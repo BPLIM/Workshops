@@ -1,6 +1,6 @@
 # BPLIM Workshop 2019
 
-In this folder you can find all the presentations for the workshop "Reproducible Research and Modern Data Analysis: Concepts, Skills and Tool".
+In this folder you can find all the presentations for the workshop "Reproducible Research and Modern Data Analysis: Concepts, Skills and Tools".
 
 ## Presentations
 
