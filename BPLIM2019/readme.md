@@ -22,7 +22,9 @@ Luís Fonseca, London Business School<br/><br/>
 
 Sérgio Correia, Board of Governors of the FED<br/><br/>
 
-**Interactive document generation with Rmarkdown** ![Interactive Presentation](https://git.io/Je7dv)
+**Interactive document generation with Rmarkdown** 
+
+[Interactive Presentation](https://git.io/Je7dv)
 
 Julia Schulte-Cloos, LMU Munich<br/><br/>
 
