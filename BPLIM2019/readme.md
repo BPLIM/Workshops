@@ -38,6 +38,8 @@ In this folder you can find all the presentations for the workshop "Reproducible
 
 **Literate programming with Stata, R, Julia and Python**
 
+[Github Repo](https://github.com/reisportela/prjs)
+
 [Miguel Portela](http://www1.eeg.uminho.pt/economia/mangelo/), EEG – Universidade do Minho<br/><br/>
 
 **Jupyter Notebooks: Introduction, Tips & Tools**
