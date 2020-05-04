@@ -7,7 +7,7 @@ title: Central Balance Sheet Database - Data Manual
 
 `Extraction Date`: June 2019
 
-`Manual Date`: 19 June 2019
+`Manual Date`: 17 April 2020
 
 
 
@@ -88,6 +88,8 @@ In all files each row corresponds to one firm in a given year.[^2] All files are
 [^4]: To see the labels in English type the following command line in Stata: 'label language en'.
 
 > `Related Datasets`: BPLIM also makes available the *Central Balance Sheet Harmonized Panel Data* which contains only variables that are consistent over time either because they were not affected by the POC to SNC change or because it was possible to construct harmonized variables based on the two different accounting systems.
+
+> `Digital Object Identifier`: 10.17900/CB.CBA.Jun2019.V1
 
 ![](./attachments/structure_CB.png)
 
@@ -1221,8 +1223,7 @@ If you have a question that is not covered in this manual, please send an email 
 
 
 # Citation of this dataset
-Banco de Portugal (2019), Central Balance Sheet Database: Annual Data. Extraction: June 2019. Microdata Research Laboratory (BPLIM) Dataset.
-
+Banco de Portugal Microdata Research Laboratory (BPLIM) (2019): Central Balance Sheet Annual Data. Extraction: June 2019. Version: V1. BANCO DE PORTUGAL. Dataset. https://doi.org/10.17900/CB.CBA.Jun2019.V1
 
 ## References
 Banco de Portugal (2009). Estatísticas das Sociedades Não Financeiras da Central de Balanços- Documento Metodológico. Departamento de Estatística.
