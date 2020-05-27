@@ -6,7 +6,7 @@ title: Central Balance Sheet Harmonized Panel Data - Data Manual
 
 `Extraction Date`: June 2019
 
-`Manual Date`: 19 June 2019
+`Manual Date`: 17 April 2020
 
 
 **Abstract**: In 2010, the national accounting standards underwent some changes, and *Plano Oficial de Contabilidade* (POC, Official Chart of Accounts) was replaced by *Sistema de Normalização Contabilística* (SNC, Accounting Standards System). This had an impact on the base information in the Central Balance Sheet Database (CB). This manual describes the panel data of Central Balance Sheet Database with harmonized variables over time available at BPLIM.
@@ -74,7 +74,7 @@ title: Central Balance Sheet Harmonized Panel Data - Data Manual
 
 > `Related Datasets`: This product is built based on the information from Central Balance Sheet Database (CB).
 
-
+> `Digital Object Identifier`: 10.17900/CB.CBHP.Jun2019.V1
 
 # Geographical Coverage
 The data refers to firms located in the Mainland Portugal and Autonomous Regions – Azores and Madeira.
@@ -492,7 +492,8 @@ For summary statistics, a codebook and description of each dataset please check 
 
 
 # Citation of this dataset
-Banco de Portugal (2019), Central Balance Sheet Harmonized Panel Data. Extraction: June 2019. Microdata Research Laboratory (BPLIM) Dataset.
+Banco de Portugal Microdata Research Laboratory (BPLIM) (2019): Central Balance Sheet Harmonized Panel. Extraction: June 2019. Version: V1. BANCO DE PORTUGAL. Dataset. https://doi.org/10.17900/CB.CBHP.Jun2019.V1
+
 
 # References
 Banco de Portugal (2014). Quadros do Setor e Quadros da Empresa e do Setor- Notas Metodológicas Série Longa 1995-2013. Estudos da Central de Balanços. Lisboa.
