@@ -444,9 +444,28 @@ Using R
 
   - Interactive non-graphical mode: go the the RedHat symbol and type `R' in the Search box
 
-![](./media/CallR.png){width="3.543307086614173in"
-height="0.8180216535433071in"}
+![](./media/CallR.png){width=50%}
     
+  - Alternatively, you can open a Terminal and type R
+  - Please make sure R is in your PATH; type $PATH in the Terminal. If this is not the case, type PATH=$PATH:/usr/bin/
+
+2. Using RStudio.
+
+  - Open a Terminal and type rstudio
+  - Please make sure RStudio is in your PATH; type $PATH in the Terminal. If this is not the case, type PATH=$PATH:/opt/bplimext/R/usr/lib64/rstudio/bib/
+
+Using julia
+===========
+
+1. Open a Terminal and type julia (julia is located in /opt/bplimext/julia/bib/, you can add it to your PATH)
+
+2. Use Atom: open a Terminal and type atom (/opt/bplimext/julia/bib/)
+
+Using julia
+===========
+
+1. Open a Terminal and type python3 (/usr/bin/)
+
 
 Allowed outputs
 =============================
