@@ -152,7 +152,7 @@ The directories that you have access to within the folder include:
 |                                   | access to this directory.*        |
 +-----------------------------------+-----------------------------------+
 | **/bplimext/doc/Manuals**         | Manuals and auxiliary files       |
-|                                   | are available here                |
+|                                   | are available here.               |
 +-----------------------------------+-----------------------------------+
 
   - You will have in your **work\_area** folder templates for both Stata and R. By default the template file is read only.
