@@ -151,6 +151,9 @@ The directories that you have access to within the folder include:
 |                                   | *You have read-write              |
 |                                   | access to this directory.*        |
 +-----------------------------------+-----------------------------------+
+| **/bplimext/doc/Manuals**         | Manuals are located here          |
+|                                   |                                   |
++-----------------------------------+-----------------------------------+
 
   - You will have in your **work\_area** folder templates for both Stata and R. By default the template file is read only.
 
@@ -461,7 +464,7 @@ Using julia
 
 2. Use Atom: open a Terminal and type atom (/opt/bplimext/julia/bib/)
 
-Using julia
+Using Python
 ===========
 
 1. Open a Terminal and type python3 (/usr/bin/)
