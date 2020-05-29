@@ -34,19 +34,24 @@ In this folder you can find all the presentations for the workshop "Big Data and
 Maria R. Sousa, BCP<br/><br/>
 
 **How can data be organization’s Energy**
+
 Liliana Bernardino, Sonae MC<br/><br/>
 
 **Decision support systems to relocate vehicles in sharing services**
+
 Nuno Oliveira, CEiia Portugal<br/><br/>
 
 
 #### Session 2
 
 **Detection of Frauds and Transactions in Local Trade: SAF-T with Big Data Technology**
+
 [Eurico Lopes](http://pessoas.ipcb.pt/eurico/), IPCB<br/><br/>
 
 **Mining Social Media to Forecast Stock Market Behavior**
+
 [Paulo Cortez](http://www3.dsi.uminho.pt/pcortez/Home.html), U Minho<br/><br/>
 
 **Detection of outliers for the inspection of potential fraud cases**
+
 [Rita P. Ribeiro](https://www.dcc.fc.up.pt/~rpribeiro/index.html), FCUP<br/><br/>
