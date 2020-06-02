@@ -880,7 +880,7 @@ height="1.2160203412073491in"}
 > The Investigator should verify that the \"fingerprint\" (verification
 > code) is:
 >
-> **33:9B:A7:27:F3:69:F7:9C:0F:4C:EC:E4:DB:D5:3A:77:40:CA:DA:B8:B2:ED:94:54 :87:A1:6E:79:18:3D:26:1B**
+> **SHA256 ED 1B D9 E2 C2 F8 C6 08 1A 53 5F 97 DA 71 77 D9 D2 EE 7A 5F 9C 35 87 B3 19 F4 7E A1 CB 2C 68 0B**
 >
 > ![](./media/image33.png){width="4.724409448818897in"
 > height="2.985113735783027in"}
