@@ -505,7 +505,7 @@ Remove outputs
 
 
 
-Scientific Support
+Scientific support
 ================================
 
 Researchers will be provided with the necessary scientific and
