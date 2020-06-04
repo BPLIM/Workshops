@@ -86,7 +86,7 @@ Access to the External Server
 2. Password policy:
   - The first password delivered must be changed at the first login.
   - After 60 days the password will expire: change the password within this time frame (see Appendix 3 for instructions on how to change the password)
-  - The passwords to be specified must meet XXXX the requirements described in Appendix 3.
+  - The passwords to be specified must meet the requirements described in Appendix 3.
 
 3. Upon access using 'NoMachine'
 
