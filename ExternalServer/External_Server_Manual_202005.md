@@ -1083,13 +1083,11 @@ Configuring browser access
 
   - Go to NoMachine first screen and double click in the following icon
 
-  ![](./media/logout1.png){width="4.068589238845145in"
-height="3.1496062992125986in"}
+  ![](./media/logout1.png){width="3in"}
 
   - right click on the icon below and choose "Terminar sessão" 
 
-  ![](./media/logout2.png){width="4.068589238845145in"
-height="3.1496062992125986in"}
+  ![](./media/logout2.png){width="3in"}
 
 [^1]: Dolphin is an intuitive and easy-to-use file manager. You can use it, for example, to browse the directory, to
     create or to delete files/directories (by using the right mouse
