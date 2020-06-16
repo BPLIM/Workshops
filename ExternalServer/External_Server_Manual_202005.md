@@ -1,7 +1,7 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
 author: "External Server Manual"
-date: "May 27, 2020"
+date: "June 16, 2020"
 output: pdf_document
 logo: logo.png
 papersize: a4
@@ -1079,6 +1079,17 @@ Configuring browser access
 
   - Ask BPLIM Staff to empty space in your home folder
 
+8. Session if frozen
+
+  - Go to NoMachine first screen and double click in the following icon
+
+  ![](./media/logout1.png){width="4.068589238845145in"
+height="3.1496062992125986in"}
+
+  - right click on the icon below and choose "Terminar sessão" 
+
+  ![](./media/logout2.png){width="4.068589238845145in"
+height="3.1496062992125986in"}
 
 [^1]: Dolphin is an intuitive and easy-to-use file manager. You can use it, for example, to browse the directory, to
     create or to delete files/directories (by using the right mouse
