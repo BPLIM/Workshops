@@ -234,6 +234,8 @@ height="1.848682195975503in"}
 Using Stata
 ===========
 
+**IMPORTANT**: do not save files in your home directory (/home/USER_LOGIN)
+
 1. Stata can be accessed in interactive graphical or non-graphical
         modes.[^6]
 
@@ -433,6 +435,8 @@ height="2.0134241032370954in"}
 
 Additional Statistical Software
 =============================================
+
+**IMPORTANT**: do not save files in your home directory (/home/USER_LOGIN)
 
  You can also use 'R' and 'python' by issuing in the shell the
  respective designation. Both applications can only be used in the
