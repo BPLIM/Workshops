@@ -512,10 +512,10 @@ Remove outputs
 User's Home folder
 ============================
 
-1. Do not save files in your Home folder
+1. Do not save files in your Home folder:
     "/home/USER_ID/".
 
-2. Regularly clean your Trash folder. In the Terminal type
+2. Regularly clean your Trash folder. If your disk use goes over the quota you will be prevented to login. In the Terminal type:
     rm -rf ~/.local/share/Trash/*
 
 
