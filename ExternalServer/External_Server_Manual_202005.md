@@ -1,7 +1,7 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
 author: "External Server Manual"
-date: "June 16, 2020"
+date: "July 14, 2020"
 output: pdf_document
 logo: logo.png
 papersize: a4
@@ -14,7 +14,7 @@ papersize: a4
 3. cd "G:\BPLIM\02. Docs Internos\03. Manuais\External Server\"
 4. RUN THE FOLLOWING LINE IN THE TERMINAL
 
-==>> REPLACE THE VERSION NUMBER
+> MAC > /Users/miguelportela/Documents/GitHub/Manuals/ExternalServer
 
 pandoc -V geometry:"paperwidth=210mm,paperheight=297mm,left=27mm,right=27mm,top=27mm,bottom=27mm" External_Server_Manual_202005.md --pdf-engine=xelatex -o External_Server_Manual.pdf
 
@@ -506,6 +506,17 @@ Remove outputs
     "**[bplim\@bportugal.pt]{.underline}**".
 
 2. Upon validation, the results will be sent to you via email.
+
+
+
+User Home folder
+============================
+
+1. Do not save files in your Home folder
+    "/home/USER_ID/".
+
+2. Regularly clean your Trash folder. In the Terminal type
+    rm -rf ~/.local/share/Trash/*
 
 
 
