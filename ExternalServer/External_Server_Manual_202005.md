@@ -509,7 +509,7 @@ Remove outputs
 
 
 
-User Home folder
+User's Home folder
 ============================
 
 1. Do not save files in your Home folder
