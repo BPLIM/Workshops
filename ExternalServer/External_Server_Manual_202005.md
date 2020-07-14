@@ -253,9 +253,9 @@ Using Stata
 height="2.488604549431321in"}
 
   - You may add a 'path' to your system folder by typing, for the
-    example on Stata 15, the following command in the shell
-
-    PATH = \$PATH:/opt/bplimext/stata15
+    example on Stata 16, the following command in the shell "vi ~/.bash_profile" and adapt the following line
+    
+    PATH=\$PATH:\$HOME/.local/bin:\$HOME/bin:/opt/bplimext/stata16
 
   - For the interactive graphical mode click on the icons
     "**xstata14mp.sh**" (Stata 14) or
