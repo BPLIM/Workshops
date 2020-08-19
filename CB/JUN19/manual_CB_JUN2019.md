@@ -7,7 +7,7 @@ title: Central Balance Sheet Database - Data Manual
 
 `Extraction Date`: June 2019
 
-`Manual Date`: 17 April 2020
+`Manual Date`: 17 August 2020
 
 
 
@@ -91,7 +91,7 @@ In all files each row corresponds to one firm in a given year.[^2] All files are
 
 > `Digital Object Identifier`: 10.17900/CB.CBA.Jun2019.V1
 
-![](./attachments/structure_CB.png)
+![](./attachments/structure_CB.PNG)
 
 
 # Geographical Coverage
@@ -107,7 +107,7 @@ CB covers the population of all Portuguese non-financial corporations. The class
 # Methodology
 The annual data of CB is collected through *Informação Empresarial Simplicada* (IES). IES is mandatory and contains tax, accounting and statistical information at the firm and establishment level. IES is composed of 21 Annexes:
 
-![Source: IES forms, Banco de Portugal, 2014; Oliveira, 2016](./attachments/ies_annexes.png)
+![Source: IES forms, Banco de Portugal, 2014; Oliveira, 2016](./attachments/ies_annexes.PNG)
 
 
 
@@ -115,7 +115,7 @@ CB contains the information reported on Annexes A (Firm Level Data) and R (Estab
 
 After the firm submits the data, the system implements some validation checks and generate an alert if it finds an inconsistency. In that case the firm has 30 days to correct it.[^9] Firms may also correct the information previously reported by sending a replacement version of the Annexes along with the “Cover Sheet”. In case the correction is made to Annex A (Balance Sheet or Loss and Profit Statement) or to Annex R (Establishment Level Data), the firm is required to re-send both Annexes even if the information reported in one of them remains unchanged. If the firm changes the fiscal period it is also required to send a declaration before and after the change. The Tax Authority (AT) [^10] sends the information collected through IES in an electronic format to the Institute of Registration and Notary Affairs (IRN).[^11] This institute is responsible for sending the information to *Banco de Portugal*, National Statistics Institute (INE) [^12] and Directorate-General for Economic Activities (DGAE).[^13]
 
-![](./attachments/information_flow.png)
+![](./attachments/information_flow.PNG)
 
 The information reported by these firms is then subject to a quality control procedure by the Statistics Department of *Banco de Portugal*. The quality control is operated at three levels (Banco de Portugal, 2009):
 
@@ -889,94 +889,94 @@ This file provides some indicators calculated using variables of CB. For more in
 ### F2. Variables calculated according to POC
 | Variable Name | Variable Description |
 | :------: | :------- |
-| VF06027    | Gross operating margin rate % |
-| VF06028    | Days in receivables (number of days) |
-| VF06032    | Days in accounts payable (number of days) |
-| VF06036    | Inventories turnover (times) |
-| VF06037    | Working capital turnover (times) |
-| VF06038    | Growth rate of turnover % |
-| VF06039    | Growth rate of gross value added (GVA) % |
-| VF06041    | Investment rate % |
-| VF06043 |    Coverage rate of investment by self-financing % |
-| VF06045 |    Capital ratio % |
-| VF06050 |    Coverage of fixed assets % |
-| VF06052 |    Coverage of medium and long term investment % |
-| VF06054 |    Debt to equity ratio % |
-| VF06056 |    Current ratio % |
-| VF06057 |    Quick ratio % |
-| VF06058 |    Return on assets % |
-| VF06060 |    Asset turnover (times) |
-| VF06062 |    Return on sales % |
-| VF06066 |    Gross economic profitability % |
-| VF06067 |    Gross value added rate (GVA) % |
-| VF06071 |    Return on equity % |
-| VF06079 |    Compound leverage factor |
-| VF06080 |    Interest burden (QS) |
-| VF06082 |    Leverage ratio |
-| VF06083 |    Extraordinary income factor |
-| VF06085 |    Tax burden (QS) |
-| VF06087 |    Income distribution - Employees % |
-| VF06089 |    Income distribution - Banks and other funders % |
-| VF06091 |    Income distribution - State % |
-| VF06093 |    Income distribution - Enterprise (self-financing) % |
-| VF06095 |    Income distribution - Other % |
-| VF06097 |    Coefficient GVA / Property, plant and equipment (euros) |
-| VF06099 |    Coefficient GVA / Employee costs (euros) |
-| VF06104 |    Coefficient capital / Employee costs (euros) |
+| VF06027   | Gross operating margin rate |
+| VF06028   | Days in receivables (number of days) |
+| VF06032   | Days in accounts payable (number of days) |
+| VF06036   | Inventories turnover (times) |
+| VF06037   | Working capital turnover (times) |
+| VF06038   | Growth rate of turnover |
+| VF06039   | Growth rate of gross value added (GVA) |
+| VF06041   | Investment rate |
+| VF06043 |   Coverage rate of investment by self-financing |
+| VF06045 |   Capital ratio |
+| VF06050 |   Coverage of fixed assets |
+| VF06052 |   Coverage of medium and long term investment |
+| VF06054 |   Debt to equity ratio |
+| VF06056 |   Current ratio |
+| VF06057 |   Quick ratio |
+| VF06058 |   Return on assets |
+| VF06060 |  Asset turnover (times) |
+| VF06062 |  Return on sales |
+| VF06066 |  Gross economic profitability |
+| VF06067 |  Gross value added rate (GVA) |
+| VF06071 |  Return on equity |
+| VF06079 |  Compound leverage factor |
+| VF06080 |  Interest burden (QS) |
+| VF06082 |  Leverage ratio |
+| VF06083 |  Extraordinary income factor |
+| VF06085 |  Tax burden (QS) |
+| VF06087 |  Income distribution - Employees |
+| VF06089 |   Income distribution - Banks and other funders |
+| VF06091 |   Income distribution - State |
+| VF06093 |   Income distribution - Enterprise (self-financing) |
+| VF06095 |  Income distribution - Other |
+| VF06097 |  Coefficient GVA / Property, plant and equipment (euros) |
+| VF06099 |   Coefficient GVA / Employee costs (euros) |
+| VF06104 |   Coefficient capital / Employee costs (euros) |
 
 
 ### F3. Variables calculated according to SNC
 | Variable Name | Variable Description |
 | :------: | :------- |
-| VF16318 |    Current ratio (%) |
-| VF16319 |    Quick ratio (%) |
-| VF16320 |    Capital ratio (%) (QS) |
-| VF16323 |    Assets to equity ratio (%) |
-| VF16324    | Solvency ratio (%) QS |
-| VF16326 |    Non-current assets coverage ratio (%) |
-| VF16331 |    Obtained funding over total liabilities (%) (QS) |
-| VF16338 |    Cost of obtained funding (%) |
-| VF16340 |    Financial Cost Effect (%) |
-| VF16345 |    Operating effect |
-| VF16346    | Other financial income effect |
-| VF16348    | Compound leverage factor - QS |
-| VF16350    | Tax burden |
-| VF16351 |    Return on sales (%) |
-| VF16353 |    Return on assets (%) |
-| VF16355 | GVA over output (%) - QS |
-| VF16357    | EBITDA over Turnover (%) |
-| VF16358    | Degree of combined leverage |
-| VF16359    | Degree of operating leverage |
-| VF16360    | Degree of other financial income leverage |
-| VF16361    | Degree of financial leverage |
-| VF16362    | Days sales outstanding (days) |
-| VF16363    | Days sales outstanding concerning non-residents (days) |
-| VF16364    | Days payable outstanding (days) |
-| VF16365    | Days payable outstanding concerning non-residents (days) |
-| VF16366    | Days sales of inventory (days) |
-| VF16367    | Asset turnover (times) - QS |
-| VF16369    | Net working capital requirements over turnover (%) |
-| VF16370    | Coefficient GVA over fixed non-financial assets |
-| VF16371    | Coefficient GVA over employee costs |
-| VF16373    | Coefficient Fixed non-financial assets over employee expenses |
-| VF16374    | Suppliers (%) - QS |
-| VF16375    | Employees (%) - QS |
-| VF16376    | Banks and other sources of funding (%) - QS |
-| VF16377    | State (%) - QS |
-| VF16378    | Enterprise - self-financing (%) - QS |
-| VF16379    | Others (%) - QS |
-| VF16426    | Interest expenses / EBITDA |
-| VF17747    | Asset turnover ratio (%) |
-| VF17749    | Profit or loss of the year before taxes (EBT) / Equity (%) |
-| VF17750    | Gross value added / Net turnover (%) |
-| VF17752    | Profit or loss of the year before taxes (EBT) / Net turnover (%) |
-| VF17753    | Equity / Total assets (%) |
-| VF17754    | Trade payables / Total assets (%) |
-| VF17755    | Total income / Net turnover (%) |
-| VF17756    | Total expenses / Net turnover (%) |
-| VF17757    | Financial fixed assets / Total assets (%) |
-| VF17758    | Trade receivables / Total assets (%) |
-| VF17759    | Other financial assets and cash and bank / Total assets (%) |
+| VF16318 |   Current ratio |
+| VF16319 |   Quick ratio |
+| VF16320 |   Capital ratio (QS) |
+| VF16323 |   Assets to equity ratio |
+| VF16324   | Solvency ratio QS |
+| VF16326 |   Non-current assets coverage ratio |
+| VF16331 |   Obtained funding over total liabilities (QS) |
+| VF16338 |  Cost of obtained funding |
+| VF16340 |   Financial Cost Effect |
+| VF16345 |   Operating effect |
+| VF16346   | Other financial income effect |
+| VF16348   | Compound leverage factor - QS |
+| VF16350   | Tax burden |
+| VF16351 |   Return on sales |
+| VF16353 |   Return on assets |
+| VF16355 | GVA over output - QS |
+| VF16357   | EBITDA over Turnover |
+| VF16358   | Degree of combined leverage |
+| VF16359   | Degree of operating leverage |
+| VF16360  | Degree of other financial income leverage |
+| VF16361   | Degree of financial leverage |
+| VF16362   | Days sales outstanding (days) |
+| VF16363  | Days sales outstanding concerning non-residents (days) |
+| VF16364  | Days payable outstanding (days) |
+| VF16365  | Days payable outstanding concerning non-residents (days) |
+| VF16366  | Days sales of inventory (days) |
+| VF16367  | Asset turnover (times) - QS |
+| VF16369  | Net working capital requirements over turnover |
+| VF16370  | Coefficient GVA over fixed non-financial assets |
+| VF16371  | Coefficient GVA over employee costs |
+| VF16373   | Coefficient Fixed non-financial assets over employee expenses |
+| VF16374   | Suppliers - QS |
+| VF16375   | Employees - QS |
+| VF16376   | Banks and other sources of funding - QS |
+| VF16377   | State - QS |
+| VF16378   | Enterprise - self-financing - QS |
+| VF16379   | Others - QS |
+| VF16426   | Interest expenses / EBITDA |
+| VF17747   | Asset turnover ratio |
+| VF17749   | Profit or loss of the year before taxes (EBT) / Equity |
+| VF17750   | Gross value added / Net turnover |
+| VF17752   | Profit or loss of the year before taxes (EBT) / Net turnover |
+| VF17753  | Equity / Total assets |
+| VF17754  | Trade payables / Total assets |
+| VF17755   | Total income / Net turnover |
+| VF17756  | Total expenses / Net turnover |
+| VF17757  | Financial fixed assets / Total assets |
+| VF17758  | Trade receivables / Total assets |
+| VF17759   | Other financial assets and cash and bank / Total assets |
 
 
 ## G.    Cash-Flows File
@@ -1224,6 +1224,7 @@ If you have a question that is not covered in this manual, please send an email 
 
 # Citation of this dataset
 Banco de Portugal Microdata Research Laboratory (BPLIM) (2019): Central Balance Sheet Annual Data. Extraction: June 2019. Version: V1. BANCO DE PORTUGAL. Dataset. https://doi.org/10.17900/CB.CBA.Jun2019.V1
+
 
 ## References
 Banco de Portugal (2009). Estatísticas das Sociedades Não Financeiras da Central de Balanços- Documento Metodológico. Departamento de Estatística.
