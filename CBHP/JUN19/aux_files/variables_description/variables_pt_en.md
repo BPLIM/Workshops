@@ -177,28 +177,28 @@
 
 | Variable | Designação | Designation |
 | :-------: | :------------ | :-------------- |
-| R001 | Liquidez geral (%) | Current ratio (%) |
-| R002 | Liquidez reduzida (%) | Quick ratio (%) |
-| R003 | Autonomia financeira (%) - QS | Capital ratio (%) (QS) |
-| R006 | Taxa de endividamento (%) | Assets to equity ratio (%) |
-| R007 | Solvabilidade (%) - QS | Solvency ratio (%) QS |
-| R009 | Cobertura dos activos não correntes (%) | Non-current assets coverage ratio (%) |
-| R023 | Efeito dos juros suportados (%) | Financial Cost Effect (%) |
-| R034 | Rendibilidade económica das vendas (%) (RE /VN) | Return on sales (%) |
-| R036 | Rendibilidade do activo (%) - QS | Return on assets (%) |
-| R040 | EBITDA em percentagem do Volume de negócios | EBITDA over Turnover (%) |
+| R001 | Liquidez geral | Current ratio |
+| R002 | Liquidez reduzida | Quick ratio |
+| R003 | Autonomia financeira - QS | Capital ratio (QS) |
+| R006 | Taxa de endividamento | Assets to equity ratio |
+| R007 | Solvabilidade - QS | Solvency ratio QS |
+| R009 | Cobertura dos activos não correntes | Non-current assets coverage ratio |
+| R023 | Efeito dos juros suportados | Financial Cost Effect |
+| R034 | Rendibilidade económica das vendas (RE /VN) | Return on sales |
+| R036 | Rendibilidade do activo - QS | Return on assets |
+| R040 | EBITDA em percentagem do Volume de negócios | EBITDA over Turnover |
 | R041 | Grau de alavancagem combinada | Degree of combined leverage |
 | R050 | Rotação do activo (nº vezes) - QS | Asset turnover (times) - QS |
 | R056 | Coeficiente Capital/Gastos com o pessoal (euros) | Coefficient Fixed non-financial assets over employee expenses |
-| R150 | Volume de negócios / Total do ativo (%) | Asset turnover ratio (%) |
-| R152 | Resultado antes de impostos  / Capital próprio (%) | Profit or loss of the year before taxes (EBT) / Equity (%) |
-| R155 | Resultado antes de impostos  / Volume de negócios (%) | Profit or loss of the year before taxes (EBT) / Net turnover (%) |
-| R156 | Capital próprio / Total do ativo (%) | Equity / Total assets (%) |
-| R157 | Fornecedores / Total do ativo (%) | Trade payables / Total assets (%) |
-| R158 | Total de rendimentos / Volume de negócios (%) | Total income / Net turnover (%) |
-| R159 | Total de gastos / Volume de negócios (%) | Total expenses / Net turnover (%) |
-| R160 | Investimentos financeiros / Total do ativo (%) | Financial fixed assets / Total assets (%) |
-| R161 | Clientes  / Total do ativo (%) | Trade receivables / Total assets (%) |
+| R150 | Volume de negócios / Total do ativo | Asset turnover ratio |
+| R152 | Resultado antes de impostos  / Capital próprio | Profit or loss of the year before taxes (EBT) / Equity |
+| R155 | Resultado antes de impostos  / Volume de negócios | Profit or loss of the year before taxes (EBT) / Net turnover |
+| R156 | Capital próprio / Total do ativo | Equity / Total assets |
+| R157 | Fornecedores / Total do ativo | Trade payables / Total assets |
+| R158 | Total de rendimentos / Volume de negócios | Total income / Net turnover |
+| R159 | Total de gastos / Volume de negócios | Total expenses / Net turnover |
+| R160 | Investimentos financeiros / Total do ativo | Financial fixed assets / Total assets |
+| R161 | Clientes  / Total do ativo | Trade receivables / Total assets |
 
 
 [return](#table-of-contents)

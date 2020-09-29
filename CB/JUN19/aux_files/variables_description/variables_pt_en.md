@@ -389,57 +389,57 @@
 
 | Variable | Designação | Designation |
 | ------- | ------------| --------------|
-| VF06027 | Margem Bruta dos Proveitos de Exploração | Gross operating margin rate % |
+| VF06027 | Margem Bruta dos Proveitos de Exploração | Gross operating margin rate |
 | VF06028 | Prazo Médio de Cobrança (Nº de Dias) | Days in receivables (number of days) |
 | VF06032 | Prazo Médio de Pagamento (Nº de Dias) | Days in accounts payable (number of days) |
 | VF06036 | Rotação das Existências (Nº de Vezes) | Inventories turnover (times) |
 | VF06037 | Rotação das Necessidades de Fundo de Maneio (Nº de Vezes) | Working capital turnover (times) |
-| VF06038 | Taxa de Variação das Vendas e Prestações de Serviços | Growth rate of turnover % |
-| VF06039 | Taxa de Variação do Valor Acrescentado Bruto | Growth rate of gross value added (GVA) % |
-| VF06041 | Taxa de Investimento | Investment rate % |
-| VF06043 | Taxa de Cobertura Por Autofinanciamento | Coverage rate of investment by self-financing % |
-| VF06045 | Autonomia Financeira | Capital ratio % |
-| VF06050 | Cobertura do Imobilizado | Coverage of fixed assets % |
-| VF06052 | Cobertura dos Capitais Investidos | Coverage of medium and long term investment % |
-| VF06054 | Taxa de Endividamento | Debt to equity ratio % |
-| VF06056 | Liquidez Geral | Current ratio % |
-| VF06057 | Liquidez Reduzida | Quick ratio % |
-| VF06058 | Rendibilidade Operacional do Activo | Return on assets % |
+| VF06038 | Taxa de Variação das Vendas e Prestações de Serviços | Growth rate of turnover |
+| VF06039 | Taxa de Variação do Valor Acrescentado Bruto | Growth rate of gross value added (GVA) |
+| VF06041 | Taxa de Investimento | Investment rate |
+| VF06043 | Taxa de Cobertura Por Autofinanciamento | Coverage rate of investment by self-financing |
+| VF06045 | Autonomia Financeira | Capital ratio |
+| VF06050 | Cobertura do Imobilizado | Coverage of fixed assets |
+| VF06052 | Cobertura dos Capitais Investidos | Coverage of medium and long term investment |
+| VF06054 | Taxa de Endividamento | Debt to equity ratio |
+| VF06056 | Liquidez Geral | Current ratio |
+| VF06057 | Liquidez Reduzida | Quick ratio |
+| VF06058 | Rendibilidade Operacional do Activo | Return on assets |
 | VF06060 | Rotação do Activo Líquido (Nº de Vezes) | Asset turnover (times) |
-| VF06062 | Rendibilidade Operacional das Vendas | Return on sales % |
-| VF06066 | Rendibilidade Económica Bruta | Gross economic profitability % |
-| VF06067 | Taxa de Valor Acrescentado Bruto | Gross value added rate (GVA) % |
-| VF06071 | Rendibilidade do Capital Próprio | Return on equity % |
+| VF06062 | Rendibilidade Operacional das Vendas | Return on sales |
+| VF06066 | Rendibilidade Económica Bruta | Gross economic profitability |
+| VF06067 | Taxa de Valor Acrescentado Bruto | Gross value added rate (GVA) |
+| VF06071 | Rendibilidade do Capital Próprio | Return on equity |
 | VF06079 | Efeito de Alavanca Financeira | Compound leverage factor |
 | VF06080 | Efeito dos Juros Suportados (QS) | Interest burden (QS) |
 | VF06082 | Efeito do endividamento | Leverage ratio |
 | VF06083 | Efeito dos Resultados extraordinários (QS) | Extraordinary income factor |
 | VF06085 | Efeito Fiscal (QS) | Tax burden (QS) |
-| VF06087 | Repartição do Rendimento - Pessoal | Income distribution - Employees % |
-| VF06089 | Repartição do Rendimento - Bancos e Outros Financiadores | Income distribution - Banks and other funders % |
-| VF06091 | Repartição do Rendimento - Estado | Income distribution - State % |
-| VF06093 | Repartição do Rendimento - Empresa (Autofinanciamento) | Income distribution - Enterprise (self-financing) % |
-| VF06095 | Repartição do Rendimento - Outros Beneficiários e Rendimentos Não Alocáveis | Income distribution - Other % |
+| VF06087 | Repartição do Rendimento - Pessoal | Income distribution - Employees |
+| VF06089 | Repartição do Rendimento - Bancos e Outros Financiadores | Income distribution - Banks and other funders |
+| VF06091 | Repartição do Rendimento - Estado | Income distribution - State |
+| VF06093 | Repartição do Rendimento - Empresa (Autofinanciamento) | Income distribution - Enterprise (self-financing) |
+| VF06095 | Repartição do Rendimento - Outros Beneficiários e Rendimentos Não Alocáveis | Income distribution - Other |
 | VF06097 | Produtividade do Equipamento | Coefficient GVA / Property, plant and equipment (euros) |
 | VF06099 | Produtividade do Trabalho (por custos com o pessoal) | Coefficient GVA / Employee costs (euros) |
 | VF06104 | Coeficiente Capital/emprego (por custos com o pessoal) | Coefficient capital / Employee costs (euros) |
-| VF16318 | Liquidez geral (%) | Current ratio (%) |
-| VF16319 | Liquidez reduzida (%) | Quick ratio (%) |
-| VF16320 | Autonomia financeira (%) - QS | Capital ratio (%) (QS) |
-| VF16323 | Taxa de endividamento (%) | Assets to equity ratio (%) |
-| VF16324 | Solvabilidade (%) - QS | Solvency ratio (%) QS |
-| VF16326 | Cobertura dos activos não correntes (%) | Non-current assets coverage ratio (%) |
-| VF16331 | Taxa de recurso a capitais alheios remunerados (%) - QS | Obtained funding over total liabilities (%) (QS) |
-| VF16338 | Custo da dívida - financiamentos obtidos | Cost of obtained funding (%) |
-| VF16340 | Efeito dos juros suportados (%) | Financial Cost Effect (%) |
-| VF16345 | Efeito da actividade económica (%) | Operating effect |
-| VF16346 | Efeito da actividade financeira  (%) | Other financial income effect |
-| VF16348 | Efeito da actividade de financiamento (%) - QS | Compound leverage factor - QS |
-| VF16350 | Efeito fiscal (%) | Tax burden |
-| VF16351 | Rendibilidade económica das vendas (%) (RE /VN) | Return on sales (%) |
-| VF16353 | Rendibilidade do activo (%) - QS | Return on assets (%) |
-| VF16355 | VAB em percentagem da produção (%) - QS | GVA over output (%) - QS |
-| VF16357 | EBITDA em percentagem do Volume de negócios | EBITDA over Turnover (%) |
+| VF16318 | Liquidez geral | Current ratio |
+| VF16319 | Liquidez reduzida | Quick ratio |
+| VF16320 | Autonomia financeira - QS | Capital ratio (QS) |
+| VF16323 | Taxa de endividamento | Assets to equity ratio  |
+| VF16324 | Solvabilidade - QS | Solvency ratio (QS) |
+| VF16326 | Cobertura dos activos não correntes | Non-current assets coverage ratio |
+| VF16331 | Taxa de recurso a capitais alheios remunerados - QS | Obtained funding over total liabilities (QS) |
+| VF16338 | Custo da dívida - financiamentos obtidos | Cost of obtained funding |
+| VF16340 | Efeito dos juros suportados | Financial Cost Effect |
+| VF16345 | Efeito da actividade económica | Operating effect |
+| VF16346 | Efeito da actividade financeira  | Other financial income effect |
+| VF16348 | Efeito da actividade de financiamento - QS | Compound leverage factor - QS |
+| VF16350 | Efeito fiscal | Tax burden |
+| VF16351 | Rendibilidade económica das vendas (RE /VN) | Return on sales |
+| VF16353 | Rendibilidade do activo - QS | Return on assets |
+| VF16355 | VAB em percentagem da produção - QS | GVA over output - QS |
+| VF16357 | EBITDA em percentagem do Volume de negócios | EBITDA over Turnover |
 | VF16358 | Grau de alavancagem combinada | Degree of combined leverage |
 | VF16359 | Grau de alavancagem da actividade económica | Degree of operating leverage |
 | VF16360 | Grau de alavancagem da actividade financeira | Degree of other financial income leverage |
@@ -450,28 +450,28 @@
 | VF16365 | Prazo médio de pagamentos com exterior (nº dias) | Days payable outstanding concerning non-residents (days) |
 | VF16366 | Prazo médio de rotação dos inventários (nº de vezes) | Days sales of inventory (days) |
 | VF16367 | Rotação do activo (nº vezes) - QS | Asset turnover (times) - QS |
-| VF16369 | Necessidades(+)/Recursos(-) de fundo de maneio em percentagem do Volume de negócios | Net working capital requirements over turnover (%) |
+| VF16369 | Necessidades(+)/Recursos(-) de fundo de maneio em percentagem do Volume de negócios | Net working capital requirements over turnover |
 | VF16370 | Coeficiente VAB/Investimentos não financeiros (euros) | Coefficient GVA over fixed non-financial assets |
 | VF16371 | Coeficiente VAB/ Gastos com o pessoal (euros) | Coefficient GVA over employee costs |
 | VF16373 | Coeficiente Capital/Gastos com o pessoal (euros) | Coefficient Fixed non-financial assets over employee expenses |
-| VF16374 | Fornecedores (%) - QS | Suppliers (%) - QS |
-| VF16375 | Pessoal (%) - QS | Employees (%) - QS |
-| VF16376 | Bancos e outros financiadores (%) - QS | Banks and other sources of funding (%) - QS |
-| VF16377 | Estado (%) - QS | State (%) - QS |
-| VF16378 | Empresa - autofinanciamento  (%) - QS | Enterprise - self-financing (%) - QS |
-| VF16379 | Restantes  (%) - QS | Others (%) - QS |
+| VF16374 | Fornecedores - QS | Suppliers - QS |
+| VF16375 | Pessoal - QS | Employees - QS |
+| VF16376 | Bancos e outros financiadores - QS | Banks and other sources of funding - QS |
+| VF16377 | Estado - QS | State - QS |
+| VF16378 | Empresa - autofinanciamento - QS | Enterprise - self-financing - QS |
+| VF16379 | Restantes - QS | Others - QS |
 | VF16426 | Pressão financeira | Interest expenses / EBITDA |
-| VF17747 | Volume de negócios / Total do ativo (%) | Asset turnover ratio (%) |
-| VF17749 | Resultado antes de impostos  / Capital próprio (%) | Profit or loss of the year before taxes (EBT) / Equity (%) |
-| VF17750 | VAB em percentagem do volume de negócios (%) | Gross value added / Net turnover (%) |
-| VF17752 | Resultado antes de impostos  / Volume de negócios (%) | Profit or loss of the year before taxes (EBT) / Net turnover (%) |
-| VF17753 | Capital próprio / Total do ativo (%) | Equity / Total assets (%) |
-| VF17754 | Fornecedores / Total do ativo (%) | Trade payables / Total assets (%) |
-| VF17755 | Total de rendimentos / Volume de negócios (%) | Total income / Net turnover (%) |
-| VF17756 | Total de gastos / Volume de negócios (%) | Total expenses / Net turnover (%) |
-| VF17757 | Investimentos financeiros / Total do ativo (%) | Financial fixed assets / Total assets (%) |
-| VF17758 | Clientes  / Total do ativo (%) | Trade receivables / Total assets (%) |
-| VF17759 | Caixa, dep bancários e instr. financeiros / Total do ativo (%) | Other financial assets and cash and bank / Total assets (%) |
+| VF17747 | Volume de negócios / Total do ativo | Asset turnover ratio |
+| VF17749 | Resultado antes de impostos / Capital próprio | Profit or loss of the year before taxes (EBT) / Equity |
+| VF17750 | VAB em percentagem do volume de negócios  | Gross value added / Net turnover |
+| VF17752 | Resultado antes de impostos / Volume de negócios | Profit or loss of the year before taxes (EBT) / Net turnover |
+| VF17753 | Capital próprio / Total do ativo | Equity / Total assets |
+| VF17754 | Fornecedores / Total do ativo  | Trade payables / Total assets |
+| VF17755 | Total de rendimentos / Volume de negócios | Total income / Net turnover |
+| VF17756 | Total de gastos / Volume de negócios | Total expenses / Net turnover |
+| VF17757 | Investimentos financeiros / Total do ativo | Financial fixed assets / Total assets |
+| VF17758 | Clientes / Total do ativo | Trade receivables / Total assets |
+| VF17759 | Caixa, dep bancários e instr. financeiros / Total do ativo | Other financial assets and cash and bank / Total assets |
 
 [return](#table-of-contents)
 
