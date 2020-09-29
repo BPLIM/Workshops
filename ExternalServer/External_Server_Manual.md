@@ -160,16 +160,16 @@ The directories that you have access to within the folder include:
 
   - By default you also have two files (see image above): (1)
     stata15mp.sh; (2) xstata15mp.sh. Files with the
-    \"**sh**\" extension allow you to send commands to
+    \"**sh**\" extension allows you to send commands to
     your operating system or to enter your operating system for
     interactive use. The first one starts Stata version 15 in
     non-graphical mode, while the second launches Stata 15 in
     graphical mode. You can start both applications by typing in the
-    Linux shell, for example, 'xstata15mp.sh', or by double clicking
+    Linux shell, for example, 'xstata15mp.sh', or by double-clicking
     the file name in 'Dolphin'.[^2]
 
   - To reset and disconnect the remote desktop connection or session,
-    you can simply log out your remote session, as shown on the
+    you can simply log out of your remote session, as shown on the
     screenshot below. After you log out, close the window.[^3]
 
 ![](./media/image7.png){width="3.1496062992125986in"
@@ -183,10 +183,10 @@ height="0.5228762029746282in"}
   - In case you do not logout, your session will be left open until your
     next login. You may use this facility to run your programs. However,
     one must be aware that this option uses resources from the server,
-    so the efficient solution to run your programs "over night" is using
+    so the efficient solution to run your programs "overnight" is using
     the batch mode as described in Step 6 below. Furthermore, in case
     the server is rebooted during a maintenance procedure your session
-    will be automatically close and unsaved documents will be lost. We
+    will be automatically closed and unsaved documents will be lost. We
     recommend you save at regular intervals your statistical programs.
 
 
@@ -232,7 +232,7 @@ height="1.848682195975503in"}
     automatically.
 
 7. E.g., type the following line to list elements within a folder in a
-    'human readable' format, h, long list format, l, in reverse order,
+    'human-readable' format, h, long list format, l, in reverse order,
     r, sort by modification time, t, and almost all files, A,
 
     ls -lArth
@@ -277,7 +277,7 @@ height="0.46653543307086615in"}
 height="2.486382327209099in"}
 
   - You can use the 'Do-file Editor' in Stata to create your own
-      "do-files" and "ado-files", or alternatively you can use
+      "do-files" and "ado-files", or you can use
       *KWrite* editor (or 'gedit')
 
   - You can open it from **RedHat** \> **Applications**
@@ -300,7 +300,7 @@ personal ado-directories, they can be categorized in four ways:
   - (SITE), the directory for "ado-files" your site might have
     installed;
 
-  - (PLUS), the directory for "ado-files" you personally might have
+  - (PLUS), the directory for "ado-files" you might have
     installed;
 
   - (PERSONAL), the directory for "ado-files" you might have written;
@@ -386,7 +386,7 @@ height="2.0134241032370954in"}
 
     at now --f batch.txt
 
-9. Type 'man at' to see further option of the command 'at'; e.g., one
+9. Type 'man at' to see a further option of the command 'at'; e.g., one
      could type
 
     at now + 5 hours --f batch.txt
@@ -423,7 +423,7 @@ height="2.0134241032370954in"}
  It allows you to see an updated version of the last lines of the log;
  *i.e.*, it updates each time the log is changed by Stata. A key
  advantage of tail is that it does not interfere with the log file,
- namely it does not write over it.
+ namely, it does not write over it.
 
 15. Another way to run a program in the background is by using the
      command 'screen'
@@ -457,7 +457,7 @@ Using R
 
 1. As with Stata, R can be accessed in interactive graphical or non-graphical modes.
 
-  - Interactive non-graphical mode: go the the RedHat symbol and type `R' in the Search box
+  - Interactive non-graphical mode: go the RedHat symbol and type `R' in the Search box
 
 ![](./media/CallR.png){width=50%}
     
@@ -652,7 +652,7 @@ Appendix 2 -- Using the 'vi' file editor
 
 1.  In the shell type 'vi batch1.txt'
 
-2.  This are the main shortcut keys
+2.  These are the main shortcut keys
 
     a.  'i' insert text
 
@@ -1108,7 +1108,7 @@ Configuring browser access
 
   ![](./media/logout1.png){width="3in"}
 
-  - right click on the icon below and choose "Terminar sessão" 
+  - right-click on the icon below and choose "Terminar sessão" 
 
   ![](./media/logout2.png){width="3in"}
 
