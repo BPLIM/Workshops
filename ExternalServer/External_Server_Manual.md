@@ -1,7 +1,7 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
 author: "External Server Manual"
-date: "July 14, 2020"
+date: "September 29, 2020"
 output: pdf_document
 logo: logo.png
 papersize: a4
@@ -17,7 +17,7 @@ papersize: a4
 > MAC > /Users/miguelportela/Documents/GitHub/Manuals/ExternalServer
 > Gab. 1.19 C:\Users\mangelo.EEG\Documents\Manuals\ExternalServer
 
-pandoc -V geometry:"paperwidth=210mm,paperheight=297mm,left=27mm,right=27mm,top=27mm,bottom=27mm" External_Server_Manual_202005.md --pdf-engine=xelatex -o External_Server_Manual.pdf
+pandoc -V geometry:"paperwidth=210mm,paperheight=297mm,left=27mm,right=27mm,top=27mm,bottom=27mm" External_Server_Manual.md --pdf-engine=xelatex -o External_Server_Manual.pdf
 
 
 ALTERNATIVE
@@ -188,6 +188,13 @@ height="0.5228762029746282in"}
     the server is rebooted during a maintenance procedure your session
     will be automatically close and unsaved documents will be lost. We
     recommend you save at regular intervals your statistical programs.
+
+
+
+<> VERY IMPORTANT <>
+=============================================
+
+ - **Do not save files in your home area /home/USER_LOGIN. In case you exceed its size you will not be able to log in.**
 
 
 
