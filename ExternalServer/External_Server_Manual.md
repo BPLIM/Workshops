@@ -467,7 +467,7 @@ Using R
 2. Using RStudio.
 
   - Open a Terminal and type rstudio
-  - Please make sure RStudio is in your PATH; type $PATH in the Terminal. If this is not the case, type PATH=\$PATH:/opt/bplimext/R/usr/lib64/rstudio/bib/
+  - Please make sure RStudio is in your PATH; type $PATH in the Terminal. If this is not the case, type PATH=\$PATH:/opt/bplimext/R/usr/lib64/rstudio/lib/
 
 Using julia
 ===========
