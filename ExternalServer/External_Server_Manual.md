@@ -1,7 +1,7 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
 author: "External Server Manual"
-date: "November 2, 2020"
+date: "December 7, 2020"
 output: pdf_document
 logo: logo.png
 papersize: a4
@@ -196,7 +196,17 @@ height="0.5228762029746282in"}
 
  - **Do not save files in your home area /home/USER_LOGIN. In case you exceed its size you will not be able to log in.**
 
+ - Check regularly the size of your project in the harddrive. Open a Terminal and apply the following steps:
 
+  1. MOVE TO THE PROJECT FOLDER: cd /bplimext/projects/p000_xxx_yyy/
+  2. LIST PROJECT SIZE: du -h
+  3. CHECK SIZE BY FOLDER SIZE AND LIST FOLDERS WITH AT LEAST 1 Gb: du --max-depth 1 -h | sort -n | grep G
+  4. MOVE TO THE work_area: cd work_area
+  5. REPEAT IN THIS FOLDER: du --max-depth 1 -h | sort -n | grep G
+  6. IDENTIFY DUPLICATED AND TEMPORARY FILES AND DELETE THEM using the command 'rm'
+  7. COMPRESS BIG FILES/FOLDERS YOU ARE NOT USING AT THE MOMENT
+  8. COMPRESS FOLDERS: tar - zcvf YOUR_FOLDER.tar.gz YOUR_FOLDER
+  9. COMPRESS INDIVIDUAL FILES: gzip YOUR_FILE
 
 Using the 'shell' in a Linux Operating System
 =============================================
