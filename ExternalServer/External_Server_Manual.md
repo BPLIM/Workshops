@@ -35,7 +35,7 @@ The ability to collect and accumulate microdata has been a powerful
 function of central banks. In the scientific community, an increasing
 number of research has been conducted using the micro-level
 information. To enhance collaborations between the central bank and
-the researchers, an advanced data sharing platform is essential.
+the researchers, an advanced data-sharing platform is essential.
 Accordingly, the Banco de Portugal Microdata Research Laboratory
 (BPLIM) (*Laboratório de Investigação em Microdados do Banco de
 Portugal*) is created to facilitate future scientific research effort
@@ -156,7 +156,7 @@ The directories that you have access to within the folder include:
 |                                   | are available here.               |
 +-----------------------------------+-----------------------------------+
 
-  - You will have in your **work\_area** folder templates for both Stata and R. By default the template file is read only.
+  - You will have in your **work\_area** folder templates for both Stata and R. By default the template file is read-only.
 
   - By default you also have two files (see image above): (1)
     stata15mp.sh; (2) xstata15mp.sh. Files with the
@@ -198,15 +198,15 @@ height="0.5228762029746282in"}
 
  - Check regularly the size of your project in the harddrive. Open a Terminal and apply the following steps:
 
-  1. MOVE TO THE PROJECT FOLDER: cd /bplimext/projects/p000_xxx_yyy/
-  2. LIST PROJECT SIZE: du -h
-  3. CHECK SIZE BY FOLDER SIZE AND LIST FOLDERS WITH AT LEAST 1 Gb: du - -max-depth 1 -h | sort -n | grep G
-  4. MOVE TO THE work_area: cd work_area
-  5. REPEAT IN THIS FOLDER: du - -max-depth 1 -h | sort -n | grep G
-  6. IDENTIFY DUPLICATED AND TEMPORARY FILES AND DELETE THEM using the command 'rm'
-  7. COMPRESS BIG FILES/FOLDERS YOU ARE NOT USING AT THE MOMENT
-  8. COMPRESS FOLDERS: tar - zcvf YOUR_FOLDER.tar.gz YOUR_FOLDER
-  9. COMPRESS INDIVIDUAL FILES: gzip YOUR_FILE
+  1. **Move to the project folder:** cd /bplimext/projects/p000_xxx_yyy/
+  2. **List project size:** du -h
+  3. **Check size by folder and list folders with at least 1Gb:** du - -max-depth 1 -h | sort -n | grep G
+  4. **Move to the folder 'work_area':** cd work_area
+  5. **Repeat the check in this folder :** du - -max-depth 1 -h | sort -n | grep G
+  6. **Identify duplicated and temporary files and delete them:** use the command 'rm'
+  7. **Compress big files/folders you are not using at the moment:**
+  7. **(a) Compress folders:** tar - zcvf YOUR_FOLDER.tar.gz YOUR_FOLDER
+  7. **(b) Compress individual files:** gzip YOUR_FILE
 
 Using the 'shell' in a Linux Operating System
 =============================================
@@ -217,7 +217,7 @@ files in your working space.
 
 1.  The *'shell'*[^5] in Linux can be accessed from
 
-RedHat \> ApplicationsApplications \> SystemSystem \> Terminal
+RedHat \> Applications \> System \> Terminal
 Terminal
 
 ![](./media/image9.png){width="3.937007874015748in"
@@ -293,7 +293,7 @@ height="2.486382327209099in"}
   - You can open it from **RedHat** \> **Applications**
       **Applications** \> **Utilities** \> **KWrite**. You can also launch 'KWrite' from the 'shell' by typing 'kwrite'
 
-  - In case the icon is not in your desktop, use Dolphin, move to folder
+  - In case the icon is not on your desktop, use Dolphin, move to folder
     '/opt/bplimext/stata15', and drag and drop the file 'xstata-mp' into
     the desktop
 
@@ -432,7 +432,7 @@ height="2.0134241032370954in"}
 
  It allows you to see an updated version of the last lines of the log;
  *i.e.*, it updates each time the log is changed by Stata. A key
- advantage of tail is that it does not interfere with the log file,
+ advantage of 'tail' is that it does not interfere with the log file,
  namely, it does not write over it.
 
 15. Another way to run a program in the background is by using the
@@ -444,7 +444,7 @@ height="2.0134241032370954in"}
          'NoMachine' session and recover it later by typing 'screen
          --r'
 
-  - We can run several instances of screen. If this is the case,
+  - We can run several instances of 'screen'. If this is the case,
          after opening a new NoMachine session we need to type in the
          Terminal shell 'screen --d' to identify the running background
          sessions. We can retrieve a particular session by knowing the
@@ -533,7 +533,7 @@ User's Home folder
 1. Do not save files in your Home folder:
     "/home/USER_ID/".
 
-2. Regularly clean your Trash folder. If your disk use goes over the quota you will be prevented to login. In the Terminal type:
+2. Regularly clean your Trash folder. If your disk use goes over the quota you will be prevented from login. In the Terminal type:
     rm -rf ~/.local/share/Trash/*
 
 
@@ -818,7 +818,7 @@ Appendix 4 -- Download, install and configure NoMachine client
 
 **Step 1**: go to the link below and use the credentials provided by
 BPLIM to access the site. **Note**: sometimes the internet provider,
-*e.g.*, an University, may block the access to this particular web site.
+*e.g.*, a University, may block access to this particular web site.
 Please check with your provider in case you get an error while trying to
 use the link.
 
@@ -942,7 +942,7 @@ height="1.2160203412073491in"}
 > ![](./media/image35.png){width="4.724409448818897in"
 > height="3.029721128608924in"}
 >
-> **Step 5.11**: Upon login success the following screens should appear
+> **Step 5.11**: Upon login success, the following screens should appear
 >
 > ![](./media/image36.png){width="4.724409448818897in"
 > height="3.0297101924759406in"}
@@ -1061,10 +1061,10 @@ Configuring browser access
 
 <!---
   - We have observed that some users who change their password within
-    "https://webfa.bportugal.pt" later are not able to login within
+    "https://webfa.bportugal.pt" later is not able to login within
     NoMachine (error message shown in the image above).
     -->
-  - In some cases it occurs due to a different keyboard layout. For example, if you have
+  - In some cases, it occurs due to a different keyboard layout. For example, if you have
     a Portuguese keyboard, but the website assumed a US keyboard, and
     your password contains a symbol like 'ç', than you will get a "wrong
     password" message. Please check the keyboard layout that is active
@@ -1114,7 +1114,7 @@ Configuring browser access
 
 8. Session if frozen
 
-  - Go to NoMachine first screen and double click in the following icon
+  - Go to NoMachine first screen and double click on the following icon
 
   ![](./media/logout1.png){width="3in"}
 
