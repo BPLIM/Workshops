@@ -200,7 +200,7 @@ height="0.5228762029746282in"}
 
   1. MOVE TO THE PROJECT FOLDER: cd /bplimext/projects/p000_xxx_yyy/
   2. LIST PROJECT SIZE: du -h
-  3. CHECK SIZE BY FOLDER SIZE AND LIST FOLDERS WITH AT LEAST 1 Gb: du --max-depth 1 -h | sort -n | grep G
+  3. CHECK SIZE BY FOLDER SIZE AND LIST FOLDERS WITH AT LEAST 1 Gb: du - -max-depth 1 -h | sort -n | grep G
   4. MOVE TO THE work_area: cd work_area
   5. REPEAT IN THIS FOLDER: du - -max-depth 1 -h | sort -n | grep G
   6. IDENTIFY DUPLICATED AND TEMPORARY FILES AND DELETE THEM using the command 'rm'
