@@ -1,10 +1,37 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
-author: "External Server Manual"
-date: "December 7, 2020"
-output: pdf_document
-logo: logo.png
+author: "[BPLIM](https://bplim.bportugal.pt/): External Server Manual"
+date: "December 10, 2020"
+output:
+  pdf_document:
+    template: bplim-template.tex
+    toc: true
+    toc_depth: 2
+    fig_caption: true
+    number_sections: true
 papersize: a4
+fontsize: 11pt
+header-includes:
+  \hypersetup{
+      colorlinks   = true,
+      citecolor    = black
+  }
+
+  \hypersetup{linkcolor=blue!75!black}
+  \hypersetup{urlcolor=blue!75!black}
+  \hypersetup{filecolor=blue!75!black}
+  \hypersetup{citecolor=black}
+  \usepackage[paperwidth=210mm,paperheight=297mm,left=27mm,right=27mm,top=25mm,bottom=25mm]{geometry}
+  \usepackage{hyperref}
+  \usepackage{float}
+  \usepackage{dcolumn}
+  \usepackage{color}
+  \usepackage{pdfpages}
+  \usepackage{setspace}
+  \doublespacing
+mainfont: Times New Roman
+sansfont: Times New Roman
+documentclass: article
 ---
 
 <!---
@@ -17,7 +44,9 @@ papersize: a4
 > MAC > /Users/miguelportela/Documents/GitHub/Manuals/ExternalServer
 > Gab. 1.19 C:\Users\mangelo.EEG\Documents\Manuals\ExternalServer
 
-pandoc -V geometry:"paperwidth=210mm,paperheight=297mm,left=27mm,right=27mm,top=27mm,bottom=27mm" External_Server_Manual.md --pdf-engine=xelatex -o External_Server_Manual.pdf
+pandoc --toc --number-sections External_Server_Manual.md --pdf-engine=xelatex -o External_Server_Manual.pdf
+
+--- OLD: pandoc -V geometry:"paperwidth=210mm,paperheight=297mm,left=27mm,right=27mm,top=27mm,bottom=27mm" External_Server_Manual.md --pdf-engine=xelatex -o External_Server_Manual.pdf ---
 
 
 ALTERNATIVE
@@ -78,37 +107,38 @@ confidentiality (low, medium, high).
 -->
 
 <!--=========================================== --->
-Access to the External Server
-===========================================
-1. Upon access approval, the User will be able to connect to the external server using one of two possibilities.
-  - NoMachine client access (_preferred_): see **Appendix 4** for details on installation and use
-  - Browser access (_low performance_): see **Appendix 5** for further details
 
-2. Password policy:
+\newpage
+
+# Access to the External Server
+
+## Upon access approval
+
+The User will be able to connect to the external server using one of two possibilities.
+
+  - `NoMachine` client access (_preferred_): see [Appendix 4](#install_nomachine) for details on installation and use
+  - Browser access (_low performance_): see [Appendix 4](#browser_access) for further details
+
+## Password policy
   - The first password delivered must be changed at the first login.
-  - After 60 days the password will expire: change the password within this time frame (see Appendix 3 for instructions on how to change the password)
-  - The passwords to be specified must meet the requirements described in Appendix 3.
+  - After 60 days the password will expire: change the password within this time frame (see [Appendix 3](#password) for instructions on how to change the password)
+  - The passwords to be specified must meet the requirements described in [Appendix 3](#password).
 
-3. Upon access using 'NoMachine'
+## First steps
 
-These are the first three screens you will see
+Once you start `NoMachine` these are the first three screens you will see:
 
-![](./media/image1.png){width="4.724409448818897in"
-height="1.7223293963254593in"}
+![](./media/image1.png){width=65%}
 
-![](./media/image2.png){width="4.724409448818897in"
-height="3.059280402449694in"}
+![](./media/image2.png){width=65%}
 
-![](./media/image3.png){width="4.724409448818897in"
-height="2.4489752843394577in"}
+![](./media/image3.png){width=65%}
 
 4. Select the "**Kickoff Application Launcher**" menu (in the lower left corner):
 
-![](./media/image4.png){width="0.570670384951881in"
-height="0.5637117235345582in"}
+![](./media/image4.png){width=10%}
 
-![](./media/image5.png){width="2.3622047244094486in"
-height="2.6394838145231847in"}
+![](./media/image5.png){width=50%}
 
 5.  Then you should:
   - Click on the "**Applications**" button
@@ -175,7 +205,7 @@ The directories that you have access to within the folder include:
 ![](./media/image7.png){width="3.1496062992125986in"
 height="3.505206692913386in"}
 
-Confirm before exiting by clicking on the **\"Logout\"** button to close the window[^4]
+Confirm before exiting by clicking on the **"Logout"** button to close the window:[^4]
 
 ![](./media/image8.png){width="1.1423611111111112in"
 height="0.5228762029746282in"}
@@ -191,39 +221,39 @@ height="0.5228762029746282in"}
 
 
 
-<> VERY IMPORTANT <>
-=============================================
+# Important guidelines
 
- - **Do not save files in your home area /home/USER_LOGIN. In case you exceed its size you will not be able to log in.**
+## Keep your home area tidy
+
+ - _Do not save files in your home area_ `/home/USER_LOGIN`. _In case you exceed its size you will not be able to log in._
 
  - Check regularly the size of your project in the harddrive. Open a Terminal and apply the following steps:
 
-  1. **Move to the project folder:** cd /bplimext/projects/p000_xxx_yyy/
-  2. **List project size:** du -h
-  3. **Check size by folder and list folders with at least 1Gb:** du - -max-depth 1 -h | sort -n | grep G
-  4. **Move to the folder 'work_area':** cd work_area
-  5. **Repeat the check in this folder :** du - -max-depth 1 -h | sort -n | grep G
-  6. **Identify duplicated and temporary files and delete them:** use the command 'rm'
-  7. **Compress big files/folders you are not using at the moment:**
-  7. **(a) Compress folders:** tar - zcvf YOUR_FOLDER.tar.gz YOUR_FOLDER
-  7. **(b) Compress individual files:** gzip YOUR_FILE
+  1. Move to the project folder: `cd /bplimext/projects/p000_xxx_yyy/`
+  2. List project size: `du -h`
+  3. Check size by folder and list folders with at least 1Gb: `du --max-depth 1 -h | sort -n | grep G`
+  4. Move to the folder 'work_area': `cd work_area`
+  5. Repeat the check in this folder: `du --max-depth 1 -h | sort -n | grep G`
+  6. Identify duplicated and temporary files and delete them: use the command `rm`
+  7. Compress big files/folders you are not using at the moment:
+  
+  > Compress folders: `tar -zcvf YOUR_FOLDER.tar.gz YOUR_FOLDER`
+  >
+  > Compress individual files: `gzip YOUR_FILE`
 
-Using the 'shell' in a Linux Operating System
-=============================================
 
-If you wish to run your programs in ***batch*** mode, then you must use the
-*'shell'* of Linux. You can also use the 'shell' to organize the
-files in your working space.
+## Using the Terminal
 
-1.  The *'shell'*[^5] in Linux can be accessed from
+Linux's Terminal is a command-line interpreter. You can use the 'shell' for a wide range of tasks, including searching files and files' contents, organizing your working space, and, most importantly, run your programs in `batch` mode.
+
+1.  Linux's Terminal can be accessed from[^5]
 
 RedHat \> Applications \> System \> Terminal
-Terminal
 
 ![](./media/image9.png){width="3.937007874015748in"
 height="1.848682195975503in"}
 
-2.  See the Appendix for a list of some of the most used commands.
+2.  See [Appendix 8.1](#shell_commands) for a list of some of the most used commands.
 
 3. In case you are using a non-English keyboard, the 'true' keyboard
     might be different from the one you see. The changes apply mostly
@@ -232,27 +262,24 @@ height="1.848682195975503in"}
     '?', or the '\*' is in SHIFT + ?. This issue is specific to the
     Operating System of your computer
 
-4. Remember that Linux is case-sensitive: e.g., "LS" and "ls" are
+4. Remember that Linux is case-sensitive: e.g., "`LS`" and "`ls`" are
     treated as different commands.
 
 5. You can use the arrow keys to scroll up and down through the
-    commands you\'ve entered.
+    commands you have entered.
 
 6. You can use the "Tab" key to complete the command line
     automatically.
 
-7. E.g., type the following line to list elements within a folder in a
-    'human-readable' format, h, long list format, l, in reverse order,
-    r, sort by modification time, t, and almost all files, A,
+7. _e.g._, type the following line to list elements within a folder in a 'human-readable' format, `h`, long list format, `l`, in reverse order,
+    `r`, sort by modification time, `t`, and almost all files, `A`,
 
-    ls -lArth
+    `ls -lArth`
 
+# Statistical software
 
+## Stata
 
-Using Stata
-===========
-
-**IMPORTANT**: do not save files in your home directory (/home/USER_LOGIN)
 
 1. Stata can be accessed in interactive graphical or non-graphical
         modes.[^6]
@@ -261,19 +288,19 @@ Using Stata
 
     Move to the desired folder, e.g.,
 
-      cd /bplimext/projects/I001\_jdoe/
+      `cd /bplimext/projects/I001_jdoe/`
 
     and type
 
-      /opt/bplimext/stata15/stata-mp
+      `/opt/bplimext/stata15/stata-mp`
 
 ![](./media/image10.png){width="3.543307086614173in"
 height="2.488604549431321in"}
 
-  - You may add a 'path' to your system folder by typing, for the
+  - You may add a 'PATH' to your system folder by typing, for the
     example on Stata 16, the following command in the shell "vi ~/.bash_profile" and adapt the following line
     
-    PATH=\$PATH:\$HOME/.local/bin:\$HOME/bin:/opt/bplimext/stata16
+    `PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/bplimext/stata16`
 
   - For the interactive graphical mode click on the icons
     "**xstata14mp.sh**" (Stata 14) or
@@ -291,7 +318,7 @@ height="2.486382327209099in"}
       *KWrite* editor (or 'gedit')
 
   - You can open it from **RedHat** \> **Applications**
-      **Applications** \> **Utilities** \> **KWrite**. You can also launch 'KWrite' from the 'shell' by typing 'kwrite'
+      \> **Utilities** \> **KWrite**. You can also launch 'KWrite' from the 'shell' by typing 'kwrite'
 
   - In case the icon is not in your desktop, use Dolphin, move to folder
     '/opt/bplimext/stata15', and drag and drop the file 'xstata-mp' into
@@ -327,7 +354,7 @@ can be found in the current directory (.).
  to your Stata 'ado-files' folder by executing the following command
  within Stata,
 
-  sysdir set PERSONAL "/bplimext/projects/YOURPROJECTID/tools"
+  `sysdir set PERSONAL "/bplimext/projects/YOURPROJECTID/tools"`
 
  You may also edit your 'profile.do' file, located in your root folder,
  "/home/YOURPROJECTID/", and add key instructions you may want to be
@@ -342,16 +369,13 @@ can be found in the current directory (.).
 ![](./media/image13.png){width="3.9368055555555554in"
 height="2.2751399825021874in"}
 
+## 'batch' mode: an example using Stata
 
-
-Stata in 'batch' mode
-===================================
 
 1.  Start a *\'**shell**\'* in Linux and navigate to the directory
          of the "do-file" file that you want to run (ex: prog1.do)
 
- **cd /bplim/projects/I001\_jdoe/work\_area/** cd
- /bplimext/projects/I001\_jdoe/work\_area/
+ `cd /bplimext/projects/I001_jdoe/work_area/`
 
 2. You might find it easier to use 'Dolphin' (= File Manager) to move
      over your folder structure. In this case, we recommend activating
@@ -368,8 +392,9 @@ Stata in 'batch' mode
 4. Inside the file write just a line with the execution command you
      would type in the 'shell'; e.g.,
 
-    /opt/bplimext/stata15/stata-mp do
-    /bplimext/projects/BPlim\_inicial/work\_area/prog1.do
+    `/opt/bplimext/stata15/stata-mp do`
+    
+    `/bplimext/projects/I001_jdoe/work_area/prog1.do`
 
 5. You can use, for example, the command line app 'vi' to create the batch file
 
@@ -394,41 +419,41 @@ height="2.0134241032370954in"}
 8. Once the batch file is created one runs the .do file in batch mode
      by typing in the 'Terminal':
 
-    at now --f batch.txt
+    `at now -f batch.txt`
 
-9. Type 'man at' to see a further option of the command 'at'; e.g., one
+9. Type 'man at' to see a further option of the command '`at`'; e.g., one
      could type
 
-    at now + 5 hours --f batch.txt
+    `at now + 5 hours -f batch.txt`
 
   or
 
-    at now + 4 minutes --f batch\_prog1
+    `at now + 4 minutes -f batch_prog1`
 
   to run the Stata program within 5 hours or 4 minutes from now,
-  respectively. 'man' is the help function in Linux
+  respectively. '`man`' is the help function in Linux
 
-10. Type 'top' in the shell/Terminal to confirm the program is running
+10. Type '`top`' in the shell/Terminal to confirm the program is running
 
-11. Under 'top' type 'i' to hide irrelevant processes (show less output)
+11. Under '`top`' type '`i`' to hide irrelevant processes (show less output)
 
-12. To kill a running process with 'top' press 'k', for 'kill', write
-    > the process number and then type '9'. The process number is
+12. To kill a running process with '`top`' press '`k`', for '`kill`', write
+    > the process number and then type '`9`'. The process number is
     > identified in the first column as PID
 
-13. To get out of the top, type 'q'
+13. To get out of the top, type '`q`'
 
-14. Useful features of the command 'at':
+14. Useful features of the command '`at`':
 
-  - 'atq': use it to see programs in the batch queue (an '=' sign
-         indicates the program is running; an 'a' indicates it is in
+  - '`atq`': use it to see programs in the batch queue (an '`=`' sign
+         indicates the program is running; an '`a`' indicates it is in
          the queue and we see the time when it will be executed)
 
-  - 'atrm \#': remove a batch from the batch queue
+  - '`atrm` \#': remove a batch from the batch queue
 
   - one can see how the batch is running by typing
 
-      'tail --f logcrc\_may21.log'
+      `tail --f logcrc_may21.log`
 
  It allows you to see an updated version of the last lines of the log;
  *i.e.*, it updates each time the log is changed by Stata. A key
@@ -436,34 +461,21 @@ height="2.0134241032370954in"}
  namely, it does not write over it.
 
 15. Another way to run a program in the background is by using the
-     command 'screen'
+     command '`screen`'
 
-  - 'screen' is useful when one wants to run Stata in interactive
+  - '`screen`' is useful when one wants to run Stata in interactive
          mode and still guarantee that if the network connection goes
          down one does not lose the session. We can simply kill the
-         'NoMachine' session and recover it later by typing 'screen
-         --r'
+         'NoMachine' session and recover it later by typing '`screen --r`'
 
   - We can run several instances of screen. If this is the case,
          after opening a new NoMachine session we need to type in the
-         Terminal shell 'screen --d' to identify the running background
+         Terminal shell '`screen -d`' to identify the running background
          sessions. We can retrieve a particular session by knowing the
-         'pid' number and typing 'screen --r 34176'
+         '`pid`' number and typing '`screen -r 34176`'
 
 
-Additional Statistical Software
-=============================================
-
-**IMPORTANT**: do not save files in your home directory (/home/USER_LOGIN)
-
- You can also use 'R' and 'python' by issuing in the shell the
- respective designation. Both applications can only be used in the
- 'shell'. You can check the packages available in R by typing
- 'installed.packages()'.
-
-
-Using R
-===========
+## R
 
 1. As with Stata, R can be accessed in interactive graphical or non-graphical modes.
 
@@ -472,49 +484,50 @@ Using R
 ![](./media/CallR.png){width=50%}
     
   - Alternatively, you can open a Terminal and type R
-  - Please make sure R is in your PATH; type \$PATH in the Terminal. If this is not the case, type PATH=\$PATH:/usr/bin/
+  - Please make sure R is in your PATH; type `$PATH` in the Terminal. If this is not the case, type `PATH=$PATH:/usr/bin/`
 
 2. Using RStudio.
 
   - Open a Terminal and type rstudio
-  - Please make sure RStudio is in your PATH; type $PATH in the Terminal. If this is not the case, type PATH=\$PATH:/opt/bplimext/R/usr/lib64/rstudio/lib/
+  - Please make sure RStudio is in your PATH; type $PATH in the Terminal. If this is not the case, type
+  
+  > `PATH=$PATH:/opt/bplimext/R/usr/lib64/rstudio/lib/`
 
-Using julia
-===========
+## Python
 
-1. Open a Terminal and type julia (julia is located in /opt/bplimext/julia/bib/, you can add it to your PATH)
+1. Open a Terminal and type
 
-2. Use Atom: open a Terminal and type atom (/opt/bplimext/julia/bib/)
-
-Using Python
-===========
-
-1. Open a Terminal and type python3 (/usr/bin/)
+> `python3`
 
 
-Allowed outputs
-=============================
+## Julia
+
+1. Open a Terminal and type julia (julia is located in /opt/bplimext/julia/lib/, you can add it to your `PATH`)
+
+2. Use Atom: open a Terminal and type
+
+> `atom`
+
+# Allowed outputs
 
 Stata results can be exported to a file on disk using one of the following formats:
 
 1. ASCII files: e.g., log files
 
 2. graphs: as .PNG (do not use the option save, or saving, within a
-    graph command; instead, use the separate command line 'graph export
-    xyz.png')
+    graph command; instead, use the separate command line 'graph export xyz.png')
 
-3. csv: CSV (Comma Separated Value format), e.g., for use with MS Excel
+3. csv: CSV (Comma Separated Value format), _e.g._, for use with MS Excel
 
 4. rtf: Rich Text Format for use with word processors
 
 5. xls or xlsx: Excel files with output tables
 
-6. tex: Latex format
+6. tex: \LaTeX format
 
 
 
-Remove outputs
-============================
+# Removing outputs
 
  Place in the "[results]{.underline}" folder all the outputs you want
  to remove from the server.[^7]
@@ -527,19 +540,19 @@ Remove outputs
 
 
 
-User's Home folder
-============================
+# User's Home folder
+
 
 1. Do not save files in your Home folder:
     "/home/USER_ID/".
 
 2. Regularly clean your Trash folder. If your disk use goes over the quota you will be prevented to login. In the Terminal type:
-    rm -rf ~/.local/share/Trash/*
+    
+    `rm -rf ~/.local/share/Trash/*`
 
 
 
-Scientific support
-================================
+# Scientific support
 
 Researchers will be provided with the necessary scientific and
 computational support (*i.e.*, advises on programming, computational
@@ -547,120 +560,119 @@ resources, micro econometrics, and econometrics of panel data for
 research undertaken with the selected Microdata).
 
 
+# Appendix
 
-Appendix 1 -- Basic 'shell' Commands on Linux
-===========================================================
+## Basic 'shell' commands on Linux{#shell_commands}
 
--   **top** List the procedures that are being executed on the
+-   `top`: List the procedures that are being executed on the
     server
 
-    -   press \'i\' option to omit background processes;
+    -   press '`i`' option to omit background processes;
 
-    -   clicar press \' h \' para ***help on top options*** ; \'h\'
+    -   clicar press '`h`' para ***help on top options*** ; '`h`'
         > option to obtain the **top command help**.
 
--   **pwd** Show current working
+-   `pwd`: Show current working
     directory
 
--   **cd** Change directory
+-   `cd`: Change directory
 
-    cd /bplimext/projects/I001\_jdoe/work\_area/
+    `cd /bplimext/projects/I001_jdoe/work_area/`
 
-    'cd \~' moves to your home folder
-
-<!-- -->
-
--   **cp** Copy file(s) to a given path
-
-    cp prog1.do /bplimext/projects/I001\_jdoe/results
+    '`cd ~`' moves to your home folder
 
 <!-- -->
 
--   **mv** Move file(s) or rename a file from a given path
+-   `cp`: Copy file(s) to a given path
 
-    mv prog1.do /bplimext/projects/I001\_jdoe/results
-
-<!-- -->
-
--   **rm** Delete a file
-
-    rm /bplimext/projects/I001\_jdoe/results/prog1.do
+    `cp prog1.do /bplimext/projects/I001_jdoe/results`
 
 <!-- -->
 
--   **mkdir** Creates a directory
+-   `mv`: Move file(s) or rename a file from a given path
 
-    mkdir programas
-
-<!-- -->
-
--   **rmdir** Deletes a directory
-
-    rmdir programas
+    `mv prog1.do /bplimext/projects/I001_jdoe/results`
 
 <!-- -->
 
--   **screen** Switch between screen
+-   `rm`: Delete a file
 
-    screen top
-
-<!-- -->
-
--   **man** Show the manual page for the given command
-
-    man ls
+    `rm /bplimext/projects/I001_jdoe/results/prog1.do`
 
 <!-- -->
 
--   **du** -h Check the information of disk usage of files and
+-   `mkdir`: Creates a directory
+
+    `mkdir programs`
+
+<!-- -->
+
+-   `rmdir`: Deletes a directory
+
+    `rmdir programs`
+
+<!-- -->
+
+-   `screen`: Switch between screen
+
+    `screen top`
+
+<!-- -->
+
+-   `man`: Show the manual page for the given command
+
+    `man ls`
+
+<!-- -->
+
+-   `du -h`: Check the information of disk usage of files and
     directories.
 
-> The "**-h**" option with "**du**" command provides results in "Human
+> The "`-h`" option with "`du`" command provides results in "Human
 > Readable Format".
 
-Ex: du /bplimext/projects/I001\_jdoe/work\_area/
+Ex: `du /bplimext/projects/I001_jdoe/work_area/`
 
--   **df** -h Check disk space utilization and show the disk space
+-   `df -h`: Check disk space utilization and show the disk space
     > statistics in "human readable" format.
 
--   vi View 'ASCII' files; e.g., log files
+-   `vi`: View 'ASCII' files; e.g., log files
 
--   **ghostscript** Preview files with the extensions of **.eps** and
-    **.pdf**
+-   `ghostscript`: Preview files with the extensions of _.eps_ and
+    _.pdf_
 
-> ghostscript /bplimext/projects/I001\_jdoe/results/\`file\_name.pdf\'
+> `ghostscript /bplimext/projects/I001_jdoe/results/file_name.pdf`
 
--   okular View 'PDF'
+-   `okular`: View 'PDF'
 
--   find Find files
+-   `find`: Find files
 
 > Structure: find /path option filename
 >
-> find . --name "\*.do"
+> `find . -name "*.do"`
 >
-> Send the 'find' output to a file:
+> Send the '`find`' output to a file:
 >
-> find . --name "\*.do" \> find\_results.txt
+> `find . -name "\*.do" > find_results.txt`
 >
 > Look for a particular string within the 'find' output:
 >
-> find . --name "\*.do" \| grep "analysis"
+> `find . -name "\*.do" | grep "analysis"`
 >
 > Identify files with extension '.do' that **contain** the word 'graph':
 >
-> find . --name "\*.do" -exec grep "graph export" '{}' \\; -print
+> `find . -name "\*.do" -exec grep "graph export" '{}' \; -print`
 
--   passwd Change your password
+-   `passwd`: Change your password
 
 -   **To exit** a program, type **CTRL + C** ('CTRL + C' kills a particular
     execution in the shell)
 
 
 
-Appendix 2 -- Using the 'vi' file editor
-========================================
+## Using the 'vi' file editor
 
-1.  In the shell type 'vi batch1.txt'
+1.  In the shell type '`vi batch1.txt`'
 
 2.  These are the main shortcut keys
 
@@ -689,25 +701,26 @@ Appendix 2 -- Using the 'vi' file editor
     l.  'ESC + q' exit the 'vi' session
 
     m.  Check, for example,
-        <https://www.cs.colostate.edu/helpdocs/vi.html>
+        [https://www.cs.colostate.edu/helpdocs/vi.html](https://www.cs.colostate.edu/helpdocs/vi.html)
 
-3.  Much easier solution: call 'gedit' file editor
+3.  Much easier solution: call '`gedit`' file editor
 
 4.  Linux commands I have to add to the manual
 
 5.  'CTRL + R': allows me to recover a previous command
 
-6.  vi .bash\_history
+6.  `vi .bash_history`
 
-Appendix 3 -- External server's password requirements
-=====================================================
+\newpage
+
+## External server's password requirements{#password}
 
 +-----------------------+-----------------------+-----------------------+
 | **Rule**              | **Value**             | **Notes **            |
 +-----------------------+-----------------------+-----------------------+
-| Maximum Password      | **[60                 | **[After 60 days the  |
+| Maximum Password      | **[60                 | *After 60 days the   |
 | Lifetime              | days]{.underline}**   | password will         |
-|                       |                       | expire]{.underline}** |
+|                       |                       | expire*              |
 |                       |                       | and has to be changed |
 |                       |                       | in the next login.    |
 |                       |                       | The password can be   |
@@ -813,8 +826,7 @@ Appendix 3 -- External server's password requirements
 +-----------------------+-----------------------+-----------------------+
 
 
-Appendix 4 -- Download, install and configure NoMachine client
-==============================================================
+## Download, install and configure NoMachine client{#install_nomachine}
 
 **Step 1**: go to the link below and use the credentials provided by
 BPLIM to access the site. **Note**: sometimes the internet provider,
@@ -822,7 +834,7 @@ BPLIM to access the site. **Note**: sometimes the internet provider,
 Please check with your provider in case you get an error while trying to
 use the link.
 
-https://www.bportugal.pt/webdrive/index.php/s/irAzxZmir8KHyzD/authenticate
+[https://www.bportugal.pt/webdrive/index.php/s/irAzxZmir8KHyzD/authenticate](https://www.bportugal.pt/webdrive/index.php/s/irAzxZmir8KHyzD/authenticate)
 
 ![](./media/image17.png){width="3.052795275590551in"
 height="2.3622047244094486in"}
@@ -971,12 +983,11 @@ height="1.2160203412073491in"}
 
 
 
-Appendix 5 -- Browser access
-============================
+## Browser access{#browser_access}
 
 > Use a browser (recommended Chrome, Firefox, Opera or Safari) and go to
-
-https://bplimexterno.bportugal.pt:4443
+>
+> [https://bplimexterno.bportugal.pt:4443](https://bplimexterno.bportugal.pt:4443)
 
 Below are the sequential screens you should see. In steps 4 to 7 you can define your settings.
 
@@ -1030,8 +1041,7 @@ Configuring browser access
 -->
 
 
-[Appendix 6 -- Frequently Asked Questions]{.underline}
-======================================================
+## Frequently Asked Questions
 
 <!---
 1.  After the login in "https://webfa.bportugal.pt" I am not able to
@@ -1112,7 +1122,7 @@ Configuring browser access
 
   - Ask BPLIM Staff to empty space in your home folder
 
-8. Session if frozen
+8. Session is frozen
 
   - Go to NoMachine first screen and double click in the following icon
 
@@ -1122,9 +1132,9 @@ Configuring browser access
 
   ![](./media/logout2.png){width="3in"}
 
-9. Visualizing LaTeX tables
+9. Visualizing \LaTeX  tables
 
-  - In case you want to see the pdf of tables you have exported to LaTeX you can create a generic tex file, `main.tex`, with the following content:
+  - In case you want to see the pdf of tables you have exported to \LaTeX  you can create a generic tex file, `main.tex`, with the following content:
 
   > `\documentclass{article}`
   >
@@ -1137,14 +1147,51 @@ Configuring browser access
   > where your table is 'your_table.tex'. The tex file can be compiled in the Terminal typing
   > `pdflatex main.tex`.
   
+## Git
+
+  You can use version-control. The server runs [Git](https://git-scm.com/) version 1.8.3.1. 
+  
+  > [Wikipedia](https://en.wikipedia.org/wiki/Git):
+  > 
+  > ``Git is a distributed version-control system for tracking changes in any set of files, originally designed for coordinating work among programmers cooperating on source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows''
+
+## Singularity
+
+You can use Singularity to run the Anaconda environment inside the server. The image for Singularity is placed in:
+
+  > `/opt/bplimext/singularity-images`
+
+Explore the following example. Type these sequence of commands:
+
+`cd /bplimext/projects/your_project_ID/work_area`
+
+`mkdir containers`
+
+`cd containers`
+
+`singularity build --sandbox Folder/ /opt/bplimext/singularity-images/bplimAnaconda.sif`
+
+`singularity shell --writable Anaconda`
+
+Now you are inside the container and can run commands such as:
+
+  > `spyder`
+  >
+  > `jupyter lab`
+
+## Jupyter Lab
+
+Explore [Jupyter lab](https://jupyter.org/):
+
+  > "JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. JupyterLab is extensible and modular: write plugins that add new components and integrate with existing ones."
+
   [^1]: Dolphin is an intuitive and easy-to-use file manager. You can use it, for example, to browse the directory, to
     create or to delete files/directories (by using the right mouse
     button). For more information about Dolphin, please visit:
-    [https://userbase.kde.org/Dolphin](https://translate.google.com/translate?hl=en&prev=_t&sl=pt-BR&tl=en&u=https://userbase.kde.org/Dolphin)
+    [https://userbase.kde.org/Dolphin](https://userbase.kde.org/Dolphin)
     .
 
-[^2]: In case 'xstata15mp.sh' does not launch Stata please see 'Section
-    5.1.b'.
+[^2]: In case 'xstata15mp.sh' does not launch Stata please see 'Section 3'.
 
 [^3]: Click on the cross button at the upper right corner to close.
 
