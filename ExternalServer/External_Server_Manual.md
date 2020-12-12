@@ -483,12 +483,18 @@ height="2.0134241032370954in"}
 
 ![](./media/CallR.png){width=50%}
     
-  - Alternatively, you can open a Terminal and type R
+  - Alternatively, you can open a Terminal and type
+
+> `R`
+
   - Please make sure R is in your PATH; type `$PATH` in the Terminal. If this is not the case, type `PATH=$PATH:/usr/bin/`
 
 2. Using RStudio.
 
-  - Open a Terminal and type rstudio
+  - Open a Terminal and type 
+  
+  > `rstudio`
+
   - Please make sure RStudio is in your PATH; type $PATH in the Terminal. If this is not the case, type
   
   > `PATH=$PATH:/opt/bplimext/R/usr/lib64/rstudio/lib/`
@@ -502,7 +508,9 @@ height="2.0134241032370954in"}
 
 ## Julia
 
-1. Open a Terminal and type julia (julia is located in /opt/bplimext/julia/lib/, you can add it to your `PATH`)
+1. Open a Terminal and type (julia is located in /opt/bplimext/julia/lib/, you can add it to your `PATH`)
+
+> `julia`
 
 2. Use Atom: open a Terminal and type
 
@@ -1149,11 +1157,20 @@ Configuring browser access
   
 ## Git
 
-  You can use version-control. The server runs [Git](https://git-scm.com/) version 1.8.3.1. 
+You can use version-control. The server runs [Git](https://git-scm.com/) version 1.8.3.1. 
   
   > [Wikipedia](https://en.wikipedia.org/wiki/Git):
   > 
   > ``Git is a distributed version-control system for tracking changes in any set of files, originally designed for coordinating work among programmers cooperating on source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows''
+
+First steps
+
+1. move to a specific folder; _e.g._, `cd /bplimext/projects/your_project_ID/work_area/`
+2. `git init`
+3. create a .gitignore file (check [toptal](https://www.toptal.com/developers/gitignore) for some examples)
+4. `git add *.do`
+5. `git commit -a -m First`
+6. `git show first_do_file.do`
 
 ## Singularity
 
@@ -1169,15 +1186,19 @@ Explore the following example. Type these sequence of commands:
 
 `cd containers`
 
-`singularity build --sandbox Folder/ /opt/bplimext/singularity-images/bplimAnaconda.sif`
+`singularity build --sandbox Anaconda /opt/bplimext/singularity-images/bplimAnaconda.sif`
 
 `singularity shell --writable Anaconda`
 
 Now you are inside the container and can run commands such as:
 
-  > `spyder`
+  > `anaconda-navigator`
   >
   > `jupyter lab`
+  >
+  > `spyder`
+
+\newpage
 
 ## Jupyter Lab
 
@@ -1185,7 +1206,15 @@ Explore [Jupyter lab](https://jupyter.org/):
 
   > "JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. JupyterLab is extensible and modular: write plugins that add new components and integrate with existing ones."
 
-  [^1]: Dolphin is an intuitive and easy-to-use file manager. You can use it, for example, to browse the directory, to
+Start Jupyter Lab by typing:
+
+  > `jupyter lab`
+
+Sample session:
+
+![](./media/JupyterLab.png){width=65%}
+
+[^1]: Dolphin is an intuitive and easy-to-use file manager. You can use it, for example, to browse the directory, to
     create or to delete files/directories (by using the right mouse
     button). For more information about Dolphin, please visit:
     [https://userbase.kde.org/Dolphin](https://userbase.kde.org/Dolphin)
