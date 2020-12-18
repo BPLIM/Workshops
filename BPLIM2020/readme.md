@@ -33,7 +33,7 @@ In this folder you can find all the presentations for the workshop "Data Visuali
 
 **Data-Driven Storytelling and data emerging presentation technologies**
 
-[Christophe Hurter](http://recherche.enac.fr/~hurter/), University of Toulouse [1]<br/><br/>
+[Christophe Hurter](http://recherche.enac.fr/~hurter/), University of Toulouse<br/><br/>
 
 [1] Please check the speaker's web page to see the presentation
 
