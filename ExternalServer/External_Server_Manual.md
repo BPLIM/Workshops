@@ -1,7 +1,7 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
 author: "[BPLIM](https://bplim.bportugal.pt/): External Server Manual"
-date: "December 12, 2020"
+date: "December 21, 2020"
 output:
   pdf_document:
     template: bplim-template.tex
@@ -515,6 +515,10 @@ height="2.0134241032370954in"}
 2. Use Atom: open a Terminal and type
 
 > `atom`
+
+## Updates to the commands and packages list
+
+  Additional commands/packages or updates to the existing ones have to be requested to BPLIM's Team.
 
 # Allowed outputs
 
