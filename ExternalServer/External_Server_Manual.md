@@ -42,6 +42,7 @@ documentclass: article
 4. RUN THE FOLLOWING LINE IN THE TERMINAL
 
 > MAC > /Users/miguelportela/Documents/GitHub/Manuals/ExternalServer
+
 > Gab. 1.19 > C:\Users\mangelo.EEG\Documents\Manuals\ExternalServer
 
 pandoc --toc --number-sections External_Server_Manual.md --pdf-engine=xelatex -o External_Server_Manual.pdf
