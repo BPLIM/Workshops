@@ -42,7 +42,7 @@ documentclass: article
 4. RUN THE FOLLOWING LINE IN THE TERMINAL
 
 > MAC > /Users/miguelportela/Documents/GitHub/Manuals/ExternalServer
-> Gab. 1.19 C:\Users\mangelo.EEG\Documents\Manuals\ExternalServer
+> Gab. 1.19 > C:\Users\mangelo.EEG\Documents\Manuals\ExternalServer
 
 pandoc --toc --number-sections External_Server_Manual.md --pdf-engine=xelatex -o External_Server_Manual.pdf
 
@@ -121,7 +121,7 @@ The User will be able to connect to the external server using one of two possibi
 
 ## Password policy
   - The first password delivered must be changed at the first login.
-  - After 60 days the password will expire: change the password within this time frame (see [Appendix 3](#password) for instructions on how to change the password)
+  - After **60 days** the password will expire: the login window will show `new password`
   - The passwords to be specified must meet the requirements described in [Appendix 3](#password).
 
 ## First steps
