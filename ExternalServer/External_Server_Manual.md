@@ -498,7 +498,7 @@ height="2.0134241032370954in"}
 
   - Please make sure RStudio is in your PATH; type $PATH in the Terminal. If this is not the case, type
   
-  > `PATH=$PATH:/opt/bplimext/R/usr/lib64/rstudio/lib/`
+  > `PATH=$PATH:/opt/bplimext/R/usr/lib64/rstudio/bin/`
 
 ## Python
 
