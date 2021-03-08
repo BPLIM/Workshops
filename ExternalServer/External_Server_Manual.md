@@ -1,7 +1,7 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
 author: "[BPLIM](https://bplim.bportugal.pt/): External Server Manual"
-date: "January 14, 2021"
+date: "March 8, 2021"
 output:
   pdf_document:
     template: bplim-template.tex
@@ -44,6 +44,8 @@ documentclass: article
 > MAC > /Users/miguelportela/Documents/GitHub/Manuals/ExternalServer
 
 > Gab. 1.19 > C:\Users\mangelo.EEG\Documents\Manuals\ExternalServer
+
+> ACREM > C:\Users\exu0o9\Documents\GitHub\Manuals\ExternalServer
 
 pandoc --toc --number-sections External_Server_Manual.md --pdf-engine=xelatex -o External_Server_Manual.pdf
 
@@ -117,13 +119,13 @@ confidentiality (low, medium, high).
 
 The User will be able to connect to the external server using one of two possibilities.
 
-  - `NoMachine` client access (_preferred_): see [Appendix 4](#install_nomachine) for details on installation and use
-  - Browser access (_low performance_): see [Appendix 4](#browser_access) for further details
+  - `NoMachine` client access (_preferred_): see [Section 8.4](#install_nomachine) for details on installation and use
+  - Browser access (_low performance_): see [Section 8.4](#browser_access) for further details
 
 ## Password policy
   - The first password delivered must be changed at the first login.
   - After **60 days** the password will expire: the login window will show `new password`
-  - The passwords to be specified must meet the requirements described in [Appendix 3](#password).
+  - The passwords to be specified must meet the requirements described in [Section 8.3](#password).
 
 ## First steps
 
@@ -151,7 +153,14 @@ height="2.808662510936133in"}
 You can see the prompt command line together with 'Dolphin' using the
 keyboard shortcut 'F4'.
 
-The directories that you have access to within the folder include:
+> c. Files with the \"**sh**\" extension allow you to send
+    commands to your operating system or to enter your operating
+    system for interactive use (for example, the file *xstata16mp.sh*
+    will launch the graphical version of Stata 16). You can start the
+    application by double-clicking
+    the file name in 'Dolphin'[^2] or by typing in the Terminal `xstata15mp.sh`.
+
+6. The directories that you have access to within the folder include:
 
 +-----------------------------------+-----------------------------------+
 | **initial\_dataset**              |                                   |
@@ -189,17 +198,7 @@ The directories that you have access to within the folder include:
 
   - You will have in your **work\_area** folder templates for both Stata and R. By default the template file is read only.
 
-  - By default you also have two files (see image above): (1)
-    stata15mp.sh; (2) xstata15mp.sh. Files with the
-    \"**sh**\" extension allows you to send commands to
-    your operating system or to enter your operating system for
-    interactive use. The first one starts Stata version 15 in
-    non-graphical mode, while the second launches Stata 15 in
-    graphical mode. You can start both applications by typing in the
-    Linux shell, for example, 'xstata15mp.sh', or by double-clicking
-    the file name in 'Dolphin'.[^2]
-
-  - To reset and disconnect the remote desktop connection or session,
+7. To reset and disconnect the remote desktop connection or session,
     you can simply log out of your remote session, as shown on the
     screenshot below. After you log out, close the window.[^3]
 
@@ -254,7 +253,7 @@ RedHat \> Applications \> System \> Terminal
 ![](./media/image9.png){width="3.937007874015748in"
 height="1.848682195975503in"}
 
-2.  See [Appendix 8.1](#shell_commands) for a list of some of the most used commands.
+2.  See [Section 8.1](#shell_commands) for a list of some of the most used commands.
 
 3. In case you are using a non-English keyboard, the 'true' keyboard
     might be different from the one you see. The changes apply mostly
