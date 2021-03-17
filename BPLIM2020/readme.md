@@ -1,6 +1,6 @@
 # BPLIM Workshop 2020
 
-In this folder you can find all the presentations for the workshop "Data Visualization".
+In this folder you can find all the presentations for the workshop "Data Visualization". If you were not able to attend the live sessions, you may watch the videos [here](https://www.youtube.com/playlist?list=PLUZo4TFBklMYZhiVPzuV_Oxaqay2WbQIM).
 
 ## Presentations
 
