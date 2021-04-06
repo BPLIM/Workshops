@@ -1,7 +1,7 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
 author: "[BPLIM](https://bplim.bportugal.pt/): External Server Manual"
-date: "March 8, 2021"
+date: "April 6, 2021"
 output:
   pdf_document:
     template: bplim-template.tex
@@ -499,6 +499,8 @@ height="2.0134241032370954in"}
   
   > `PATH=$PATH:/opt/bplimext/R/usr/lib64/rstudio/bin/`
 
+**IMPORTANT**: do not save your workspace image in your home folder (`Save workspace image? [y/n/c]`). In case you want to keep the workspace file save it in your project folder under `work_area`. 
+
 ## Python
 
 1. Open a Terminal and type
@@ -519,6 +521,13 @@ height="2.0134241032370954in"}
 ## Updates to the commands and packages list
 
   Additional commands/packages or updates to the existing ones have to be requested to BPLIM's Team.
+
+## Build a container to fine tune your statistical packages
+
+  You can use Singularity containers in the server. To do so please send us the definition file so we build the image and put it on your working area.
+  You can find detailed information on Singularity containers at [https://sylabs.io/](https://sylabs.io/). We provide some notes in the Appendix
+
+
 
 # Allowed outputs
 
@@ -1176,7 +1185,9 @@ First steps
 5. `git commit -a -m First`
 6. `git show first_do_file.do`
 
-## Singularity
+## Singularity containers
+
+### Using a prebuilt image available at BPLIM's server
 
 You can use Singularity to run the Anaconda environment inside the server. The image for Singularity is placed in:
 
@@ -1202,7 +1213,28 @@ Now you are inside the container and can run commands such as:
   >
   > `spyder`
 
-\newpage
+### Build your container
+
+- You can write a script to build your container using our example [bplim_RStudio.def](https://github.com/BPLIM/Manuals/tree/master/ExternalServer/bplim_RStudio.def) available at our [GitHub repository](https://github.com/BPLIM/Manuals/tree/master/ExternalServer)
+
+- In this template we setup a machine running Ubuntu 18.04.5, R 4.0.5 and RStudio 1.3.1093. The installation includes the following packages: rmardown, tinytex, stargazer, kableExtra, ExPanDaR and rblm
+
+- Test your script and build the container using [SylabsCloud](https://cloud.sylabs.io/) (you can use your GitHub account to login)
+
+- Click in 'CREATE'
+
+![](images/SylabsCreate.png){width="1.2in"}
+
+- In the following step upload your '.def' file or copy/paste its contents in the Text box:
+
+![](images/SylabsBuildContainer.png){width="2.1in"}
+
+- Sylabs runs a first test on the vaility of your script and releases the button 'Build' (click on it)
+
+- Follow the outcome at the bottom of the screen and check for possible error messages
+
+- Once you succeed in building the container you cand send us the file `bplim_RStudio.def`
+
 
 ## Jupyter Lab
 

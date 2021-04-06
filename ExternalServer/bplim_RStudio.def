@@ -1,0 +1,97 @@
+Bootstrap: docker
+From: ubuntu:18.04
+IncludeCmd: yes
+
+
+%environment
+R_VERSION=4.0.2
+export R_VERSION
+R_CONFIG_DIR=/etc/R/
+export R_CONFIG_DIR
+export LC_ALL=C
+export PATH=$PATH
+
+
+%labels
+Author Gustavo Iglésias and Miguel Portela -- BPLIM
+Version v0.0.1
+R_Version 4.0.4
+build_date 2021 Mar 26
+
+
+%apprun R
+exec R "$@"
+
+%apprun Rscript
+exec Rscript "$@"
+
+%runscript
+exec R "$@"
+
+
+%post
+  apt-get update
+  apt-get install -y apt-transport-https apt-utils software-properties-common
+  apt-get install -y add-apt-key
+  export DEBIAN_FRONTEND=noninteractive
+  ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime
+  apt-get install -y tzdata
+  dpkg-reconfigure --frontend noninteractive tzdata
+
+  #add CRAN/Ubuntu repo, add key, then refresh
+  # update indices
+  apt update -qq
+  # install two helper packages we need
+  apt install --no-install-recommends software-properties-common dirmngr
+  # import the signing key (by Michael Rutter) for these repo
+  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+  # add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
+  add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -sc)-cran40/"  
+  apt-get update
+
+  apt-get install -y wget nano gnupg gnupg2 curl
+  apt-get install -y libblas3 libblas-dev liblapack-dev liblapack3 curl
+  apt-get install -y gcc fort77 aptitude
+  aptitude install -y g++
+  aptitude install -y xorg-dev
+  aptitude install -y libreadline-dev
+  aptitude install -y gfortran
+  gfortran --version
+  apt-get install -y libssl-dev libxml2-dev libpcre3-dev liblzma-dev libbz2-dev libcurl4-openssl-dev 
+  apt-get install -y libhdf5-dev hdf5-helpers libmariadb-client-lgpl-dev git
+
+  apt-get update && DEBIAN_FRONTEND="noninteractive" TZ="Europe/London" apt-get -y install xkb-data x11-apps bzip2 qt5-default mesa-utils libgl1-mesa-dev libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 iproute2 swig build-essential software-properties-common libnss3 net-tools unixodbc-dev git vim
+
+  apt-get install -y r-base r-base-dev
+  
+  R --version
+  
+  # installing packages from cran
+  R --slave -e 'install.packages("devtools", repos="https://cloud.r-project.org/",dependencies = T)'
+  R --slave -e 'install.packages("tidyverse",repos="https://cran.rstudio.com/")'
+  R --slave -e 'install.packages("packrat",dependencies = T)'
+  R --slave -e 'install.packages("haven",dependencies = T)'
+
+  
+  wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.3.1093-amd64.deb
+  
+  apt install -y ./rstudio-1.3.1093-amd64.deb
+
+  wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+
+  R --slave -e 'install.packages("kableExtra")'
+  R --slave -e 'install.packages("stargazer")'
+
+  R --slave -e 'install.packages(c("rmarkdown","tinytex"))'
+  R --slave -e 'tinytex:::install_prebuilt("TinyTeX")'
+
+  R --slave -e 'install.packages("remotes")'
+  R --slave -e 'remotes::install_version("SDMTools", "1.1-221")'
+  
+  R --slave -e 'install.packages("BiocManager")'
+  R --slave -e 'BiocManager::install(c("graph"))'
+  
+  R --slave -e 'library(devtools)'
+  R --slave -e 'devtools::install_github("tlamadon/rblm")'
+
+  R --slave -e 'install.packages(c("ExPanDaR","bookdown"))'
