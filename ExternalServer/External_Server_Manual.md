@@ -41,7 +41,7 @@ documentclass: article
 3. cd "G:\BPLIM\02. Docs Internos\03. Manuais\External Server\"
 4. RUN THE FOLLOWING LINE IN THE TERMINAL
 
-> MAC > /Users/miguelportela/Documents/GitHub/Manuals/ExternalServer
+> MAC > cd /Users/miguelportela/Documents/GitHub/Manuals/ExternalServer
 
 > Gab. 1.19 > C:\Users\mangelo.EEG\Documents\Manuals\ExternalServer
 
