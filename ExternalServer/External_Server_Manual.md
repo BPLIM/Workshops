@@ -550,6 +550,8 @@ Stata results can be exported to a file on disk using one of the following forma
 
 # Removing outputs
 
+The output files, e.g., log files or images, must be requested from the BPLIM team, bplim@bportugal.pt. Researchers are not allowed to place or remove files on the server autonomously.
+
  Place in the "[results]{.underline}" folder all the outputs you want
  to remove from the server.[^7]
 
