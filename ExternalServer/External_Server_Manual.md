@@ -1,7 +1,7 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
 author: "[BPLIM](https://bplim.bportugal.pt/): External Server Manual"
-date: "April 6, 2021"
+date: "August 11, 2021"
 output:
   pdf_document:
     template: bplim-template.tex
@@ -81,7 +81,7 @@ Data Confidentiality
 
 While researchers prefer unrestricted access to data, care must be
 given to secure the confidentiality of the data providers. All access
-granted to microdata should obey the applicable law and the data
+granted to microdata should obey the applicable law, and the data
 should only be used for research purposes.
 
 Therefore, the data is only made available to the Banco de Portugal's
@@ -97,7 +97,7 @@ Banco de Portugal (BdP).
 Type of access to the Microdata varies according to levels of
 confidentiality (low, medium, high).
 
--   **Low**: information that can be obtained to the public or
+-   **Low**: information that can be obtained from the public or
     scientific community by other institutions
 
 -   **Medium**: information pertaining to institutions (firms, banks,
@@ -129,7 +129,7 @@ The User will be able to connect to the external server using one of two possibi
 
 ## First steps
 
-Once you start `NoMachine` these are the first three screens you will see:
+Once you start `NoMachine`, these are the first three screens you will see:
 
 ![](./media/image1.png){width=65%}
 
@@ -158,7 +158,7 @@ keyboard shortcut 'F4'.
     system for interactive use (for example, the file *xstata16mp.sh*
     will launch the graphical version of Stata 16). You can start the
     application by double-clicking
-    the file name in 'Dolphin'[^2] or by typing in the Terminal `xstata15mp.sh`.
+    the file name in 'Dolphin'[^2] or by typing in the Terminal `xstata16mp.sh`
 
 6. The directories that you have access to within the folder include:
 
@@ -196,11 +196,10 @@ keyboard shortcut 'F4'.
 |                                   | are available here.               |
 +-----------------------------------+-----------------------------------+
 
-  - You will have in your **work\_area** folder templates for both Stata and R. By default the template file is read only.
+  - You will have in your **work\_area** folder templates for both Stata and R(`R.sh`). By default, the template file is read-only.
 
 7. To reset and disconnect the remote desktop connection or session,
-    you can simply log out of your remote session, as shown on the
-    screenshot below. After you log out, close the window.[^3]
+    you can simply log out of your remote session, as shown in the screenshot below. After you log out, close the window.[^3]
 
 ![](./media/image7.png){width="3.1496062992125986in"
 height="3.505206692913386in"}
@@ -215,8 +214,8 @@ height="0.5228762029746282in"}
     one must be aware that this option uses resources from the server,
     so the efficient solution to run your programs "overnight" is using
     the batch mode as described in Step 6 below. Furthermore, in case
-    the server is rebooted during a maintenance procedure your session
-    will be automatically closed and unsaved documents will be lost. We
+    the server is rebooted during a maintenance procedure, your session
+    will be automatically closed, and unsaved documents will be lost. We
     recommend you save at regular intervals your statistical programs.
 
 
@@ -227,7 +226,7 @@ height="0.5228762029746282in"}
 
  - _Do not save files in your home area_ `/home/USER_LOGIN`. _In case you exceed its size you will not be able to log in._
 
- - Check regularly the size of your project in the harddrive. Open a Terminal and apply the following steps:
+ - Check regularly the size of your project on the harddrive. Open a Terminal and apply the following steps:
 
   1. Move to the project folder: `cd /bplimext/projects/p000_xxx_yyy/`
   2. List project size: `du -h`
@@ -255,7 +254,7 @@ height="1.848682195975503in"}
 
 2.  See [Section 8.1](#shell_commands) for a list of some of the most used commands.
 
-3. In case you are using a non-English keyboard, the 'true' keyboard
+3. If you use a non-English keyboard, the 'true' keyboard
     might be different from the one you see. The changes apply mostly
     to the symbols, not letters or numbers. For example, in case you
     have a Portuguese keyboard on your computer the '+' is now in key
@@ -276,10 +275,11 @@ height="1.848682195975503in"}
 
     `ls -lArth`
 
-# Statistical software
+# Statistical software{#statistical_software}
 
 ## Stata
 
+Stata versions available in the server: 14, 15, 16 and 17 (adjust the following lines to the Stata version you want to use)
 
 1. Stata can be accessed in interactive graphical or non-graphical
         modes.[^6]
@@ -292,7 +292,7 @@ height="1.848682195975503in"}
 
     and type
 
-      `/opt/bplimext/stata15/stata-mp`
+      `/opt/bplimext/stata16/stata-mp`
 
 ![](./media/image10.png){width="3.543307086614173in"
 height="2.488604549431321in"}
@@ -303,8 +303,7 @@ height="2.488604549431321in"}
     `PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/bplimext/stata16`
 
   - For the interactive graphical mode click on the icons
-    "**xstata14mp.sh**" (Stata 14) or
-    "**xstata15mp.sh**" (Stata 15) located in the
+    "**xstata16mp.sh**" (Stata 16) located in the
     'desktop', depending on the desired Stata version,
 
 ![](./media/image11.png){width="0.5905511811023622in"
@@ -320,9 +319,12 @@ height="2.486382327209099in"}
   - You can open it from **RedHat** \> **Applications**
       \> **Utilities** \> **KWrite**. You can also launch 'KWrite' from the 'shell' by typing 'kwrite'
 
-  - In case the icon is not in your desktop, use Dolphin, move to folder
-    '/opt/bplimext/stata15', and drag and drop the file 'xstata-mp' into
+  - In case the Stata's icon is not on your desktop, use Dolphin, move to folder
+    '/bplimext/scripts/wrappers/', and drag and drop the file 'xstata17-mp' into
     the desktop
+
+![](./media/image12b.png){width="3.937007874015748in"
+height="2.486382327209099in"}
 
 2. To look for **"ado-files"**:
 
@@ -359,7 +361,7 @@ can be found in the current directory (.).
  You may also edit your 'profile.do' file, located in your root folder,
  "/home/YOURPROJECTID/", and add key instructions you may want to be
  executed every time you start Stata. The above instruction is one of
- such cases. You can create, or edit, the file 'profile.do' using
+ such cases. You can create or edit the file 'profile.do' using
  'Do-file Editor' within Stata ('vi profile.do' or KWrite are also a
  possibility).
 
@@ -389,10 +391,10 @@ height="2.2751399825021874in"}
 
 3. Create an ASCII file named, e.g., 'batch\_prog1'
 
-4. Inside the file write just a line with the execution command you
+4. Inside the file, write just a line with the execution command you
      would type in the 'shell'; e.g.,
 
-    `/opt/bplimext/stata15/stata-mp do`
+    `/opt/bplimext/stata16/stata-mp do`
     
     `/bplimext/projects/I001_jdoe/work_area/prog1.do`
 
@@ -416,7 +418,7 @@ height="2.0134241032370954in"}
      sometimes Stata *doeditor* does not 'see' the file 'batch', while
      it 'sees' 'batch.txt'
 
-8. Once the batch file is created one runs the .do file in batch mode
+8. Once the batch file is created, one runs the .do file in batch mode
      by typing in the 'Terminal':
 
     `at now -f batch.txt`
@@ -456,7 +458,7 @@ height="2.0134241032370954in"}
       `tail --f logcrc_may21.log`
 
  It allows you to see an updated version of the last lines of the log;
- *i.e.*, it updates each time the log is changed by Stata. A key
+ *i.e.*, it updates each time Stata changes the log. A key
  advantage of tail is that it does not interfere with the log file,
  namely, it does not write over it.
 
@@ -468,8 +470,8 @@ height="2.0134241032370954in"}
          down one does not lose the session. We can simply kill the
          'NoMachine' session and recover it later by typing '`screen --r`'
 
-  - We can run several instances of screen. If this is the case,
-         after opening a new NoMachine session we need to type in the
+  - We can run several instances of `screen`. If this is the case,
+         after opening a new NoMachine session, we need to type in the
          Terminal shell '`screen -d`' to identify the running background
          sessions. We can retrieve a particular session by knowing the
          '`pid`' number and typing '`screen -r 34176`'
@@ -499,7 +501,7 @@ height="2.0134241032370954in"}
   
   > `PATH=$PATH:/opt/bplimext/R/usr/lib64/rstudio/bin/`
 
-**IMPORTANT**: do not save your workspace image in your home folder (`Save workspace image? [y/n/c]`). In case you want to keep the workspace file save it in your project folder under `work_area`. 
+**IMPORTANT**: do not save your workspace image in your home folder (`Save workspace image? [y/n/c]`). If you want to keep the workspace file save it in your project folder under `work_area`. 
 
 ## Python
 
@@ -510,7 +512,7 @@ height="2.0134241032370954in"}
 
 ## Julia
 
-1. Open a Terminal and type (julia is located in /opt/bplimext/julia/lib/, you can add it to your `PATH`)
+1. Open a Terminal and type (`julia` is located in /opt/bplimext/julia/lib/, you can add it to your `PATH`)
 
 > `julia`
 
@@ -522,9 +524,9 @@ height="2.0134241032370954in"}
 
   Additional commands/packages or updates to the existing ones have to be requested to BPLIM's Team.
 
-## Build a container to fine tune your statistical packages
+## Build a container to fine-tune your statistical packages
 
-  You can use Singularity containers in the server. To do so please send us the definition file so we build the image and put it on your working area.
+  You can use Singularity containers in the server. To do so, please send us the definition file, so we build the image and put it in your working area.
   You can find detailed information on Singularity containers at [https://sylabs.io/](https://sylabs.io/). We provide some notes in the Appendix
 
 
@@ -569,7 +571,7 @@ The output files, e.g., log files or images, must be requested from the BPLIM te
 1. Do not save files in your Home folder:
     "/home/USER_ID/".
 
-2. Regularly clean your Trash folder. If your disk use goes over the quota you will be prevented to login. In the Terminal type:
+2. Regularly clean your Trash folder. If your disk use goes over the quota you will be prevented from login. In the Terminal type:
     
     `rm -rf ~/.local/share/Trash/*`
 
@@ -853,7 +855,7 @@ Ex: `du /bplimext/projects/I001_jdoe/work_area/`
 
 **Step 1**: go to the link below and use the credentials provided by
 BPLIM to access the site. **Note**: sometimes the internet provider,
-*e.g.*, an University, may block the access to this particular web site.
+*e.g.*, an University, may block access to this particular website.
 Please check with your provider in case you get an error while trying to
 use the link.
 
@@ -942,7 +944,7 @@ height="1.2160203412073491in"}
 **\
 **
 
-> **Step 5.8**: Before the first effective connection it may be
+> **Step 5.8**: Before the first effective connection, it may be
 > necessary to accept the certificate from bplimexterno.bportugal.pt
 >
 > The Investigator should verify that the \"fingerprint\" (verification
@@ -977,7 +979,7 @@ height="1.2160203412073491in"}
 > ![](./media/image35.png){width="4.724409448818897in"
 > height="3.029721128608924in"}
 >
-> **Step 5.11**: Upon login success the following screens should appear
+> **Step 5.11**: Upon login success, the following screens should appear
 >
 > ![](./media/image36.png){width="4.724409448818897in"
 > height="3.0297101924759406in"}
@@ -1072,7 +1074,7 @@ Configuring browser access
 
  It may occur that a firewall is preventing the download. We have
  verified such problem in some Universities and Governmental services.
- Please try the download outside the firewall
+ Please try the download outside the firewall.
 -->
 
 1.  Mac users are not able to install NoMachine, receiving the following
@@ -1097,14 +1099,14 @@ Configuring browser access
     "https://webfa.bportugal.pt" later are not able to login within
     NoMachine (error message shown in the image above).
     -->
-  - In some cases it occurs due to a different keyboard layout. For example, if you have
+  - In some cases, it occurs due to a different keyboard layout. For example, if you have
     a Portuguese keyboard, but the website assumed a US keyboard, and
     your password contains a symbol like 'ç', than you will get a "wrong
     password" message. Please check the keyboard layout that is active
     when you type the password. Alternatively, change the password after
     the first login with NoMachine. Use linux's command 'passwd'.
 
-  - Login fails and the system shows the message: \"Could not connect to
+  - Login fails, and the system shows the message: \"Could not connect to
     the server. Error is 138: Connection is timed out\" Please check if
     your network has a strict firewall; e.g., some researchers are not
     able to reach BPLIM's server within their University network. Please
@@ -1231,11 +1233,11 @@ Now you are inside the container and can run commands such as:
 
 ![](images/SylabsBuildContainer.png){width="2.1in"}
 
-- Sylabs runs a first test on the vaility of your script and releases the button 'Build' (click on it)
+- Sylabs runs a first test on the validity of your script and releases the button 'Build' (click on it)
 
 - Follow the outcome at the bottom of the screen and check for possible error messages
 
-- Once you succeed in building the container you cand send us the file `bplim_RStudio.def`
+- Once you succeed in building the container, you cand send us the file `bplim_RStudio.def`
 
 
 ## Jupyter Lab
@@ -1258,7 +1260,7 @@ Sample session:
     [https://userbase.kde.org/Dolphin](https://userbase.kde.org/Dolphin)
     .
 
-[^2]: In case 'xstata15mp.sh' does not launch Stata please see 'Section 3'.
+[^2]: In case 'xstata16mp.sh' does not launch Stata please see '[Section 3](#statistical_software)'.
 
 [^3]: Click on the cross button at the upper right corner to close.
 
