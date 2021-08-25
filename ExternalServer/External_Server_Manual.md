@@ -1,7 +1,7 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
 author: "[BPLIM](https://bplim.bportugal.pt/): External Server Manual"
-date: "August 11, 2021"
+date: "August 25, 2021"
 output:
   pdf_document:
     template: bplim-template.tex
@@ -41,11 +41,11 @@ documentclass: article
 3. cd "G:\BPLIM\02. Docs Internos\03. Manuais\External Server\"
 4. RUN THE FOLLOWING LINE IN THE TERMINAL
 
-> MAC > cd /Users/miguelportela/Documents/GitHub/Manuals/ExternalServer
+> MAC > cd /Users/zxc/Documents/GitHub/Manuals/ExternalServer
 
-> Gab. 1.19 > C:\Users\mangelo.EEG\Documents\Manuals\ExternalServer
+> Gab. 1.19 > C:\Users\fst.EEG\Documents\Manuals\ExternalServer
 
-> ACREM > C:\Users\exu0o9\Documents\GitHub\Manuals\ExternalServer
+> ACREM > C:\Users\asd\Documents\GitHub\Manuals\ExternalServer
 
 pandoc --toc --number-sections External_Server_Manual.md --pdf-engine=xelatex -o External_Server_Manual.pdf
 
@@ -1227,11 +1227,11 @@ Now you are inside the container and can run commands such as:
 
 - Click in 'CREATE'
 
-![](images/SylabsCreate.png){width="1.2in"}
+![](media/SylabsCreate.png){width="1.2in"}
 
 - In the following step upload your '.def' file or copy/paste its contents in the Text box:
 
-![](images/SylabsBuildContainer.png){width="2.1in"}
+![](media/SylabsBuildContainer.png){width="2.1in"}
 
 - Sylabs runs a first test on the validity of your script and releases the button 'Build' (click on it)
 
