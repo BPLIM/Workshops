@@ -43,11 +43,11 @@ documentclass: article
 3. cd "G:\BPLIM\02. Docs Internos\03. Manuais\External Server\"
 4. RUN THE FOLLOWING LINE IN THE TERMINAL
 
-> MAC > cd /Users/zxs/Documents/GitHub/Projects/Internal_Server/manual
+> MAC > /Users/zxc/Documents/GitHub/Manuals/InternalServer
 
 > Gab. 1.19 > C:\Users\sws.EEG\Documents\Manuals\ExternalServer
 
-> ACREM > C:\Users\exu0o9\Documents\GitHub\Projects\Internal_Server\manual>
+> ACREM > C:\Users\krt\Documents\GitHub\Projects\Internal_Server\manual>
 
 pandoc --toc --number-sections Internal_Server_Manual.md --pdf-engine=xelatex -o Internal_Server_Manual.pdf
 
