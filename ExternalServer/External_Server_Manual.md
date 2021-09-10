@@ -37,9 +37,7 @@ documentclass: article
 <!---
 
 1. open TERMINAL
-2. G:
-3. cd "G:\BPLIM\02. Docs Internos\03. Manuais\External Server\"
-4. RUN THE FOLLOWING LINE IN THE TERMINAL
+2. RUN THE FOLLOWING LINE IN THE TERMINAL
 
 > MAC > cd /Users/zxc/Documents/GitHub/Manuals/ExternalServer
 
@@ -49,7 +47,6 @@ documentclass: article
 
 pandoc --toc --number-sections External_Server_Manual.md --pdf-engine=xelatex -o External_Server_Manual.pdf
 
---- OLD: pandoc -V geometry:"paperwidth=210mm,paperheight=297mm,left=27mm,right=27mm,top=27mm,bottom=27mm" External_Server_Manual.md --pdf-engine=xelatex -o External_Server_Manual.pdf ---
 
 
 ALTERNATIVE
@@ -370,6 +367,25 @@ can be found in the current directory (.).
 
 ![](./media/image13.png){width="3.9368055555555554in"
 height="2.2751399825021874in"}
+
+3. Stata's temporary files:
+
+> Check the location of the folder with temporary files
+
+- Open a Terminal and type
+
+> `tempfile junk`
+> `display "'junk'"`
+
+> In the work_area of your project add a folder named `tmp`
+
+> Open the file `.bashrc` and add the following lines:
+
+> `STATATMP="/bplimext/projects/YOUR_PROJECT_ID/work_area/tmp"`
+
+> `export STATATMP`
+
+> In the Terminal type `source .bashrc` and can call Stata from the Terminal.
 
 ## 'batch' mode: an example using Stata
 
