@@ -306,6 +306,27 @@ can be found in the current directory (.).
 ![](./media/other/image13.png){width="3.9368055555555554in"
 height="2.2751399825021874in"}
 
+3. Stata's temporary files:
+
+> Check the location of the folder with temporary files
+
+- Open a Terminal and type
+
+> `tempfile junk`
+
+> `display "'junk'"`
+
+> In the work_area of your project add a folder named `tmp`
+
+> Using the Terminal, go to your home folder, `cd ~`, and open the file `.bashrc` and add the following lines:
+
+> `STATATMP="/bplim/projects/YOUR_PROJECT_ID/work_area/tmp"`
+
+> `export STATATMP`
+
+> In the Terminal type `source .bashrc` and call Stata from the Terminal (`xstata-mp`).
+
+
 ## 'batch' mode: an example using Stata
 
 

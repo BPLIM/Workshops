@@ -375,17 +375,18 @@ height="2.2751399825021874in"}
 - Open a Terminal and type
 
 > `tempfile junk`
+
 > `display "'junk'"`
 
 > In the work_area of your project add a folder named `tmp`
 
-> Open the file `.bashrc` and add the following lines:
+> Using the Terminal, go to your home folder, `cd ~`, and open the file `.bashrc` and add the following lines:
 
 > `STATATMP="/bplimext/projects/YOUR_PROJECT_ID/work_area/tmp"`
 
 > `export STATATMP`
 
-> In the Terminal type `source .bashrc` and can call Stata from the Terminal.
+> In the Terminal type `source .bashrc` and call Stata from the Terminal (`xstata-mp`).
 
 ## 'batch' mode: an example using Stata
 
@@ -393,7 +394,7 @@ height="2.2751399825021874in"}
 1.  Start a *\'**shell**\'* in Linux and navigate to the directory
          of the "do-file" file that you want to run (ex: prog1.do)
 
- `cd /bplimext/projects/I001_jdoe/work_area/`
+`cd /bplimext/projects/I001_jdoe/work_area/`
 
 2. You might find it easier to use 'Dolphin' (= File Manager) to move
      over your folder structure. In this case, we recommend activating
