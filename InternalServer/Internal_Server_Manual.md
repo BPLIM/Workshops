@@ -64,7 +64,7 @@ https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf
 # Access to the Internal Server
 
 
-> Upon access approval, a user will be able to connect to the Interna
+> Upon access approval, a user will be able to connect to the Internal
 > Server through remote desktop connection, which is installed on the
 > desktop with a shortcut icon "**bplim-int**". One can also obtain
 > direct access to the project folder under "**pxxx\_name**", where
