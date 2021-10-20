@@ -520,6 +520,8 @@ height="2.0134241032370954in"}
 
 **IMPORTANT**: do not save your workspace image in your home folder (`Save workspace image? [y/n/c]`). If you want to keep the workspace file save it in your project folder under `work_area`. 
 
+**RStudio Font Type**: please make sure you are not using Font Type Courier (Menu Tools, Global Options, Appearence ...)
+
 ## Python
 
 1. Open a Terminal and type
