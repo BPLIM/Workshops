@@ -457,6 +457,10 @@ height="2.0134241032370954in"}
   
   > `PATH=$PATH:/opt/bplim/R/usr/lib64/rstudio/bin/`
 
+- In case you face difficulties opening/saving files in RStudio, please open a Terminal and type
+
+  > `/bplim/scripts/wrappers/R.sh`
+
   **RStudio Font Type**: please make sure you are not using Font Type Courier (Menu Tools, Global Options, Appearence ...)
 
 
