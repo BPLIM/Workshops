@@ -518,6 +518,10 @@ height="2.0134241032370954in"}
   
   > `PATH=$PATH:/opt/bplimext/R/usr/lib64/rstudio/bin/`
 
+  - In case you face difficulties opening/saving files in RStudio, please open a Terminal and type
+
+  > `/bplimext/scripts/wrappers/R.sh`
+
 **IMPORTANT**: do not save your workspace image in your home folder (`Save workspace image? [y/n/c]`). If you want to keep the workspace file save it in your project folder under `work_area`. 
 
 ## Python
