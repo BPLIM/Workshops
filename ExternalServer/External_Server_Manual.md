@@ -274,6 +274,8 @@ height="1.848682195975503in"}
 
 # Statistical software{#statistical_software}
 
+The installation of additional commands/packages must be requested from the BPLIM team, bplim@bportugal.pt. Researchers are not allowed to install new commands/packages on the server autonomously.
+
 ## Stata
 
 Stata versions available in the server: 14, 15, 16 and 17 (adjust the following lines to the Stata version you want to use)
