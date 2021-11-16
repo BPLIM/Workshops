@@ -26,7 +26,7 @@ IncludeCmd: yes
 Author Gustavo Iglésias, Miguel Portela and Rita Sousa -- BPLIM
 Version v0.0.1: R + RStudio for researchers
 R_Version 4.0.4
-build_date 2021 October 25
+build_date 2021 November 16
 
 
 %post
@@ -49,23 +49,14 @@ build_date 2021 October 25
       apt update
       apt update -qq
   
-    # install two helper packages we need
+apt update -qq
 
-      apt install -y --no-install-recommends
-
-    # import the signing key (by Michael Rutter) for these repo
-
-#	cp /mnt/cephfs/colaborativo/DEE-BPLIM-Filial/containers/cran_key.txt .
-#	apt-key add cran_key.txt
-
+apt install -y --no-install-recommends software-properties-common dirmngr
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 	apt-get update
 
-    # add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
-  
-      add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -sc)-cran40/"  
-      apt-get update
-      
-    apt-get install -y r-base r-recommended libnss3
+    apt-get install -y --no-install-recommends r-base r-recommended libnss3
 
   ###
 
