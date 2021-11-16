@@ -1205,6 +1205,7 @@ You can use version-control. The server runs [Git](https://git-scm.com/) version
   > 
   > ``Git is a distributed version-control system for tracking changes in any set of files, originally designed for coordinating work among programmers cooperating on source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows''
 
+<!---
 First steps
 
 1. move to a specific folder; _e.g._, `cd /bplimext/projects/your_project_ID/work_area/`
@@ -1241,6 +1242,8 @@ Now you are inside the container and can run commands such as:
   > `jupyter lab`
   >
   > `spyder`
+
+-->
 
 ### Build your container
 
