@@ -1244,7 +1244,7 @@ Now you are inside the container and can run commands such as:
 
 ### Build your container
 
-- You can write a script to build your container using our example [bplim_RStudio.def](https://github.com/BPLIM/Manuals/tree/master/ExternalServer/bplim_RStudio.def) available at our [GitHub repository](https://github.com/BPLIM/Manuals/tree/master/ExternalServer)
+- You can write a script to build your container using our example [bplim_RStudio.def](https://github.com/BPLIM/Manuals/tree/master/ExternalServer/container_BPLIM_RStudio_researchers.def) available at our [GitHub repository](https://github.com/BPLIM/Manuals/tree/master/ExternalServer)
 
 - In this template we setup a machine running Ubuntu 18.04.5, R 4.0.5 and RStudio 1.3.1093. The installation includes the following packages: rmardown, tinytex, stargazer, kableExtra, ExPanDaR and rblm
 
