@@ -87,4 +87,4 @@ add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_relea
   # INSTALL R PACKAGES
 
 R --slave -e 'install.packages("devtools",dependencies = TRUE, type="source")'
-R --slave -e 'install.packages(c("tidyverse"), dependencies = TRUE)'
+R --slave -e 'install.packages(c("tidyverse"), dependencies = TRUE, type = "source")'
