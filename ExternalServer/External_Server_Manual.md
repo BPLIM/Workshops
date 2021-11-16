@@ -1246,7 +1246,9 @@ Now you are inside the container and can run commands such as:
 
 - You can write a script to build your container using our example [bplim_RStudio.def](https://github.com/BPLIM/Manuals/tree/master/ExternalServer/container_BPLIM_RStudio_researchers.def) available at our [GitHub repository](https://github.com/BPLIM/Manuals/tree/master/ExternalServer)
 
-- In this template we setup a machine running Ubuntu 18.04.5, R 4.0.5 and RStudio 1.3.1093. The installation includes the following packages: rmardown, tinytex, stargazer, kableExtra, ExPanDaR and rblm
+- In this template we setup a machine running Ubuntu 20.04, R 4.1 and RStudio 1.3.1093. The installation includes the following packages: rmarkdown, tinytex, stargazer, kableExtra, ExPanDaR and rblm
+
+- You add your packages in line 103
 
 - Test your script and build the container using [SylabsCloud](https://cloud.sylabs.io/) (you can use your GitHub account to login)
 
@@ -1262,7 +1264,7 @@ Now you are inside the container and can run commands such as:
 
 - Follow the outcome at the bottom of the screen and check for possible error messages
 
-- Once you succeed in building the container, you cand send us the file `bplim_RStudio.def`
+- Once you succeed in building the container, you cand send us the file `container_BPLIM_RStudio_researchers.def` with your changes
 
 
 ## Jupyter Lab

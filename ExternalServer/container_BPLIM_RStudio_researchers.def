@@ -4,9 +4,9 @@ IncludeCmd: yes
 
 
 %files
-  /mnt/cephfs/Downloads/libpng12-0_1.2.54-1ubuntu1.11ppa0eoan_amd64.deb
-  /mnt/cephfs/Downloads/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb
-  /mnt/cephfs/colaborativo/DEE-BPLIM-Filial/containers/cran_key.txt
+  #/mnt/cephfs/Downloads/libpng12-0_1.2.54-1ubuntu1.11ppa0eoan_amd64.deb
+  #/mnt/cephfs/Downloads/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb
+  #/mnt/cephfs/colaborativo/DEE-BPLIM-Filial/containers/cran_key.txt
 
 
 %environment
@@ -55,8 +55,8 @@ build_date 2021 October 25
 
     # import the signing key (by Michael Rutter) for these repo
 
-	cp /mnt/cephfs/colaborativo/DEE-BPLIM-Filial/containers/cran_key.txt .
-	apt-key add cran_key.txt
+#	cp /mnt/cephfs/colaborativo/DEE-BPLIM-Filial/containers/cran_key.txt .
+#	apt-key add cran_key.txt
 
 	apt-get update
 
@@ -95,13 +95,5 @@ build_date 2021 October 25
 
   # INSTALL R PACKAGES
 
-install.packages("devtools",dependencies = TRUE, type="source")
-library(devtools)
-
-install.packages("pacman",dependencies=TRUE, type="source")
-
-install.packages(pkgs = c(
-"broom",
-"visdat"), dependencies = TRUE, type="source")
-
-##  install.packages(pkgs = c("tidyverse","data.table","haven","here","glmnet","ranger","caret","gbm","xgboost","bartMachine","rpart"), dependencies = TRUE, type="source")
+R --slave -e 'install.packages("devtools",dependencies = TRUE, type="source")'
+R --slave -e 'install.packages(c("tidyverse"), dependencies = TRUE)'
