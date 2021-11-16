@@ -1197,15 +1197,15 @@ Configuring browser access
   > where your table is 'your_table.tex'. The tex file can be compiled in the Terminal typing
   > `pdflatex main.tex`.
   
-## Git
+## Build your container
 
+<!---
 You can use version-control. The server runs [Git](https://git-scm.com/) version 1.8.3.1. 
   
   > [Wikipedia](https://en.wikipedia.org/wiki/Git):
   > 
   > ``Git is a distributed version-control system for tracking changes in any set of files, originally designed for coordinating work among programmers cooperating on source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows''
 
-<!---
 First steps
 
 1. move to a specific folder; _e.g._, `cd /bplimext/projects/your_project_ID/work_area/`
@@ -1244,8 +1244,6 @@ Now you are inside the container and can run commands such as:
   > `spyder`
 
 -->
-
-### Build your container
 
 - You can write a script to build your container using our example [bplim_RStudio.def](https://github.com/BPLIM/Manuals/tree/master/ExternalServer/container_BPLIM_RStudio_researchers.def) available at our [GitHub repository](https://github.com/BPLIM/Manuals/tree/master/ExternalServer)
 
