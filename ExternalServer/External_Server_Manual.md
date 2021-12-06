@@ -167,6 +167,10 @@ keyboard shortcut 'F4'.
 |                                   | read-only access to this          |
 |                                   | directory.*                       |
 +-----------------------------------+-----------------------------------+
+| **initial\_dataset/modified**     |                                   |
+|                                   | Modified data provided by BPLIM.  |
+|                                   |                                   |
++-----------------------------------+-----------------------------------+
 | **results**                       |                                   |
 |                                   | Output files that                 |
 |                                   | researchers wish to generate      |
