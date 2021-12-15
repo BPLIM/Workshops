@@ -1,6 +1,6 @@
 # BPLIM Workshop 2021
 
-In this folder you can find all the presentations for the workshop "Reproducibility of Scientific Results".
+In this folder you can find the presentations of the Workshop on "Reproducibility of Scientific Results".
 
 
 ## Presentations
