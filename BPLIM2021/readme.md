@@ -39,6 +39,8 @@ https://jschultecloos.github.io/reproducr<br/><br/>
 
 [Lars Vilhuber](https://www.vilhuber.com/lars/), Cornell University and American Economic Association
 
+https://aeadataeditor.github.io/
+
 https://github.com/AEADataEditor/Statapackagesearch<br/><br/>
 
 
