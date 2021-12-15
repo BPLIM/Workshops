@@ -26,54 +26,46 @@ IncludeCmd: yes
 Author Gustavo Iglésias, Miguel Portela and Rita Sousa -- BPLIM
 Version v0.0.1: R + RStudio for researchers
 R_Version 4.0.4
-build_date 2021 November 16
+build_date 2021 December 15
 
 
 %post
-  apt-get update
-  apt-get install -y apt-transport-https apt-utils software-properties-common
-  apt-get install -y add-apt-key
+  apt update
+  apt install -y apt-transport-https apt-utils software-properties-common wget
+  apt install -y add-apt-key
   export DEBIAN_FRONTEND=noninteractive
   ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime
-  apt-get install -y tzdata
+  apt install -y tzdata
   dpkg-reconfigure --frontend noninteractive tzdata
-
-  apt update
-  apt-get update
-  apt install -y software-properties-common wget
     
 
   # R
 
-      apt-get update
-      apt update
-      apt update -qq
-  
 apt update -qq
 
-apt install -y --no-install-recommends software-properties-common dirmngr
+apt install -y --no-install-recommends dirmngr
 wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
-	apt-get update
+	apt update
 
-    apt-get install -y --no-install-recommends r-base r-recommended libnss3
+    apt install -y --no-install-recommends r-base r-recommended libnss3
 
   ###
 
-	  apt-get install -y wget nano gnupg gnupg2 curl
-	       apt-get update
-	  apt-get install -y libblas3 libblas-dev liblapack-dev liblapack3 curl aptitude
-	     apt-get update
+	  apt install -y nano gnupg gnupg2 curl
+	     apt update
+	  apt install -y libblas3 libblas-dev liblapack-dev liblapack3 curl aptitude
+	     apt update
 	  aptitude install -y xorg-dev
-	      apt-get update
+	      apt update
 	  aptitude install -y libreadline-dev
-	      apt-get update
-	  apt-get install -y libssl-dev libxml2-dev libpcre3-dev liblzma-dev libbz2-dev libcurl4-openssl-dev libmagick++-dev
-	      apt-get update
-	  apt-get install -y libhdf5-dev hdf5-helpers git
+	      apt update
+	  apt install -y libssl-dev libxml2-dev libpcre3-dev liblzma-dev libbz2-dev libcurl4-openssl-dev libmagick++-dev
+	      apt update
+	  apt install -y libhdf5-dev hdf5-helpers git
 
-	  apt-get update
-	  apt-get -y install xkb-data x11-apps bzip2 qt5-default mesa-utils libgl1-mesa-dev libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 iproute2 swig build-essential software-properties-common net-tools unixodbc-dev git vim cython cmake
+	  apt update
+	  apt -y install xkb-data x11-apps bzip2 qt5-default mesa-utils libgl1-mesa-dev libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 iproute2 swig build-essential net-tools unixodbc-dev vim cython cmake
 
   ###
 
