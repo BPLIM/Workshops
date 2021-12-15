@@ -19,11 +19,15 @@ The slides are available at https://osf.io/wd5ah/<br/><br/>
 
 **Reproducibility in economics with administrative data: Making the most of existing techniques**
 
-[Thibaut Lamadon](https://www.lamadon.com/), University of Chicago<br/><br/>
+[Thibaut Lamadon](https://www.lamadon.com/), University of Chicago
+
+https://github.com/tlamadon/continuous-reproducibility<br/><br/>
 
 **A tool-kit for reproducible report generation with RMarkdown, Pandoc, and Lua** 
 
-[Julia Schulte-Cloos](https://jschultecloos.github.io/), LMU Munich<br/><br/>
+[Julia Schulte-Cloos](https://jschultecloos.github.io/), LMU Munich
+
+https://jschultecloos.github.io/reproducr<br/><br/>
 
 **Dawning of a new age? Replications Practices and Journal Data Policies**
 
@@ -34,9 +38,8 @@ The slides are available at https://osf.io/wd5ah/<br/><br/>
 [Lars Vilhuber](https://www.vilhuber.com/lars/), Cornell University and American Economic Association<br/><br/>
 
 
-## Useful Links
+## Other Useful Links
 
-https://github.com/tlamadon/continuous-reproducibility
 
 https://social-science-data-editors.github.io/template_README/
 
@@ -45,8 +48,6 @@ https://pubs.aeaweb.org/doi/pdfplus/10.1257/pandp.111.808
 https://www.tse-fr.eu/publications/how-make-pie-reproducible-research-empirical-economics-econometrics
 
 https://aeadataeditor.github.io/posts/2021-11-16-docker
-
-https://jschultecloos.github.io/reproducr
 
 https://github.com/sergiocorreia/stata-require
 
