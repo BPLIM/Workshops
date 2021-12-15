@@ -51,7 +51,7 @@ https://aeadataeditor.github.io/posts/2021-11-16-docker
 
 https://github.com/sergiocorreia/stata-require
 
-https://docs.google.com/document/d/1hugEO5BZqkKADt_ZnXqXgQ_89H1vzbQV6H9o129huSo/edit?usp=sharing
+[Comments from the chat](https://docs.google.com/document/d/1hugEO5BZqkKADt_ZnXqXgQ_89H1vzbQV6H9o129huSo/edit?usp=sharing)
 
 
 
