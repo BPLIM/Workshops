@@ -15,11 +15,13 @@ In this folder you can find the presentations of the Workshop on "Reproducibilit
 
 [Luiza Cardoso de Andrade](https://luizaandrade.github.io/), World Bank
 
-The slides are available at https://osf.io/wd5ah/<br/><br/>
+Slides available at https://osf.io/wd5ah/<br/><br/>
 
 **Reproducibility in economics with administrative data: Making the most of existing techniques**
 
 [Thibaut Lamadon](https://www.lamadon.com/), University of Chicago
+
+Slides available at https://tlamadon.github.io/code4research/1
 
 https://github.com/tlamadon/continuous-reproducibility<br/><br/>
 
