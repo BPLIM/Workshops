@@ -13,7 +13,9 @@ In this folder you can find the presentations of the Workshop on "Reproducibilit
 
 **Frequent reproducibility mistakes in Stata and how to avoid them**
 
-[Luiza Cardoso de Andrade](https://luizaandrade.github.io/), World Bank<br/><br/>
+[Luiza Cardoso de Andrade](https://luizaandrade.github.io/), World Bank
+
+The slides are available at https://osf.io/wd5ah/<br/><br/>
 
 **Reproducibility in economics with administrative data: Making the most of existing techniques**
 
@@ -30,6 +32,23 @@ In this folder you can find the presentations of the Workshop on "Reproducibilit
 **Overview of reproducibility and replicability in economics, with a side trip to provenance**
 
 [Lars Vilhuber](https://www.vilhuber.com/lars/), Cornell University and American Economic Association<br/><br/>
+
+
+## Useful Links
+
+https://github.com/tlamadon/continuous-reproducibility
+
+https://social-science-data-editors.github.io/template_README/
+
+https://pubs.aeaweb.org/doi/pdfplus/10.1257/pandp.111.808
+
+https://www.tse-fr.eu/publications/how-make-pie-reproducible-research-empirical-economics-econometrics
+
+https://aeadataeditor.github.io/posts/2021-11-16-docker
+
+https://jschultecloos.github.io/reproducr
+
+https://github.com/sergiocorreia/stata-require
 
 
 
