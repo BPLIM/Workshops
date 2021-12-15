@@ -37,7 +37,9 @@ https://jschultecloos.github.io/reproducr<br/><br/>
 
 **Overview of reproducibility and replicability in economics, with a side trip to provenance**
 
-[Lars Vilhuber](https://www.vilhuber.com/lars/), Cornell University and American Economic Association<br/><br/>
+[Lars Vilhuber](https://www.vilhuber.com/lars/), Cornell University and American Economic Association
+
+https://github.com/AEADataEditor/Statapackagesearch<br/><br/>
 
 
 ## Other Useful Links
@@ -52,6 +54,8 @@ https://www.tse-fr.eu/publications/how-make-pie-reproducible-research-empirical-
 https://aeadataeditor.github.io/posts/2021-11-16-docker
 
 https://github.com/sergiocorreia/stata-require
+
+https://stenci.la/
 
 [Comments from the chat](https://docs.google.com/document/d/1hugEO5BZqkKADt_ZnXqXgQ_89H1vzbQV6H9o129huSo/edit?usp=sharing)
 
