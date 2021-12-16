@@ -27,17 +27,17 @@ In this folder you can find the materials from the Workshop on "Reproducibility 
 
 [Thibaut Lamadon](https://www.lamadon.com/), University of Chicago
 
-Slides available at https://tlamadon.github.io/code4research/1
+- Slides available at https://tlamadon.github.io/code4research/1
 
-https://github.com/tlamadon/continuous-reproducibility<br/><br/>
+- https://github.com/tlamadon/continuous-reproducibility<br/><br/>
 
 **A tool-kit for reproducible report generation with RMarkdown, Pandoc, and Lua** 
 
 [Julia Schulte-Cloos](https://jschultecloos.github.io/), LMU Munich
 
-Slides available at https://jsc-reproducible-report-generation-bplim2021.netlify.app/
+- Slides available at https://jsc-reproducible-report-generation-bplim2021.netlify.app/
 
-https://jschultecloos.github.io/reproducr<br/><br/>
+- https://jschultecloos.github.io/reproducr<br/><br/>
 
 **Dawning of a new age? Replications Practices and Journal Data Policies**
 
