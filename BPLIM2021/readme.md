@@ -9,13 +9,19 @@ In this folder you can find the materials from the Workshop on "Reproducibility 
 
 **Implementing Reproducibility and Transparency in Central Banks**
 
-[Sylverie Herbert](https://sylverieherbert.github.io/), Banque de France<br/><br/>
+[Sylverie Herbert](https://sylverieherbert.github.io/), Banque de France
+
+- [Slides](https://github.com/larsvilhuber/Workshops/blob/master/BPLIM2021/Sylverie_Herbert_Slides.pdf)
+
+<br/><br/>
 
 **Frequent reproducibility mistakes in Stata and how to avoid them**
 
 [Luiza Cardoso de Andrade](https://luizaandrade.github.io/), World Bank
 
-Slides available at https://osf.io/wd5ah/<br/><br/>
+- Slides available at [https://osf.io/wd5ah/](https://osf.io/wd5ah/).
+- [DIME Wiki](https://dimewiki.worldbank.org/) at [https://dimewiki.worldbank.org/](https://dimewiki.worldbank.org/)
+<br/><br/>
 
 **Reproducibility in economics with administrative data: Making the most of existing techniques**
 
@@ -39,9 +45,11 @@ https://jschultecloos.github.io/reproducr<br/><br/>
 
 [Lars Vilhuber](https://www.vilhuber.com/lars/), Cornell University and American Economic Association
 
-https://aeadataeditor.github.io/
+- https://aeadataeditor.github.io/
+- [Slides](https://doi.org/10.5281/zenodo.5786464) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5786464.svg)](https://doi.org/10.5281/zenodo.5786464)
+- https://github.com/AEADataEditor/Statapackagesearch
 
-https://github.com/AEADataEditor/Statapackagesearch<br/><br/>
+<br/><br/>
 
 
 ## Other Useful Links
