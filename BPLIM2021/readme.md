@@ -11,9 +11,7 @@ In this folder you can find the materials from the Workshop on "Reproducibility 
 
 [Sylverie Herbert](https://sylverieherbert.github.io/), Banque de France
 
-- [Slides](https://github.com/larsvilhuber/Workshops/blob/master/BPLIM2021/Sylverie_Herbert_Slides.pdf)
-
-<br/><br/>
+- [Slides](https://github.com/larsvilhuber/Workshops/blob/master/BPLIM2021/Sylverie_Herbert_Slides.pdf)<br/><br/>
 
 **Frequent reproducibility mistakes in Stata and how to avoid them**
 
