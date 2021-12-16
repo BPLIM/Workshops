@@ -29,6 +29,8 @@ https://github.com/tlamadon/continuous-reproducibility<br/><br/>
 
 [Julia Schulte-Cloos](https://jschultecloos.github.io/), LMU Munich
 
+Slides available at https://jsc-reproducible-report-generation-bplim2021.netlify.app/
+
 https://jschultecloos.github.io/reproducr<br/><br/>
 
 **Dawning of a new age? Replications Practices and Journal Data Policies**
