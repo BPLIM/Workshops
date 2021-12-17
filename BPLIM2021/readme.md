@@ -47,8 +47,8 @@ In this folder you can find the materials from the Workshop on "Reproducibility 
 
 [Lars Vilhuber](https://www.vilhuber.com/lars/), Cornell University and American Economic Association
 
-- https://aeadataeditor.github.io/
 - [Slides](https://doi.org/10.5281/zenodo.5786464) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5786464.svg)](https://doi.org/10.5281/zenodo.5786464)
+- https://aeadataeditor.github.io/
 - https://github.com/AEADataEditor/Statapackagesearch
 
 <br/><br/>
