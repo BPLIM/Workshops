@@ -18,7 +18,7 @@ In this folder you can find the materials from the Workshop on "Reproducibility 
 [Luiza Cardoso de Andrade](https://luizaandrade.github.io/), World Bank
 
 - Slides available at [https://osf.io/wd5ah/](https://osf.io/wd5ah/).
-- [DIME Wiki](https://dimewiki.worldbank.org/) at [https://dimewiki.worldbank.org/](https://dimewiki.worldbank.org/)
+- DIME Wiki at [https://dimewiki.worldbank.org/](https://dimewiki.worldbank.org/)
 <br/><br/>
 
 **Reproducibility in economics with administrative data: Making the most of existing techniques**
