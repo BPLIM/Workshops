@@ -49,6 +49,7 @@ In this folder you can find the materials from the Workshop on "Reproducibility 
 
 - [Slides](https://doi.org/10.5281/zenodo.5786464) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5786464.svg)](https://doi.org/10.5281/zenodo.5786464)
 - https://aeadataeditor.github.io/
+- https://aeadataeditor.github.io/posts/2021-11-16-docker
 - https://github.com/AEADataEditor/Statapackagesearch
 
 <br/><br/>
@@ -62,8 +63,6 @@ https://social-science-data-editors.github.io/template_README/
 https://pubs.aeaweb.org/doi/pdfplus/10.1257/pandp.111.808
 
 https://www.tse-fr.eu/publications/how-make-pie-reproducible-research-empirical-economics-econometrics
-
-https://aeadataeditor.github.io/posts/2021-11-16-docker
 
 https://github.com/sergiocorreia/stata-require
 
