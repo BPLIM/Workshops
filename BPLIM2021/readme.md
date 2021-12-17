@@ -39,7 +39,9 @@ In this folder you can find the materials from the Workshop on "Reproducibility 
 
 **Dawning of a new age? Replications Practices and Journal Data Policies**
 
-[Marianne Saam](https://www.zbw.eu/en/marianne-saam), ZBW Leibniz Centre for Economics<br/><br/>
+[Marianne Saam](https://www.zbw.eu/en/marianne-saam), ZBW Leibniz Centre for Economics
+
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2021/Marianne_Saam_Slides.pdf)<br/><br/>
 
 **Overview of reproducibility and replicability in economics, with a side trip to provenance**
 
