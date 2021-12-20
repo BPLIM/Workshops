@@ -17,7 +17,7 @@ In this folder you can find the materials from the Workshop on "Reproducibility 
 
 [Luiza Cardoso de Andrade](https://luizaandrade.github.io/), World Bank
 
-- Slides available at [https://osf.io/wd5ah/](https://osf.io/wd5ah/).
+- Slides available at [https://osf.io/anprm/](https://osf.io/anprm/).
 - DIME Wiki at [https://dimewiki.worldbank.org/](https://dimewiki.worldbank.org/)
 <br/><br/>
 
