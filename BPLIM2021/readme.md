@@ -41,7 +41,7 @@ In this folder you can find the materials from the Workshop on "Reproducibility 
 
 [Marianne Saam](https://www.zbw.eu/en/marianne-saam), ZBW Leibniz Centre for Economics
 
-- [Slides](10.5281/zenodo.5797743)<br/><br/>
+- [Slides](https://doi.org/10.5281/zenodo.5797743) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5797743.svg)](https://doi.org/10.5281/zenodo.5797743)<br/><br/>
 
 **Overview of reproducibility and replicability in economics, with a side trip to provenance**
 
