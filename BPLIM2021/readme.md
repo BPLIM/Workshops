@@ -1,6 +1,7 @@
 # BPLIM Workshop 2021
 
 In this folder you can find the materials from the Workshop on "Reproducibility of Scientific Results".
+Recordings of all sessions can be found on [Youtube](https://www.youtube.com/watch?v=erhIbEXOKhE&list=PLdcNmwWYeA7XtB6rJ8i1kkywNtfiqIMIe).
 
 
 ## Presentations
