@@ -155,7 +155,7 @@ keyboard shortcut 'F4'.
     system for interactive use (for example, the file *xstata16mp.sh*
     will launch the graphical version of Stata 16). You can start the
     application by double-clicking
-    the file name in 'Dolphin'[^2] or byy typing in the Terminal `xstata16mp.sh`
+    the file name in 'Dolphin'[^2] or by typing in the Terminal `xstata16mp.sh`
 
 6. The directories that you have access to within the folder include:
 
