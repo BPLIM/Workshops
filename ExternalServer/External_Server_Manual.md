@@ -541,6 +541,8 @@ height="2.0134241032370954in"}
 
 ## Julia
 
+### Alternative A
+
 1. Open a Terminal and type (`julia` is located in /opt/bplimext/julia/lib/, you can add it to your `PATH`)
 
 > `julia`
@@ -548,6 +550,15 @@ height="2.0134241032370954in"}
 2. Use Atom: open a Terminal and type
 
 > `atom`
+
+### Alternative B: using a container (see the discussion in the Appendix)
+
+1. Request a container with **`Julia`** for your project
+
+> The container will be in the folder `tools` inside the project folder
+
+> **Advantages**: you can build a Julia setup finetuned to your project, including the definition Julia's version and packages
+
 
 ## Updates to the commands and packages list
 
