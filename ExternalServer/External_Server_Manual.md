@@ -1262,11 +1262,11 @@ Now you are inside the container and can run commands such as:
 
 ### Build your container
 
-- You can write a script to build your container using our definition file template [container_BPLIM_RStudio_researchers.def](https://github.com/BPLIM/Manuals/tree/master/ExternalServer/container_BPLIM_RStudio_researchers.def) available at our [GitHub repository](https://github.com/BPLIM/Manuals/tree/master/ExternalServer)
+- You can write a script to build your container using our definition file template [BPLIM_container_PROJECT_ID.def](https://github.com/BPLIM/Manuals/tree/master/ExternalServer/Containers/1.R_RStudio/BPLIM_container_PROJECT_ID.def) available at our [GitHub repository](https://github.com/BPLIM/Manuals/tree/master/ExternalServer)
 
-- In this template we setup a machine running Ubuntu 20.04, R 4.1 and RStudio 1.3.1093
+- In this template we setup a machine running Ubuntu 20.04, R 4.2 and RStudio.
 
-- You can add your packages in line 90 within `c()`; e.g.,
+- You can add your packages in line 89 within `c()`; e.g.,
 
 > `c("tidyverse","haven")`
 
