@@ -90,7 +90,7 @@ IncludeCmd: yes
 	R --slave -e 'install.packages("censReg",dependencies=TRUE)'
 	R --slave -e 'install.packages(c("nloptr","lme4","pbkrtest","effects","car","dynlm","systemfit"),dependencies=TRUE)'
 	R --slave -e 'install.packages("AER",dependencies=TRUE)'
-	R --slave -e 'install.packages("sampleSelection",dependencies=TRUE)'
+  R --slave -e 'install.packages(c("margins","sampleSelection"),dependencies=TRUE)'
 
   # CLEAN temporary files
 
