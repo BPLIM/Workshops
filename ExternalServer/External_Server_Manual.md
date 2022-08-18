@@ -12,17 +12,14 @@ output:
 papersize: a4
 fontsize: 11pt
 header-includes:
-  \hypersetup{
-      colorlinks   = true,
-      citecolor    = black
-  }
-
+  \usepackage[paperwidth=210mm,paperheight=297mm,left=27mm,right=27mm,top=25mm,bottom=25mm]{geometry}
+  \usepackage{hyperref}
+  \hypersetup{colorlinks=true}
+  \hypersetup{citecolor=black}
   \hypersetup{linkcolor=blue!75!black}
   \hypersetup{urlcolor=blue!75!black}
   \hypersetup{filecolor=blue!75!black}
   \hypersetup{citecolor=black}
-  \usepackage[paperwidth=210mm,paperheight=297mm,left=27mm,right=27mm,top=25mm,bottom=25mm]{geometry}
-  \usepackage{hyperref}
   \usepackage{float}
   \usepackage{dcolumn}
   \usepackage{color}
@@ -378,7 +375,7 @@ height="2.2751399825021874in"}
 
 > Check the location of the folder with temporary files
 
-- Open a Terminal and type
+- In the command line in Stata type the following two commands to check the location of your temporary folder:
 
 > `tempfile junk`
 
@@ -392,7 +389,13 @@ height="2.2751399825021874in"}
 
 > `export STATATMP`
 
-> In the Terminal type `source .bashrc` and call Stata from the Terminal (`xstata-mp`).
+> In the Terminal type `source .bashrc`
+
+> In the Linux Taskbar click in the RedHat and choose Logout
+
+> Re-start your NoMachine session
+
+> Start Stata and confirm that your tempfile folder is in your `work_area`
 
 ## 'batch' mode: an example using Stata
 
