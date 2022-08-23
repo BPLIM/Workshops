@@ -1,7 +1,7 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
 author: "[BPLIM](https://bplim.bportugal.pt/): External Server Manual"
-date: "September 12, 2021"
+date: "August 23, 2022"
 output:
   pdf_document:
     template: bplim-template.tex
@@ -379,7 +379,7 @@ height="2.2751399825021874in"}
 
 > `tempfile junk`
 
-> `display "'junk'"`
+> `display "``junk'"`
 
 > In the work_area of your project add a folder named `tmp`
 
