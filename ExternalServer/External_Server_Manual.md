@@ -42,6 +42,8 @@ documentclass: article
 
 > ACREM > C:\Users\asd\Documents\GitHub\Manuals\ExternalServer
 
+> Desktop > C:\Users\exu0o9\Documents\GitHub\Manuals\ExternalServer
+
 pandoc --toc --number-sections External_Server_Manual.md --pdf-engine=xelatex -o External_Server_Manual.pdf
 
 
@@ -151,10 +153,10 @@ keyboard shortcut 'F4'.
 
 > c. Files with the \"**sh**\" extension allow you to send
     commands to your operating system or to enter your operating
-    system for interactive use (for example, the file *xstata16mp.sh*
-    will launch the graphical version of Stata 16). You can start the
+    system for interactive use (for example, the file *xstata17mp.sh*
+    will launch the graphical version of Stata 17). You can start the
     application by double-clicking
-    the file name in 'Dolphin'[^2] or by typing in the Terminal `xstata16mp.sh`
+    the file name in 'Dolphin'[^2] or by typing in the Terminal `xstata17mp.sh`
 
 6. The directories that you have access to within the folder include:
 
@@ -281,7 +283,7 @@ The installation of additional commands/packages must be requested from the BPLI
 
 ## Stata
 
-Stata versions available in the server: 14, 15, 16 and 17 (adjust the following lines to the Stata version you want to use)
+Stata versions available in the server: 15, 16 and 17 (adjust the following lines to the Stata version you want to use)
 
 1. Stata can be accessed in interactive graphical or non-graphical
         modes.[^6]
@@ -294,17 +296,17 @@ Stata versions available in the server: 14, 15, 16 and 17 (adjust the following 
 
     and type
 
-      `/opt/bplimext/stata16/stata-mp`
+      `stata17-mp`
 
 ![](./media/image10.png){width="3.543307086614173in"
 height="2.488604549431321in"}
 
   - You may add a 'PATH' to your system folder by typing, for example on Stata 16, the following command in the shell "vi ~/.bash_profile" and adapt the following line
     
-    `PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/bplimext/stata16`
+    `PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/bplimext/stata17`
 
   - For the interactive graphical mode click on the icons
-    "**xstata16mp.sh**" (Stata 16) located in the
+    "**xstata17mp.sh**" (Stata 17) located in the
     'desktop', depending on the desired Stata version,
 
 ![](./media/image11.png){width="0.5905511811023622in"
@@ -372,6 +374,7 @@ can be found in the current directory (.).
 ![](./media/image13.png){width="3.9368055555555554in"
 height="2.2751399825021874in"}
 
+<!---
 3. Stata's temporary files:
 
 > Check the location of the folder with temporary files
@@ -399,7 +402,7 @@ height="2.2751399825021874in"}
 > Start Stata and confirm that your `tempfile` folder is pointing to the folder `.TMP`
 
 ## 'batch' mode: an example using Stata
-
+-->
 
 1.  Start a *\'**shell**\'* in Linux and navigate to the directory
          of the "do-file" file that you want to run (ex: prog1.do)
@@ -421,7 +424,7 @@ height="2.2751399825021874in"}
 4. Inside the file, write just a line with the execution command you
      would type in the 'shell'; e.g.,
 
-    `/opt/bplimext/stata16/stata-mp do`
+    `/bplimext/projects/I001_jdoe/stata-mp do`
     
     `/bplimext/projects/I001_jdoe/work_area/prog1.do`
 
@@ -1337,7 +1340,7 @@ Sample session:
     [https://userbase.kde.org/Dolphin](https://userbase.kde.org/Dolphin)
     .
 
-[^2]: In case 'xstata16mp.sh' does not launch Stata please see '[Section 3](#statistical_software)'.
+[^2]: In case 'xstata17mp.sh' does not launch Stata please see '[Section 3](#statistical_software)'.
 
 [^3]: Click on the cross button at the upper right corner to close.
 
