@@ -329,6 +329,8 @@ height="2.486382327209099in"}
 ![](./media/image12b.png){width="3.937007874015748in"
 height="2.486382327209099in"}
 
+**NOTE**: to start Stata use the shortcuts in your project's folder.
+
 2. To look for **"ado-files"**:
 
 "Ado-files" are text files containing the Stata program. It is
