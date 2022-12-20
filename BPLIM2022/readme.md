@@ -1,7 +1,7 @@
 # BPLIM Workshop 2022
 
 In this folder you can find the materials from the Workshop on "Empirical Research with Large Datasets".
-Recordings of all sessions can be found on [Youtube]().
+Recordings of all sessions can be found on [Not available yet]().
 
 
 ## Presentations
