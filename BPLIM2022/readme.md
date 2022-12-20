@@ -15,9 +15,7 @@ Recordings of all sessions can be found on [Youtube]().
 [Lars Vilhuber](https://www.vilhuber.com/lars/), Cornell University and American Economic Association
 
 - [Slides](https://larsvilhuber.github.io/reproducibility-confidential-bigdata-bplim/)
-- https://aeadataeditor.github.io/
-- https://aeadataeditor.github.io/posts/2021-11-16-docker
-- https://github.com/AEADataEditor/Statapackagesearch
+- https://aeadataeditor.github.io/ <br/><br/>
 
 **Big Data Analytics: A guide to economists making the transition to Big Data**
 
@@ -37,9 +35,11 @@ Recordings of all sessions can be found on [Youtube]().
 
 - [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2022/Day1_04_John_Horton.pdf) <br/><br/>
 
-
+<br/>
 
 ### Second Day
+
+<br/>
 
 **How to work efficiently with large datasets”** 
 
