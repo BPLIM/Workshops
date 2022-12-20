@@ -33,7 +33,7 @@ Recordings of all sessions can be found on [Youtube]().
 
 [John Horton](https://john-joseph-horton.com/), MIT Sloan School of Management and NBER
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2022/Day1_04_John_Horton.pdf) <br/><br/>
+- [Slides](https://docs.google.com/presentation/d/1MU1iEZdv_vsxSMs7d-mVLfvmuNQlun9xpJ9AbFDsCdk/edit#slide=id.p) <br/><br/>
 
 <br/>
 
