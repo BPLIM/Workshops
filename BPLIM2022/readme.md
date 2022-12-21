@@ -69,6 +69,10 @@ Recordings of all sessions can be found on [Not available yet]().
 
 - https://mcaceresb.github.io/stata-bigdata/
 
+- https://www.bundesbank.de/resource/blob/623988/62b8c17881d63bccc61efd11af0b47db/mL/2021-04-large-data-data.pdf
+
+- https://www.bundesbank.de/resource/blob/745172/b6f5ae48e84585baad4c9d2ba7944e46/mL/2022-02-workflows-data.pdf
+
 
 
 
