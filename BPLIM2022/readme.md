@@ -14,8 +14,7 @@ Recordings of all sessions can be found on [Not available yet]().
 
 [Lars Vilhuber](https://www.vilhuber.com/lars/), Cornell University and American Economic Association
 
-- [Slides](https://larsvilhuber.github.io/reproducibility-confidential-bigdata-bplim/)
-- https://aeadataeditor.github.io/ <br/><br/>
+- [Slides](https://larsvilhuber.github.io/reproducibility-confidential-bigdata-bplim/) <br/><br/>
 
 **Big Data Analytics: A guide to economists making the transition to Big Data**
 
@@ -29,7 +28,7 @@ Recordings of all sessions can be found on [Not available yet]().
 
 - [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2022/Day1_03_Frauke_Kreuter.pdf) <br/><br/>
 
-**Thoughts on Working with Corporate Data**
+**Empirical Research With Large Datasets**
 
 [John Horton](https://john-joseph-horton.com/), MIT Sloan School of Management and NBER
 
@@ -41,14 +40,14 @@ Recordings of all sessions can be found on [Not available yet]().
 
 <br/>
 
-**How to work efficiently with large datasets”** 
+**How to work efficiently with large datasets** 
 
 [Mauricio Caceres](https://mcaceresb.github.io/), Brown University
 
 - [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2022/Day2_01_Mauricio_Caceres.pdf) <br/><br/>
 
 
-**Open source tools for really large data”**
+**Open source tools for really large data**
 
 [Miguel Portela](http://www1.eeg.uminho.pt/economia/mangelo/), Universidade do Minho
 
@@ -61,6 +60,20 @@ Recordings of all sessions can be found on [Not available yet]().
 [Jannic Cutura](https://janniccutura.net/), European Central Bank
 
 - [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2022/Day2_03_Jannic_Cutura.pdf) <br/><br/>
+
+<br/><br/>
+
+## Useful Links
+
+- https://aeadataeditor.github.io/
+
+- https://mcaceresb.github.io/stata-bigdata/
+
+
+
+
+
+
 
 
 
