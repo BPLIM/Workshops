@@ -53,8 +53,8 @@ Recordings of all sessions can be found on [Not available yet]().
 
 [Nelson Area](https://nelsonareal.net/), Universidade do Minho
 
-- [Slides](https://nareal.net/bplim2022) <br/><br/>
-- Singularity container: `singularity pull library://reisportela/bplim/workshop2022` 
+- [Slides](https://nareal.net/bplim2022) 
+- Singularity container: `singularity pull library://reisportela/bplim/workshop2022` <br/><br/>
 
 **Why is my computer so slow? How distributed computing can help you with data intensive workloads**
 
