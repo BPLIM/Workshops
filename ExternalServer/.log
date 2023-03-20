@@ -1,0 +1,27 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2023.2.13)  13 FEB 2023 15:27
+entering extended mode
+**quit
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\.tex"
+! Interruption.
+<to be read again> 
+                   \begingroup 
+l.1 
+    %%
+? 
+! Emergency stop.
+<to be read again> 
+                   \begingroup 
+l.1 
+    %%
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 7 strings out of 493305
+ 192 string characters out of 3138871
+ 53825 words of memory out of 3000000
+ 3658 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 3i,0n,1p,10b,6s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
