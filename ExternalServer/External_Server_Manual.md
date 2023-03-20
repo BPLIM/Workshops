@@ -1223,7 +1223,7 @@ Configuring browser access
 
 ## Version control
 
-The server runs [Git](https://git-scm.com/) version 1.8.3.1. 
+The server runs [GitLab](https://about.gitlab.com/). In case you want to use Git you should request it from BPLIM (bplim@bportugal.pt).
   
   > [Wikipedia](https://en.wikipedia.org/wiki/Git):
   > 
@@ -1231,13 +1231,50 @@ The server runs [Git](https://git-scm.com/) version 1.8.3.1.
 
 First steps
 
-1. move to a specific folder; _e.g._, `cd /bplimext/projects/your_project_ID/work_area/`
+1.	Authenticate by `ssh-key`. Open a `Terminal` in your home folder and type:
+
+    `ssh-keygen -t rsa -C “BPLIM git”`
+
+    `cat ~/.ssh/id_rsa.pub`
+
+3.	Copy the resulting key to the clipboard
+
+4.	Open Firefox and navigate to [https://vxpp-bplimgit.bplim.local/](https://vxpp-bplimgit.bplim.local/)
+
+> Use your credentials for the external server to login. 
+
+5.	In your profile go to settings and on the left-side bar click in SSH Keys and paste the contents of the clipboard in the text box on the top right corner under "Key"
+
+> Give a title, e.g., "BPLIM git", and click in "Add key"
+
+6. Go to `Projects` and create a `New project`, e.g., myfirst
+
+To use git, it is necessary to modify or create the .gitconfig file in your user's home directory. You can use KWrite to edit/create the file. The file should have the following format. In this file, you can adapt the name and replace 'investa' with your own user.
+
+
+  [cola]
+
+          spellcheck = false  
+  [user]
+
+          name = Investigador A
+
+          email = investa@sxpe-bplim01.bplim.local
+  [gui]
+  
+          editor = kwrite
+
+7. You can clone the project by typing in the `Terminal`
+
+`git clone git@vxpp-bplimgit.bplim.local:investa/myfirst.git`
+
+<!--- 1. move to a specific folder; _e.g._, `cd /bplimext/projects/your_project_ID/work_area/`
 2. create a .gitignore file (check [toptal](https://www.toptal.com/developers/gitignore) for some examples)
 3. `git init`
 4. `git add *.do`
 5. `git commit -a -m "First"`
 6. `git show first_do_file.do`
-
+-->
 
 ## Containers
 
