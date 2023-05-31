@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>dscr_employee</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<meta charset="utf-8"/>
+<h1 id="variables-in-the-historical-series-of-the-portuguese-banking-sector-database">Variables in the Historical Series of the Portuguese Banking Sector Database</h1>
+<h2 id="file-description">File Description</h2>
+<p><code>extraction</code>: October 2022</p>
+<h2 id="human-resources-yearly"><strong>Human Resources: Yearly</strong></h2>
+<pre class='stata'>SLB - Human Resources Variables - 1990
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            26                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 1991
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            28                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 1992
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            28                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 1993
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            31                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 1994
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            33                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 1995
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            32                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 1996
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            28                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 1997
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            31                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 1998
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            33                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 1999
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            33                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2000
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            25                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2001
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            33                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2002
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            32                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2003
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            32                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2004
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            32                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2005
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            31                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2006
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            33                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2007
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            33                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2008
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            31                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2009
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            30                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2010
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            24                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2011
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            24                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2012
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            22                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2013
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            20                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2014
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            21                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2015
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            21                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2016
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            21                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2017
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            22                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2018
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            23                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2019
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            23                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2020
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            25                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+
+SLB - Human Resources Variables - 2021
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19902021_OCT22_QC_V01.dta
+  obs:            25                          SLB - Complete - Ref. OCT22 - QC/(V01)
+ vars:            30                          2 Dec 2022 14:56
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QC_1            int     %10.0g                Total
+QC_2            int     %10.0g                International activity
+QC_2_1          int     %10.0g                Branches and foreign subsidiaries
+QC_2_2          int     %10.0g                Consolidated foreign bank branches
+QC_3            int     %10.0g                Domestic activity - Banking institutions
+QC_3_1_1        int     %10.0g                By gender: Male
+QC_3_1_2        int     %10.0g                By gender: Female
+QC_3_2_1        int     %10.0g                By age: &lt;30 years old
+QC_3_2_2        int     %10.0g                By age: 30-44 years old
+QC_3_2_3        int     %10.0g                By age:> 44 years old
+QC_3_3_1        int     %10.0g                By seniority: &lt;1 year
+QC_3_3_2        int     %10.0g                By seniority: 1-5 years
+QC_3_3_3        int     %10.0g                By seniority: 6-10 years
+QC_3_3_4        int     %10.0g                by seniority: 11-15 years
+QC_3_3_5        int     %10.0g                By seniority:> 15 years
+QC_3_4_1        int     %10.0g                By labour contract: Permanent
+QC_3_4_2        int     %10.0g                By labour contract: Fixed-term contract
+QC_3_5_1        int     %10.0g                By education: Basic
+QC_3_5_2        int     %10.0g                By education: Secondary
+QC_3_5_3        int     %10.0g                By education: Higher
+QC_3_6_1        int     %10.0g                By function: Management
+QC_3_6_2        int     %10.0g                By functions: Specific
+QC_3_6_3        int     %10.0g                By function: Administrative
+QC_3_6_4        int     %10.0g                By function: Support
+QC_3_7_1        int     %10.0g                By activity: Commercial
+QC_3_7_2        int     %10.0g                By activity: Other
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year
+     Note: Dataset has changed since last saved.
+</pre>
+</body>
+</html>

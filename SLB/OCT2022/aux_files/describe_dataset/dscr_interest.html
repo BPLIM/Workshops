@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>dscr_interest</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<meta charset="utf-8"/>
+<h1 id="variables-in-the-historical-series-of-the-portuguese-banking-sector-database">Variables in the Historical Series of the Portuguese Banking Sector Database</h1>
+<h2 id="file-description">File Description</h2>
+<p><code>extraction</code>: October 2022</p>
+<h2 id="interest-rates-yearly"><strong>Interest Rates: Yearly</strong></h2>
+<pre class='stata'>SLB - Interest Rates Variables - 1997
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            35                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 1998
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            38                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 1999
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            42                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2000
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            50                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2001
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            48                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2002
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            48                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2003
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            48                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2004
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            52                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2005
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            49                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2006
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            51                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2007
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            53                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2008
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            55                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2009
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            54                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2010
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            57                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2011
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            60                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2012
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            54                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2013
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            53                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2014
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            53                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2015
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            54                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2016
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            53                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2017
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            51                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2018
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            48                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2019
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            49                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2020
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            49                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2021
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_YBNK_19972021_OCT22_QB2_V01.dta
+  obs:            49                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 14:59
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+year            int     %10.0g                Year
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  year  banco
+     Note: Dataset has changed since last saved.
+</pre>
+<h2 id="interest-rates-quarterly"><strong>Interest Rates: Quarterly</strong></h2>
+<pre class='stata'>SLB - Interest Rates Variables - 1997
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:            33                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 1998
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           142                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 1999
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           150                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2000
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           169                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2001
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           186                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2002
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           183                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2003
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           111                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2004
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           128                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2005
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           121                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2006
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           126                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2007
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           119                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2008
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           121                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2009
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           127                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2010
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           194                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2011
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           215                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2012
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           200                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2013
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           201                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2014
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           197                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2015
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           196                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2016
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           191                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2017
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           193                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2018
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           179                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2019
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           185                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2020
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           186                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+
+SLB - Interest Rates Variables - 2021
+
+Contains data from Z:/data/Products/SLB/2022_10/Output/Data/SLB_C_QBNK_19972021_OCT22_QB2_V01.dta
+  obs:           188                          SLB - Complete - Ref. OCT22 - QB2/(V01)
+ vars:            24                          2 Dec 2022 15:21
+                                              (_dta has notes)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+instcode        int     %10.0g                Bank Identification Code
+banco           str5    %9s                   Original Bank Identification Code
+date            int     %tq                   Date
+ref             int     %td                   Reference date
+QB2_1_1         double  %10.0g                Interest rates on outstanding amounts - Loans/Credits
+QB2_1_1_1       double  %10.0g                Interest rates on outstanding amounts - Credits to non-financial corporations
+QB2_1_1_2       double  %10.0g                Interest rates on outstanding amounts - Loans to households
+QB2_1_1_2_1     double  %10.0g                Interest rates on outstanding amounts - Housing loans
+QB2_1_1_2_2     double  %10.0g                Interest rates on outstanding amounts - Credit for consumption and other purpose
+QB2_1_2         double  %10.0g                Interest rates on outstanding amounts - Deposits
+QB2_1_2_1       double  %10.0g                Interest rates on outstanding amounts - Demand deposits
+QB2_1_2_1_1     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to non-financial corpora
+QB2_1_2_1_2     double  %10.0g                Interest rates on outstanding amounts - Demand deposits to households
+QB2_1_2_2       double  %10.0g                Interest rates on outstanding amounts - Other deposits
+QB2_1_2_2_1     double  %10.0g                Interest rates on outstanding amounts - Other deposits to non-financial corporat
+QB2_1_2_2_2     double  %10.0g                Interest rates on outstanding amounts - Other deposits to households
+QB2_2_1         double  %10.0g                Interest rates on new business (i.e., new loans)
+QB2_2_1_1       double  %10.0g                Interest rates on new business (i.e., new loans) to non-financial corporations
+QB2_2_1_2       double  %10.0g                Interest rates on new business (i.e., new loans) to households
+QB2_2_1_2_1     double  %10.0g                Interest rates on new business (i.e., new loans) to households: Housing loans
+QB2_2_1_2_2     double  %10.0g                Interest rates on new business (i.e., new loans): Credit for consumption and oth
+QB2_2_2         double  %10.0g                Interest rates on new business: New deposits
+QB2_2_2_1       double  %10.0g                Interest rates on new business: New deposits to non-financial corporations
+QB2_2_2_2       double  %10.0g                Interest rates on new business: New deposits to households
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: instcode  date
+     Note: Dataset has changed since last saved.
+</pre>
+</body>
+</html>

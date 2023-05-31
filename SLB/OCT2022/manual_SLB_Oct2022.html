@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Historical Series of the Portuguese Banking Sector - Data Manual</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Historical Series of the Portuguese Banking Sector - Data Manual</h1>
+</header>
+<meta charset="utf-8"/>
+<p><br />
+</p>
+<p><code>Extraction Date</code>: October 2022</p>
+<p><code>Manual Date</code>: October 2022</p>
+<p><br />
+</p>
+<p><strong>Abstract</strong>: The Historical Series of the Portuguese Banking Sector Database (SLB) reports, on a consolidated basis, a wide range of series on bank’s financial statements (i.e., balance sheet, income statement, and solvency), loans to customers, interest rates, human resources, branch network, and payment systems. The dataset is updated annually.<br />
+<strong>Keywords</strong>: Portuguese banking sector, consolidated, historical series, balance sheet statement, income statement, solvency, loans to customers and interest rates, human resources, branches, payment systems.</p>
+<p><br />
+</p>
+<h1 id="table-of-contents">Table of contents</h1>
+<ol type="1">
+<li><p><a href="#general-information">General Information</a></p></li>
+<li><p><a href="#population">Population</a></p></li>
+<li><p><a href="#methodology">Methodology</a></p></li>
+<li><p><a href="#description-of-files">Description of Files</a></p></li>
+<li><a href="#description-of-variables">Description of Variables</a>
+<ol type="1">
+<li><a href="#a.-balance-sheet-file">Balance Sheet File</a></li>
+<li><a href="#b.-income-statement-file">Income Statement File</a></li>
+<li><a href="#c.-solvency-file">Solvency File</a></li>
+<li><a href="#d.-loans-to-customers-file">Loans to Customers File</a></li>
+<li><a href="#e.-interest-rates-file">Interest Rates File</a></li>
+<li><a href="#f.-human-resources-file">Human Resources File</a></li>
+<li><a href="#g.-branch-network-file">Branch Network File</a></li>
+<li><a href="#h.-payment-systems-file">Payment Systems File</a></li>
+</ol></li>
+<li><p><a href="#basic-descriptive-statistics">Basic Descriptive Statistics</a></p></li>
+<li><p><a href="#auxiliary-files">Auxiliary Files</a></p></li>
+<li><p><a href="#useful-links">Useful Links</a></p></li>
+<li><p><a href="#useful-ado-files">Useful Ado Files</a></p></li>
+<li><p><a href="#references">References</a></p></li>
+<li><p><a href="#citation-of-this-dataset">Citation of this dataset</a></p></li>
+<li><p><a href="#appendix">Appendix</a></p></li>
+</ol>
+<h1 id="general-information">General Information</h1>
+<blockquote>
+<p><code>Database Designation in English</code>: Historical Series of Portuguese Banking Sector (SLB)</p>
+</blockquote>
+<blockquote>
+<p><code>Database Designation in Portuguese</code>: Séries Longas do Sector Bancário Português (SLB)</p>
+</blockquote>
+<blockquote>
+<p><code>Data Type</code>: longitudinal data</p>
+</blockquote>
+<blockquote>
+<p><code>Unit of Analysis</code>: banking group/stand-alone institution</p>
+</blockquote>
+<blockquote>
+<p><code>Frequency</code>: yearly and quarterly</p>
+</blockquote>
+<blockquote>
+<p><code>Start Date</code>: 1990</p>
+</blockquote>
+<blockquote>
+<p><code>Most Recent Date</code>: 2021</p>
+</blockquote>
+<blockquote>
+<p><code>Reference date</code>: year-end and quarter-end <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+</blockquote>
+<blockquote>
+<p><code>Data Organization</code>: data is organized by frequency, i.e., yearly and quarterly, and information type, i.e., balance sheet statement (QA1), income statement (QA2), solvency (QA3), loans to customers (QB1), interest rates (QB2), human resources (QC), branch network (QD), and payment systems (QE). All data files are available in Stata format, version 16.</p>
+</blockquote>
+<blockquote>
+<p><code>Version of the Data</code>: the data made available by BPLIM corresponds to a data freeze at a certain time of the year. Therefore, all files contain information as reported at the extraction date. The most recent update of the data occurred in October 2022.</p>
+</blockquote>
+<blockquote>
+<p><code>Languages Available</code>: variables labels are available in Portuguese and in English. <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+</blockquote>
+<blockquote>
+<p><code>Data Access</code>: this data set is available to external researchers under certain conditions.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+</blockquote>
+<blockquote>
+<p><code>Digital Object Identifier</code>: 10.17900/SLB.Oct2022.V1</p>
+</blockquote>
+<h1 id="population">Population</h1>
+<p>The information provided refers to banking groups and stand-alone institutions resident in Portugal for the period between 1990 and 2021. For tables <em>Balance Sheet Statement (QA1)</em>, <em>Income Statement (QA2)</em>, and <em>Solvency (QA3)</em>, the data was compiled on a consolidated basis, whereas the remaining tables aggregate the information of the resident Other Monetary Financial Institutions (except Central Bank) belonging to a banking group.</p>
+<p>The coverage of financial institutions varies depending on the data table.<br />
+</p>
+<p>The <em>Balance Sheet Statement (QA1)</em>, <em>Income Statement (QA2)</em>, and <em>Solvency (QA3)</em> tables include the institutions that are subject to Banco de Portugal’s supervision, namely the Other Monetary Financial Institutions (OMFIs) since 1990 and institutions that have been part of the banking system since 2008. These institutions are contemplated in the Legal Framework of Credit Institutions and Financial Companies (“Regime Geral das Instituições de Crédito e Sociedade Financeiras - RGICSF”). The number of institutions that are part of the banking system has varied over the past decades.</p>
+<p>The tables of <em>Loans to Customers (QB1)</em> and <em>Interest Rates (QB2)</em> include resident institutions (except for the central bank) that are covered by the Monetary and Financial Institution Statistics (“Estatísticas Monetárias e Financeiras - EMF”). The aggregated data is obtained by aggregating individual institution’s information on their activities carried out in the national territory.</p>
+<p>The table of <em>Human Resources (QC)</em> contains a total of 69 entities, considered to be banking groups on a consolidated basis.</p>
+<p>The table of <em>Branch Network (QD)</em> covers a similar group of institutions as the <em>Human Resources (QC)</em> table, corresponding to an average of 28 institutions per year, with a maximum of 35 (in 1999) and a minimum of around 20 institutions from 2012 onwards.</p>
+<p>The institutions covered by <em>Human Resources (QC)</em> and <em>Branch Network (QD)</em> are members of the Portuguese Banking Association (“Associação Portuguesa de Bancos- APB”). The aggregated data is obtained by aggregating information of the individual institutions that make up the banking group.</p>
+<p>The table of <em>Payment Systems (QE)</em> is constructed based on information on payment systems and instruments reported to the Banco de Portugal’s Payment Systems Department, under the Interbank Clearing System (SICOI).</p>
+<h1 id="methodology">Methodology</h1>
+<p>The Historical Series of the Portuguese Banking Sector data is collected and assembled by a working group at Banco de Portugal which was established at the end of 2017 with the objective of constructing historical series on the Portuguese banking sector. The SLB database covers the period from 1990 to 2021 and the data is available at yearly frequency. For some tables (i.e., i.e., balance sheet, income statement, solvency, loans to customers, and interest rates), the data is also available at quarterly frequency. However, it should be noted that the data period and the availability of the data frequency differ according to the data table, the variable and the institution under consideration, which leads to some breaks in the series.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> For example, interest rates between 2003 and 2010 are collected based on a sample, which explains the missing observations during this period of time.</p>
+<p><strong>Table 1</strong> - Tables and Data Period</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Table</strong></th>
+<th style="text-align: left;"><strong>Type of information</strong></th>
+<th style="text-align: left;"><strong>Frequency</strong><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></th>
+<th style="text-align: left;"><strong>Data Period</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QA1</td>
+<td style="text-align: left;">Balance Sheet</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">1990-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1</td>
+<td style="text-align: left;">Balance Sheet</td>
+<td style="text-align: left;">Quarterly</td>
+<td style="text-align: left;">2001Q1-2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA2</td>
+<td style="text-align: left;">Income Statement</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">1990-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2</td>
+<td style="text-align: left;">Income Statement</td>
+<td style="text-align: left;">Quarterly</td>
+<td style="text-align: left;">2001Q1-2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA3</td>
+<td style="text-align: left;">Solvency</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">1994-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA3</td>
+<td style="text-align: left;">Solvency</td>
+<td style="text-align: left;">Quarterly</td>
+<td style="text-align: left;">2009Q1-2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1</td>
+<td style="text-align: left;">Loans to Customers</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">1990-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1</td>
+<td style="text-align: left;">Loans to Customers</td>
+<td style="text-align: left;">Quarterly</td>
+<td style="text-align: left;">2001Q1-2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB2</td>
+<td style="text-align: left;">Interest Rates</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">1997-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB2</td>
+<td style="text-align: left;">Interest Rates</td>
+<td style="text-align: left;">Quarterly</td>
+<td style="text-align: left;">1997Q4-2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC</td>
+<td style="text-align: left;">Human Resources</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">1990-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QD</td>
+<td style="text-align: left;">Branch Network</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">1990-2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QE</td>
+<td style="text-align: left;">Payment Systems</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">2000-2021</td>
+</tr>
+</tbody>
+</table>
+<p>Despite the efforts of maintaining the greatest possible coherence over time, we shall still note some series breaks in the data caused by changes to supervisory information reports, to accounting practices and/or to the perimeter of banking groups, i.e. mergers/acquisitions between banking institutions.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
+<p>Some important changes in accounting procedures that have caused series breaks are the following:</p>
+<ul>
+<li>the introduction of the International Accounting Standards (IAS) in March 2005 requires financial institutions to value a substantial share of on-balance-sheet assets in securities at market prices, in contrast to the former valuation at the purchase price;;</li>
+<li>the standardization of prudential reporting at European level (COREP) from 2014 onward has led to significant alterations in the definitions underlying the main solvency ratios;</li>
+<li>the introduction of IFRS 9 in January 2018, in addition to other changes, results in a major change in the impairment calculation method from an incurred loss model towards an expected loss model.</li>
+</ul>
+<p>In order to be able to build retrospective series, the data is constructed based on the more recent financial reporting standards (FINREP). This decision was also made to facilitate future updates of the data and to ensure compatibility with the most recent analysis of the banking sector.</p>
+<p>Solvency indicators were chosen with the objective of maintaining the highest consistency across the entire period. In particular, the implementation of the new prudential reporting system at the beginning of 2014 through Commission Implementing Regulation (EU) No 680/2014, known as COREP, resulted in a set of methodological changes in the calculation of own funds. The continuity of the series was guaranteed, by matching the concept of base own funds according to the previous reporting system to Tier 1 capital in COREP, thus keeping the latest terminology, and total capital in line with both reporting systems. Given the recent introduction in the regulatory framework, an option was made not to include in the database the concept of Common Equity Tier 1 capital (CET1), which could not be retropolated for earlier periods (prior to 2014).</p>
+<p>The detailed solutions adopted to ensure a single format over the entire period are documented in <a href="https://www.bportugal.pt/sites/default/files/anexos/pdf-boletim/historical_series_portuguese_banking_system.pdf"><strong>Historical Series - Portuguese Banking Sector 1990-2018</strong></a></p>
+<h1 id="description-of-files">Description of Files</h1>
+<p>The Historical Series of the Portuguese Banking Sector Database (SLB) is organized by frequency and information type. Each row corresponds to a financial institution in a given year or quarter.</p>
+<p>The data files are organized with the following nomenclature:</p>
+<p><strong><em>SLB_METH_fBNK_xxxx_MMMYY_yyyy_version.dta</em></strong></p>
+<p>where <em>METH</em> denotes the method used to prepare the data (<em>“A”</em> for Anonymized and <em>“P”</em> for Perturbed), <em>f</em> denotes the data frequency (Y for yearly frequency; Q for quarterly frequency), <em>xxxx</em> denotes the data range (eg: 19902021), <em>MMMYY</em> denotes the extraction date (eg: OCT22), and <em>yyyy</em> denotes the table (QA1 for Balance Sheet Statement; QA2 for Income Statement; QA3 for Solvency; QB1 for Loans to Customers; QB2 for Interest Rates; QC for Human Resources; QD for Branch Network; QE for Payment Systems), <em>version</em> denotes the data version (eg: V01).</p>
+<p>All files contain a unique bank identifier (<em>bina</em>) allowing the matching of the different types of information by bank. Whenever possible, labels are applied and value labels are attributed to all categorical variables. To preserve confidentiality, identification of institutions are anonymized through unique identifiers (i.e., bina) and the variable values are perturbed for external researchers.</p>
+<p><strong>Table 2</strong> - Data Files</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Type of information</strong></th>
+<th style="text-align: left;"><strong>Frequency</strong></th>
+<th style="text-align: left;"><strong>File Name</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Balance Sheet</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">SLB_A_YBNK_19902021_OCT22_QA1_V01.dta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Balance Sheet</td>
+<td style="text-align: left;">Quarterly</td>
+<td style="text-align: left;">SLB_A_QBNK_20012021_OCT22_QA1_V01.dta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Income Statement</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">SLB_A_YBNK_19902021_OCT22_QA2_V01.dta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Income Statement</td>
+<td style="text-align: left;">Quarterly</td>
+<td style="text-align: left;">SLB_A_QBNK_20012021_OCT22_QA2_V01.dta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Solvency</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">SLB_A_YBNK_19942021_OCT22_QA3_V01.dta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Solvency</td>
+<td style="text-align: left;">Quarterly</td>
+<td style="text-align: left;">SLB_A_QBNK_20092021_OCT22_QA3_V01.dta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Loans to Customers</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">SLB_A_YBNK_19902021_OCT22_QB1_V01.dta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Loans to Customers</td>
+<td style="text-align: left;">Quarterly</td>
+<td style="text-align: left;">SLB_A_QBNK_20012021_OCT22_QB1_V01.dta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interest Rates</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">SLB_A_YBNK_19972021_OCT22_QB2_V01.dta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Interest Rates</td>
+<td style="text-align: left;">Quarterly</td>
+<td style="text-align: left;">SLB_A_QBNK_19972021_OCT22_QB2_V01.dta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Human Resources</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">SLB_A_YBNK_19902021_OCT22_QC_V01.dta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Branch Network<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">SLB_A_YBNK_19902021_OCT22_QD_V01.dta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Payment Systems</td>
+<td style="text-align: left;">Yearly</td>
+<td style="text-align: left;">SLB_A_YBNK_20002021_OCT22_QE_V01.dta</td>
+</tr>
+</tbody>
+</table>
+<h1 id="description-of-variables">Description of Variables</h1>
+<p>Below we provide a general description of the variables included in each data file referred above. For a full account of all variable categories and changes over time see <a href="#auxiliary-files">“Auxiliary Files” section</a>.</p>
+<h2 id="a.-balance-sheet-file">A. Balance Sheet File</h2>
+<h3 id="a1.-identifiers">A1. Identifiers</h3>
+<p><code>Bank identifier</code> (<em>bina</em>) - Anonymized identification number for financial institution that enables tracking the institution over time. BPLIM provides an anonymized version of the financial institution identifier which is denoted by <em>bina</em>.</p>
+<p><code>Reference quarter of the data</code> (<em>Date</em>) - Reference quarter of the data</p>
+<p><code>Reference Year of the data</code> (<em>Year</em>) - Reference year of the data</p>
+<h3 id="a2.-balance-sheet-variables">A2. Balance Sheet Variables</h3>
+<p><strong>Table 3</strong> - Balance Sheet Variables</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 22%" />
+<col style="width: 11%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: center;">Available Period - Yearly Data</th>
+<th style="text-align: center;">Available Period - Quarterly Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QA1_1</td>
+<td style="text-align: left;">Cash and cash balances/loans to central banks</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_2</td>
+<td style="text-align: left;">Demand deposits in other credit institutions</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_3</td>
+<td style="text-align: left;">Loan to other credit institutions - Carrying amount</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_3_1</td>
+<td style="text-align: left;">&gt; Loan to other credit institutions - Gross carrying amount</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_3_2</td>
+<td style="text-align: left;">&gt; Loan to other credit institutions - Impairments and value adjustments</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_4</td>
+<td style="text-align: left;">Loan to customers - Carrying amount</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_4_1</td>
+<td style="text-align: left;">&gt; Loan to customers - Gross carrying amount</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_4_2</td>
+<td style="text-align: left;">&gt; Loan to customers - Impairments and value adjustments</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_5</td>
+<td style="text-align: left;">Debt securities - Carrying amount</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_5_1</td>
+<td style="text-align: left;">&gt; Debt securities - Gross carrying amount</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_5_1_1</td>
+<td style="text-align: left;">&gt; &gt; Debt securities - Gross carrying amount - General government</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1998 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_5_1_2</td>
+<td style="text-align: left;">&gt; &gt; Debt securities - Gross carrying amount - Other issuers</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1998 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_5_2</td>
+<td style="text-align: left;">&gt; Debt securities - Impairments and value adjustments</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_6</td>
+<td style="text-align: left;">Equity instruments</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_7</td>
+<td style="text-align: left;">Investments in subsidiaries, joint ventures and associates</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_8</td>
+<td style="text-align: left;">Tangible assets</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_9</td>
+<td style="text-align: left;">Intangible assets</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_10</td>
+<td style="text-align: left;">Other assets</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_10_1</td>
+<td style="text-align: left;">&gt; Other assets - Tax assets</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2005 - 2021</td>
+<td style="text-align: center;">2005Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_10_1_1</td>
+<td style="text-align: left;">&gt; &gt; Other assets - Tax assets - Deferred taxes</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2005 - 2021</td>
+<td style="text-align: center;">2005Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_10_1_2</td>
+<td style="text-align: left;">&gt; &gt; Other assets - Tax assets - Current taxes</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2005 - 2021</td>
+<td style="text-align: center;">2005Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_10_2</td>
+<td style="text-align: left;">&gt; Other assets - Others</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2005 - 2021</td>
+<td style="text-align: center;">2005Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_11</td>
+<td style="text-align: left;">Total assets</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_12</td>
+<td style="text-align: left;">Deposits from central banks and other credit institutions</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_12_1</td>
+<td style="text-align: left;">&gt; Deposits from central banks and other credit institutions - central banks</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2005 - 2021</td>
+<td style="text-align: center;">2005Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_12_2</td>
+<td style="text-align: left;">&gt; Deposits from central banks and other credit institutions - other credit institutions</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2005 - 2021</td>
+<td style="text-align: center;">2005Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_13</td>
+<td style="text-align: left;">Customer deposits</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_13_1</td>
+<td style="text-align: left;">&gt; Customer deposits - Short-term deposits</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_13_2</td>
+<td style="text-align: left;">&gt; Customer deposits - Deposits with agreed maturity</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_14</td>
+<td style="text-align: left;">Liabilities represented by debt securities</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_15</td>
+<td style="text-align: left;">Other liabilities (includes derivatives and short-term liabilities)</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_16</td>
+<td style="text-align: left;">Total Liabilities</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_17</td>
+<td style="text-align: left;">Equity</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_17_1</td>
+<td style="text-align: left;">&gt; Equity - Capital</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_17_2</td>
+<td style="text-align: left;">&gt; Equity - Share premium</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_17_3</td>
+<td style="text-align: left;">&gt; Equity - Reserves</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_17_3_1</td>
+<td style="text-align: left;">&gt; &gt; Equity - Reserves - Retained earnings</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_17_3_2</td>
+<td style="text-align: left;">&gt; &gt; Equity - Reserves - Other reserves</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_17_4</td>
+<td style="text-align: left;">&gt; Equity - Minority interests</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA1_17_5</td>
+<td style="text-align: left;">&gt; Equity - Consolidated income for the year</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA1_17_6</td>
+<td style="text-align: left;">&gt; Equity - Own shares (-)</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="b.-income-statement-file">B. Income Statement File</h2>
+<h3 id="b1.-identifiers">B1. Identifiers</h3>
+<p><code>Bank identifier</code> (<em>bina</em>) - Anonymized identification number for financial institution that enables tracking the institution over time. BPLIM provides an anonymized version of the financial institution identifier which is denoted by <em>bina</em>.</p>
+<p><code>Reference quarter of the data</code> (<em>Date</em>) - Reference quarter of the data</p>
+<p><code>Reference Year of the data</code> (<em>Year</em>) - Reference year of the data</p>
+<h3 id="b2.-income-statement-variables">B2. Income Statement Variables</h3>
+<p><strong>Table 4</strong> - Income Statement Variables</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 22%" />
+<col style="width: 11%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: center;">Available Period - Yearly Data</th>
+<th style="text-align: center;">Available Period - Quarterly Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QA2_1</td>
+<td style="text-align: left;">Interest income</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2_2</td>
+<td style="text-align: left;">Interest expenses</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA2_3</td>
+<td style="text-align: left;">Net interest income</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2_4</td>
+<td style="text-align: left;">Capital gains (net)</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA2_5</td>
+<td style="text-align: left;">Income from services and commissions (net)</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2_5_1</td>
+<td style="text-align: left;">&gt; Income from services and commissions received</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA2_5_2</td>
+<td style="text-align: left;">&gt; Income from services and commissions paid</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2_6</td>
+<td style="text-align: left;">Income from financial operations</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA2_7</td>
+<td style="text-align: left;">Other operating results</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2_8</td>
+<td style="text-align: left;">Total operating income</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA2_9</td>
+<td style="text-align: left;">Staff expenses</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2_10</td>
+<td style="text-align: left;">Other administrative expenses</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA2_11</td>
+<td style="text-align: left;">Depreciation</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2_12</td>
+<td style="text-align: left;">Provisions and impairments (net of reversals)</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA2_12_1</td>
+<td style="text-align: left;">&gt; Provisions or reversal of provisions (net)</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2005 - 2021</td>
+<td style="text-align: center;">2005Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2_12_2</td>
+<td style="text-align: left;">&gt; Impairment losses and other net value adjustments</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2005 - 2021</td>
+<td style="text-align: center;">2005Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA2_12_2_1</td>
+<td style="text-align: left;">&gt; &gt; Credit impairment losses</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2005 - 2021</td>
+<td style="text-align: center;">2005Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2_12_2_2</td>
+<td style="text-align: left;">&gt; &gt; Other impairment losses and value adjustments</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2005 - 2021</td>
+<td style="text-align: center;">2005Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA2_13</td>
+<td style="text-align: left;">Other profit or (-) loss</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2_14</td>
+<td style="text-align: left;">Profit or (-) loss before tax</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA2_15</td>
+<td style="text-align: left;">Tax expenses or income related to profit or loss</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2_16</td>
+<td style="text-align: left;">Net profit or (-) loss</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA2_17</td>
+<td style="text-align: left;">Profit/loss for year attributable to minority interest</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA2_18</td>
+<td style="text-align: left;">Profit/loss for year attributable to owners of parent</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c.-solvency-file">C. Solvency File</h2>
+<h3 id="c1.-identifiers">C1. Identifiers</h3>
+<p><code>Bank identifier</code> (<em>bina</em>) - Anonymized identification number for financial institution that enables tracking the institution over time. BPLIM provides an anonymized version of the financial institution identifier which is denoted by <em>bina</em>.</p>
+<p><code>Reference quarter of the data</code> (<em>Date</em>) - Reference quarter of the data</p>
+<p><code>Reference Year of the data</code> (<em>Year</em>) - Reference year of the data</p>
+<h3 id="c2.-solvency">C2. Solvency</h3>
+<p><strong>Table 5</strong> - Solvency</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 22%" />
+<col style="width: 11%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: center;">Available Period - Yearly Data</th>
+<th style="text-align: center;">Available Period - Quarterly Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QA3_1</td>
+<td style="text-align: left;">Tier 1 capital</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1996 - 2021</td>
+<td style="text-align: center;">2009Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA3_2</td>
+<td style="text-align: left;">Total own funds</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1994 - 2021</td>
+<td style="text-align: center;">2009Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA3_3</td>
+<td style="text-align: left;">Risk-weighted assets</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1994 - 2021</td>
+<td style="text-align: center;">2009Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QA3_4</td>
+<td style="text-align: left;">Tier 1 capital ratio</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">1996 - 2021</td>
+<td style="text-align: center;">2009Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QA3_5</td>
+<td style="text-align: left;">Total capital ratio</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">1994 - 2021</td>
+<td style="text-align: center;">2009Q1 - 2021Q4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d.-loans-to-customers-file">D. Loans to Customers File</h2>
+<h3 id="d1.-identifiers">D1. Identifiers</h3>
+<p><code>Bank identifier</code> (<em>bina</em>) - Anonymized identification number for financial institution that enables tracking the institution over time. BPLIM provides an anonymized version of the financial institution identifier which is denoted by <em>bina</em>.</p>
+<p><code>Reference quarter of the data</code> (<em>Date</em>) - Reference quarter of the data</p>
+<p><code>Reference Year of the data</code> (<em>Year</em>) - Reference year of the data</p>
+<h3 id="d2.-loans-to-customers-variables">D2. Loans to Customers Variables</h3>
+<p><strong>Table 6</strong> - Loans to Customers Variables</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 22%" />
+<col style="width: 11%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: center;">Available Period - Yearly Data</th>
+<th style="text-align: center;">Available Period - Quarterly Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QB1_1</td>
+<td style="text-align: left;">Gross loans to customers</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_1_1</td>
+<td style="text-align: left;">&gt; Gross Loans except to other financial companies</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_1_1_1</td>
+<td style="text-align: left;">&gt; &gt; Domestic credit except to other financial companies</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_1_1_1_1</td>
+<td style="text-align: left;">&gt; &gt; &gt; Domestic credit to non-financial corporations</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_1_1_1_1_1</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Domestic credit to NFCs - Agriculture and fishing</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_1_1_1_1_2</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Domestic credit to NFCs – Mining and quarrying and Manufacturing</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_1_1_1_1_3</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Domestic credit to NFCs – Construction and public works</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_1_1_1_1_4</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Domestic credit to NFCs – Electricity, gas and water</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_1_1_1_1_5</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Domestic credit to NFCs – Services</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_1_1_1_1_6</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Domestic credit to NFCs – Other</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_1_1_1_2</td>
+<td style="text-align: left;">&gt; &gt; &gt; Domestic credit to general government</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1996 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_1_1_1_3</td>
+<td style="text-align: left;">&gt; &gt; &gt; Domestic credit to households</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_1_1_1_3_1</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Domestic housing credit</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_1_1_1_3_2</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Domestic credit for consumption and other purposes</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_1_1_2</td>
+<td style="text-align: left;">&gt; &gt; Other credit</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1990 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_1_2</td>
+<td style="text-align: left;">&gt; Domestic credit to other financial companies</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1992 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_2</td>
+<td style="text-align: left;">Domestic overdue credit</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_2_1</td>
+<td style="text-align: left;">&gt; Domestic overdue credit to non-financial companies</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_2_1_1</td>
+<td style="text-align: left;">&gt; &gt; Domestic overdue credit to NFCs – Agriculture and fishing</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_2_1_2</td>
+<td style="text-align: left;">&gt; &gt; Domestic overdue credit to NFCs – Mining and quarrying and Manufacturing</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_2_1_3</td>
+<td style="text-align: left;">&gt; &gt; Domestic overdue credit to NFCs – Construction and public works</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_2_1_4</td>
+<td style="text-align: left;">&gt; &gt; Domestic overdue credit to NFCs – Electricity, gas and water</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_2_1_5</td>
+<td style="text-align: left;">&gt; &gt; Domestic overdue credit to NFCs – Services</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_2_1_6</td>
+<td style="text-align: left;">&gt; &gt; Domestic overdue credit to NFCs – Other</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_2_2</td>
+<td style="text-align: left;">&gt; Domestic overdue credit to general government</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_2_3</td>
+<td style="text-align: left;">&gt; Domestic overdue credit to households</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB1_2_3_1</td>
+<td style="text-align: left;">&gt; &gt; Domestic overdue housing credit</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB1_2_3_2</td>
+<td style="text-align: left;">&gt; &gt; Domestic overdue credit for consumption and other purposes</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">2001Q1 - 2021Q4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e.-interest-rates-file">E. Interest Rates File</h2>
+<h3 id="e1.-identifiers">E1. Identifiers</h3>
+<p><code>Bank identifier</code> (<em>bina</em>) - Anonymized identification number for financial institution that enables tracking the institution over time. BPLIM provides an anonymized version of the financial institution identifier which is denoted by <em>bina</em>.</p>
+<p><code>Reference quarter of the data</code> (<em>Date</em>) - Reference quarter of the data</p>
+<p><code>Reference Year of the data</code> (<em>Year</em>) - Reference year of the data</p>
+<h3 id="e2.-interest-rates-variables">E2. Interest Rates Variables</h3>
+<p><strong>Table 7</strong> - Interest Rates Variables</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 22%" />
+<col style="width: 11%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: center;">Available Period - Yearly Data</th>
+<th style="text-align: center;">Available Period - Quarterly Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QB2_1_1</td>
+<td style="text-align: left;">Interest rates on outstanding amounts - Loans/Credits</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">2003 - 2021</td>
+<td style="text-align: center;">2003Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB2_1_1_1</td>
+<td style="text-align: left;">&gt; Interest rates on outstanding amounts - Credits to non-financial corporations</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">2003 - 2021</td>
+<td style="text-align: center;">2003Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB2_1_1_2</td>
+<td style="text-align: left;">&gt; Interest rates on outstanding amounts - Loans to households</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">2003 - 2021</td>
+<td style="text-align: center;">2003Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB2_1_1_2_1</td>
+<td style="text-align: left;">&gt; &gt; Interest rates on outstanding amounts - Housing loans</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">2003 - 2021</td>
+<td style="text-align: center;">2003Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB2_1_1_2_2</td>
+<td style="text-align: left;">&gt; &gt; Interest rates on outstanding amounts - Credit for consumption and other purposes</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">2003 - 2021</td>
+<td style="text-align: center;">2003Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB2_1_2</td>
+<td style="text-align: left;">Interest rates on outstanding amounts - Deposits</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">2003 - 2021</td>
+<td style="text-align: center;">2003Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB2_1_2_1</td>
+<td style="text-align: left;">&gt; Interest rates on outstanding amounts - Demand deposits</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">2003 - 2021</td>
+<td style="text-align: center;">2003Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB2_1_2_1_1</td>
+<td style="text-align: left;">&gt; &gt; Interest rates on outstanding amounts - Demand deposits to non-financial corporations</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">2003 - 2021</td>
+<td style="text-align: center;">2003Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB2_1_2_1_2</td>
+<td style="text-align: left;">&gt; &gt; Interest rates on outstanding amounts - Demand deposits to households</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">2003 - 2021</td>
+<td style="text-align: center;">2003Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB2_1_2_2</td>
+<td style="text-align: left;">&gt; Interest rates on outstanding amounts - Other deposits</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">2003 - 2021</td>
+<td style="text-align: center;">2003Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB2_1_2_2_1</td>
+<td style="text-align: left;">&gt; &gt; Interest rates on outstanding amounts - Other deposits to non-financial corporations</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">2003 - 2021</td>
+<td style="text-align: center;">2003Q1 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB2_1_2_2_2</td>
+<td style="text-align: left;">&gt; &gt; Interest rates on outstanding amounts - Other deposits to households</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">2003 - 2021</td>
+<td style="text-align: center;">2003Q1 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB2_2_1</td>
+<td style="text-align: left;">Interest rates on new loans</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">1997Q4 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB2_2_1_1</td>
+<td style="text-align: left;">&gt; Interest rates on new loans to non-financial corporations</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">1997Q4 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB2_2_1_2</td>
+<td style="text-align: left;">&gt; Interest rates on new loans to households</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">1997Q4 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB2_2_1_2_1</td>
+<td style="text-align: left;">&gt; &gt; Interest rates on new loans to households: Housing loans</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">1997Q4 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB2_2_1_2_2</td>
+<td style="text-align: left;">&gt; &gt; Interest rates on new loans: Credit for consumption and other purposes</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">1997Q4 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB2_2_2</td>
+<td style="text-align: left;">Interest rates on deposits: New deposits</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">1997Q4 - 2021Q4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB2_2_2_1</td>
+<td style="text-align: left;">&gt; Interest rates on deposits: New deposits to non-financial corporations</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">1997Q4 - 2021Q4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QB2_2_2_2</td>
+<td style="text-align: left;">&gt; Interest rates on deposits: New deposits to households</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: center;">1997 - 2021</td>
+<td style="text-align: center;">1997Q4 - 2021Q4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="f.-human-resources-file">F. Human Resources File</h2>
+<h3 id="f1.-identifiers">F1. Identifiers</h3>
+<p><code>Bank identifier</code> (<em>bina</em>) - Anonymized identification number for financial institution that enables tracking the institution over time. BPLIM provides an anonymized version of the financial institution identifier which is denoted by <em>bina</em>.</p>
+<p><code>Reference Year of the data</code> (<em>Year</em>) - Reference year of the data</p>
+<h3 id="f2.-human-resources-variables">F2. Human Resources Variables</h3>
+<p><strong>Table 8</strong> - Human Resources Variables</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: center;">Available Period - Yearly Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QC_1</td>
+<td style="text-align: left;">Total</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1992 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_2</td>
+<td style="text-align: left;">International activity</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1992 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC_2_1</td>
+<td style="text-align: left;">&gt; Branches and foreign subsidiaries</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_2_2</td>
+<td style="text-align: left;">&gt; Consolidated foreign bank branches</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC_3</td>
+<td style="text-align: left;">Domestic activity - Banking institutions</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_3_1_1</td>
+<td style="text-align: left;">&gt; By gender: Male</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">2005 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC_3_1_2</td>
+<td style="text-align: left;">&gt; By gender: Female</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">2005 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_3_2_1</td>
+<td style="text-align: left;">&gt; By age: &lt;30 years old</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC_3_2_2</td>
+<td style="text-align: left;">&gt; By age: 30-44 years old</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_3_2_3</td>
+<td style="text-align: left;">&gt; By age:&gt; 44 years old</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC_3_3_1</td>
+<td style="text-align: left;">&gt; By seniority: &lt;1 year</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1993 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_3_3_2</td>
+<td style="text-align: left;">&gt; By seniority: 1-5 years</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC_3_3_3</td>
+<td style="text-align: left;">&gt; By seniority: 6-10 years</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_3_3_4</td>
+<td style="text-align: left;">&gt; By seniority: 11-15 years</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC_3_3_5</td>
+<td style="text-align: left;">&gt; By seniority:&gt; 15 years</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_3_4_1</td>
+<td style="text-align: left;">&gt; By contract type: Permanent</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">2005 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC_3_4_2</td>
+<td style="text-align: left;">&gt; By contract type: Fixed-term contract</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">2005 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_3_5_1</td>
+<td style="text-align: left;">&gt; By education: Basic</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1993 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC_3_5_2</td>
+<td style="text-align: left;">&gt; By education: Secondary</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1993 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_3_5_3</td>
+<td style="text-align: left;">&gt; By education: Higher</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1993 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC_3_6_1</td>
+<td style="text-align: left;">&gt; By function: Management</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1995 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_3_6_2</td>
+<td style="text-align: left;">&gt; By functions: Specific</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1995 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC_3_6_3</td>
+<td style="text-align: left;">&gt; By function: Administrative</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1995 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_3_6_4</td>
+<td style="text-align: left;">&gt; By function: Support</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1995 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QC_3_7_1</td>
+<td style="text-align: left;">&gt; By activity: Commercial</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QC_3_7_2</td>
+<td style="text-align: left;">&gt; By activity: Other</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+</tbody>
+</table>
+<h2 id="g.-branch-network-file">G. Branch Network File</h2>
+<h3 id="g1.-identifiers">G1. Identifiers</h3>
+<p><code>Bank identifier</code> (<em>bina</em>) - Anonymized identification number for financial institution that enables tracking the institution over time. BPLIM provides an anonymized version of the financial institution identifier which is denoted by <em>bina</em>.</p>
+<p><code>Reference Year of the data</code> (<em>Year</em>) - Reference year of the data</p>
+<h3 id="g2.-bank-branch-network-variables">G2. Bank Branch Network Variables</h3>
+<p><strong>Table 9</strong> - Bank Branch Network Variables</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: center;">Available Period - Yearly Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QD_1</td>
+<td style="text-align: left;">Total</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1992 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QD_2</td>
+<td style="text-align: left;">Total international activity</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1992 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QD_2_1</td>
+<td style="text-align: left;">&gt; Branches and foreign subsidiaries</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1992 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QD_2_2</td>
+<td style="text-align: left;">&gt; Consolidated foreign bank branches</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1992 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QD_3</td>
+<td style="text-align: left;">Total domestic activity</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: center;">1990 - 2021</td>
+</tr>
+</tbody>
+</table>
+<h2 id="h.-payment-systems-file">H. Payment Systems File</h2>
+<h3 id="h1.-identifiers">H1. Identifiers</h3>
+<p><code>Bank identifier</code> (<em>bina</em>) - Anonymized identification number for financial institution that enables tracking the institution over time. BPLIM provides an anonymized version of the financial institution identifier which is denoted by <em>bina</em>.</p>
+<p><code>Reference Year of the data</code> (<em>Year</em>) - Reference year of the data</p>
+<h3 id="h2.-payment-systems-variables">H2. Payment Systems Variables</h3>
+<p><strong>Table 10</strong> - Payment Systems Variables</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: center;">Available Period - Yearly Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QE_1</td>
+<td style="text-align: left;">Number of ATMs</td>
+<td style="text-align: left;">Quantity</td>
+<td style="text-align: center;">2000 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QE_2</td>
+<td style="text-align: left;">Number of POS terminals</td>
+<td style="text-align: left;">Quantity</td>
+<td style="text-align: center;">2000 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QE_3</td>
+<td style="text-align: left;">Number of payment transactions</td>
+<td style="text-align: left;">Quantity</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QE_3_1</td>
+<td style="text-align: left;">&gt; Cheques</td>
+<td style="text-align: left;">Quantity</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QE_3_2</td>
+<td style="text-align: left;">&gt; Bills of trade and bills of exchange</td>
+<td style="text-align: left;">Quantity</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QE_3_3</td>
+<td style="text-align: left;">&gt; Direct debits</td>
+<td style="text-align: left;">Quantity</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QE_3_4</td>
+<td style="text-align: left;">&gt; Multibanco</td>
+<td style="text-align: left;">Quantity</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QE_3_4_1</td>
+<td style="text-align: left;">&gt; &gt; Home banking payments</td>
+<td style="text-align: left;">Quantity</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QE_3_4_2</td>
+<td style="text-align: left;">&gt; &gt; ATM payments</td>
+<td style="text-align: left;">Quantity</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QE_3_4_3</td>
+<td style="text-align: left;">&gt; &gt; Residual of card payments network</td>
+<td style="text-align: left;">Quantity</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QE_3_5</td>
+<td style="text-align: left;">&gt; Credit transfers</td>
+<td style="text-align: left;">Quantity</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QE_4</td>
+<td style="text-align: left;">Value of payment transactions</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QE_4_1</td>
+<td style="text-align: left;">&gt; Cheques</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QE_4_2</td>
+<td style="text-align: left;">&gt; Bills of trade and bills of exchange</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QE_4_3</td>
+<td style="text-align: left;">&gt; Direct debits</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QE_4_4</td>
+<td style="text-align: left;">&gt; Multibanco</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QE_4_4_1</td>
+<td style="text-align: left;">&gt; &gt; Home banking payments</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QE_4_4_2</td>
+<td style="text-align: left;">&gt; &gt; ATM payments</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QE_4_4_3</td>
+<td style="text-align: left;">&gt; &gt; Withdrawals</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QE_4_4_4</td>
+<td style="text-align: left;">&gt; &gt; Purchases</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QE_4_4_5</td>
+<td style="text-align: left;">&gt; &gt; Residual of card payments network</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QE_4_5</td>
+<td style="text-align: left;">&gt; Credit transfers</td>
+<td style="text-align: left;">€Millions</td>
+<td style="text-align: center;">2001 - 2021</td>
+</tr>
+</tbody>
+</table>
+<h1 id="basic-descriptive-statistics">Basic Descriptive Statistics</h1>
+<p><strong>Table 11</strong> - Number of observations over the data period (as of December)</p>
+<p>Panel A: Yearly Data</p>
+<pre class='stata'>──────────┬───────────
+     Year │    Freq.  
+──────────┼───────────
+     1990 │     130   
+     1991 │     133   
+     1992 │     139   
+     1993 │     155   
+     1994 │     189   
+     1995 │     188   
+     1996 │     172   
+     1997 │     233   
+     1998 │     255   
+     1999 │     283   
+     2000 │     297   
+     2001 │     343   
+     2002 │     335   
+     2003 │     349   
+     2004 │     356   
+     2005 │     349   
+     2006 │     354   
+     2007 │     357   
+     2008 │     431   
+     2009 │     434   
+     2010 │     414   
+     2011 │     397   
+     2012 │     393   
+     2013 │     383   
+     2014 │     378   
+     2015 │     389   
+     2016 │     377   
+     2017 │     359   
+     2018 │     350   
+     2019 │     350   
+     2020 │     350   
+     2021 │     348   
+──────────┴───────────
+</pre>
+<p>Panel B: Quarterly Data</p>
+<pre class='stata'>──────────┬───────────
+     Date │    Freq.  
+──────────┼───────────
+   1997q4 │      35   
+   1998q1 │      37   
+   1998q2 │      37   
+   1998q3 │      38   
+   1998q4 │      38   
+   1999q1 │      37   
+   1999q2 │      39   
+   1999q3 │      41   
+   1999q4 │      41   
+   2000q1 │      41   
+   2000q2 │      42   
+   2000q3 │      41   
+   2000q4 │      45   
+   2001q1 │     202   
+   2001q2 │     202   
+   2001q3 │     200   
+   2001q4 │     201   
+   2002q1 │     197   
+   2002q2 │     195   
+   2002q3 │     198   
+   2002q4 │     197   
+   2003q1 │     169   
+   2003q2 │     169   
+   2003q3 │     196   
+   2003q4 │     184   
+   2004q1 │     187   
+   2004q2 │     186   
+   2004q3 │     212   
+   2004q4 │     194   
+   2005q1 │     186   
+   2005q2 │     184   
+   2005q3 │     210   
+   2005q4 │     187   
+   2006q1 │     190   
+   2006q2 │     191   
+   2006q3 │     216   
+   2006q4 │     187   
+   2007q1 │     181   
+   2007q2 │     184   
+   2007q3 │     218   
+   2007q4 │     189   
+   2008q1 │     231   
+   2008q2 │     240   
+   2008q3 │     275   
+   2008q4 │     245   
+   2009q1 │     286   
+   2009q2 │     289   
+   2009q3 │     319   
+   2009q4 │     293   
+   2010q1 │     288   
+   2010q2 │     320   
+   2010q3 │     318   
+   2010q4 │     308   
+   2011q1 │     307   
+   2011q2 │     304   
+   2011q3 │     298   
+   2011q4 │     297   
+   2012q1 │     305   
+   2012q2 │     304   
+   2012q3 │     303   
+   2012q4 │     298   
+   2013q1 │     298   
+   2013q2 │     298   
+   2013q3 │     296   
+   2013q4 │     293   
+   2014q1 │     292   
+   2014q2 │     292   
+   2014q3 │     292   
+   2014q4 │     291   
+   2015q1 │     289   
+   2015q2 │     294   
+   2015q3 │     294   
+   2015q4 │     288   
+   2016q1 │     277   
+   2016q2 │     279   
+   2016q3 │     278   
+   2016q4 │     279   
+   2017q1 │     279   
+   2017q2 │     277   
+   2017q3 │     276   
+   2017q4 │     264   
+   2018q1 │     262   
+   2018q2 │     262   
+   2018q3 │     261   
+   2018q4 │     260   
+   2019q1 │     262   
+   2019q2 │     267   
+   2019q3 │     267   
+   2019q4 │     264   
+   2020q1 │     266   
+   2020q2 │     265   
+   2020q3 │     266   
+   2020q4 │     264   
+   2021q1 │     266   
+   2021q2 │     266   
+   2021q3 │     268   
+   2021q4 │     264   
+──────────┴───────────
+</pre>
+<h1 id="auxiliary-files">Auxiliary Files</h1>
+<p>For a description of each variable in each dataset (name, unit of measurement, data and storage type, format, year of first and last observation), an account of the changes occurred over time, summary statistics<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> for each dataset and a codebook for each dataset, please check the following auxiliary files:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">File</th>
+<th style="text-align: center;">Description of Variables</th>
+<th style="text-align: center;">Summary Statistics</th>
+<th style="text-align: center;">Codebook</th>
+<th style="text-align: center;">Dataset description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Summary of all variables (Portuguese and English labels)</td>
+<td style="text-align: center;"><a href="./aux_files/variables_description/variables_pt_en.html">variables_pt_en</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Balance Sheet File</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_bal.html">stat_bal</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_bal.html">cdbk_bal</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_bal.html">dscr_bal</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Income Statement File</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_lp.html">stat_lp</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_lp.html">cdbk_lp</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_lp.html">dscr_lp</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Solvency File</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_fi.html">stat_fi</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_fi.html">cdbk_fi</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_fi.html">dscr_fi</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Loans to customers File</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_credit.html">stat_credit</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_credit.html">cdbk_credit</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_credit.html">dscr_credit</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Interest Rates File</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_interest.html">stat_interest</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_interest.html">cdbk_interest</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_interest.html">dscr_interest</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Human Resources File</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_employee.html">stat_employee</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_employee.html">cdbk_employee</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_employee.html">dscr_employee</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Branch Network File</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_branch.html">stat_branch</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_branch.html">cdbk_branch</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_branch.html">dscr_branch</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Payment Systems</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_payment.html">stat_payment</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_payment.html">cdbk_payment</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_payment.html">dscr_payment</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>The Summary Statistics, Codebook and Dataset Description files are available on BPLIM’s servers.</p>
+<h1 id="useful-links">Useful Links</h1>
+<p><a href="https://www.bportugal.pt/en/publicacao/historical-series-about-portuguese-economy-after-world-war-ii"><strong>Historical series about portuguese economy after World War II</strong></a></p>
+<p><a href="https://www.bportugal.pt/comunicado/banco-de-portugal-disponibiliza-informacao-historica-sobre-o-setor-bancario-portugues"><strong>Banco de Portugal’s Communication</strong></a></p>
+<h1 id="useful-ado-files">Useful Ado Files</h1>
+<p>We provide an ado file written by BPLIM staff for researchers to implement the matching of the Historical Series of the Portuguese Banking Sector (SLB) which reports consolidated information with the Central Credit Responsibility (CRC) database which reports individual-level information.</p>
+<h2 id="mergecrcslb"><a href="https://github.com/BPLIM/Tools/tree/master/ados/CRC_FRMBNK/mergecrcslb">mergecrcslb</a></h2>
+<p><code>Description</code></p>
+<p><code>mergecrcslb</code> is a Stata user-written command to help Create linking ids for financial institutions in the Central Credit Responsibility (CRC) database for the purpose of merging with Historical Series of the Portuguese Banking Sector (SLB). By default, the ado should only be applied to the original CRC datasets (bank-firm level or exposure level) prepared by BPLIM.</p>
+<p><code>Syntax</code></p>
+<pre><code>mergecrcslb bankvar timevar
+</code></pre>
+<p>where <code>panelvar</code> is BPLIM’s anonymized bank identifier and <code>timevar</code> identifies the time variable (monthly).</p>
+<h1 id="references">References</h1>
+<p>Below is a list of main references:</p>
+<ol type="1">
+<li><p><a href="https://www.bportugal.pt/sites/default/files/anexos/pdf-boletim/series_longas_setor_bancario_portugues.pdf"><strong>Series Longas - Setor Bancario Portugues 1990-2018</strong></a></p></li>
+<li><p><a href="https://www.bportugal.pt/sites/default/files/anexos/pdf-boletim/historical_series_portuguese_banking_system.pdf"><strong>Historical Series - Portuguese Banking Sector 1990-2018</strong></a></p></li>
+<li><p>Banco de Portugal (2017), <a href="https://www.bportugal.pt/sites/default/files/anexos/pdf-boletim/ref_06_2017_en.pdf"><strong>Financial Stability Report</strong></a>, Banco de Portugal, June 2017, 84-91.</p></li>
+</ol>
+<h1 id="citation-of-this-dataset">Citation of this dataset</h1>
+<p>Banco de Portugal Microdata Research Laboratory (BPLIM)(2022): Historical Series of the Portuguese Banking Sector Data. Extraction: October 2022. Version:V1. BANCO DE PORTUGAL. Dataset. https://doi.org/10.17900/SLB.Oct2022.V1</p>
+<h1 id="appendix">Appendix</h1>
+<ol type="1">
+<li><p><a href="./attachments/List%20of%20Included%20Institutions%20by%20Variable.xlsx">List of Included Institutions by Variable</a><a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p></li>
+<li><p><a href="./attachments/QG_Perímetros%20por%20Grupo%20Bancário_final.xlsx">The Evolution of Banking Groups Over Time</a><a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></p></li>
+</ol>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>The yearly date reflects year-end information, except for interest rates which are computed as the average of the quarterly interest rates and income statement variables which are summed up over the period.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>To see the labels in Portuguese type the following command line in Stata: “label language pt”.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Conditions for data access for external researchers are detailed in the <em><a href="https://msites-dee-bplim-prd.azurewebsites.net/sites/default/files/guide_for_researchers_v2021_v2.pdf">Guide for Researchers Using Banco de Portugal Microdata Research Laboratory (BPLIM) Data</a></em>.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Please refer to the section <a href="#description-of-variables">Description of Variables</a> for more details.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>The yearly date reflects year-end information, except for interest rates which are computed as the average of the quarterly interest rates.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>Please refer to the <a href="https://www.bportugal.pt/sites/default/files/anexos/pdf-boletim/historical_series_portuguese_banking_system.pdf">“Historical Series - Portuguese Banking Sector 1990-2018” report</a> for more details.<a href="#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>Information on geographical distribution (by region and municipality) of branch network is available upon request.<a href="#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>Please note that the summary statistics are run based on the perturbed data.<a href="#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>24 institutions were eliminated in the current update, given the entry into force of the <a href="https://www.cmvm.pt/pt/Legislacao/Legislacaonacional/Circulares/Documents/Circular%20relativa%20%C3%A0%20entrada%20em%20vigor%20do%20Regime%20de%20Empresas%20de%20Investimento.pdf">Investment Companies Regulation</a>. The weight of these institutions in the financial system is however residual.<a href="#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p>Information on the over-time evolution of banking groups is only available upon request to internal researchers.<a href="#fnref10" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+</body>
+</html>
