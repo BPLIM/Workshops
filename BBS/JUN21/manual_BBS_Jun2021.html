@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Monetary Financial Institutions Balance Sheet Database - Data Manual</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Monetary Financial Institutions Balance Sheet Database - Data Manual</h1>
+</header>
+<meta charset="utf-8"/>
+<p><code>Extraction Date</code>: June 2021</p>
+<p><code>Manual Date</code>: 1 July 2021<br />
+</p>
+<p><strong>Abstract</strong>: The Monetary Financial Institutions (MFIs) Balance Sheet Database reports detailed information on the assets and liabilities of the monetary financial institutions (MFIs) operating in Portugal. The dataset is updated annually.<br />
+</p>
+<p><strong>Keywords</strong>: balance sheet, asset, liabilities, instrument, counterparty, revisions.<br />
+</p>
+<h1 id="table-of-contents">Table of contents</h1>
+<ol type="1">
+<li><p><a href="#general-information">General Information</a></p></li>
+<li><p><a href="#geographical-coverage">Geographical Coverage</a></p></li>
+<li><p><a href="#population">Population</a></p></li>
+<li><p><a href="#methodology">Methodology</a></p></li>
+<li><p><a href="#description-of-files">Description of Files</a></p></li>
+<li><p><a href="#description-of-variables">Description of Variables</a></p></li>
+<li><p><a href="#basic-descriptive-statistics">Basic Descriptive Statistics</a></p></li>
+<li><p><a href="#auxiliary-files">Auxiliary Files</a></p></li>
+<li><p><a href="#useful-links">Useful Links</a></p></li>
+<li><p><a href="#legislation">Legislation</a></p></li>
+<li><p><a href="#citation-of-this-dataset">Citation of this dataset</a></p></li>
+</ol>
+<h1 id="general-information">General Information</h1>
+<blockquote>
+<p><code>Data Type</code>: longitudinal data</p>
+</blockquote>
+<blockquote>
+<p><code>Unit of Analysis</code>: instrument-counterparty</p>
+</blockquote>
+<blockquote>
+<p><code>Frequency</code>: monthly</p>
+</blockquote>
+<blockquote>
+<p><code>Start Date</code>: September, 1997</p>
+</blockquote>
+<blockquote>
+<p><code>Most Recent Date</code>: December, 2020</p>
+</blockquote>
+<blockquote>
+<p><code>Reference date</code>: month-end</p>
+</blockquote>
+<blockquote>
+<p><code>Data Organization</code>: data is organized for assets and liabilities separately. All data files are available in Stata format, version 15.</p>
+</blockquote>
+<blockquote>
+<p><code>Version of the Data</code>: the data made available by BPLIM corresponds to a data freeze at a certain time of the year. Therefore, all files contain information as reported at the extraction date. The most recent update of the data occurred in June 2021.</p>
+</blockquote>
+<blockquote>
+<p><code>Languages Available</code>: variables labels are available in Portuguese and in English. <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+</blockquote>
+<blockquote>
+<p><code>Data Access</code>: this data set is available to external researchers under certain conditions.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+</blockquote>
+<blockquote>
+<p><code>Digital Object Identifier</code>: 10.17900/BBS.Jun2021.V1.</p>
+</blockquote>
+<h1 id="geographical-coverage">Geographical Coverage</h1>
+<p>The MFIs Balance Sheet Database includes the assets and liabilities of all monetary financial institutions (MFIs) operating in mainland Portugal and autonomous regions - Azores and Madeira.</p>
+<h1 id="population">Population</h1>
+<p>The MFIs Balance Sheet Database collects the balance sheet data for all monetary financial institutions (MFIs) that were in operation in Portugal between September 1997 and December 2020.</p>
+<p><u><strong>Comment</strong></u> : Non-monetary financial agents are not covered in the database. In case an institution stops to be classified as MFI, data reporting will be discontinued. Some MFIs in Portugal have experienced acquisitions and/or mergers, which induced asset/liability flows from one institution to another.</p>
+<h1 id="methodology">Methodology</h1>
+<p>The MFIs Balance Sheet Database has undergone a major revision in December, 2014 which lead to the reclassification of financial institutions and counterparties.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. Due to this revision, there are some breaks in the series. The revision also adds an extra variable that indicates institution type.</p>
+<p>To make variables compatible over time, we have harmonized the data based on the correspondence table illustrated in the <a href="#description-of-variables"><em>Description of Variables</em></a> section.</p>
+<p>To preserve confidentiality, MFIs are anonymized through unique identifiers and the instrument values are perturbed for external researchers.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
+<h1 id="description-of-files">Description of Files</h1>
+<p>The MFIs Balance Sheet Database is organized separately for assets and liabilities in the bank balance sheet (BBS) files. Each row corresponds to an instrument-counterparty pair in a given month.</p>
+<p>The data files are organized with the following nomenclature:</p>
+<p><strong><em>BBS_METH_BNK_xxxx_yyyy_V01.dta</em></strong></p>
+<p>where <em>xxxx</em> denotes the data range (eg: SEP1997DEC2020), <em>yyyy</em> denotes the type of balance (ASSET for asset instruments; LIAB for liability instrument), and <em>METH</em> denotes the method used to prepare the data (<em>“A”</em> for Anonymized and <em>“P”</em> for Perturbed).</p>
+<p>Identification of MFIs will be anonymized in the data. Additionally, for external researchers the data values are perturbed.</p>
+<p>We also provide a harmonized data set to facilitate the comparison between the two reporting systems, i.e. before and after December, 2014.</p>
+<h1 id="description-of-variables">Description of Variables</h1>
+<p><code>Bank identifier</code></p>
+<p>Anonymized identification number for MFI that enables tracking the MFI over time. BPLIM provides an anonymized version of the MFIs identifier which is denoted by <em>bina</em>.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Abbreviation</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>bina</em></td>
+<td style="text-align: left;">Anonymized bank identificaton number</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Availability</strong>: Sep. 1997 - Dec. 2020</p>
+<p><code>Reference date</code></p>
+<p>The reference month of the data</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Abbreviation</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>date</em></td>
+<td style="text-align: left;">Reference month of the data</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Availability</strong>: Sep. 1997 - Dec. 2020</p>
+<p><code>Instrument code</code></p>
+<p>Classification of the financial instrument</p>
+<p>The classification of financial instruments was revised in December, 2014. As a result, a new categorization was applied thereafter. Below is the correspondence table for the instrument codes between the two reporting systems (aligned based on the previous reporting system).</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Abbreviation</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>instrument_asset</em></td>
+<td style="text-align: left;">Financial instruments: asset side</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>instrument_liab</em></td>
+<td style="text-align: left;">Financial instruments: liability side</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Availability</strong>: Sep. 1997 - Dec. 2020</p>
+<p><strong>Table 2</strong> - Correspondence Table for Financial Instruments</p>
+<p>Panel A: Asset side (<em>instrument_asset</em>)</p>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 25%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Before December 2014</strong></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>December 2014 onwards</strong></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Code</strong></td>
+<td style="text-align: left;"><strong>Designation</strong></td>
+<td style="text-align: left;"><strong>Code</strong></td>
+<td style="text-align: left;"><strong>Designation</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Banknotes and coins</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Banknotes and coins</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Credit and equivalent - up to 1 year</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Credit and equivalent - up to 1 year</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Credit and equivalent - from 1 year to 5 years</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Credit and equivalent - from 1 year to 2 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Credit and equivalent - from 1 year to 5 years</td>
+<td style="text-align: left;">40</td>
+<td style="text-align: left;">Credit and equivalent - from 2 year to 5 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">40</td>
+<td style="text-align: left;">Credit and equivalent - more than 5 years</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">Credit and equivalent - more than 5 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">Securities other than equity - up to 1 year</td>
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">Debt securities - up to 1 year</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">Securities other than equity - from 1 year to 2 years</td>
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">Debt securities - from 1 year to 2 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">Securities other than equity - more than 2 years</td>
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">Debt securities - more than 2 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">Equity securities</td>
+<td style="text-align: left;">90</td>
+<td style="text-align: left;">Traded shares</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">Equity securities</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">Untraded shares</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">Equity securities</td>
+<td style="text-align: left;">110</td>
+<td style="text-align: left;">Other equities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">Equity securities</td>
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">Units</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">Properties, furnitures, and equipments</td>
+<td style="text-align: left;">130</td>
+<td style="text-align: left;">Properties, furnitures, and equipments</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">110</td>
+<td style="text-align: left;">Miscellaneous assets</td>
+<td style="text-align: left;">140</td>
+<td style="text-align: left;">Miscellaneous assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">90</td>
+<td style="text-align: left;">Units (included in equity securities)</td>
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">Units</td>
+</tr>
+</tbody>
+</table>
+<p><u><strong>Comment</strong></u> : Before December 2014, the financial instrument “Units” (coded 90) is also included in the financial instrument “Equity securities” (coded 80).</p>
+<p><strong>When calculating the aggregates, to avoid double counting the value for “Unit” should be dropped.</strong></p>
+<p>Panel B: Liability side (<em>instrument_liab</em>)</p>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 25%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Before December 2014</strong></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>December 2014 onwards</strong></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Code</strong></td>
+<td style="text-align: left;"><strong>Designation</strong></td>
+<td style="text-align: left;"><strong>Code</strong></td>
+<td style="text-align: left;"><strong>Designation</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">130</td>
+<td style="text-align: left;">Demand deposits (excluding sight deposits)</td>
+<td style="text-align: left;">380</td>
+<td style="text-align: left;">Demand deposits (excluding sight deposits)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">140</td>
+<td style="text-align: left;">Deposits redeemable at a notice of up to 90 days (excluding sight deposits)</td>
+<td style="text-align: left;">390</td>
+<td style="text-align: left;">Deposits redeemable at a notice of up to 90 days (excluding sight deposits)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">150</td>
+<td style="text-align: left;">Deposits redeemable at a notice of more than 90 days (including sight deposits)</td>
+<td style="text-align: left;">400</td>
+<td style="text-align: left;">Deposits redeemable at a notice of more than 90 days (including sight deposits)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">170</td>
+<td style="text-align: left;">Deposits and equivalent (excluding demand deposits, deposits redeemable at notice, and trading liabilities) - up to 1 year</td>
+<td style="text-align: left;">420</td>
+<td style="text-align: left;">Deposits and equivalent (excluding demand deposits, deposits redeemable at notice, and trading liabilities) - up to 1 year</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">180</td>
+<td style="text-align: left;">Deposits and equivalent (excluding demand deposits, deposits redeemable at notice, and trading liabilities) - from 1 to 2 years</td>
+<td style="text-align: left;">430</td>
+<td style="text-align: left;">Deposits and equivalent (excluding demand deposits, deposits redeemable at notice, and trading liabilities) - from 1 to 2 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">190</td>
+<td style="text-align: left;">Deposits and equivalent (excluding demand deposits, deposits redeemable at notice, and trading liabilities) - more than 2 years</td>
+<td style="text-align: left;">440</td>
+<td style="text-align: left;">Deposits and equivalent (excluding demand deposits, deposits redeemable at notice, and trading liabilities) - more than 2 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">200</td>
+<td style="text-align: left;">Trading liabilities</td>
+<td style="text-align: left;">450</td>
+<td style="text-align: left;">Trading liabilities - up to 1 year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">200</td>
+<td style="text-align: left;">Trading liabilities</td>
+<td style="text-align: left;">460</td>
+<td style="text-align: left;">Trading liabilities - more than 1 year</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">210</td>
+<td style="text-align: left;">Securities other than capital - up to 1 year</td>
+<td style="text-align: left;">470</td>
+<td style="text-align: left;">Debt securities issued - up to 1 year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">220</td>
+<td style="text-align: left;">Securities other than capital - from 1 to 2 years</td>
+<td style="text-align: left;">480</td>
+<td style="text-align: left;">Debt securities issued - from 1 to 2 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">230</td>
+<td style="text-align: left;">Securities other than capital - from 2 years</td>
+<td style="text-align: left;">490</td>
+<td style="text-align: left;">Debt securities issued - more than 2 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">240</td>
+<td style="text-align: left;">Capital and reserves</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Capital and reserves</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">260</td>
+<td style="text-align: left;">Miscellaneous liabilities</td>
+<td style="text-align: left;">520</td>
+<td style="text-align: left;">Miscellaneous Liabilities</td>
+</tr>
+</tbody>
+</table>
+<p><code>Counterparty code</code></p>
+<p>Classification of counterparty</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Abbreviation</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>counterparty_asset</em></td>
+<td style="text-align: left;">Classification of counterparty: asset side</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>counterparty_liab</em></td>
+<td style="text-align: left;">Classification of counterparty: liability side</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Availability</strong>: Sep. 1997 - Dec. 2020</p>
+<p>The classification of counterparties was also revised in December, 2014. The correspondence table for the counterparty codes between the two reporting systems (aligned based on the previous reporting system) is:</p>
+<p><strong>Table 3</strong> - Correspondence Table for Counterparties</p>
+<p>Panel A: Asset side (<em>counterparty_asset</em>)</p>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 25%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Before December 2014</strong></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>December 2014 onwards</strong></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Code</strong></td>
+<td style="text-align: left;"><strong>Designation</strong></td>
+<td style="text-align: left;"><strong>Code</strong></td>
+<td style="text-align: left;"><strong>Designation</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Monetary financial institutions</td>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Central banks</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Monetary financial institutions</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Money market funds</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Monetary financial institutions</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Deposit institutions, excluding central banks</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Other financial intermediaries and financial auxiliaries</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">Other financial intermediaries, financial auxiliaries, and captive financial institutions and money lenders</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Other financial intermediaries and financial auxiliaries</td>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">Investment fund, excluding money market funds</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Insurance corporations and pension funds</td>
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">Insurance corporations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Insurance corporations and pension funds</td>
+<td style="text-align: left;">32</td>
+<td style="text-align: left;">Pension funds</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">40</td>
+<td style="text-align: left;">Central government</td>
+<td style="text-align: left;">40</td>
+<td style="text-align: left;">Central government</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">Regional government</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">Regional government</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">Local government</td>
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">Local government</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">Social security</td>
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">Social security</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">Non-financial institutions</td>
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">Non-financial institutions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">90</td>
+<td style="text-align: left;">Individuals</td>
+<td style="text-align: left;">91</td>
+<td style="text-align: left;">Family</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">90</td>
+<td style="text-align: left;">Individuals</td>
+<td style="text-align: left;">92</td>
+<td style="text-align: left;">Non-profit institutions serving households</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">Irrelevant sector</td>
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">Irrelevant sector</td>
+</tr>
+</tbody>
+</table>
+<p>Panel B: Liability side (<em>counterparty_liab</em> )</p>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 25%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Before December 2014</strong></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>December 2014 onwards</strong></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Code</strong></td>
+<td style="text-align: left;"><strong>Designation</strong></td>
+<td style="text-align: left;"><strong>Code</strong></td>
+<td style="text-align: left;"><strong>Designation</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Central banks</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Central banks</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Institutions not subject to minimum reserves, namely the money market funds</td>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Money market funds</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Institutions subject to minimum reserves</td>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">Deposit institutions, excluding central banks</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">40</td>
+<td style="text-align: left;">Other financial intermediaries and financial auxiliaries</td>
+<td style="text-align: left;">39</td>
+<td style="text-align: left;">Other financial intermediaries, financial auxiliaries, and captive financial institutions and money lenders</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">40</td>
+<td style="text-align: left;">Other financial intermediaries and financial auxiliaries</td>
+<td style="text-align: left;">43</td>
+<td style="text-align: left;">Investment fund, excluding money market funds</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">Insurance corporations and pension funds</td>
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">Insurance corporations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">Insurance corporations and pension funds</td>
+<td style="text-align: left;">52</td>
+<td style="text-align: left;">Pension funds</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">Central government</td>
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">Central government</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">Regional government</td>
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">Regional government</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">Local government</td>
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">Local government</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">90</td>
+<td style="text-align: left;">Social security</td>
+<td style="text-align: left;">90</td>
+<td style="text-align: left;">Social security</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">Non-financial institutions</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">Non-financial institutions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">110</td>
+<td style="text-align: left;">Individuals</td>
+<td style="text-align: left;">111</td>
+<td style="text-align: left;">Family</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">110</td>
+<td style="text-align: left;">Individuals</td>
+<td style="text-align: left;">112</td>
+<td style="text-align: left;">Non-profit institutions serving households</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">Irrelevant sector</td>
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">Irrelevant sector</td>
+</tr>
+</tbody>
+</table>
+<p><code>Country</code></p>
+<p>Country of origin or region of the counterparty</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Abbreviation</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>country</em></td>
+<td style="text-align: left;">Country of origin</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Availability</strong>: Sep. 1997 - Dec. 2020</p>
+<p><strong>Table 4</strong> - Counterparty Countries (<em>country</em>)</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Code</strong></th>
+<th style="text-align: left;"><strong>Designation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">UM-PT</td>
+<td style="text-align: left;">Monetary Union countries excluding Portugal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TP-UM</td>
+<td style="text-align: left;">Countries outside Monetary Union</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EUB</td>
+<td style="text-align: left;">European Central Bank</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AUT</td>
+<td style="text-align: left;">Austria</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BEL</td>
+<td style="text-align: left;">Belgium</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CYP</td>
+<td style="text-align: left;">Cyprus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DEU</td>
+<td style="text-align: left;">Germany</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ESP</td>
+<td style="text-align: left;">Spain</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EST</td>
+<td style="text-align: left;">Estonia</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FIN</td>
+<td style="text-align: left;">Finland</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">FRA</td>
+<td style="text-align: left;">France</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GRC</td>
+<td style="text-align: left;">Greece</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IRL</td>
+<td style="text-align: left;">Ireland</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ITA</td>
+<td style="text-align: left;">Italy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LTU</td>
+<td style="text-align: left;">Lithuania</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LUX</td>
+<td style="text-align: left;">Luxembourg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LVA</td>
+<td style="text-align: left;">Latvia</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MLT</td>
+<td style="text-align: left;">Malta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NLD</td>
+<td style="text-align: left;">Netherlands</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PRT</td>
+<td style="text-align: left;">Portugal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SVK</td>
+<td style="text-align: left;">Slovakia</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SVN</td>
+<td style="text-align: left;">Slovenia</td>
+</tr>
+</tbody>
+</table>
+<p><u><strong>Comment</strong></u> : One should take caution not to double count the Monetary Union (UM) countries when calculating the aggregates. For example, the total assets of each bank should be aggregated only using the following components: <em>Portugal, Monetary Union countries excluding Portugal (UM-PT) and Countries outside Monetary Union (PT-UM).</em></p>
+<p><code>Institution type</code></p>
+<p>Type of institution. This variable is only available from December, 2014 onwards.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Abbreviation</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>inst_type</em></td>
+<td style="text-align: left;">Type of institution</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Availability</strong>: Dec. 2014 - Dec. 2020</p>
+<p><strong>Table 5</strong> – Institution type (<em>inst_type</em>)</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Code</strong></th>
+<th style="text-align: left;"><strong>Designation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Banks</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Saving banks</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Money market fund</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Central agricultural credit bank and mutual agricultural credit banks</td>
+</tr>
+</tbody>
+</table>
+<p><code>Value</code></p>
+<p>Value outstanding of a financial instrument, expressed in millions of euros.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Abbreviation</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>value</em></td>
+<td style="text-align: left;">Amount (in million euros)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Availability</strong>: Sep. 1997 - Dec. 2020</p>
+<h1 id="basic-descriptive-statistics">Basic Descriptive Statistics</h1>
+<p><strong>Table 6</strong> - Number of observations over the data period (as of December)</p>
+<pre class='stata'>──────────┬───────────
+     Year │    Freq.  
+──────────┼───────────
+     1997 │    2,990  
+     1998 │    3,117  
+     1999 │    3,321  
+     2000 │    3,014  
+     2001 │    2,940  
+     2002 │    2,926  
+     2003 │    3,164  
+     2004 │    3,194  
+     2005 │    2,252  
+     2006 │    2,391  
+     2007 │    2,452  
+     2008 │    2,545  
+     2009 │    2,542  
+     2010 │    2,429  
+     2011 │    2,317  
+     2012 │    2,326  
+     2013 │    2,206  
+     2014 │    2,882  
+     2015 │    2,894  
+     2016 │    2,857  
+     2017 │    2,829  
+     2018 │    2,771  
+     2019 │    2,784  
+     2020 │    2,753  
+──────────┴───────────
+</pre>
+<h1 id="auxiliary-files">Auxiliary Files</h1>
+<p>For a description of each variable in each dataset (name, unit of measurement, data and storage type, format, year of first and last observation), an account of the changes occurred over time, summary statistics for each dataset and a codebook for each dataset, please check the following auxiliary files:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Data File</th>
+<th style="text-align: center;">Description of Variables</th>
+<th style="text-align: center;">Summary Statistics</th>
+<th style="text-align: center;">Codebook</th>
+<th style="text-align: center;">Dataset description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Bank Balance Sheet (BBS)</td>
+<td style="text-align: center;"><a href="./aux_files/variables_description/var_bbs.html">var_bbs.html</a></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_bbs.html">stat_bbs.html</a><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_bbs.html">cdbk_bbs.html</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_bbs.html">dscr_bbs.html</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>The Summary Statistics, Codebook and Dataset Description files are available on BPLIM’s servers.</p>
+<h1 id="useful-links">Useful Links</h1>
+<p><a href="https://www.bportugal.pt/EstatisticasWEB/MetadataItens/MContexto_IFM_EN.htm" class="uri">https://www.bportugal.pt/EstatisticasWEB/MetadataItens/MContexto_IFM_EN.htm</a></p>
+<h1 id="legislation">Legislation</h1>
+<p>Below is a list of relevant legislations:</p>
+<ol type="1">
+<li><p><a href="./Instruções%20EMF-combine/43-97i67.pdf"><strong>Instrução no. 43/97</strong></a></p></li>
+<li><p><a href="./Instruções%20EMF-combine/19-2002i7.pdf"><strong>Instrução no. 19/2002</strong></a></p></li>
+<li><p><a href="./Instruções%20EMF-combine/12-2010i4.pdf"><strong>Instrução no. 12/2010</strong></a></p></li>
+<li><p><a href="./Instruções%20EMF-combine/20-2012i4.pdf"><strong>Instrução no. 20/2012</strong></a></p></li>
+<li><p><a href="./Instruções%20EMF-combine/25-2014m.pdf"><strong>Instrução no. 25/2014</strong></a></p></li>
+</ol>
+<h1 id="citation-of-this-dataset">Citation of this dataset</h1>
+<p>Banco de Portugal Microdata Research Laboratory (BPLIM)(2021): Bank Balance Sheet Monthly Data. Extraction: June 2021. Version:V1. BANCO DE PORTUGAL. Dataset. https://doi.org/10.17900/BBS.Jun2021.V1</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>To see the labels in Portuguese type the following command line in Stata: “label language pt”.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Conditions for data access for external researchers are detailed in the <em>Guide for Researchers Using Banco de Portugal Microdata Research Laboratory (BPLIM) Data</em>.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Please refer to the <a href="./aux_files/variables_description/var_bbs.html">variable spreadsheet</a> for details.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>See the <em>Guide for Researchers Using Banco de Portugal Microdata Research Laboratory (BPLIM) Data</em>.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>Please note that the summary statistics are run based on the perturbed data.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+</body>
+</html>

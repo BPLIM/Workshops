@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Monetary Financial Institutions Balance Sheet Database</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Monetary Financial Institutions Balance Sheet Database</h1>
+</header>
+<meta charset="utf-8"/>
+<p><code>Extraction Date</code>: June 2022</p>
+<p><code>Manual Date</code>: 26 October 2022<br />
+</p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<ol type="1">
+<li><p><a href="#variable-description">Variable Description</a></p></li>
+<li><p><a href="#time-series">Time Series</a></p></li>
+</ol>
+<h2 id="variable-description">Variable Description</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 38%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Designation</th>
+<th style="text-align: center;">Scale of Measurement</th>
+<th style="text-align: center;">Data type</th>
+<th style="text-align: center;">Storage type</th>
+<th style="text-align: center;">Start</th>
+<th style="text-align: center;">End</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>bina</em></td>
+<td style="text-align: left;">Anonymized bank identificaton number</td>
+<td style="text-align: center;">code</td>
+<td style="text-align: center;">discrete</td>
+<td style="text-align: center;">int</td>
+<td style="text-align: center;">1997m9</td>
+<td style="text-align: center;">2021m12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>date</em></td>
+<td style="text-align: left;">Reference monthh</td>
+<td style="text-align: center;">month</td>
+<td style="text-align: center;">discrete</td>
+<td style="text-align: center;">int</td>
+<td style="text-align: center;">1997m9</td>
+<td style="text-align: center;">2021m12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>instrument_asset</em></td>
+<td style="text-align: left;">Financial instruments: asset side</td>
+<td style="text-align: center;">code</td>
+<td style="text-align: center;">discrete</td>
+<td style="text-align: center;">int</td>
+<td style="text-align: center;">1997m9</td>
+<td style="text-align: center;">2021m12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>instrument_liab</em></td>
+<td style="text-align: left;">Financial instruments: liability side</td>
+<td style="text-align: center;">code</td>
+<td style="text-align: center;">discrete</td>
+<td style="text-align: center;">int</td>
+<td style="text-align: center;">1997m9</td>
+<td style="text-align: center;">2021m12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>counterparty_asset</em></td>
+<td style="text-align: left;">Classification of counterparty: asset side</td>
+<td style="text-align: center;">code</td>
+<td style="text-align: center;">discrete</td>
+<td style="text-align: center;">int</td>
+<td style="text-align: center;">1997m9</td>
+<td style="text-align: center;">2021m12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>counterparty_liab</em></td>
+<td style="text-align: left;">Classification of counterparty: liability side</td>
+<td style="text-align: center;">code</td>
+<td style="text-align: center;">discrete</td>
+<td style="text-align: center;">int</td>
+<td style="text-align: center;">1997m9</td>
+<td style="text-align: center;">2021m12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>country</em></td>
+<td style="text-align: left;">Country of origin or region of the counterparty</td>
+<td style="text-align: center;">code</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">str</td>
+<td style="text-align: center;">1997m9</td>
+<td style="text-align: center;">2021m12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>inst_type</em></td>
+<td style="text-align: left;">Type of institution</td>
+<td style="text-align: center;">code</td>
+<td style="text-align: center;">discrete</td>
+<td style="text-align: center;">int</td>
+<td style="text-align: center;">2014m12</td>
+<td style="text-align: center;">2021m12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>value</em></td>
+<td style="text-align: left;">Amount</td>
+<td style="text-align: center;">million euros</td>
+<td style="text-align: center;">continuous</td>
+<td style="text-align: center;">double</td>
+<td style="text-align: center;">1997m9</td>
+<td style="text-align: center;">2021m12</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Return</a></p>
+<h2 id="time-series">Time Series</h2>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 44%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: center;">Sep 1997 - Nov 2014</th>
+<th style="text-align: center;">Dec 2014 - Dec 2021</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>bina</em></td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>date</em></td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>instrument_asset</em></td>
+<td style="text-align: center;"><a href="#asset-instrument-classification-1997">Classification 97</a></td>
+<td style="text-align: center;"><a href="#asset-instrument-classification-2014">Classification 2014</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>instrument_liab</em></td>
+<td style="text-align: center;"><a href="#liability-instrument-classification-1997">Classification 97</a></td>
+<td style="text-align: center;"><a href="#liability-instrument-classification-2014">Classification 2014</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>counterparty_asset</em></td>
+<td style="text-align: center;"><a href="#asset-counterparty-classification-1997">Classification 97</a></td>
+<td style="text-align: center;"><a href="#asset-counterparty-classification-2014">Classification 2014</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>counterparty_liab</em></td>
+<td style="text-align: center;"><a href="#liability-counterparty-classification-1997">Classification 97</a></td>
+<td style="text-align: center;"><a href="#liability-counterparty-classification-2014">Classification 2014</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>country</em></td>
+<td style="text-align: center;"><a href="#country">Country</a></td>
+<td style="text-align: center;"><a href="#country">Country</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>inst_type</em></td>
+<td style="text-align: center;">[X]</td>
+<td style="text-align: center;"><a href="#institution-type">Institution Type</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>value</em></td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Legend</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">Variable available</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">[X]</td>
+<td style="text-align: center;">Variable not available</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Return</a></p>
+<h2 id="asset-instrument-classification-1997">Asset Instrument Classification 1997</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Notas e Moedas</td>
+<td style="text-align: left;">Banknotes and coins</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">Créditos e equiparados - Até 1 ano</td>
+<td style="text-align: left;">Credit and equivalent - up to 1 year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">30</td>
+<td style="text-align: left;">Créditos e equiparados - De 1 a 5 anos</td>
+<td style="text-align: left;">Credit and equivalent - from 1 year to 5 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">40</td>
+<td style="text-align: left;">Créditos e equiparados - A mais de 5 anos</td>
+<td style="text-align: left;">Credit and equivalent - more than 5 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">50</td>
+<td style="text-align: left;">Títulos exceto participações - Até 1 ano</td>
+<td style="text-align: left;">Securities other than equity - up to 1 year</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">60</td>
+<td style="text-align: left;">Títulos exceto participações - De 1 a 2 anos</td>
+<td style="text-align: left;">Securities other than equity - from 1 year to 2 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">70</td>
+<td style="text-align: left;">Títulos exceto participações - A mais de 2 anos</td>
+<td style="text-align: left;">Securities other than equity - more than 2 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">80</td>
+<td style="text-align: left;">Participações</td>
+<td style="text-align: left;">Equity securities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">90</td>
+<td style="text-align: left;">Participações, das quais unidades de participação</td>
+<td style="text-align: left;">Units (included in equity securities)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">Imóveis, mobiliário e material</td>
+<td style="text-align: left;">Properties, furnitures, and equipments</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">110</td>
+<td style="text-align: left;">Ativos diversos</td>
+<td style="text-align: left;">Miscellaneous assets</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Return</a></p>
+<h2 id="asset-instrument-classification-2014">Asset Instrument Classification 2014</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Notas e moedas</td>
+<td style="text-align: left;">Banknotes and coins</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">Créditos e equiparados - Até 1 ano</td>
+<td style="text-align: left;">Credit and equivalent - up to 1 year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">30</td>
+<td style="text-align: left;">Créditos e equiparados - De 1 a 2 anos</td>
+<td style="text-align: left;">Credit and equivalent - from 1 year to 2 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">40</td>
+<td style="text-align: left;">Créditos e equiparados - De 2 a 5 anos</td>
+<td style="text-align: left;">Credit and equivalent - from 2 year to 5 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">50</td>
+<td style="text-align: left;">Créditos e equiparados - A mais de 5 anos</td>
+<td style="text-align: left;">Credit and equivalent - more than 5 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">60</td>
+<td style="text-align: left;">Títulos de dívida - Até 1 ano</td>
+<td style="text-align: left;">Debt securities - up to 1 year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">70</td>
+<td style="text-align: left;">Títulos de dívida - De 1 a 2 anos</td>
+<td style="text-align: left;">Debt securities - from 1 year to 2 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">80</td>
+<td style="text-align: left;">Títulos de dívida - A mais de 2 anos</td>
+<td style="text-align: left;">Debt securities - more than 2 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">90</td>
+<td style="text-align: left;">Ações cotadas</td>
+<td style="text-align: left;">Traded shares</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">Ações não cotadas</td>
+<td style="text-align: left;">Untraded shares</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">110</td>
+<td style="text-align: left;">Outras participações</td>
+<td style="text-align: left;">Other equities</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">120</td>
+<td style="text-align: left;">Unidades de participação</td>
+<td style="text-align: left;">Units</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">130</td>
+<td style="text-align: left;">Imóveis, mobiliário e material</td>
+<td style="text-align: left;">Properties, furnitures, and equipments</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">140</td>
+<td style="text-align: left;">Ativos diversos</td>
+<td style="text-align: left;">Miscellaneous assets</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Return</a></p>
+<h2 id="liability-instrument-classification-1997">Liability Instrument Classification 1997</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">130</td>
+<td style="text-align: left;">Responsabilidades à vista (exceto depósitos de poupança à vista)</td>
+<td style="text-align: left;">Demand deposits (excluding sight deposits)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">140</td>
+<td style="text-align: left;">Depósitos com pré-aviso (incluindo depósitos de poupança à vista) - Até 90 dias</td>
+<td style="text-align: left;">Deposits redeemable at a notice of up to 90 days (excluding sight deposits)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">150</td>
+<td style="text-align: left;">Depósitos com pré-aviso (incluindo depósitos de poupança à vista) - A mais 90 dias</td>
+<td style="text-align: left;">Deposits redeemable at a notice of more than 90 days (including sight deposits)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">170</td>
+<td style="text-align: left;">Depósitos e equiparados (exceto responsabilidades à vista, depósitos com pré-aviso e acordos de recompra) - Até 1 ano</td>
+<td style="text-align: left;">Deposits and equivalent (excluding demand deposits, deposits redeemable at notice, and trading liabilities) - up to 1 year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">180</td>
+<td style="text-align: left;">Depósitos e equiparados (exceto responsabilidades à vista, depósitos com pré-aviso e acordos de recompra) - De 1 a 2 anos</td>
+<td style="text-align: left;">Deposits and equivalent (excluding demand deposits, deposits redeemable at notice, and trading liabilities) - from 1 to 2 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">190</td>
+<td style="text-align: left;">Depósitos e equiparados (exceto responsabilidades à vista, depósitos com pré-aviso e acordos de recompra) - A mais de 2 anos</td>
+<td style="text-align: left;">Deposits and equivalent (excluding demand deposits, deposits redeemable at notice, and trading liabilities) - more than 2 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">200</td>
+<td style="text-align: left;">Acordos de recompra</td>
+<td style="text-align: left;">Trading liabilities</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">210</td>
+<td style="text-align: left;">Títulos exceto capital - Até 1 ano</td>
+<td style="text-align: left;">Secutities other than capital - up to 1 year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">220</td>
+<td style="text-align: left;">Títulos exceto capital - De 1 a 2 anos</td>
+<td style="text-align: left;">Secutities other than capital - from 1 to 2 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">230</td>
+<td style="text-align: left;">Títulos exceto capital - A mais de 2 anos</td>
+<td style="text-align: left;">Secutities other than capital - from 2 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">240</td>
+<td style="text-align: left;">Capital e reservas</td>
+<td style="text-align: left;">Capital and reserves</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">260</td>
+<td style="text-align: left;">Passivos diversos</td>
+<td style="text-align: left;">Miscellaneous liabilities</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Return</a></p>
+<h2 id="liability-instrument-classification-2014">Liability Instrument Classification 2014</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">380</td>
+<td style="text-align: left;">Responsabilidades à vista (exceto depósitos de poupança à vista)</td>
+<td style="text-align: left;">Demand deposits (excluding sight deposits)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">390</td>
+<td style="text-align: left;">Depósitos com pré-aviso (incluindo depósitos de poupança à vista) - Até 90 dias</td>
+<td style="text-align: left;">Deposits redeemable at a notice of up to 90 days (excluding sight deposits)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">400</td>
+<td style="text-align: left;">Depósitos com pré-aviso (incluindo depósitos de poupança à vista) - A mais de 90 dias</td>
+<td style="text-align: left;">Deposits redeemable at a notice of more than 90 days (including sight deposits)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">420</td>
+<td style="text-align: left;">Depósitos e equiparados (exceto responsabilidades à vista, depósitos com pré-aviso e acordos de recompra) - Até 1 ano</td>
+<td style="text-align: left;">Deposits and equivalent (excluding demand deposits, deposits redeemable at notice, and trading liabilities) - up to 1 year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">430</td>
+<td style="text-align: left;">Depósitos e equiparados (exceto responsabilidades à vista, depósitos com pré-aviso e acordos de recompra) - De 1 a 2 anos</td>
+<td style="text-align: left;">Deposits and equivalent (excluding demand deposits, deposits redeemable at notice, and trading liabilities) - from 1 to 2 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">440</td>
+<td style="text-align: left;">Depósitos e equiparados (exceto responsabilidades à vista, depósitos com pré-aviso e acordos de recompra) - A mais de 2 anos</td>
+<td style="text-align: left;">Deposits and equivalent (excluding demand deposits, deposits redeemable at notice, and trading liabilities) - more than 2 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">450</td>
+<td style="text-align: left;">Acordos de recompra - Até 1 ano</td>
+<td style="text-align: left;">Trading liabilities - up to 1 year</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">460</td>
+<td style="text-align: left;">Acordos de recompra - A mais de 1 ano</td>
+<td style="text-align: left;">Trading liabilities - more than 1 year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">470</td>
+<td style="text-align: left;">Títulos de dívida emitidos - Até 1 ano</td>
+<td style="text-align: left;">Debt securities issued - up to 1 year</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">480</td>
+<td style="text-align: left;">Títulos de dívida emitidos - De 1 a 2 anos</td>
+<td style="text-align: left;">Debt securities issued - from 1 to 2 years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">490</td>
+<td style="text-align: left;">Títulos de dívida emitidos - A mais de 2 anos</td>
+<td style="text-align: left;">Debt securities issued - more than 2 years</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">500</td>
+<td style="text-align: left;">Capital e reservas</td>
+<td style="text-align: left;">Capital and reserves</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">520</td>
+<td style="text-align: left;">Passivos diversos</td>
+<td style="text-align: left;">Miscellaneous Liabilities</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Return</a></p>
+<h2 id="asset-counterparty-classification-1997">Asset Counterparty Classification 1997</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Instituições financeiras monetárias</td>
+<td style="text-align: left;">Monetary financial institutions</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">Outros intermediários financeiros e auxiliares financeiros</td>
+<td style="text-align: left;">Other financial intermediaries and financial auxiliaries</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">30</td>
+<td style="text-align: left;">Sociedades de seguros e fundos de pensões</td>
+<td style="text-align: left;">Insurance corporations and pension funds</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">40</td>
+<td style="text-align: left;">Administração central</td>
+<td style="text-align: left;">Central government</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">50</td>
+<td style="text-align: left;">Administração regional</td>
+<td style="text-align: left;">Regional government</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">60</td>
+<td style="text-align: left;">Administração local</td>
+<td style="text-align: left;">Local government</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">70</td>
+<td style="text-align: left;">Segurança social</td>
+<td style="text-align: left;">Social security</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">80</td>
+<td style="text-align: left;">Sociedades não financeiras</td>
+<td style="text-align: left;">Non-financial institutions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">90</td>
+<td style="text-align: left;">Particulares</td>
+<td style="text-align: left;">Individuals</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">120</td>
+<td style="text-align: left;">Setorização não relevante/ não possível</td>
+<td style="text-align: left;">Irrelevant sector</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Return</a></p>
+<h2 id="asset-counterparty-classification-2014">Asset Counterparty Classification 2014</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Bancos Centrais</td>
+<td style="text-align: left;">Central banks</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">Fundos do mercado monetário</td>
+<td style="text-align: left;">Money market funds</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">Entidades depositárias, exceto o Banco Central</td>
+<td style="text-align: left;">Deposit institutions, excluding central banks</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">Outros intermediários financeiros, auxiliares financeiros e instituições financeiras cativas e prestamistas</td>
+<td style="text-align: left;">Other financial intermediaries, financial auxiliaries, and captive financial institutions and money lenders</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">22</td>
+<td style="text-align: left;">Fundos de investimento, exceto fundos do mercado monetário</td>
+<td style="text-align: left;">investment fund, excluding money market funds</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">31</td>
+<td style="text-align: left;">Sociedades de seguros</td>
+<td style="text-align: left;">Insurance corporations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">32</td>
+<td style="text-align: left;">Fundos de pensões</td>
+<td style="text-align: left;">Pension funds</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">40</td>
+<td style="text-align: left;">Administração central</td>
+<td style="text-align: left;">Central government</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">50</td>
+<td style="text-align: left;">Administração regional</td>
+<td style="text-align: left;">Regional government</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">60</td>
+<td style="text-align: left;">Administração local</td>
+<td style="text-align: left;">Local government</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">70</td>
+<td style="text-align: left;">Segurança social</td>
+<td style="text-align: left;">Social security</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">80</td>
+<td style="text-align: left;">Sociedades não financeiras</td>
+<td style="text-align: left;">Non-financial institutions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">91</td>
+<td style="text-align: left;">Famílias</td>
+<td style="text-align: left;">Family</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">92</td>
+<td style="text-align: left;">Instituições sem fins lucrativos ao serviço das famílias</td>
+<td style="text-align: left;">Non-profit institutions serving households</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">120</td>
+<td style="text-align: left;">Setorização não relevante/ não possível</td>
+<td style="text-align: left;">Irrelevant sector</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Return</a></p>
+<h2 id="liability-counterparty-classification-1997">Liability Counterparty Classification 1997</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Bancos Centrais</td>
+<td style="text-align: left;">Central banks</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">OIFM 1: instituições não sujeitas a reservas mínimas, nomeadamente os Fundos do Mercado Monetário</td>
+<td style="text-align: left;">Institutions not subject to minimum reserves, namely the money market funds</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">30</td>
+<td style="text-align: left;">OIFM 2: instituições sujeitas a reservas mínimas</td>
+<td style="text-align: left;">Institutions subject to minimum reserves</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">40</td>
+<td style="text-align: left;">Outros intermediários financeiros e auxiliares financeiros</td>
+<td style="text-align: left;">Other financial intermediaries and financial auxiliaries</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">50</td>
+<td style="text-align: left;">Sociedades de seguros e fundos de pensões</td>
+<td style="text-align: left;">Insurance corporations and pension funds</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">60</td>
+<td style="text-align: left;">Administração central</td>
+<td style="text-align: left;">Central government</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">70</td>
+<td style="text-align: left;">Administração regional</td>
+<td style="text-align: left;">Regional government</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">80</td>
+<td style="text-align: left;">Administração local</td>
+<td style="text-align: left;">Local government</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">90</td>
+<td style="text-align: left;">Segurança social</td>
+<td style="text-align: left;">Social security</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">Sociedades não financeiras</td>
+<td style="text-align: left;">Non-financial institutions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">110</td>
+<td style="text-align: left;">Particulares</td>
+<td style="text-align: left;">Individuals</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">120</td>
+<td style="text-align: left;">Setorização não relevante/ não possivel</td>
+<td style="text-align: left;">Irrelevant sector</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Return</a></p>
+<h2 id="liability-counterparty-classification-2014">Liability Counterparty Classification 2014</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Bancos Centrais</td>
+<td style="text-align: left;">Central banks</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">21</td>
+<td style="text-align: left;">Fundos do mercado monetário</td>
+<td style="text-align: left;">Money market funds</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">22</td>
+<td style="text-align: left;">Entidades depositárias, exceto o Banco Central</td>
+<td style="text-align: left;">Deposit institutions, excluding central banks</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">39</td>
+<td style="text-align: left;">Outros intermediários financeiros, auxiliares financeiros e instituições financeiras cativas e prestamistas</td>
+<td style="text-align: left;">Other financial intermediaries, financial auxiliaries, and captive financial institutions and money lenders</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">43</td>
+<td style="text-align: left;">Fundos de investimento, exceto fundos do mercado monetário</td>
+<td style="text-align: left;">investment fund, excluding money market funds</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">51</td>
+<td style="text-align: left;">Sociedades de seguros</td>
+<td style="text-align: left;">Insurance corporations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">52</td>
+<td style="text-align: left;">Fundos de pensões</td>
+<td style="text-align: left;">Pension funds</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">60</td>
+<td style="text-align: left;">Administração central</td>
+<td style="text-align: left;">Central government</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">70</td>
+<td style="text-align: left;">Administração regional</td>
+<td style="text-align: left;">Regional government</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">80</td>
+<td style="text-align: left;">Administração local</td>
+<td style="text-align: left;">Local government</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">90</td>
+<td style="text-align: left;">Segurança social</td>
+<td style="text-align: left;">Social security</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">Sociedades não financeiras</td>
+<td style="text-align: left;">Non-financial institutions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">111</td>
+<td style="text-align: left;">Famílias</td>
+<td style="text-align: left;">Family</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">112</td>
+<td style="text-align: left;">Instituições sem fins lucrativos ao serviço das famílias</td>
+<td style="text-align: left;">Non-profit institutions serving households</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">120</td>
+<td style="text-align: left;">Setorização não relevante/ não possível</td>
+<td style="text-align: left;">Irrelevant sector</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Return</a></p>
+<h2 id="country">Country</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">UM-PT</td>
+<td style="text-align: left;">Países da União Monetária excluindo Portugal</td>
+<td style="text-align: left;">Monetary Union countries excluding Portugal</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PT-UM</td>
+<td style="text-align: left;">Países Fora da União Monetária</td>
+<td style="text-align: left;">Countries outside Monetary Union</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">EUB</td>
+<td style="text-align: left;">Banco Central Europeu</td>
+<td style="text-align: left;">European Central Bank</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">AUT</td>
+<td style="text-align: left;">Austria</td>
+<td style="text-align: left;">Austria</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">BEL</td>
+<td style="text-align: left;">Bélgica</td>
+<td style="text-align: left;">Belgium</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CYP</td>
+<td style="text-align: left;">Chipre</td>
+<td style="text-align: left;">Cyprus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DEU</td>
+<td style="text-align: left;">Alemanha</td>
+<td style="text-align: left;">Germany</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ESP</td>
+<td style="text-align: left;">Espanha</td>
+<td style="text-align: left;">Spain</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">EST</td>
+<td style="text-align: left;">Estónia</td>
+<td style="text-align: left;">Estonia</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">FIN</td>
+<td style="text-align: left;">Finlândia</td>
+<td style="text-align: left;">Finland</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">FRA</td>
+<td style="text-align: left;">França</td>
+<td style="text-align: left;">France</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">GRC</td>
+<td style="text-align: left;">Grécia</td>
+<td style="text-align: left;">Greece</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">IRL</td>
+<td style="text-align: left;">Irlanda</td>
+<td style="text-align: left;">Ireland</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ITA</td>
+<td style="text-align: left;">Itália</td>
+<td style="text-align: left;">Italy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">LTU</td>
+<td style="text-align: left;">Lituânia</td>
+<td style="text-align: left;">Lithuania</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">LUX</td>
+<td style="text-align: left;">Luxemburgo</td>
+<td style="text-align: left;">Luxembourg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">LVA</td>
+<td style="text-align: left;">Letónia</td>
+<td style="text-align: left;">Latvia</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MLT</td>
+<td style="text-align: left;">Malta</td>
+<td style="text-align: left;">Malta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">NLD</td>
+<td style="text-align: left;">Holanda</td>
+<td style="text-align: left;">Netherlands</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PRT</td>
+<td style="text-align: left;">Portugal</td>
+<td style="text-align: left;">Portugal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SVK</td>
+<td style="text-align: left;">Eslováquia</td>
+<td style="text-align: left;">Slovakia</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SVN</td>
+<td style="text-align: left;">Eslovénia</td>
+<td style="text-align: left;">Slovenia</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Return</a></p>
+<h2 id="institution-type">Institution Type</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Bancos</td>
+<td style="text-align: left;">Banks</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Caixas Económicas</td>
+<td style="text-align: left;">Saving banks</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Fundos do Mercado Monetário</td>
+<td style="text-align: left;">Money market fund</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Caixa Central e Caixas de Crédito Agrícola Mútuo</td>
+<td style="text-align: left;">Central agricultural credit bank and mutual agricultural credit banks</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Return</a></p>
+</body>
+</html>
