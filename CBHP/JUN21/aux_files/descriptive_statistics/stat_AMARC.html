@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>stat_AMARC</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px; max-width:45em;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+td {padding:0 0 0 0} /* override */
+table:not([class]) th { padding:4px 6px } 
+table:not([class]) td { padding:4px 6px } 
+table:not([class]) thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+table:not([class]) thead tr:last-child  th {padding-bottom:6px}
+table:not([class]) tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+table:not([class]) tbody tr:last-child  td {padding-bottom:6px;}
+table:not([class]) tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+</head>
+<body>
+<meta charset="utf-8"/>
+<h1 id="central-balance-sheet-harmonized-panel-data">Central Balance Sheet Harmonized Panel Data</h1>
+<h2 id="descriptive-statistics">Descriptive statistics</h2>
+<p><code>extraction</code>: June 2021</p>
+<h2 id="corporate-actions---harmonized-panel"><strong>Corporate Actions - Harmonized Panel</strong></h2>
+<pre class='stata'>AMARC - 2006-2019
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │     59,443    33312.88    18872.51       1059      67218
+         ano │     59,443      2012.2    3.874621       2006       2019
+   tipoacont │     59,443    27.94366    9.061854         10         79
+mesesparagem │     49,323    11.05859    2.426105          1         24
+efeitocontas │     59,439    .2038056    .4028295          0          1
+efeitopess~l │     59,439    .0944161    .2924092          0          1
+efeitobala~o │     59,439    .1798146    .3840362          0          1
+efeitodemr~t │     59,439    .1604334    .3670106          0          1
+
+Descriptive Statistics by Year
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2006
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      4,494    32716.42    13480.54       1059      58670
+         ano │      4,494        2006           0       2006       2006
+   tipoacont │      4,494    28.75367    8.768587         10         79
+mesesparagem │      3,810    10.69134    2.784979          1         15
+efeitocontas │      4,494    .1221629    .3275103          0          1
+efeitopess~l │      4,494     .000445    .0210936          0          1
+efeitobala~o │      4,494    .3375612    .4729307          0          1
+efeitodemr~t │      4,494    .2955051    .4563203          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2007
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      4,480    33482.61    16104.97       2708      58669
+         ano │      4,480        2007           0       2007       2007
+   tipoacont │      4,480    28.99554    11.59969         10         79
+mesesparagem │      3,516    10.54266    2.895064          1         24
+efeitocontas │      4,480    .2926339    .4550226          0          1
+efeitopess~l │      4,480    .1165179    .3208807          0          1
+efeitobala~o │      4,480    .2113839    .4083356          0          1
+efeitodemr~t │      4,480    .1805804     .384713          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2008
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      4,270    35417.57    17831.56       3257      58665
+         ano │      4,270        2008           0       2008       2008
+   tipoacont │      4,270    27.50234    11.09677         10         79
+mesesparagem │      3,232    10.62717    2.876157          1         18
+efeitocontas │      4,270    .2948478    .4560277          0          1
+efeitopess~l │      4,270    .1149883    .3190452          0          1
+efeitobala~o │      4,270    .1866511    .3896768          0          1
+efeitodemr~t │      4,270    .1777518    .3823484          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2009
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      4,202     39220.8    18129.33       5017      58672
+         ano │      4,202        2009           0       2009       2009
+   tipoacont │      4,202    27.04165    9.566288         10         79
+mesesparagem │      3,284    10.90469    2.537874          1         12
+efeitocontas │      4,202    .2520228     .434226          0          1
+efeitopess~l │      4,202    .1147073    .3187063          0          1
+efeitobala~o │      4,202     .184436    .3878855          0          1
+efeitodemr~t │      4,202    .1746787    .3797373          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2010
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      4,357    45047.51    17701.91       1615      58683
+         ano │      4,357        2010           0       2010       2010
+   tipoacont │      4,357    28.57723    9.054235         10         79
+mesesparagem │      3,726    10.90982    2.611163          1         22
+efeitocontas │      4,357    .1817765    .3857044          0          1
+efeitopess~l │      4,357    .1427588    .3498668          0          1
+efeitobala~o │      4,357    .2430571    .4289786          0          1
+efeitodemr~t │      4,357     .190039    .3923768          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2011
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      4,644     46138.1    20685.29       1876      58729
+         ano │      4,644        2011           0       2011       2011
+   tipoacont │      4,644    27.70758    8.010827         10         79
+mesesparagem │      3,950    10.84203     2.70783          1         19
+efeitocontas │      4,644    .1307063    .3371152          0          1
+efeitopess~l │      4,644    .1386736    .3456428          0          1
+efeitobala~o │      4,644     .214255    .4103487          0          1
+efeitodemr~t │      4,644    .1955211     .396644          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2012
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      4,597    9360.945    3270.383       1436      36061
+         ano │      4,597        2012           0       2012       2012
+   tipoacont │      4,597    27.57646    8.631948         10         79
+mesesparagem │      3,818    10.97669     2.52786          1         12
+efeitocontas │      4,597    .2007831    .4006297          0          1
+efeitopess~l │      4,597    .1218186    .3271117          0          1
+efeitobala~o │      4,597    .1692408    .3750053          0          1
+efeitodemr~t │      4,597     .177072    .3817712          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2013
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      5,054    13960.57     2852.47       5562      36063
+         ano │      5,054        2013           0       2013       2013
+   tipoacont │      5,054    28.36367    9.908682         10         79
+mesesparagem │      4,145    11.22895    2.167332          1         12
+efeitocontas │      5,054     .208152    .4060263          0          1
+efeitopess~l │      5,054    .1203008    .3253451          0          1
+efeitobala~o │      5,054    .1442422    .3513699          0          1
+efeitodemr~t │      5,054    .1612584    .3678055          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2014
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      4,606    20529.07    3332.018      11373      36070
+         ano │      4,606        2014           0       2014       2014
+   tipoacont │      4,606    28.06057    7.824876         10         79
+mesesparagem │      4,003    11.25081    2.196619          1         12
+efeitocontas │      4,602    .1631899     .369579          0          1
+efeitopess~l │      4,602    .1099522    .3128642          0          1
+efeitobala~o │      4,602    .1490656    .3561918          0          1
+efeitodemr~t │      4,602     .142764      .34987          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2015
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      4,494    22849.75    3242.457      16703      64856
+         ano │      4,494        2015           0       2015       2015
+   tipoacont │      4,494    27.84869    8.312705         10         79
+mesesparagem │      3,813    11.29006     2.09564          1         12
+efeitocontas │      4,494    .2619048      .43972          0          1
+efeitopess~l │      4,494    .0631954    .2433411          0          1
+efeitobala~o │      4,494    .1132621    .3169482          0          1
+efeitodemr~t │      4,494    .0983534     .297825          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2016
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      4,070    29321.36    1785.631      18549      36072
+         ano │      4,070        2016           0       2016       2016
+   tipoacont │      4,070     27.8027    8.109635         10         79
+mesesparagem │      3,457    11.35059    2.015786          1         12
+efeitocontas │      4,070    .2115479    .4084561          0          1
+efeitopess~l │      4,070    .0660934    .2484758          0          1
+efeitobala~o │      4,070    .1253071    .3311075          0          1
+efeitodemr~t │      4,070    .1031941    .3042496          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2017
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      3,776    33802.98    1784.403      27247      62576
+         ano │      3,776        2017           0       2017       2017
+   tipoacont │      3,776    27.47669    8.380867         10         79
+mesesparagem │      3,151    11.47636    1.827653          1         12
+efeitocontas │      3,776    .1914725    .3935121          0          1
+efeitopess~l │      3,776     .050053    .2180832          0          1
+efeitobala~o │      3,776    .1255297    .3313624          0          1
+efeitodemr~t │      3,776    .1038136    .3050589          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2018
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      3,402    60003.86    5087.811      32040      63376
+         ano │      3,402        2018           0       2018       2018
+   tipoacont │      3,402    27.47972    7.915629         10         79
+mesesparagem │      2,872    11.41957    1.969943          1         12
+efeitocontas │      3,402    .1760729    .3809382          0          1
+efeitopess~l │      3,402     .063786    .2444073          0          1
+efeitobala~o │      3,402    .1402116    .3472575          0          1
+efeitodemr~t │      3,402    .0967078    .2956029          0          1
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+-> ano = 2019
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+    numordem │      2,997    64954.22    1425.166      32183      67218
+         ano │      2,997        2019           0       2019       2019
+   tipoacont │      2,997    27.61895    7.606144         10         79
+mesesparagem │      2,546    11.49647    1.866094          1         12
+efeitocontas │      2,997    .1504838    .3576047          0          1
+efeitopess~l │      2,997    .0720721    .2586504          0          1
+efeitobala~o │      2,997    .1451451    .3523059          0          1
+efeitodemr~t │      2,997    .1004338    .3006276          0          1
+</pre>
+</body>
+</html>

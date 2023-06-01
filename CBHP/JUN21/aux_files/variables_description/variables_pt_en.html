@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>variables_pt_en_new</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<meta charset="utf-8"/>
+<h1 id="variables-in-central-balance-sheet-harmonized-panel-data">Variables in Central Balance Sheet Harmonized Panel Data</h1>
+<h1 id="table-of-contents">Table of Contents</h1>
+<ol type="1">
+<li><a href="#general-information-file-cover-sheet">General Information File (Cover Sheet)</a></li>
+<li><a href="#economic-and-financial-information-file">Economic and Financial Information File</a></li>
+<li><a href="#employment-information-file">Employment Information File</a></li>
+<li><a href="#trade-information-per-market-file">Trade Information per Market File</a></li>
+<li><a href="#corporate-actions-file">Corporate Actions File</a></li>
+<li><a href="#economic-and-financial-indicators">Economic and Financial Indicators</a></li>
+</ol>
+<h2 id="general-information-file-cover-sheet">General Information File (Cover Sheet)</h2>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 35%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">ano</td>
+<td style="text-align: left;">Ano de referência</td>
+<td style="text-align: left;">Year of reference</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">tina</td>
+<td style="text-align: left;">Número de Identificação Fiscal Anonimizado</td>
+<td style="text-align: left;">Anonymized Tax Identification Number</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">datainitrib</td>
+<td style="text-align: left;">Data do início do período de tributação</td>
+<td style="text-align: left;">Start of fiscal period</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">datafimtrib</td>
+<td style="text-align: left;">Data do fim do período de tributação</td>
+<td style="text-align: left;">End of fiscal period</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">numdias</td>
+<td style="text-align: left;">Número de dias do período de tributação</td>
+<td style="text-align: left;">Number of days of fiscal period</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">motivodec</td>
+<td style="text-align: left;">Motivo da declaração</td>
+<td style="text-align: left;">Declaration motive</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">ancon</td>
+<td style="text-align: left;">Ano de constituição empresa</td>
+<td style="text-align: left;">Founding year</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">sitempresa</td>
+<td style="text-align: left;">Situação da empresa</td>
+<td style="text-align: left;">Firm’s situation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">datasitempresa</td>
+<td style="text-align: left;">Situação da empresa - data</td>
+<td style="text-align: left;">Date of firm’s situation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">cae3</td>
+<td style="text-align: left;">Classificação da atividade económica (Rev. 3)</td>
+<td style="text-align: left;">Portuguese classification of economic activities- Revision 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">cae21</td>
+<td style="text-align: left;">Classificação da atividade económica (Rev. 2.1)</td>
+<td style="text-align: left;">Portuguese classification of economic activities- Revision 2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">distrito</td>
+<td style="text-align: left;">Distrito da empresa</td>
+<td style="text-align: left;">District/Distrito in which the firm is located</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">liquidacao</td>
+<td style="text-align: left;">Empresa em liquidação</td>
+<td style="text-align: left;">Firm in Liquidation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">sucursal</td>
+<td style="text-align: left;">Sucursal</td>
+<td style="text-align: left;">Branch</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">exporta</td>
+<td style="text-align: left;">Empresa exportadora</td>
+<td style="text-align: left;">Exporting firm</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">natju</td>
+<td style="text-align: left;">Natureza jurídica</td>
+<td style="text-align: left;">Legal form</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">sectorinstit</td>
+<td style="text-align: left;">Setor institucional</td>
+<td style="text-align: left;">Institutional sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">indactiecon</td>
+<td style="text-align: left;">Indicador da atividade económica</td>
+<td style="text-align: left;">Indicator of Economic Activity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">planocont</td>
+<td style="text-align: left;">Plano de Contabilidade</td>
+<td style="text-align: left;">Reporting type (accounting system)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">regime</td>
+<td style="text-align: left;">Regime contabilístico</td>
+<td style="text-align: left;">Reporting standards</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">pervvn</td>
+<td style="text-align: left;">% Volume de negócios da atividade principal</td>
+<td style="text-align: left;">Share of turnover of the main economic activity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">numestabnac</td>
+<td style="text-align: left;">Número de estabelecimentos da empresa em território nacional</td>
+<td style="text-align: left;">Number of national establishments</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">numestabest</td>
+<td style="text-align: left;">Número de estabelecimentos da empresa fora do território nacional</td>
+<td style="text-align: left;">Number of foreign establishments</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">numestab</td>
+<td style="text-align: left;">Número de estabelecimentos da empresa</td>
+<td style="text-align: left;">Total number of establishments</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">caekotu</td>
+<td style="text-align: left;">Secções da CAE K, O, T ou U</td>
+<td style="text-align: left;">CAE sections K, O, T or U</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">dimcomissao</td>
+<td style="text-align: left;">Categoria de Dimensão - Recomendação da Comissão 2003/361/CE</td>
+<td style="text-align: left;">Dimension category - Commission recommendation 2003/361/CE</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">return</a></p>
+<h2 id="economic-and-financial-information-file">Economic and Financial information File</h2>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 35%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">B001</td>
+<td style="text-align: left;">Total Activo (QS)</td>
+<td style="text-align: left;">Total Assets (QS)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B004</td>
+<td style="text-align: left;">&gt; Activo não corrente - Total (QS)</td>
+<td style="text-align: left;">&gt; Total non-current assets (QS)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B005</td>
+<td style="text-align: left;">&gt; &gt; Ativos fixos tangiveis e intangiveis</td>
+<td style="text-align: left;">&gt; &gt; Fixed tangible assets and intangible assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B012</td>
+<td style="text-align: left;">&gt; &gt; &gt;Ativos Fixos Tangíveis</td>
+<td style="text-align: left;">&gt; &gt; &gt;Fixed tangible assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B025</td>
+<td style="text-align: left;">&gt; &gt; Investimentos financeiros</td>
+<td style="text-align: left;">&gt; &gt; Financial investments</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B158</td>
+<td style="text-align: left;">&gt; &gt; Restantes ativos não correntes</td>
+<td style="text-align: left;">&gt; &gt; Non-current assets - Remaining non-current assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B029</td>
+<td style="text-align: left;">&gt;Activo corrente - Total (QS)</td>
+<td style="text-align: left;">&gt; Total Current assets (QS)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B032</td>
+<td style="text-align: left;">&gt; &gt; Inventários e Ativos biológicos</td>
+<td style="text-align: left;">&gt; &gt;Current assets - Inventories and biological assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B041</td>
+<td style="text-align: left;">&gt; &gt;Clientes</td>
+<td style="text-align: left;">&gt; &gt;Current assets - Customers</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B049</td>
+<td style="text-align: left;">&gt; &gt; Depósitos bancários e caixa</td>
+<td style="text-align: left;">&gt; &gt;Current assets - Cash and bank deposits</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B159</td>
+<td style="text-align: left;">&gt; &gt;Restantes ativos correntes</td>
+<td style="text-align: left;">&gt; &gt;Current assets - Remaining current assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B042</td>
+<td style="text-align: left;">&gt; &gt;Activo corrente - Estado e outros entes públicos</td>
+<td style="text-align: left;">&gt; &gt;Current assets - State and other public entities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B060</td>
+<td style="text-align: left;">Capital Próprio e Passivo (QS)</td>
+<td style="text-align: left;">Equity and Liabilities (QS)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B061</td>
+<td style="text-align: left;">&gt;Capital Próprio (QS)</td>
+<td style="text-align: left;">&gt; Equity (QS)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">BL005</td>
+<td style="text-align: left;">&gt; &gt; Reservas legais</td>
+<td style="text-align: left;">&gt; &gt; Legal reserves</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">BL007</td>
+<td style="text-align: left;">&gt; &gt; Resultados transitados</td>
+<td style="text-align: left;">&gt; &gt; Retained earnings</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B074</td>
+<td style="text-align: left;">&gt; &gt; Dividendos antecipados</td>
+<td style="text-align: left;">&gt; &gt; Interim dividends</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B143</td>
+<td style="text-align: left;">&gt; &gt;Capital subscrito</td>
+<td style="text-align: left;">&gt; &gt; Subscribed capital</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B080</td>
+<td style="text-align: left;">&gt;Passivo (QS)</td>
+<td style="text-align: left;">&gt; Liabilities (QS)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B081</td>
+<td style="text-align: left;">&gt; &gt;Passivo não corrente (QS)</td>
+<td style="text-align: left;">&gt; &gt; Non-current liabilities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B085</td>
+<td style="text-align: left;">&gt; &gt; &gt;Passivo não corrente - Financiamentos obtidos</td>
+<td style="text-align: left;">&gt; &gt; &gt; Non-current liabilities - Obtained funding</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B160</td>
+<td style="text-align: left;">&gt; &gt; &gt;Restantes passivos não correntes</td>
+<td style="text-align: left;">&gt; &gt; &gt; Non-current liabilities - Remaining non-current liabilities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B089</td>
+<td style="text-align: left;">&gt; &gt;Passivo corrente (QS)</td>
+<td style="text-align: left;">&gt; &gt; Current liabilities (QS)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B093</td>
+<td style="text-align: left;">&gt; &gt; &gt;Fornecedores</td>
+<td style="text-align: left;">&gt; &gt; &gt; Current liabilities - Suppliers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B161</td>
+<td style="text-align: left;">&gt; &gt; &gt;Restantes passivos correntes</td>
+<td style="text-align: left;">&gt; &gt; &gt; Current liabilities - Remaining current liabilities</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B094</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt;Passivo corrente - Estado e outros entes públicos</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Current liabilities - State and other public entities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D021</td>
+<td style="text-align: left;">Total de rendimentos (QS)</td>
+<td style="text-align: left;">Total income</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D001</td>
+<td style="text-align: left;">Vendas e serviços prestados</td>
+<td style="text-align: left;">&gt; Turnover</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D002</td>
+<td style="text-align: left;">Vendas</td>
+<td style="text-align: left;">&gt; &gt; Sales</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DL017</td>
+<td style="text-align: left;">Prestações de serviços</td>
+<td style="text-align: left;">&gt; &gt; Services</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D111</td>
+<td style="text-align: left;">Restantes rendimentos</td>
+<td style="text-align: left;">&gt; Remaining Income</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D005</td>
+<td style="text-align: left;">Subsidios à exploração</td>
+<td style="text-align: left;">&gt; &gt; Operating subsidies</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D006</td>
+<td style="text-align: left;">Variaçãos nos inventários da produção</td>
+<td style="text-align: left;">&gt; &gt; Variation in production</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D007</td>
+<td style="text-align: left;">Trabalhos para a própria entidade</td>
+<td style="text-align: left;">&gt; &gt; Capitalized production</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DL043</td>
+<td style="text-align: left;">Rendimentos Suplementares</td>
+<td style="text-align: left;">Supplementary income</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D013</td>
+<td style="text-align: left;">Outros rendimentos e ganhos - Rendimentos e ganhos em investimentos financeiros e meios financeiros líquidos</td>
+<td style="text-align: left;">Other incomes - Income from financial assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D062</td>
+<td style="text-align: left;">Total de gastos (QS)</td>
+<td style="text-align: left;">Total Expenses (QS)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D025</td>
+<td style="text-align: left;">&gt;CMVMC</td>
+<td style="text-align: left;">&gt; Costs of goods sold and material consumed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D026</td>
+<td style="text-align: left;">&gt;Fornecimentos e serviços externos</td>
+<td style="text-align: left;">&gt; Supplies and external services</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D029</td>
+<td style="text-align: left;">&gt;Gastos com o pessoal</td>
+<td style="text-align: left;">&gt; Employee expenses</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D030</td>
+<td style="text-align: left;">&gt; &gt;Gastos com o Pessoal - Remunerações (Órgãos sociais e pessoal)</td>
+<td style="text-align: left;">&gt; &gt; Salaries</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DL011</td>
+<td style="text-align: left;">&gt; &gt; &gt; Remunerações dos orgãos sociais</td>
+<td style="text-align: left;">&gt; &gt; &gt; Salaries of corporate bodies</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DL012</td>
+<td style="text-align: left;">&gt; &gt; &gt;Remunerações do pessoal</td>
+<td style="text-align: left;">&gt; &gt; &gt; Salaries of employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DL045</td>
+<td style="text-align: left;">&gt; &gt; Gastos com o Pessoal - Outros, exceto remunerações</td>
+<td style="text-align: left;">&gt; &gt; Employee expenses - Other, except salaries</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DL013</td>
+<td style="text-align: left;">&gt; &gt; &gt;Encargos sobre remunerações</td>
+<td style="text-align: left;">&gt; &gt; &gt; Social security expenses</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DL014</td>
+<td style="text-align: left;">&gt; &gt; &gt;Seguros de acidentes de trabalho e doenças profissionais</td>
+<td style="text-align: left;">&gt; &gt; &gt; Insurance schemes for accidents at work and occupational diseases</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D108</td>
+<td style="text-align: left;">&gt;Restantes gastos</td>
+<td style="text-align: left;">&gt; Remaining expenses</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D041</td>
+<td style="text-align: left;">&gt;Ajustamentos de valor sobre ativos não financeiros - Gastos de depreciação/amortização</td>
+<td style="text-align: left;">&gt; Expenses/reversals of depreciations and amortizations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D053</td>
+<td style="text-align: left;">&gt;Gastos e perdas de financiamento - Juros e gastos similares suportados (QS)</td>
+<td style="text-align: left;">&gt; Interest expenses</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D060</td>
+<td style="text-align: left;">&gt;Imposto sobre o rendimento do período</td>
+<td style="text-align: left;">&gt; Income tax</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D112</td>
+<td style="text-align: left;">d.q.: Imparidades, variações de valor e outros gastos e perdas em instrumentos financeiros e investimentos financeiros</td>
+<td style="text-align: left;">Impairment losses, changes in fair value and other expenses and losses in fin. invest. and fin. instrum.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D082</td>
+<td style="text-align: left;">Resultado económico</td>
+<td style="text-align: left;">Operating net income</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D084</td>
+<td style="text-align: left;">EBITDA - resultado antes de juros, impostos e depreciações</td>
+<td style="text-align: left;">Earnings before Interest, Taxes, Depreciation and Amortization - EBITDA</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D085</td>
+<td style="text-align: left;">Resultado operacional (antes juros e impostos)</td>
+<td style="text-align: left;">Earning before Interest and Tax - EBIT</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D086</td>
+<td style="text-align: left;">Resultado antes de impostos</td>
+<td style="text-align: left;">Earnings before Tax - EBT</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D087</td>
+<td style="text-align: left;">Resultado líquido do periodo</td>
+<td style="text-align: left;">Net income</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DL002</td>
+<td style="text-align: left;">Outros Gastos e perdas - Descontos de pronto pagamento concedidos</td>
+<td style="text-align: left;">Other expenses - Cash discounts granted</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DL005</td>
+<td style="text-align: left;">Outros Gastos e perdas - Outros - Donativos</td>
+<td style="text-align: left;">Other expenses - Other - Donations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DL047</td>
+<td style="text-align: left;">Impostos indiretos</td>
+<td style="text-align: left;">Indirect taxes</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">return</a></p>
+<h2 id="employment-information-file">Employment Information File</h2>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 35%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">E001</td>
+<td style="text-align: left;">Pessoas ao serviço da empresa (remuneradas e não remuneradas)</td>
+<td style="text-align: left;">Number of (paid and unpaid) employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">E002</td>
+<td style="text-align: left;">Pessoas remuneradas ao serviço da empresa (assalariados)</td>
+<td style="text-align: left;">Number of paid employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E003</td>
+<td style="text-align: left;">Pessoas não remuneradas ao serviço da empresa</td>
+<td style="text-align: left;">Number of unpaid employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">E004</td>
+<td style="text-align: left;">Pessoas ao serviço da empresa a tempo completo</td>
+<td style="text-align: left;">Number of (paid and unpaid) full-time employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E005</td>
+<td style="text-align: left;">Pessoas remuneradas ao serviço da empresa a tempo completo</td>
+<td style="text-align: left;">Number of paid full-time employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">E006</td>
+<td style="text-align: left;">Pessoas ao serviço da empresa a tempo parcial</td>
+<td style="text-align: left;">Number of (paid and unpaid) part-time employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E007</td>
+<td style="text-align: left;">Pessoas remuneradas ao serviço da empresa a tempo parcial</td>
+<td style="text-align: left;">Number of paid part-time employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">E008</td>
+<td style="text-align: left;">Pessoas ao serviço da empresa afetas à I&amp;D</td>
+<td style="text-align: left;">Number of employees allocated to research and development</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E009</td>
+<td style="text-align: left;">Prestadores de serviços</td>
+<td style="text-align: left;">Service providers</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">E010</td>
+<td style="text-align: left;">Trabalho temporário</td>
+<td style="text-align: left;">Temporary Agency Employment</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E011</td>
+<td style="text-align: left;">Nº de horas trabalhadas</td>
+<td style="text-align: left;">Number of hours worked by paid and unpaid employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">E012</td>
+<td style="text-align: left;">Nº de horas trabalhadas por pessoas remuneradas</td>
+<td style="text-align: left;">Number of hours worked by paid employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E013</td>
+<td style="text-align: left;">Nº de horas trabalhadas por pessoas não remuneradas</td>
+<td style="text-align: left;">Number of hours worked by unpaid employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">E014</td>
+<td style="text-align: left;">Nº de horas trabalhadas por Pessoas ao serviço da empresa a tempo completo</td>
+<td style="text-align: left;">Number of hours worked by paid and unpaid full-time employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E015</td>
+<td style="text-align: left;">Nº de horas trabalhadas por Pessoas remuneradas ao serviço da empresa a tempo completo</td>
+<td style="text-align: left;">Number of hours worked by paid full-time employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">E016</td>
+<td style="text-align: left;">Nº de horas trabalhadas por Pessoas ao serviço da empresa a tempo parcial</td>
+<td style="text-align: left;">Number of hours worked by paid and unpaid part-time employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E017</td>
+<td style="text-align: left;">Nº de horas trabalhadas por Pessoas remuneradas ao serviço da empresa a tempo parcial</td>
+<td style="text-align: left;">Number of hours worked by paid part-time employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">E018</td>
+<td style="text-align: left;">Nº de horas trabalhadas por prestadores de serviços</td>
+<td style="text-align: left;">Number of hours worked by service providers</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">return</a></p>
+<h2 id="trade-information-per-market-file">Trade Information per Market File</h2>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 35%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">MG001</td>
+<td style="text-align: left;">Vendas - Mercado Interno</td>
+<td style="text-align: left;">Total Sales - Internal Market</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MG002</td>
+<td style="text-align: left;">Prestações de Serviços - Mercado Interno</td>
+<td style="text-align: left;">Total Services - Internal Market</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MG003</td>
+<td style="text-align: left;">Compras - Mercado Interno</td>
+<td style="text-align: left;">Total Purchases - Internal Market</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MG004</td>
+<td style="text-align: left;">Vendas - Mercado Comunitário</td>
+<td style="text-align: left;">Total Sales - EU-Market</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MG005</td>
+<td style="text-align: left;">Prestações de Serviços - Mercado Comunitário</td>
+<td style="text-align: left;">Total Services - EU-Market</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MG006</td>
+<td style="text-align: left;">Compras - Mercado Comunitário</td>
+<td style="text-align: left;">Total Purchases - EU-Market</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MG007</td>
+<td style="text-align: left;">Vendas - Mercado Extra-comunitário</td>
+<td style="text-align: left;">Total Sales - Extra EU-Market</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MG008</td>
+<td style="text-align: left;">Prestações de Serviços - Mercado Extra-comunitário</td>
+<td style="text-align: left;">Total Services - Extra EU-Market</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MG009</td>
+<td style="text-align: left;">Compras - Mercado Extra-comunitário</td>
+<td style="text-align: left;">Total Purchases - Extra EU-Market</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MG010</td>
+<td style="text-align: left;">Vendas - Total</td>
+<td style="text-align: left;">Total Sales</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MG011</td>
+<td style="text-align: left;">Prestações de Serviços - Total</td>
+<td style="text-align: left;">Total Services</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MG012</td>
+<td style="text-align: left;">Compras - Total</td>
+<td style="text-align: left;">Total Purchases</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">return</a></p>
+<h2 id="corporate-actions-file">Corporate Actions File</h2>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 35%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">ano</td>
+<td style="text-align: left;">Ano de Referência</td>
+<td style="text-align: left;">Reference year</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">numordem</td>
+<td style="text-align: left;">Número de ordem do acontecimento marcante</td>
+<td style="text-align: left;">Corporate action’s number of order</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">tina_origem</td>
+<td style="text-align: left;">Número de Identificação Fiscal anonimizado - Empresa de Origem</td>
+<td style="text-align: left;">Anonymized Tax Identification Number - Firm of origin</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">tina_destino</td>
+<td style="text-align: left;">Número de Identificação Fiscal anonimizado - Empresa de Destino</td>
+<td style="text-align: left;">Anonymized Tax Identification Number - Firm of destination</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">tipoacont</td>
+<td style="text-align: left;">Tipo de acontecimento</td>
+<td style="text-align: left;">Type of corporate action</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">mesesparagem</td>
+<td style="text-align: left;">Número de meses de paragem de atividade</td>
+<td style="text-align: left;">Number of months of activity interruption</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">efeitocontas</td>
+<td style="text-align: left;">Efeito na generalidade das contas reportadas pela empresa</td>
+<td style="text-align: left;">Effect on financial statements</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">efeitopessoal</td>
+<td style="text-align: left;">Efeito no pessoal</td>
+<td style="text-align: left;">Effect on employment information</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">efeitobalanco</td>
+<td style="text-align: left;">Efeito no balanço</td>
+<td style="text-align: left;">Effect on balance sheet</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">efeitodemresult</td>
+<td style="text-align: left;">Efeito na demonstração de resultados</td>
+<td style="text-align: left;">Effect on profit and loss statement</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">return</a></p>
+<h2 id="economic-and-financial-indicators">Economic and Financial Indicators</h2>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 35%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Designação</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">R001</td>
+<td style="text-align: left;">Liquidez geral</td>
+<td style="text-align: left;">Current ratio</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">R002</td>
+<td style="text-align: left;">Liquidez reduzida</td>
+<td style="text-align: left;">Quick ratio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">R003</td>
+<td style="text-align: left;">Autonomia financeira - QS</td>
+<td style="text-align: left;">Capital ratio (QS)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">R006</td>
+<td style="text-align: left;">Taxa de endividamento</td>
+<td style="text-align: left;">Assets to equity ratio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">R007</td>
+<td style="text-align: left;">Solvabilidade - QS</td>
+<td style="text-align: left;">Solvency ratio QS</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">R009</td>
+<td style="text-align: left;">Cobertura dos activos não correntes</td>
+<td style="text-align: left;">Non-current assets coverage ratio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">R023</td>
+<td style="text-align: left;">Efeito dos juros suportados</td>
+<td style="text-align: left;">Financial Cost Effect</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">R034</td>
+<td style="text-align: left;">Rendibilidade económica das vendas (RE /VN)</td>
+<td style="text-align: left;">Return on sales</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">R036</td>
+<td style="text-align: left;">Rendibilidade do activo - QS</td>
+<td style="text-align: left;">Return on assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">R040</td>
+<td style="text-align: left;">EBITDA em percentagem do Volume de negócios</td>
+<td style="text-align: left;">EBITDA over Turnover</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">R041</td>
+<td style="text-align: left;">Grau de alavancagem combinada</td>
+<td style="text-align: left;">Degree of combined leverage</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">R050</td>
+<td style="text-align: left;">Rotação do activo (nº vezes) - QS</td>
+<td style="text-align: left;">Asset turnover (times) - QS</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">R056</td>
+<td style="text-align: left;">Coeficiente Capital/Gastos com o pessoal (euros)</td>
+<td style="text-align: left;">Coefficient Fixed non-financial assets over employee expenses</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">R150</td>
+<td style="text-align: left;">Volume de negócios / Total do ativo</td>
+<td style="text-align: left;">Asset turnover ratio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">R152</td>
+<td style="text-align: left;">Resultado antes de impostos / Capital próprio</td>
+<td style="text-align: left;">Profit or loss of the year before taxes (EBT) / Equity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">R155</td>
+<td style="text-align: left;">Resultado antes de impostos / Volume de negócios</td>
+<td style="text-align: left;">Profit or loss of the year before taxes (EBT) / Net turnover</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">R156</td>
+<td style="text-align: left;">Capital próprio / Total do ativo</td>
+<td style="text-align: left;">Equity / Total assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">R157</td>
+<td style="text-align: left;">Fornecedores / Total do ativo</td>
+<td style="text-align: left;">Trade payables / Total assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">R158</td>
+<td style="text-align: left;">Total de rendimentos / Volume de negócios</td>
+<td style="text-align: left;">Total income / Net turnover</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">R159</td>
+<td style="text-align: left;">Total de gastos / Volume de negócios</td>
+<td style="text-align: left;">Total expenses / Net turnover</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">R160</td>
+<td style="text-align: left;">Investimentos financeiros / Total do ativo</td>
+<td style="text-align: left;">Financial fixed assets / Total assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">R161</td>
+<td style="text-align: left;">Clientes / Total do ativo</td>
+<td style="text-align: left;">Trade receivables / Total assets</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">return</a></p>
+</body>
+</html>

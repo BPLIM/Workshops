@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>contas_snc_items_new</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<meta charset="utf-8"/>
+<h1 id="variables-in-central-balance-sheet-harmonized-panel-data">Variables in Central Balance Sheet Harmonized Panel Data</h1>
+<h2 id="economic-and-financial-information-file">Economic and Financial information File</h2>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 22%" />
+<col style="width: 26%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Items in SNC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">B001</td>
+<td style="text-align: left;">Total Activo (QS)</td>
+<td style="text-align: left;">Total Assets (QS)</td>
+<td style="text-align: left;">[B004]+[B029]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B004</td>
+<td style="text-align: left;">&gt; Activo não corrente - Total (QS)</td>
+<td style="text-align: left;">&gt; Total non-current assets (QS)</td>
+<td style="text-align: left;">[B005]+[B025]+[Q04A-A5108-1]+[Q04A-A5110-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B005</td>
+<td style="text-align: left;">&gt; &gt; Ativos fixos tangiveis e intangiveis</td>
+<td style="text-align: left;">&gt; &gt; Fixed tangible assets and intangible assets</td>
+<td style="text-align: left;">[B012]+[Q04A-A5103-1]+[Q04A-A5104-1-R1]+[Q04A-A5104-1-R2]+[Q04A-A5104-1-R3]+[Q04A-A5104-1-R4]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B012</td>
+<td style="text-align: left;">&gt; &gt; &gt; Ativos Fixos Tangíveis</td>
+<td style="text-align: left;">&gt; &gt; &gt; Fixed tangible assets</td>
+<td style="text-align: left;">[Q05A-05081A-A5640-1-soma]+[Q05A-05081A-A5640-2-soma]+[Q05A-05121A-A5738-1-soma]+[Q05A-05121A-A5738-2-soma]+[Q05A-05121A-A5738-3-soma]+[Q05A-05121A-A5738-6-soma]+[Q05A-05121A-A5738-7-soma]+[Q05A-05121A-A5738-8-soma]+[Q05A-05081A-A5640-3-soma]+[Q04A-A5101-1-R1]+[Q04A-A5101-1-R2]+[Q04A-A5101-1-R3]+[Q04A-A5101-1-R4]+[Q04A-A5102-1]+[Q04A-A5105-1] - [Q05A-05081A-A5640-1-soma] - [Q05A-05081A-A5640-2-soma] - [Q05A-05081A-A5640-3-soma] - [Q05A-05081A-A5640-8-soma] - [Q05A-05081A-A5640-9-soma] - [Q05A-05121A-A5738-10-soma] - [Q05A-05121A-A5738-1-soma] - [Q05A-05121A-A5738-2-soma] - [Q05A-05121A-A5738-3-soma] - [Q05A-05121A-A5738-4-soma] - [Q05A-05121A-A5738-5-soma] - [Q05A-05121A-A5738-6-soma] - [Q05A-05121A-A5738-7-soma] - [Q05A-05121A-A5738-8-soma] - [Q05A-05121A-A5738-9-soma]+[Q05A-05081A-A5640-8-soma]+[Q05A-05081A-A5640-9-soma]+[Q05A-05121A-A5738-10-soma]+[Q05A-05121A-A5738-4-soma]+[Q05A-05121A-A5738-5-soma]+[Q05A-05121A-A5738-9-soma]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B025</td>
+<td style="text-align: left;">&gt; &gt; Investimentos financeiros</td>
+<td style="text-align: left;">&gt; &gt; Financial investments</td>
+<td style="text-align: left;">[Q05A-05141A-A5771-soma]+[Q05A-0516A-A5816-1-soma]+[Q05A-0516A-A5816-2-soma]+[Q05A-0516A-A5836-1-soma]+[Q05A-0516A-A5836-2-soma] - [Q05A-05141A-A5756] - [Q05A-05141A-A5765] - [Q05A-0516A-A5798-1] - [Q05A-0516A-A5798-2] - [Q05A-0516A-A5807-1] - [Q05A-0516A-A5807-2] - [Q05A-0516A-A5820-1] - [Q05A-0516A-A5820-2] - [Q05A-0516A-A5827-1] - [Q05A-0516A-A5827-2]+[Q04A-A5106-1]+[Q04A-A5107-1]+[Q04A-A5109-1]+[Q04A-A5111-1]+[Q05A-05141A-A5756]+[Q05A-05141A-A5765]+[Q05A-0516A-A5798-1]+[Q05A-0516A-A5798-2]+[Q05A-0516A-A5807-1]+[Q05A-0516A-A5807-2]+[Q05A-0516A-A5820-1]+[Q05A-0516A-A5820-2]+[Q05A-0516A-A5827-1]+[Q05A-0516A-A5827-2] - [Q05A-05141A-A5771-soma] - [Q05A-0516A-A5816-1-soma] - [Q05A-0516A-A5816-2-soma] - [Q05A-0516A-A5836-1-soma] - [Q05A-0516A-A5836-2-soma]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B158</td>
+<td style="text-align: left;">&gt; &gt; Restantes ativos não correntes</td>
+<td style="text-align: left;">&gt; &gt; Non-current assets - Remaining non-current assets</td>
+<td style="text-align: left;">[Q04A-A5108-1]+[Q04A-A5110-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B029</td>
+<td style="text-align: left;">&gt; Activo corrente - Total (QS)</td>
+<td style="text-align: left;">&gt; Total Current assets (QS)</td>
+<td style="text-align: left;">[B032]+[B041]+[B042]+ [Q04A-A5119-1-R1]+[Q04A-A5119-1-R2]+[Q04A-A5119-1-R3]+[Q04A-A5121-1]+[Q04A-A5122-1-R1]+[Q04A-A5122-1-R2]+[Q04A-A5122-1-R3]+[Q04A-A5124-1]+ [Q04A-A5118-1]+ [Q04A-A5123-1] - [Q04A-A5157-1]+[B049]+ [Q04A-A5120-1]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B032</td>
+<td style="text-align: left;">&gt; &gt; Inventários e Ativos biológicos</td>
+<td style="text-align: left;">&gt; &gt; Current assets - Inventories and biological assets</td>
+<td style="text-align: left;">[Q05A-05191A-A5879-2] + [Q05A-05181A-A5859-5] + [Q05A-05191A-A5887-3-soma] + [Q04A-A5113-1-R1] + [Q04A-A5113-1-R2] + [Q04A-A5113-1-R3] +[Q04A-A5113-1-R4] + [Q04A-A5114-1] - [Q05A-05181A-A5859-5] - [Q05A-05191A-A5879-2] - [Q05A-05191A-A5887-3-soma]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B041</td>
+<td style="text-align: left;">&gt; &gt;Clientes</td>
+<td style="text-align: left;">&gt; &gt;Current assets - Customers</td>
+<td style="text-align: left;">[Q04A-A5115-1-R1]+[Q04A-A5115-1-R2]+[Q04A-A5115-1-R3]+[Q04A-A5115-1-R4]+[Q06-061A-A8036-R1]+[Q06-061A-A8036-R2]+[Q06-061A-A8036-R3] - [Q04A-A5149-1]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B049</td>
+<td style="text-align: left;">&gt; &gt; Depósitos bancários e caixa</td>
+<td style="text-align: left;">&gt; &gt; Current assets - Cash and bank deposits</td>
+<td style="text-align: left;">[Q04A-A5125-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B159</td>
+<td style="text-align: left;">&gt; &gt; Restantes ativos correntes</td>
+<td style="text-align: left;">&gt; &gt; Current assets - Remaining current assets</td>
+<td style="text-align: left;">[B042] + [Q04A-A5118-1] + [Q04A-A5120-1] + [Q04A-A5119-1-R1] + [Q04A-A5119-1-R2] + [Q04A-A5119-1-R3] + [Q04A-A5121-1] + [Q04A-A5122-1-R1] + [Q04A-A5122-1-R2] + [Q04A-A5122-1-R3] + [Q04A-A5124-1]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B042</td>
+<td style="text-align: left;">&gt; &gt; Activo corrente - Estado e outros entes públicos</td>
+<td style="text-align: left;">&gt; &gt; Current assets - State and other public entities</td>
+<td style="text-align: left;">[Q04A-A5117-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B060</td>
+<td style="text-align: left;">Capital Próprio e Passivo (QS)</td>
+<td style="text-align: left;">Equity and Liabilities (QS)</td>
+<td style="text-align: left;">[B061] + [Q04A-A5142-1] + [Q04A-A5143-1] + [Q04A-A5144-1] + [Q04A-A5146-1-R1] + [Q04A-A5146-1-R2] + [Q04A-A5146-1-R3] + [Q04A-A5146-1-R4] + [Q04A-A5145-1] + [Q04A-A5148-1-R1] + [Q04A-A5148-1-R2] + [Q04A-A5148-1-R3] + [Q04A-A5148-1-R4] - [Q04A-A5116-1] + [Q04A-A5150-1] + [Q04A-A5151-1] + [Q04A-A5153-1] + [Q04A-A5155-1] +[Q04A-A5156-1-R1] + [Q04A-A5156-1-R2] + [Q04A-A5156-1-R3] + [Q04A-A5156-1-R4] + [Q04A-A5158-1] + [Q06-061A-A8036-R1] + [Q06-061A-A8036-R2] + [Q06-061A-A8036-R3] + [Q04A-A5152-1] + [Q04A-A5154-1-R1] + [Q04A-A5154-1-R2] + [Q04A-A5154-1-R3] + [Q04A-A5154-1-R4]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B061</td>
+<td style="text-align: left;">&gt;Capital Próprio (QS)</td>
+<td style="text-align: left;">&gt; Equity (QS)</td>
+<td style="text-align: left;">[Q04A-A5128-1] + [Q04A-A5130-1] + [Q04A-A5132-1] + [Q04A-A5133-1] + [Q04A-A5134-1]+[Q04A-A5129-1] + [Q04A-A5131-1] + [Q04A-A5135-1] + [Q04A-A5136-1] + [Q04A-A5137-1-R1] + [Q04A-A5137-1-R2] + [Q04A-A5137-1-R3] + [Q04A-A5137-1-R4] + [Q04A-A5139-1] + [Q04A-A5140-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">BL005</td>
+<td style="text-align: left;">&gt; &gt; Reservas legais</td>
+<td style="text-align: left;">&gt; &gt; Legal reserves</td>
+<td style="text-align: left;">[Q04A-A5132-1]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">BL007</td>
+<td style="text-align: left;">&gt; &gt; Resultados transitados</td>
+<td style="text-align: left;">&gt; &gt; Retained earnings</td>
+<td style="text-align: left;">[Q04A-A5134-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B074</td>
+<td style="text-align: left;">&gt; &gt; Dividendos antecipados</td>
+<td style="text-align: left;">&gt; &gt; Interim dividends</td>
+<td style="text-align: left;">[Q04A-A5140-1]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B143</td>
+<td style="text-align: left;">&gt; &gt; Capital subscrito</td>
+<td style="text-align: left;">&gt; &gt; Subscribed capital</td>
+<td style="text-align: left;">[Q06-061A-A8015] + [Q06-061A-A8016] + [Q04A-A5128-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B080</td>
+<td style="text-align: left;">&gt; Passivo (QS)</td>
+<td style="text-align: left;">&gt; Liabilities (QS)</td>
+<td style="text-align: left;">[B081]+[B089]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B081</td>
+<td style="text-align: left;">&gt; &gt; Passivo não corrente (QS)</td>
+<td style="text-align: left;">&gt; &gt; Non-current liabilities</td>
+<td style="text-align: left;">[Q04A-A5142-1] + [B085] + [Q04A-A5144-1] + [Q04A-A5146-1-R1] + [Q04A-A5146-1-R2] + [Q04A-A5146-1-R3] + [Q04A-A5146-1-R4] + [Q04A-A5145-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B085</td>
+<td style="text-align: left;">&gt; &gt; &gt; Passivo não corrente - Financiamentos obtidos</td>
+<td style="text-align: left;">&gt; &gt; &gt; Non-current liabilities - Obtained funding</td>
+<td style="text-align: left;">[Q04A-A5143-1]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B160</td>
+<td style="text-align: left;">&gt; &gt; &gt; Restantes passivos não correntes</td>
+<td style="text-align: left;">&gt; &gt; &gt; Non-current liabilities - Remaining non-current liabilities</td>
+<td style="text-align: left;">[Q04A-A5142-1] + [Q04A-A5145-1] + [Q04A-A5146-1-R1] + [Q04A-A5146-1-R2] + [Q04A-A5146-1-R3] + [Q04A-A5146-1-R4]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B089</td>
+<td style="text-align: left;">&gt; &gt; Passivo corrente (QS)</td>
+<td style="text-align: left;">&gt; &gt; Current liabilities (QS)</td>
+<td style="text-align: left;">[B093]+[B094]+ [Q04A-A5151-1]+[Q04A-A5153-1]+[Q04A-A5155-1]+[Q04A-A5156-1-R1]+[Q04A-A5156-1-R2]+[Q04A-A5156-1-R3]+[Q04A-A5156-1-R4]+[Q04A-A5158-1]+[Q06-061A-A8036-R1]+[Q06-061A-A8036-R2]+[Q06-061A-A8036-R3]+[Q04A-A5152-1]+ [Q04A-A5154-1-R1]+[Q04A-A5154-1-R2]+[Q04A-A5154-1-R3]+[Q04A-A5154-1-R4]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B093</td>
+<td style="text-align: left;">&gt; &gt; &gt; Fornecedores</td>
+<td style="text-align: left;">&gt; &gt; &gt; Current liabilities - Suppliers</td>
+<td style="text-align: left;">[Q04A-A5148-1-R1]+[Q04A-A5148-1-R2]+[Q04A-A5148-1-R3]+[Q04A-A5148-1-R4] - [Q04A-A5116-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B161</td>
+<td style="text-align: left;">&gt; &gt; &gt; Restantes passivos correntes</td>
+<td style="text-align: left;">&gt; &gt; &gt; Current liabilities - Remaining current liabilities</td>
+<td style="text-align: left;">[B094] + [Q04A-A5154-1-R1]+[Q04A-A5154-1-R2]+[Q04A-A5154-1-R3]+[Q04A-A5154-1-R4] + [Q04A-A5151-1]+[Q04A-A5153-1]+[Q04A-A5155-1]+[Q04A-A5156-1-R1]+[Q04A-A5156-1-R2]+[Q04A-A5156-1-R3]+[Q04A-A5156-1-R4]+[Q04A-A5158-1]+[Q06-061A-A8036-R1]+[Q06-061A-A8036-R2]+[Q06-061A-A8036-R3]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B094</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Passivo corrente - Estado e outros entes públicos</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Current liabilities - State and other public entities</td>
+<td style="text-align: left;">[Q04A-A5150-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D021</td>
+<td style="text-align: left;">Total de rendimentos (QS)</td>
+<td style="text-align: left;">Total income</td>
+<td style="text-align: left;">[D001]+[D005]+[D006]+[D007]+ [Q03A-A5003-1]+[Q03A-A5015-1]+[Q06-061A-A8089-R1]+[Q06-061A-A8089-R2]+[Q06-061A-A8089-R3]+ [Q03A-A5021-1]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D001</td>
+<td style="text-align: left;">Vendas e serviços prestados</td>
+<td style="text-align: left;">&gt; Turnover</td>
+<td style="text-align: left;">[D002]+ [Q05A-05301A-A6045-4-soma]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D002</td>
+<td style="text-align: left;">Vendas</td>
+<td style="text-align: left;">&gt; &gt; Sales</td>
+<td style="text-align: left;">[Q03A-A5001-1] - [Q05A-05301A-A6045-4-soma]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DL017</td>
+<td style="text-align: left;">Prestações de serviços</td>
+<td style="text-align: left;">&gt; &gt; Services</td>
+<td style="text-align: left;">[Q05A-05301A-A6045-4-soma]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D111</td>
+<td style="text-align: left;">Restantes rendimentos</td>
+<td style="text-align: left;">&gt; Remaining Income</td>
+<td style="text-align: left;">[D005] + [D006] + [D007] + [Q03A-A5003-1] + [Q03A-A5015-1] + [Q06-061A-A8089-R1] + [Q06-061A-A8089-R2] + [Q06-061A-A8089-R3] + [Q03A-A5021-1]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D005</td>
+<td style="text-align: left;">Subsidios à exploração</td>
+<td style="text-align: left;">&gt; &gt; Operating subsidies</td>
+<td style="text-align: left;">[Q03A-A5002-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D006</td>
+<td style="text-align: left;">Variaçãos nos inventários da produção</td>
+<td style="text-align: left;">&gt; &gt; Variation in production</td>
+<td style="text-align: left;">[Q03A-A5004-1]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D007</td>
+<td style="text-align: left;">Trabalhos para a própria entidade</td>
+<td style="text-align: left;">&gt; &gt; Capitalized production</td>
+<td style="text-align: left;">[Q03A-A5005-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DL043</td>
+<td style="text-align: left;">Rendimentos Suplementares</td>
+<td style="text-align: left;">Supplementary income</td>
+<td style="text-align: left;">[Q05A-05302A-A6072-4-soma]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D013</td>
+<td style="text-align: left;">Outros rendimentos e ganhos - Rendimentos e ganhos em investimentos financeiros e meios financeiros líquidos</td>
+<td style="text-align: left;">Other incomes - Income from financial assets</td>
+<td style="text-align: left;">[Q06-061A-A8132]+[Q06-061A-A8134]+[Q06-061A-A8141-soma] - [Q06-061A-A8147]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D062</td>
+<td style="text-align: left;">Total de gastos (QS)</td>
+<td style="text-align: left;">Total Expenses (QS)</td>
+<td style="text-align: left;">[D025]+[D026]+[D029]+ [Q03A-A5009-1]+[Q03A-A5010-1]+[Q03A-A5012-1]+[Q03A-A5013-1-R2]+[Q03A-A5013-1-R3]+[Q03A-A5013-1-R4]+[Q03A-A5019-1] - [Q03A-A5014-1]+[D041]+ [Q03A-A5011-1]+ [Q03A-A5016-1]+[Q06-061A-A8089-R1]+[Q06-061A-A8089-R2]+[Q06-061A-A8089-R3]+[D053]+[D060]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D025</td>
+<td style="text-align: left;">&gt; CMVMC</td>
+<td style="text-align: left;">&gt; Costs of goods sold and material consumed</td>
+<td style="text-align: left;">[Q03A-A5006-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D026</td>
+<td style="text-align: left;">&gt; Fornecimentos e serviços externos</td>
+<td style="text-align: left;">&gt; Supplies and external services</td>
+<td style="text-align: left;">[Q03A-A5007-1]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D029</td>
+<td style="text-align: left;">&gt; Gastos com o pessoal</td>
+<td style="text-align: left;">&gt; Employee expenses</td>
+<td style="text-align: left;">[D030] + [Q05A-05292A-A6035] + [Q03A-A5008-1] - [Q05A-05292A-A6025] - [Q05A-05292A-A6027] - [Q05A-05292A-A6035]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D030</td>
+<td style="text-align: left;">&gt; &gt; Gastos com o Pessoal - Remunerações (Órgãos sociais e pessoal)</td>
+<td style="text-align: left;">&gt; &gt; Salaries</td>
+<td style="text-align: left;">[Q05A-05292A-A6025]+[Q05A-05292A-A6027]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DL011</td>
+<td style="text-align: left;">&gt; &gt; &gt; Remunerações dos orgãos sociais</td>
+<td style="text-align: left;">&gt; &gt; &gt; Salaries of corporate bodies</td>
+<td style="text-align: left;">[Q05A-05292A-A6025]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DL012</td>
+<td style="text-align: left;">&gt; &gt; &gt; Remunerações do pessoal</td>
+<td style="text-align: left;">&gt; &gt; &gt; Salaries of employees</td>
+<td style="text-align: left;">[Q05A-05292A-A6027]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DL045</td>
+<td style="text-align: left;">&gt; &gt; Gastos com o Pessoal - Outros, exceto remunerações</td>
+<td style="text-align: left;">&gt; &gt; Employee expenses - Other, except salaries</td>
+<td style="text-align: left;">[Q05A-05292A-A6024-soma] - [D030]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DL013</td>
+<td style="text-align: left;">&gt; &gt; &gt; Encargos sobre remunerações</td>
+<td style="text-align: left;">&gt; &gt; &gt; Social security expenses</td>
+<td style="text-align: left;">[Q05A-05292A-A6035]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DL014</td>
+<td style="text-align: left;">&gt; &gt; &gt; Seguros de acidentes de trabalho e doenças profissionais</td>
+<td style="text-align: left;">&gt; &gt; &gt; Insurance schemes for accidents at work and occupational diseases</td>
+<td style="text-align: left;">[Q05A-05292A-A6036]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D108</td>
+<td style="text-align: left;">&gt; Restantes gastos</td>
+<td style="text-align: left;">&gt; Remaining expenses</td>
+<td style="text-align: left;">[Q03A-A5009-1] + [Q03A-A5010-1] + [Q03A-A5012-1] + [Q03A-A5013-1-R2] + [Q03A-A5013-1-R3] + [Q03A-A5013-1-R4] + [Q03A-A5019-1] - [Q03A-A5014-1] +[Q03A-A5011-1] + [Q03A-A5016-1] + [Q06-061A-A8089-R1] + [Q06-061A-A8089-R2] + [Q06-061A-A8089-R3]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D041</td>
+<td style="text-align: left;">&gt; Ajustamentos de valor sobre ativos não financeiros - Gastos de depreciação/amortização</td>
+<td style="text-align: left;">&gt; Expenses/reversals of depreciations and amortizations</td>
+<td style="text-align: left;">[Q03A-A5018-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D053</td>
+<td style="text-align: left;">&gt; Gastos e perdas de financiamento - Juros e gastos similares suportados (QS)</td>
+<td style="text-align: left;">&gt; Interest expenses</td>
+<td style="text-align: left;">[Q03A-A5022-1]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D060</td>
+<td style="text-align: left;">&gt; Imposto sobre o rendimento do período</td>
+<td style="text-align: left;">&gt; Income tax</td>
+<td style="text-align: left;">[Q03A-A5024-1]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D112</td>
+<td style="text-align: left;">d.q.: Imparidades, variações de valor e outros gastos e perdas em instrumentos financeiros e investimentos financeiros</td>
+<td style="text-align: left;">Impairment losses, changes in fair value and other expenses and losses in fin. invest. and fin. instrum.</td>
+<td style="text-align: left;">[Q05A-0513A-A5750-3-soma] + [Q05A-05281A-A5970-3-soma] + [Q05A-05281A-A5971-3-soma] + [Q06-061A-A8077] + [Q06-061A-A8078] - [Q05A-0513A-A5750-6-soma] - [Q06-061A-A8123] - [Q06-061A-A8124] + [Q06-061A-A8089-R1] + [Q06-061A-A8089-R2] + [Q06-061A-A8089-R3] + [Q06-061A-A8089-R4] + [Q06-061A-A8093] + [Q06-061A-A8104-soma] - [Q06-061A-A8106] -[Q06-061A-A8109] - [Q06-061A-A8112]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D082</td>
+<td style="text-align: left;">Resultado económico</td>
+<td style="text-align: left;">Operating net income</td>
+<td style="text-align: left;">[D001]+[D005]+[D006]+[D007]+ [Q03A-A5003-1]+[Q03A-A5015-1]+[Q06-061A-A8089-R1]+[Q06-061A-A8089-R2]+[Q06-061A-A8089-R3]+ [Q05A-0513A-A5750-3-soma]+[Q05A-05281A-A5970-3-soma]+[Q05A-05281A-A5971-3-soma]+[Q06-061A-A8077]+[Q06-061A-A8078] - [Q05A-0513A-A5750-6-soma] - [Q06-061A-A8123] - [Q06-061A-A8124]+ [Q06-061A-A8089-R1]+[Q06-061A-A8089-R2]+[Q06-061A-A8089-R3]+[Q06-061A-A8089-R4]+[Q06-061A-A8093]+[Q06-061A-A8104-soma] - [Q06-061A-A8106] - [Q06-061A-A8109] - [Q06-061A-A8112] - [Q06-061A-A8132]-[Q06-061A-A8134]-[Q06-061A-A8141-soma] + [Q06-061A-A8147] - [D025] - [D026] - [D029] - [Q03A-A5009-1]-[Q03A-A5010-1]-[Q03A-A5012-1]-[Q03A-A5013-1-R2]-[Q03A-A5013-1-R3]-[Q03A-A5013-1-R4]-[Q03A-A5019-1] + [Q03A-A5014-1]- [Q03A-A5011-1]- [Q03A-A5016-1]-[Q06-061A-A8089-R1]-[Q06-061A-A8089-R2]-[Q06-061A-A8089-R3]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D084</td>
+<td style="text-align: left;">EBITDA - resultado antes de juros, impostos e depreciações</td>
+<td style="text-align: left;">Earnings before Interest, Taxes, Depreciation and Amortization - EBITDA</td>
+<td style="text-align: left;">[D001]+[D005]+[D006]+[D007]+ [Q03A-A5003-1]+[Q03A-A5015-1]+[Q06-061A-A8089-R1]+[Q06-061A-A8089-R2]+[Q06-061A-A8089-R3] - [D025] - [D026] - [D029] - [Q03A-A5009-1]-[Q03A-A5010-1]-[Q03A-A5012-1]-[Q03A-A5013-1-R2]-[Q03A-A5013-1-R3]-[Q03A-A5013-1-R4]-[Q03A-A5019-1] + [Q03A-A5014-1] - [Q03A-A5011-1]- [Q03A-A5016-1]-[Q06-061A-A8089-R1]-[Q06-061A-A8089-R2]-[Q06-061A-A8089-R3]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D085</td>
+<td style="text-align: left;">Resultado operacional (antes juros e impostos)</td>
+<td style="text-align: left;">Earning before Interest and Tax - EBIT</td>
+<td style="text-align: left;">[D001]+[D005]+[D006]+[D007]+ [Q03A-A5003-1]+[Q03A-A5015-1]+[Q06-061A-A8089-R1]+[Q06-061A-A8089-R2]+[Q06-061A-A8089-R3] - [D025] - [D026] - [D029] - [Q03A-A5009-1]-[Q03A-A5010-1]-[Q03A-A5012-1]-[Q03A-A5013-1-R2]-[Q03A-A5013-1-R3]-[Q03A-A5013-1-R4]-[Q03A-A5019-1] + [Q03A-A5014-1] - [D041] - [Q03A-A5011-1] - [Q03A-A5016-1]-[Q06-061A-A8089-R1]-[Q06-061A-A8089-R2]-[Q06-061A-A8089-R3]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D086</td>
+<td style="text-align: left;">Resultado antes de impostos</td>
+<td style="text-align: left;">Earnings before Tax - EBT</td>
+<td style="text-align: left;">[D001]+[D005]+[D006]+[D007]+ [Q06-061A-A8128]+ [Q06-061A-A8127-soma] - [Q06-061A-A8128] +[Q06-061A-A8141-soma] - [D025] - [D026] - [D029] - [Q03A-A5009-1]-[Q03A-A5010-1]-[Q03A-A5011-1]-[Q03A-A5012-1]-[Q03A-A5013-1-R2]-[Q03A-A5013-1-R3]-[Q03A-A5013-1-R4]-[Q03A-A5018-1]-[Q03A-A5019-1] +[Q03A-A5014-1] - [Q06-061A-A8084]-[Q06-061A-A8082-soma] + [Q06-061A-A8084]- [Q06-061A-A8081-soma] + [Q06-061A-A8082-soma] - [Q06-061A-A8106]- [Q06-061A-A8104-soma] + [Q06-061A-A8106]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D087</td>
+<td style="text-align: left;">Resultado líquido do periodo</td>
+<td style="text-align: left;">Net income</td>
+<td style="text-align: left;">[D001]+[D005]+[D006]+[D007]+ [Q06-061A-A8128]+ [Q06-061A-A8127-soma] - [Q06-061A-A8128]+ [Q06-061A-A8141-soma]- [D025]-[D026]-[D029]-[Q03A-A5009-1]-[Q03A-A5010-1]-[Q03A-A5011-1]-[Q03A-A5012-1]-[Q03A-A5013-1-R2]-[Q03A-A5013-1-R3]-[Q03A-A5013-1-R4]-[Q03A-A5018-1]-[Q03A-A5019-1] + [Q03A-A5014-1]- [Q06-061A-A8084]- [Q06-061A-A8082-soma] - [Q06-061A-A8084]- [Q06-061A-A8081-soma] + [Q06-061A-A8082-soma]- [Q06-061A-A8106]- [Q06-061A-A8104-soma] + [Q06-061A-A8106]-[D060]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DL002</td>
+<td style="text-align: left;">Outros Gastos e perdas - Descontos de pronto pagamento concedidos</td>
+<td style="text-align: left;">Other expenses - Cash discounts granted</td>
+<td style="text-align: left;">[Q06-061A-A8086]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DL005</td>
+<td style="text-align: left;">Outros Gastos e perdas - Outros - Donativos</td>
+<td style="text-align: left;">Other expenses - Other - Donations</td>
+<td style="text-align: left;">[Q06-061A-A8099]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DL047</td>
+<td style="text-align: left;">Impostos indiretos</td>
+<td style="text-align: left;">Indirect taxes</td>
+<td style="text-align: left;">[Q06-061A-A8084]+[Q06-061A-A8085]</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

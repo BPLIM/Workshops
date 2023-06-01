@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>cdbk_AMARC</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px; max-width:45em;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+td {padding:0 0 0 0} /* override */
+table:not([class]) th { padding:4px 6px } 
+table:not([class]) td { padding:4px 6px } 
+table:not([class]) thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+table:not([class]) thead tr:last-child  th {padding-bottom:6px}
+table:not([class]) tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+table:not([class]) tbody tr:last-child  td {padding-bottom:6px;}
+table:not([class]) tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+</head>
+<body>
+<meta charset="utf-8"/>
+<h1 id="central-balance-sheet-harmonized-panel-data">Central Balance Sheet Harmonized Panel Data</h1>
+<h2 id="codebook">Codebook</h2>
+<p><code>extraction</code>: June 2021</p>
+<h2 id="corporate-actions---harmonized-panel"><strong>Corporate Actions - Harmonized Panel</strong></h2>
+<pre class='stata'>AMARC - 2006-2019
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Panel/Output/Data/Firms/CBHP_I_YFRM_20062019_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:54
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  59,443
+                  Size:  713,316 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [1059,67218]                 units:  1
+         unique values:  54,243                   missing .:  0/59,443
+
+                  mean:   33312.9
+              std. dev:   18872.5
+
+           percentiles:        10%       25%       50%       75%       90%
+                              7313     16671     33652     49460     59387
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2006,2019]                  units:  1
+         unique values:  14                       missing .:  0/59,443
+
+                  mean:    2012.2
+              std. dev:   3.87462
+
+           percentiles:        10%       25%       50%       75%       90%
+                              2007      2009      2012      2015      2018
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  10                       missing .:  0/59,443
+
+              examples:  30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,24]                       units:  1
+         unique values:  17                       missing .:  10,120/59,443
+
+                  mean:   11.0586
+              std. dev:   2.42611
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 8        12        12        12        12
+
+        missing values:  efeitocontas==mv --> mesesparagem==mv
+                         efeitopess~l==mv --> mesesparagem==mv
+                         efeitobala~o==mv --> mesesparagem==mv
+                         efeitodemr~t==mv --> mesesparagem==mv
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4/59,443
+
+            tabulation:  Freq.   Numeric  Label
+                        47,325         0  No
+                        12,114         1  Yes
+                             4         .  
+
+        missing values:  efeitopess~l==mv &lt;-> efeitocontas==mv
+                         efeitobala~o==mv &lt;-> efeitocontas==mv
+                         efeitodemr~t==mv &lt;-> efeitocontas==mv
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4/59,443
+
+            tabulation:  Freq.   Numeric  Label
+                        53,827         0  No
+                         5,612         1  Yes
+                             4         .  
+
+        missing values:  efeitocontas==mv &lt;-> efeitopess~l==mv
+                         efeitobala~o==mv &lt;-> efeitopess~l==mv
+                         efeitodemr~t==mv &lt;-> efeitopess~l==mv
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4/59,443
+
+            tabulation:  Freq.   Numeric  Label
+                        48,751         0  No
+                        10,688         1  Yes
+                             4         .  
+
+        missing values:  efeitocontas==mv &lt;-> efeitobala~o==mv
+                         efeitopess~l==mv &lt;-> efeitobala~o==mv
+                         efeitodemr~t==mv &lt;-> efeitobala~o==mv
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4/59,443
+
+            tabulation:  Freq.   Numeric  Label
+                        49,903         0  No
+                         9,536         1  Yes
+                             4         .  
+
+        missing values:  efeitocontas==mv &lt;-> efeitodemr~t==mv
+                         efeitopess~l==mv &lt;-> efeitodemr~t==mv
+                         efeitobala~o==mv &lt;-> efeitodemr~t==mv
+</pre>
+</body>
+</html>

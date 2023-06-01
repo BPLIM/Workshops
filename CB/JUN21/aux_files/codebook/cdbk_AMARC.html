@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>cdbk_AMARC</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px; max-width:45em;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+td {padding:0 0 0 0} /* override */
+table:not([class]) th { padding:4px 6px } 
+table:not([class]) td { padding:4px 6px } 
+table:not([class]) thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+table:not([class]) thead tr:last-child  th {padding-bottom:6px}
+table:not([class]) tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+table:not([class]) tbody tr:last-child  td {padding-bottom:6px;}
+table:not([class]) tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+</head>
+<body>
+<meta charset="utf-8"/>
+<h1 id="central-balance-sheet-database">Central Balance Sheet Database</h1>
+<h2 id="codebook">Codebook</h2>
+<p><code>extraction</code>: June 2021</p>
+<h2 id="corporate-actions"><strong>Corporate Actions</strong></h2>
+<pre class='stata'>AMARC - 2006
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2006/CB_I_YFRM_2006_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  4,494
+                  Size:  53,928 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [1059,58670]                 units:  1
+         unique values:  4,113                    missing .:  0/4,494
+
+                  mean:   32716.4
+              std. dev:   13480.5
+
+           percentiles:        10%       25%       50%       75%       90%
+                              1414     36535   37703.5     38884     39730
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2006,2006]                  units:  1
+         unique values:  1                        missing .:  0/4,494
+
+            tabulation:  Freq.  Value
+                         4,494  2006
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  9                        missing .:  0/4,494
+
+            tabulation:  Freq.   Numeric  Label
+                           412        10  10 Merge
+                           164        20  20 Split
+                         3,810        30  30 Activity Interruption by
+                                          non-seasonal companies (>3
+                                          months, consecutive or not)
+                            11        62  62 Dissolution of a significant
+                                          part of productive assets
+                                          without split
+                            37        67  67 Other corporate actions
+                             3        70  70 Disposal of a significant
+                                          part of productive assets
+                            50        72  72 Transfer of a significant
+                                          part of productive assets
+                             5        78  78 Change of economic activity
+                                          with the creation of a new firm
+                             2        79  79 Change of economic activity
+                                          without the creation of a new
+                                          firm
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,15]                       units:  1
+         unique values:  13                       missing .:  684/4,494
+
+                  mean:   10.6913
+              std. dev:   2.78498
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 6        12        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,494
+
+            tabulation:  Freq.   Numeric  Label
+                         3,945         0  No
+                           549         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,494
+
+            tabulation:  Freq.   Numeric  Label
+                         4,492         0  No
+                             2         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,494
+
+            tabulation:  Freq.   Numeric  Label
+                         2,977         0  No
+                         1,517         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,494
+
+            tabulation:  Freq.   Numeric  Label
+                         3,166         0  No
+                         1,328         1  Yes
+
+AMARC - 2007
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2007/CB_I_YFRM_2007_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  4,480
+                  Size:  53,760 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [2708,58669]                 units:  1
+         unique values:  3,914                    missing .:  0/4,480
+
+                  mean:   33482.6
+              std. dev:     16105
+
+           percentiles:        10%       25%       50%       75%       90%
+                            3018.5   39832.5   41184.5   42382.5   43107.5
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2007,2007]                  units:  1
+         unique values:  1                        missing .:  0/4,480
+
+            tabulation:  Freq.  Value
+                         4,480  2007
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  10                       missing .:  0/4,480
+
+              examples:  30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,24]                       units:  1
+         unique values:  13                       missing .:  964/4,480
+
+                  mean:   10.5427
+              std. dev:   2.89506
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 6        11        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,480
+
+            tabulation:  Freq.   Numeric  Label
+                         3,169         0  No
+                         1,311         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,480
+
+            tabulation:  Freq.   Numeric  Label
+                         3,958         0  No
+                           522         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,480
+
+            tabulation:  Freq.   Numeric  Label
+                         3,533         0  No
+                           947         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,480
+
+            tabulation:  Freq.   Numeric  Label
+                         3,671         0  No
+                           809         1  Yes
+
+AMARC - 2008
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2008/CB_I_YFRM_2008_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  4,270
+                  Size:  51,240 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [3257,58665]                 units:  1
+         unique values:  3,729                    missing .:  0/4,270
+
+                  mean:   35417.6
+              std. dev:   17831.6
+
+           percentiles:        10%       25%       50%       75%       90%
+                            4161.5     43435   44701.5     45840   46685.5
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2008,2008]                  units:  1
+         unique values:  1                        missing .:  0/4,270
+
+            tabulation:  Freq.  Value
+                         4,270  2008
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  10                       missing .:  0/4,270
+
+              examples:  20    20 Split
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,18]                       units:  1
+         unique values:  13                       missing .:  1,038/4,270
+
+                  mean:   10.6272
+              std. dev:   2.87616
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 6        12        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,270
+
+            tabulation:  Freq.   Numeric  Label
+                         3,011         0  No
+                         1,259         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,270
+
+            tabulation:  Freq.   Numeric  Label
+                         3,779         0  No
+                           491         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,270
+
+            tabulation:  Freq.   Numeric  Label
+                         3,473         0  No
+                           797         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,270
+
+            tabulation:  Freq.   Numeric  Label
+                         3,511         0  No
+                           759         1  Yes
+
+AMARC - 2009
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2009/CB_I_YFRM_2009_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  4,202
+                  Size:  50,424 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [5017,58672]                 units:  1
+         unique values:  3,685                    missing .:  0/4,202
+
+                  mean:   39220.8
+              std. dev:   18129.3
+
+           percentiles:        10%       25%       50%       75%       90%
+                              5236     46773   48200.5     49323     50084
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2009,2009]                  units:  1
+         unique values:  1                        missing .:  0/4,202
+
+            tabulation:  Freq.  Value
+                         4,202  2009
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  10                       missing .:  0/4,202
+
+              examples:  20    20 Split
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,12]                       units:  1
+         unique values:  12                       missing .:  918/4,202
+
+                  mean:   10.9047
+              std. dev:   2.53787
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 7        12        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,202
+
+            tabulation:  Freq.   Numeric  Label
+                         3,143         0  No
+                         1,059         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,202
+
+            tabulation:  Freq.   Numeric  Label
+                         3,720         0  No
+                           482         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,202
+
+            tabulation:  Freq.   Numeric  Label
+                         3,427         0  No
+                           775         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,202
+
+            tabulation:  Freq.   Numeric  Label
+                         3,468         0  No
+                           734         1  Yes
+
+AMARC - 2010
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2010/CB_I_YFRM_2010_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  4,357
+                  Size:  52,284 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [1615,58683]                 units:  1
+         unique values:  4,034                    missing .:  0/4,357
+
+                  mean:   45047.5
+              std. dev:   17701.9
+
+           percentiles:        10%       25%       50%       75%       90%
+                              1865     50915     52062     53185     53895
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2010,2010]                  units:  1
+         unique values:  1                        missing .:  0/4,357
+
+            tabulation:  Freq.  Value
+                         4,357  2010
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  10                       missing .:  0/4,357
+
+              examples:  30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,22]                       units:  1
+         unique values:  13                       missing .:  631/4,357
+
+                  mean:   10.9098
+              std. dev:   2.61116
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 6        12        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,357
+
+            tabulation:  Freq.   Numeric  Label
+                         3,565         0  No
+                           792         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,357
+
+            tabulation:  Freq.   Numeric  Label
+                         3,735         0  No
+                           622         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,357
+
+            tabulation:  Freq.   Numeric  Label
+                         3,298         0  No
+                         1,059         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,357
+
+            tabulation:  Freq.   Numeric  Label
+                         3,529         0  No
+                           828         1  Yes
+
+AMARC - 2011
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2011/CB_I_YFRM_2011_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  4,644
+                  Size:  55,728 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [1876,58729]                 units:  1
+         unique values:  4,265                    missing .:  0/4,644
+
+                  mean:   46138.1
+              std. dev:   20685.3
+
+           percentiles:        10%       25%       50%       75%       90%
+                              2099   54595.5   55872.5   57090.5     57833
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2011,2011]                  units:  1
+         unique values:  1                        missing .:  0/4,644
+
+            tabulation:  Freq.  Value
+                         4,644  2011
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  9                        missing .:  0/4,644
+
+            tabulation:  Freq.   Numeric  Label
+                           606        10  10 Merge
+                            41        20  20 Split
+                         3,950        30  30 Activity Interruption by
+                                          non-seasonal companies (>3
+                                          months, consecutive or not)
+                             1        62  62 Dissolution of a significant
+                                          part of productive assets
+                                          without split
+                            13        67  67 Other corporate actions
+                             9        70  70 Disposal of a significant
+                                          part of productive assets
+                             4        71  71 Acquisition of a significant
+                                          part of productive assets
+                            19        72  72 Transfer of a significant
+                                          part of productive assets
+                             1        79  79 Change of economic activity
+                                          without the creation of a new
+                                          firm
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,19]                       units:  1
+         unique values:  14                       missing .:  694/4,644
+
+                  mean:    10.842
+              std. dev:   2.70783
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 6        12        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,644
+
+            tabulation:  Freq.   Numeric  Label
+                         4,037         0  No
+                           607         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,644
+
+            tabulation:  Freq.   Numeric  Label
+                         4,000         0  No
+                           644         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,644
+
+            tabulation:  Freq.   Numeric  Label
+                         3,649         0  No
+                           995         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,644
+
+            tabulation:  Freq.   Numeric  Label
+                         3,736         0  No
+                           908         1  Yes
+
+AMARC - 2012
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2012/CB_I_YFRM_2012_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  4,597
+                  Size:  55,164 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [1436,36061]                 units:  1
+         unique values:  4,178                    missing .:  0/4,597
+
+                  mean:   9360.94
+              std. dev:   3270.38
+
+           percentiles:        10%       25%       50%       75%       90%
+                              6916      7702      8946     10205     11030
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2012,2012]                  units:  1
+         unique values:  1                        missing .:  0/4,597
+
+            tabulation:  Freq.  Value
+                         4,597  2012
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  9                        missing .:  0/4,597
+
+            tabulation:  Freq.   Numeric  Label
+                           644        10  10 Merge
+                            75        20  20 Split
+                         3,818        30  30 Activity Interruption by
+                                          non-seasonal companies (>3
+                                          months, consecutive or not)
+                             5        62  62 Dissolution of a significant
+                                          part of productive assets
+                                          without split
+                             2        67  67 Other corporate actions
+                            17        70  70 Disposal of a significant
+                                          part of productive assets
+                             7        71  71 Acquisition of a significant
+                                          part of productive assets
+                            19        72  72 Transfer of a significant
+                                          part of productive assets
+                            10        79  79 Change of economic activity
+                                          without the creation of a new
+                                          firm
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,12]                       units:  1
+         unique values:  12                       missing .:  779/4,597
+
+                  mean:   10.9767
+              std. dev:   2.52786
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 7        12        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,597
+
+            tabulation:  Freq.   Numeric  Label
+                         3,674         0  No
+                           923         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,597
+
+            tabulation:  Freq.   Numeric  Label
+                         4,037         0  No
+                           560         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,597
+
+            tabulation:  Freq.   Numeric  Label
+                         3,819         0  No
+                           778         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,597
+
+            tabulation:  Freq.   Numeric  Label
+                         3,783         0  No
+                           814         1  Yes
+
+AMARC - 2013
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2013/CB_I_YFRM_2013_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  5,054
+                  Size:  60,648 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [5562,36063]                 units:  1
+         unique values:  4,620                    missing .:  0/5,054
+
+                  mean:   13960.6
+              std. dev:   2852.47
+
+           percentiles:        10%       25%       50%       75%       90%
+                             11595     12455   13782.5     15139     15967
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2013,2013]                  units:  1
+         unique values:  1                        missing .:  0/5,054
+
+            tabulation:  Freq.  Value
+                         5,054  2013
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  10                       missing .:  0/5,054
+
+              examples:  30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+                         30    30 Activity Interruption by non-seasonal companies (>3 months, consecutive or not)
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,12]                       units:  1
+         unique values:  12                       missing .:  909/5,054
+
+                  mean:    11.229
+              std. dev:   2.16733
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 9        12        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/5,054
+
+            tabulation:  Freq.   Numeric  Label
+                         4,002         0  No
+                         1,052         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/5,054
+
+            tabulation:  Freq.   Numeric  Label
+                         4,446         0  No
+                           608         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/5,054
+
+            tabulation:  Freq.   Numeric  Label
+                         4,325         0  No
+                           729         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/5,054
+
+            tabulation:  Freq.   Numeric  Label
+                         4,239         0  No
+                           815         1  Yes
+
+AMARC - 2014
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2014/CB_I_YFRM_2014_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  4,606
+                  Size:  55,272 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [11373,36070]                units:  1
+         unique values:  4,306                    missing .:  0/4,606
+
+                  mean:   20529.1
+              std. dev:   3332.02
+
+           percentiles:        10%       25%       50%       75%       90%
+                             16702     17676   20134.5     23073     24392
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2014,2014]                  units:  1
+         unique values:  1                        missing .:  0/4,606
+
+            tabulation:  Freq.  Value
+                         4,606  2014
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  9                        missing .:  0/4,606
+
+            tabulation:  Freq.   Numeric  Label
+                           541        10  10 Merge
+                            12        20  20 Split
+                         4,003        30  30 Activity Interruption by
+                                          non-seasonal companies (>3
+                                          months, consecutive or not)
+                             5        62  62 Dissolution of a significant
+                                          part of productive assets
+                                          without split
+                            14        67  67 Other corporate actions
+                            12        70  70 Disposal of a significant
+                                          part of productive assets
+                             5        71  71 Acquisition of a significant
+                                          part of productive assets
+                             6        72  72 Transfer of a significant
+                                          part of productive assets
+                             8        79  79 Change of economic activity
+                                          without the creation of a new
+                                          firm
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,12]                       units:  1
+         unique values:  12                       missing .:  603/4,606
+
+                  mean:   11.2508
+              std. dev:   2.19662
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 9        12        12        12        12
+
+        missing values:  efeitocontas==mv --> mesesparagem==mv
+                         efeitopess~l==mv --> mesesparagem==mv
+                         efeitobala~o==mv --> mesesparagem==mv
+                         efeitodemr~t==mv --> mesesparagem==mv
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4/4,606
+
+            tabulation:  Freq.   Numeric  Label
+                         3,851         0  No
+                           751         1  Yes
+                             4         .  
+
+        missing values:  efeitopess~l==mv &lt;-> efeitocontas==mv
+                         efeitobala~o==mv &lt;-> efeitocontas==mv
+                         efeitodemr~t==mv &lt;-> efeitocontas==mv
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4/4,606
+
+            tabulation:  Freq.   Numeric  Label
+                         4,096         0  No
+                           506         1  Yes
+                             4         .  
+
+        missing values:  efeitocontas==mv &lt;-> efeitopess~l==mv
+                         efeitobala~o==mv &lt;-> efeitopess~l==mv
+                         efeitodemr~t==mv &lt;-> efeitopess~l==mv
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4/4,606
+
+            tabulation:  Freq.   Numeric  Label
+                         3,916         0  No
+                           686         1  Yes
+                             4         .  
+
+        missing values:  efeitocontas==mv &lt;-> efeitobala~o==mv
+                         efeitopess~l==mv &lt;-> efeitobala~o==mv
+                         efeitodemr~t==mv &lt;-> efeitobala~o==mv
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4/4,606
+
+            tabulation:  Freq.   Numeric  Label
+                         3,945         0  No
+                           657         1  Yes
+                             4         .  
+
+        missing values:  efeitocontas==mv &lt;-> efeitodemr~t==mv
+                         efeitopess~l==mv &lt;-> efeitodemr~t==mv
+                         efeitobala~o==mv &lt;-> efeitodemr~t==mv
+
+AMARC - 2015
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2015/CB_I_YFRM_2015_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  4,494
+                  Size:  53,928 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [16703,64856]                units:  1
+         unique values:  4,155                    missing .:  0/4,494
+
+                  mean:   22849.7
+              std. dev:   3242.46
+
+           percentiles:        10%       25%       50%       75%       90%
+                             18872     20570   22308.5     25317     26491
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2015,2015]                  units:  1
+         unique values:  1                        missing .:  0/4,494
+
+            tabulation:  Freq.  Value
+                         4,494  2015
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  9                        missing .:  0/4,494
+
+            tabulation:  Freq.   Numeric  Label
+                           578        10  10 Merge
+                            45        20  20 Split
+                         3,813        30  30 Activity Interruption by
+                                          non-seasonal companies (>3
+                                          months, consecutive or not)
+                             3        62  62 Dissolution of a significant
+                                          part of productive assets
+                                          without split
+                            15        67  67 Other corporate actions
+                            21        70  70 Disposal of a significant
+                                          part of productive assets
+                             3        71  71 Acquisition of a significant
+                                          part of productive assets
+                             8        72  72 Transfer of a significant
+                                          part of productive assets
+                             8        79  79 Change of economic activity
+                                          without the creation of a new
+                                          firm
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,12]                       units:  1
+         unique values:  12                       missing .:  681/4,494
+
+                  mean:   11.2901
+              std. dev:   2.09564
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 9        12        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,494
+
+            tabulation:  Freq.   Numeric  Label
+                         3,317         0  No
+                         1,177         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,494
+
+            tabulation:  Freq.   Numeric  Label
+                         4,210         0  No
+                           284         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,494
+
+            tabulation:  Freq.   Numeric  Label
+                         3,985         0  No
+                           509         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,494
+
+            tabulation:  Freq.   Numeric  Label
+                         4,052         0  No
+                           442         1  Yes
+
+AMARC - 2016
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2016/CB_I_YFRM_2016_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  4,070
+                  Size:  48,840 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [18549,36072]                units:  1
+         unique values:  3,751                    missing .:  0/4,070
+
+                  mean:   29321.4
+              std. dev:   1785.63
+
+           percentiles:        10%       25%       50%       75%       90%
+                           27574.5     28280   29399.5     30530   31220.5
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2016,2016]                  units:  1
+         unique values:  1                        missing .:  0/4,070
+
+            tabulation:  Freq.  Value
+                         4,070  2016
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  9                        missing .:  0/4,070
+
+            tabulation:  Freq.   Numeric  Label
+                           509        10  10 Merge
+                            60        20  20 Split
+                         3,457        30  30 Activity Interruption by
+                                          non-seasonal companies (>3
+                                          months, consecutive or not)
+                             3        62  62 Dissolution of a significant
+                                          part of productive assets
+                                          without split
+                             5        67  67 Other corporate actions
+                            10        70  70 Disposal of a significant
+                                          part of productive assets
+                             6        71  71 Acquisition of a significant
+                                          part of productive assets
+                            10        72  72 Transfer of a significant
+                                          part of productive assets
+                            10        79  79 Change of economic activity
+                                          without the creation of a new
+                                          firm
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,12]                       units:  1
+         unique values:  12                       missing .:  613/4,070
+
+                  mean:   11.3506
+              std. dev:   2.01579
+
+           percentiles:        10%       25%       50%       75%       90%
+                                10        12        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,070
+
+            tabulation:  Freq.   Numeric  Label
+                         3,209         0  No
+                           861         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,070
+
+            tabulation:  Freq.   Numeric  Label
+                         3,801         0  No
+                           269         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,070
+
+            tabulation:  Freq.   Numeric  Label
+                         3,560         0  No
+                           510         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/4,070
+
+            tabulation:  Freq.   Numeric  Label
+                         3,650         0  No
+                           420         1  Yes
+
+AMARC - 2017
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2017/CB_I_YFRM_2017_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  3,776
+                  Size:  45,312 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [27247,62576]                units:  1
+         unique values:  3,466                    missing .:  0/3,776
+
+                  mean:     33803
+              std. dev:    1784.4
+
+           percentiles:        10%       25%       50%       75%       90%
+                             32152   32862.5     33876   34887.5     35551
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2017,2017]                  units:  1
+         unique values:  1                        missing .:  0/3,776
+
+            tabulation:  Freq.  Value
+                         3,776  2017
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  8                        missing .:  0/3,776
+
+            tabulation:  Freq.   Numeric  Label
+                           537        10  10 Merge
+                            47        20  20 Split
+                         3,151        30  30 Activity Interruption by
+                                          non-seasonal companies (>3
+                                          months, consecutive or not)
+                            14        67  67 Other corporate actions
+                             9        70  70 Disposal of a significant
+                                          part of productive assets
+                             1        71  71 Acquisition of a significant
+                                          part of productive assets
+                            10        72  72 Transfer of a significant
+                                          part of productive assets
+                             7        79  79 Change of economic activity
+                                          without the creation of a new
+                                          firm
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,12]                       units:  1
+         unique values:  12                       missing .:  625/3,776
+
+                  mean:   11.4764
+              std. dev:   1.82765
+
+           percentiles:        10%       25%       50%       75%       90%
+                                11        12        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/3,776
+
+            tabulation:  Freq.   Numeric  Label
+                         3,053         0  No
+                           723         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/3,776
+
+            tabulation:  Freq.   Numeric  Label
+                         3,587         0  No
+                           189         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/3,776
+
+            tabulation:  Freq.   Numeric  Label
+                         3,302         0  No
+                           474         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/3,776
+
+            tabulation:  Freq.   Numeric  Label
+                         3,384         0  No
+                           392         1  Yes
+
+AMARC - 2018
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2018/CB_I_YFRM_2018_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  3,402
+                  Size:  40,824 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [32040,63376]                units:  1
+         unique values:  3,155                    missing .:  0/3,402
+
+                  mean:   60003.9
+              std. dev:   5087.81
+
+           percentiles:        10%       25%       50%       75%       90%
+                             59241     59903   60875.5     61873     62501
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2018,2018]                  units:  1
+         unique values:  1                        missing .:  0/3,402
+
+            tabulation:  Freq.  Value
+                         3,402  2018
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  9                        missing .:  0/3,402
+
+            tabulation:  Freq.   Numeric  Label
+                           464        10  10 Merge
+                            39        20  20 Split
+                         2,872        30  30 Activity Interruption by
+                                          non-seasonal companies (>3
+                                          months, consecutive or not)
+                             4        62  62 Dissolution of a significant
+                                          part of productive assets
+                                          without split
+                             4        67  67 Other corporate actions
+                             6        70  70 Disposal of a significant
+                                          part of productive assets
+                             1        71  71 Acquisition of a significant
+                                          part of productive assets
+                             7        72  72 Transfer of a significant
+                                          part of productive assets
+                             5        79  79 Change of economic activity
+                                          without the creation of a new
+                                          firm
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,12]                       units:  1
+         unique values:  12                       missing .:  530/3,402
+
+                  mean:   11.4196
+              std. dev:   1.96994
+
+           percentiles:        10%       25%       50%       75%       90%
+                                11        12        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/3,402
+
+            tabulation:  Freq.   Numeric  Label
+                         2,803         0  No
+                           599         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/3,402
+
+            tabulation:  Freq.   Numeric  Label
+                         3,185         0  No
+                           217         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/3,402
+
+            tabulation:  Freq.   Numeric  Label
+                         2,925         0  No
+                           477         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/3,402
+
+            tabulation:  Freq.   Numeric  Label
+                         3,073         0  No
+                           329         1  Yes
+
+AMARC - 2019
+
+               Dataset:  S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2019/CB_I_YFRM_2019_JUN21_AMARC_V01.dta
+            Last saved:  23 Jun 2021 15:46
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+   Available languages:  default en pt
+     Codebook language:  en
+
+                 Label:  [none]
+   Number of variables:  8
+Number of observations:  2,997
+                  Size:  35,964 bytes ignoring labels, etc.
+
+_dta:
+  1.  "Programmed by bpu058351 on 23 Jun 2021"
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+numordem                                                                                                                                                                           Corporate action’s Number of order
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (long)
+
+                 range:  [32183,67218]                units:  1
+         unique values:  2,872                    missing .:  0/2,997
+
+                  mean:   64954.2
+              std. dev:   1425.17
+
+           percentiles:        10%       25%       50%       75%       90%
+                             63564     64146     65040     65886     66428
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano                                                                                                                                                                                                    Reference year
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (int)
+
+                 range:  [2019,2019]                  units:  1
+         unique values:  1                        missing .:  0/2,997
+
+            tabulation:  Freq.  Value
+                         2,997  2019
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+tipoacont                                                                                                                                                                                    Type of corporate action
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  tipoacont_EN
+
+                 range:  [10,79]                      units:  1
+         unique values:  8                        missing .:  0/2,997
+
+            tabulation:  Freq.   Numeric  Label
+                           368        10  10 Merge
+                            63        20  20 Split
+                         2,546        30  30 Activity Interruption by
+                                          non-seasonal companies (>3
+                                          months, consecutive or not)
+                             1        62  62 Dissolution of a significant
+                                          part of productive assets
+                                          without split
+                             4        70  70 Disposal of a significant
+                                          part of productive assets
+                             3        71  71 Acquisition of a significant
+                                          part of productive assets
+                             7        72  72 Transfer of a significant
+                                          part of productive assets
+                             5        79  79 Change of economic activity
+                                          without the creation of a new
+                                          firm
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+mesesparagem                                                                                                                                                                Number of months of activity interruption
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+
+                 range:  [1,12]                       units:  1
+         unique values:  12                       missing .:  451/2,997
+
+                  mean:   11.4965
+              std. dev:   1.86609
+
+           percentiles:        10%       25%       50%       75%       90%
+                                12        12        12        12        12
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitocontas                                                                                                                                                                           Effect on financial statements
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/2,997
+
+            tabulation:  Freq.   Numeric  Label
+                         2,546         0  No
+                           451         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitopessoal                                                                                                                                                                        Effect on employment information
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/2,997
+
+            tabulation:  Freq.   Numeric  Label
+                         2,781         0  No
+                           216         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitobalanco                                                                                                                                                                                 Effect on balance sheet
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/2,997
+
+            tabulation:  Freq.   Numeric  Label
+                         2,562         0  No
+                           435         1  Yes
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+efeitodemresult                                                                                                                                                                   Effect on profit and loss statement
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/2,997
+
+            tabulation:  Freq.   Numeric  Label
+                         2,696         0  No
+                           301         1  Yes
+</pre>
+</body>
+</html>

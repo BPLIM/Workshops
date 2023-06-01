@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>dscr_Pessoal</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px; max-width:45em;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+td {padding:0 0 0 0} /* override */
+table:not([class]) th { padding:4px 6px } 
+table:not([class]) td { padding:4px 6px } 
+table:not([class]) thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+table:not([class]) thead tr:last-child  th {padding-bottom:6px}
+table:not([class]) tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+table:not([class]) tbody tr:last-child  td {padding-bottom:6px;}
+table:not([class]) tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+</head>
+<body>
+<meta charset="utf-8"/>
+<h1 id="central-balance-sheet-database">Central Balance Sheet Database</h1>
+<h2 id="file-description">File Description</h2>
+<p><code>extraction</code>: June 2021</p>
+<h2 id="employment-information"><strong>Employment Information</strong></h2>
+<pre class='stata'>Pessoal - 2006
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2006/CB_I_YFRM_2006_JUN21_PESSOAL_V01.dta
+  obs:       344,417                          
+ vars:            30                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF03319         double  %10.0g                Number of (paid and unpaid) employees
+VF03320         double  %10.0g                Number of (paid and unpaid) full-time employees
+VF03321         double  %10.0g                Number of paid employees
+VF03322         int     %8.0g                 Number of paid apprentices
+VF03323         int     %8.0g                 Number of paid homeworkers
+VF03324         double  %10.0g                Number of paid part-time employees
+VF03325         double  %10.0g                Service providers
+VF03326         int     %8.0g                 Number of employees allocated to research and development
+VF03327         long    %12.0g                Temporary Agency Employment
+VF03328         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF03329         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF03330         double  %10.0g                Number of hours worked by paid employees
+VF03331         double  %10.0g                Number of hours worked by paid part-time employees
+VF03332         double  %10.0g                Number of hours worked by service providers
+VF04036         double  %10.0g                Corporate bodies Remunerations
+VF04037         double  %10.0g                Salaries
+VF04038         double  %10.0g                Pensions
+VF04039         double  %10.0g                Retirement benefits and pension premiums
+VF04040         double  %10.0g                Social security expenses
+VF04041         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF04042         double  %10.0g                Expenses with social actions
+VF04043         double  %10.0g                Other employee expenses
+VF04902         double  %10.0g                Number of unpaid employees
+VF04903         double  %10.0g                Number of paid full-time employees
+VF04904         double  %10.0g                Number of (paid and unpaid) part-time employees
+VF04905         double  %10.0g                Number of hours worked by unpaid employees
+VF04906         double  %10.0g                Number of hours worked by paid full-time employees
+VF04907         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF05990         double  %10.0g                Total Hours Worked
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2007
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2007/CB_I_YFRM_2007_JUN21_PESSOAL_V01.dta
+  obs:       359,638                          
+ vars:            30                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF03319         double  %10.0g                Number of (paid and unpaid) employees
+VF03320         double  %10.0g                Number of (paid and unpaid) full-time employees
+VF03321         double  %10.0g                Number of paid employees
+VF03322         int     %8.0g                 Number of paid apprentices
+VF03323         int     %8.0g                 Number of paid homeworkers
+VF03324         double  %10.0g                Number of paid part-time employees
+VF03325         int     %8.0g                 Service providers
+VF03326         int     %8.0g                 Number of employees allocated to research and development
+VF03327         long    %12.0g                Temporary Agency Employment
+VF03328         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF03329         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF03330         double  %10.0g                Number of hours worked by paid employees
+VF03331         double  %10.0g                Number of hours worked by paid part-time employees
+VF03332         double  %10.0g                Number of hours worked by service providers
+VF04036         double  %10.0g                Corporate bodies Remunerations
+VF04037         double  %10.0g                Salaries
+VF04038         double  %10.0g                Pensions
+VF04039         double  %10.0g                Retirement benefits and pension premiums
+VF04040         double  %10.0g                Social security expenses
+VF04041         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF04042         double  %10.0g                Expenses with social actions
+VF04043         double  %10.0g                Other employee expenses
+VF04902         double  %10.0g                Number of unpaid employees
+VF04903         double  %10.0g                Number of paid full-time employees
+VF04904         double  %10.0g                Number of (paid and unpaid) part-time employees
+VF04905         double  %10.0g                Number of hours worked by unpaid employees
+VF04906         double  %10.0g                Number of hours worked by paid full-time employees
+VF04907         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF05990         double  %10.0g                Total Hours Worked
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2008
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2008/CB_I_YFRM_2008_JUN21_PESSOAL_V01.dta
+  obs:       369,909                          
+ vars:            30                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF03319         double  %10.0g                Number of (paid and unpaid) employees
+VF03320         double  %10.0g                Number of (paid and unpaid) full-time employees
+VF03321         double  %10.0g                Number of paid employees
+VF03322         int     %8.0g                 Number of paid apprentices
+VF03323         int     %8.0g                 Number of paid homeworkers
+VF03324         double  %10.0g                Number of paid part-time employees
+VF03325         long    %12.0g                Service providers
+VF03326         int     %8.0g                 Number of employees allocated to research and development
+VF03327         long    %12.0g                Temporary Agency Employment
+VF03328         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF03329         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF03330         double  %10.0g                Number of hours worked by paid employees
+VF03331         double  %10.0g                Number of hours worked by paid part-time employees
+VF03332         long    %12.0g                Number of hours worked by service providers
+VF04036         double  %10.0g                Corporate bodies Remunerations
+VF04037         double  %10.0g                Salaries
+VF04038         double  %10.0g                Pensions
+VF04039         double  %10.0g                Retirement benefits and pension premiums
+VF04040         double  %10.0g                Social security expenses
+VF04041         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF04042         double  %10.0g                Expenses with social actions
+VF04043         double  %10.0g                Other employee expenses
+VF04902         double  %10.0g                Number of unpaid employees
+VF04903         double  %10.0g                Number of paid full-time employees
+VF04904         double  %10.0g                Number of (paid and unpaid) part-time employees
+VF04905         double  %10.0g                Number of hours worked by unpaid employees
+VF04906         double  %10.0g                Number of hours worked by paid full-time employees
+VF04907         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF05990         double  %10.0g                Total Hours Worked
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2009
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2009/CB_I_YFRM_2009_JUN21_PESSOAL_V01.dta
+  obs:       369,928                          
+ vars:            30                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF03319         double  %10.0g                Number of (paid and unpaid) employees
+VF03320         double  %10.0g                Number of (paid and unpaid) full-time employees
+VF03321         double  %10.0g                Number of paid employees
+VF03322         int     %8.0g                 Number of paid apprentices
+VF03323         int     %8.0g                 Number of paid homeworkers
+VF03324         int     %8.0g                 Number of paid part-time employees
+VF03325         long    %12.0g                Service providers
+VF03326         int     %8.0g                 Number of employees allocated to research and development
+VF03327         int     %8.0g                 Temporary Agency Employment
+VF03328         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF03329         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF03330         double  %10.0g                Number of hours worked by paid employees
+VF03331         double  %10.0g                Number of hours worked by paid part-time employees
+VF03332         long    %12.0g                Number of hours worked by service providers
+VF04036         double  %10.0g                Corporate bodies Remunerations
+VF04037         double  %10.0g                Salaries
+VF04038         double  %10.0g                Pensions
+VF04039         double  %10.0g                Retirement benefits and pension premiums
+VF04040         double  %10.0g                Social security expenses
+VF04041         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF04042         double  %10.0g                Expenses with social actions
+VF04043         double  %10.0g                Other employee expenses
+VF04902         int     %8.0g                 Number of unpaid employees
+VF04903         double  %10.0g                Number of paid full-time employees
+VF04904         int     %8.0g                 Number of (paid and unpaid) part-time employees
+VF04905         long    %12.0g                Number of hours worked by unpaid employees
+VF04906         double  %10.0g                Number of hours worked by paid full-time employees
+VF04907         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF05990         double  %10.0g                Total Hours Worked
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2010
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2010/CB_I_YFRM_2010_JUN21_PESSOAL_V01.dta
+  obs:       370,692                          
+ vars:            69                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF03319         int     %8.0g                 Number of (paid and unpaid) employees
+VF03320         int     %8.0g                 Number of (paid and unpaid) full-time employees
+VF03321         int     %8.0g                 Number of paid employees
+VF03322         byte    %8.0g                 Number of paid apprentices
+VF03323         byte    %8.0g                 Number of paid homeworkers
+VF03324         int     %8.0g                 Number of paid part-time employees
+VF03325         int     %8.0g                 Service providers
+VF03326         byte    %8.0g                 Number of employees allocated to research and development
+VF03327         byte    %8.0g                 Temporary Agency Employment
+VF03328         long    %12.0g                Number of hours worked by paid and unpaid employees
+VF03329         long    %12.0g                Number of hours worked by paid and unpaid full-time employees
+VF03330         long    %12.0g                Number of hours worked by paid employees
+VF03331         long    %12.0g                Number of hours worked by paid part-time employees
+VF03332         long    %12.0g                Number of hours worked by service providers
+VF04036         double  %10.0g                Corporate bodies Remunerations
+VF04037         double  %10.0g                Salaries
+VF04038         double  %10.0g                Pensions
+VF04039         double  %10.0g                Retirement benefits and pension premiums
+VF04040         double  %10.0g                Social security expenses
+VF04041         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF04042         double  %10.0g                Expenses with social actions
+VF04043         double  %10.0g                Other employee expenses
+VF04902         byte    %8.0g                 Number of unpaid employees
+VF04903         int     %8.0g                 Number of paid full-time employees
+VF04904         int     %8.0g                 Number of (paid and unpaid) part-time employees
+VF04905         int     %8.0g                 Number of hours worked by unpaid employees
+VF04906         long    %12.0g                Number of hours worked by paid full-time employees
+VF04907         long    %12.0g                Number of hours worked by paid and unpaid part-time employees
+VF05990         long    %12.0g                Total Hours Worked
+VF15532         int     %8.0g                 Number of (paid and unpaid) employees
+VF15533         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF15534         int     %8.0g                 Number of paid employees
+VF15535         double  %10.0g                Number of hours worked by paid employees
+VF15536         int     %8.0g                 Number of unpaid employees
+VF15537         long    %12.0g                Number of hours worked by unpaid employees
+VF15538         int     %8.0g                 Number of (paid and unpaid) full-time employees
+VF15539         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF15540         int     %8.0g                 Number of paid full-time employees
+VF15541         double  %10.0g                Number of hours worked by paid full-time employees
+VF15542         int     %8.0g                 Number of (paid and unpaid) part-time employees
+VF15543         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF15544         int     %8.0g                 Number of paid part-time employees
+VF15545         double  %10.0g                Number of hours worked by paid part-time employees
+VF15546         int     %8.0g                 Number of (paid and unpaid) male employees
+VF15547         double  %10.0g                Number of hours worked by male employees
+VF15548         int     %8.0g                 Number of (paid and unpaid) female employees
+VF15549         double  %10.0g                Number of hours worked by female employees
+VF15550         int     %8.0g                 Number of employees allocated to research and development
+VF15551         long    %12.0g                Service providers
+VF15552         double  %10.0g                Number of hours worked by service providers
+VF15553         long    %12.0g                Temporary Agency Employment
+VF15555         double  %10.0g                Salaries of corporate bodies
+VF15556         double  %10.0g                Salaries of corporate bodies- of which participation in profits
+VF15557         double  %10.0g                Salaries
+VF15558         double  %10.0g                Salaries - of which participation in the profits
+VF15559         double  %10.0g                Post-employment benefits
+VF15560         double  %10.0g                Pension premiums
+VF15561         double  %10.0g                Other benefits
+VF15562         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15563         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15564         double  %10.0g                Compensations/indemnities
+VF15565         double  %10.0g                Social security expenses
+VF15566         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF15567         double  %10.0g                Expenses with social actions
+VF15568         double  %10.0g                Other employee expenses
+VF15569         double  %10.0g                Training expenses
+VF15570         double  %10.0g                Other expenses- Expenses with uniforms
+VF18834         byte    %8.0g                 Expenses with defined pension plans
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2011
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2011/CB_I_YFRM_2011_JUN21_PESSOAL_V01.dta
+  obs:       379,575                          
+ vars:            40                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF15532         int     %8.0g                 Number of (paid and unpaid) employees
+VF15533         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF15534         int     %8.0g                 Number of paid employees
+VF15535         double  %10.0g                Number of hours worked by paid employees
+VF15536         int     %8.0g                 Number of unpaid employees
+VF15537         double  %10.0g                Number of hours worked by unpaid employees
+VF15538         int     %8.0g                 Number of (paid and unpaid) full-time employees
+VF15539         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF15540         int     %8.0g                 Number of paid full-time employees
+VF15541         double  %10.0g                Number of hours worked by paid full-time employees
+VF15542         int     %8.0g                 Number of (paid and unpaid) part-time employees
+VF15543         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF15544         int     %8.0g                 Number of paid part-time employees
+VF15545         double  %10.0g                Number of hours worked by paid part-time employees
+VF15546         int     %8.0g                 Number of (paid and unpaid) male employees
+VF15547         double  %10.0g                Number of hours worked by male employees
+VF15548         int     %8.0g                 Number of (paid and unpaid) female employees
+VF15549         double  %10.0g                Number of hours worked by female employees
+VF15550         int     %8.0g                 Number of employees allocated to research and development
+VF15551         int     %8.0g                 Service providers
+VF15552         double  %10.0g                Number of hours worked by service providers
+VF15553         long    %12.0g                Temporary Agency Employment
+VF15555         double  %10.0g                Salaries of corporate bodies
+VF15556         double  %10.0g                Salaries of corporate bodies- of which participation in profits
+VF15557         double  %10.0g                Salaries
+VF15558         double  %10.0g                Salaries - of which participation in the profits
+VF15559         double  %10.0g                Post-employment benefits
+VF15560         double  %10.0g                Pension premiums
+VF15561         double  %10.0g                Other benefits
+VF15562         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15563         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15564         double  %10.0g                Compensations/indemnities
+VF15565         double  %10.0g                Social security expenses
+VF15566         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF15567         double  %10.0g                Expenses with social actions
+VF15568         double  %10.0g                Other employee expenses
+VF15569         double  %10.0g                Training expenses
+VF15570         double  %10.0g                Other expenses- Expenses with uniforms
+VF18834         byte    %8.0g                 Expenses with defined pension plans
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2012
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2012/CB_I_YFRM_2012_JUN21_PESSOAL_V01.dta
+  obs:       380,911                          
+ vars:            40                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF15532         int     %8.0g                 Number of (paid and unpaid) employees
+VF15533         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF15534         int     %8.0g                 Number of paid employees
+VF15535         double  %10.0g                Number of hours worked by paid employees
+VF15536         int     %8.0g                 Number of unpaid employees
+VF15537         long    %12.0g                Number of hours worked by unpaid employees
+VF15538         int     %8.0g                 Number of (paid and unpaid) full-time employees
+VF15539         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF15540         int     %8.0g                 Number of paid full-time employees
+VF15541         double  %10.0g                Number of hours worked by paid full-time employees
+VF15542         int     %8.0g                 Number of (paid and unpaid) part-time employees
+VF15543         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF15544         int     %8.0g                 Number of paid part-time employees
+VF15545         double  %10.0g                Number of hours worked by paid part-time employees
+VF15546         int     %8.0g                 Number of (paid and unpaid) male employees
+VF15547         double  %10.0g                Number of hours worked by male employees
+VF15548         long    %12.0g                Number of (paid and unpaid) female employees
+VF15549         double  %10.0g                Number of hours worked by female employees
+VF15550         int     %8.0g                 Number of employees allocated to research and development
+VF15551         int     %8.0g                 Service providers
+VF15552         long    %12.0g                Number of hours worked by service providers
+VF15553         long    %12.0g                Temporary Agency Employment
+VF15555         double  %10.0g                Salaries of corporate bodies
+VF15556         double  %10.0g                Salaries of corporate bodies- of which participation in profits
+VF15557         double  %10.0g                Salaries
+VF15558         double  %10.0g                Salaries - of which participation in the profits
+VF15559         double  %10.0g                Post-employment benefits
+VF15560         double  %10.0g                Pension premiums
+VF15561         double  %10.0g                Other benefits
+VF15562         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15563         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15564         double  %10.0g                Compensations/indemnities
+VF15565         double  %10.0g                Social security expenses
+VF15566         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF15567         double  %10.0g                Expenses with social actions
+VF15568         double  %10.0g                Other employee expenses
+VF15569         double  %10.0g                Training expenses
+VF15570         double  %10.0g                Other expenses- Expenses with uniforms
+VF18834         double  %10.0g                Expenses with defined pension plans
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2013
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2013/CB_I_YFRM_2013_JUN21_PESSOAL_V01.dta
+  obs:       386,118                          
+ vars:            40                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF15532         int     %8.0g                 Number of (paid and unpaid) employees
+VF15533         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF15534         int     %8.0g                 Number of paid employees
+VF15535         double  %10.0g                Number of hours worked by paid employees
+VF15536         int     %8.0g                 Number of unpaid employees
+VF15537         long    %12.0g                Number of hours worked by unpaid employees
+VF15538         int     %8.0g                 Number of (paid and unpaid) full-time employees
+VF15539         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF15540         int     %8.0g                 Number of paid full-time employees
+VF15541         double  %10.0g                Number of hours worked by paid full-time employees
+VF15542         int     %8.0g                 Number of (paid and unpaid) part-time employees
+VF15543         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF15544         int     %8.0g                 Number of paid part-time employees
+VF15545         double  %10.0g                Number of hours worked by paid part-time employees
+VF15546         int     %8.0g                 Number of (paid and unpaid) male employees
+VF15547         double  %10.0g                Number of hours worked by male employees
+VF15548         int     %8.0g                 Number of (paid and unpaid) female employees
+VF15549         double  %10.0g                Number of hours worked by female employees
+VF15550         int     %8.0g                 Number of employees allocated to research and development
+VF15551         int     %8.0g                 Service providers
+VF15552         long    %12.0g                Number of hours worked by service providers
+VF15553         long    %12.0g                Temporary Agency Employment
+VF15555         double  %10.0g                Salaries of corporate bodies
+VF15556         double  %10.0g                Salaries of corporate bodies- of which participation in profits
+VF15557         double  %10.0g                Salaries
+VF15558         double  %10.0g                Salaries - of which participation in the profits
+VF15559         double  %10.0g                Post-employment benefits
+VF15560         double  %10.0g                Pension premiums
+VF15561         double  %10.0g                Other benefits
+VF15562         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15563         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15564         double  %10.0g                Compensations/indemnities
+VF15565         double  %10.0g                Social security expenses
+VF15566         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF15567         double  %10.0g                Expenses with social actions
+VF15568         double  %10.0g                Other employee expenses
+VF15569         double  %10.0g                Training expenses
+VF15570         double  %10.0g                Other expenses- Expenses with uniforms
+VF18834         double  %10.0g                Expenses with defined pension plans
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2014
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2014/CB_I_YFRM_2014_JUN21_PESSOAL_V01.dta
+  obs:       391,405                          
+ vars:            40                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF15532         int     %8.0g                 Number of (paid and unpaid) employees
+VF15533         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF15534         int     %8.0g                 Number of paid employees
+VF15535         double  %10.0g                Number of hours worked by paid employees
+VF15536         int     %8.0g                 Number of unpaid employees
+VF15537         long    %12.0g                Number of hours worked by unpaid employees
+VF15538         int     %8.0g                 Number of (paid and unpaid) full-time employees
+VF15539         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF15540         int     %8.0g                 Number of paid full-time employees
+VF15541         double  %10.0g                Number of hours worked by paid full-time employees
+VF15542         int     %8.0g                 Number of (paid and unpaid) part-time employees
+VF15543         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF15544         int     %8.0g                 Number of paid part-time employees
+VF15545         double  %10.0g                Number of hours worked by paid part-time employees
+VF15546         int     %8.0g                 Number of (paid and unpaid) male employees
+VF15547         double  %10.0g                Number of hours worked by male employees
+VF15548         int     %8.0g                 Number of (paid and unpaid) female employees
+VF15549         double  %10.0g                Number of hours worked by female employees
+VF15550         int     %8.0g                 Number of employees allocated to research and development
+VF15551         long    %12.0g                Service providers
+VF15552         long    %12.0g                Number of hours worked by service providers
+VF15553         long    %12.0g                Temporary Agency Employment
+VF15555         double  %10.0g                Salaries of corporate bodies
+VF15556         double  %10.0g                Salaries of corporate bodies- of which participation in profits
+VF15557         double  %10.0g                Salaries
+VF15558         double  %10.0g                Salaries - of which participation in the profits
+VF15559         double  %10.0g                Post-employment benefits
+VF15560         double  %10.0g                Pension premiums
+VF15561         double  %10.0g                Other benefits
+VF15562         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15563         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15564         double  %10.0g                Compensations/indemnities
+VF15565         double  %10.0g                Social security expenses
+VF15566         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF15567         double  %10.0g                Expenses with social actions
+VF15568         double  %10.0g                Other employee expenses
+VF15569         double  %10.0g                Training expenses
+VF15570         double  %10.0g                Other expenses- Expenses with uniforms
+VF18834         double  %10.0g                Expenses with defined pension plans
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2015
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2015/CB_I_YFRM_2015_JUN21_PESSOAL_V01.dta
+  obs:       403,788                          
+ vars:            40                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF15532         int     %8.0g                 Number of (paid and unpaid) employees
+VF15533         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF15534         int     %8.0g                 Number of paid employees
+VF15535         double  %10.0g                Number of hours worked by paid employees
+VF15536         int     %8.0g                 Number of unpaid employees
+VF15537         long    %12.0g                Number of hours worked by unpaid employees
+VF15538         int     %8.0g                 Number of (paid and unpaid) full-time employees
+VF15539         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF15540         int     %8.0g                 Number of paid full-time employees
+VF15541         double  %10.0g                Number of hours worked by paid full-time employees
+VF15542         int     %8.0g                 Number of (paid and unpaid) part-time employees
+VF15543         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF15544         int     %8.0g                 Number of paid part-time employees
+VF15545         double  %10.0g                Number of hours worked by paid part-time employees
+VF15546         int     %8.0g                 Number of (paid and unpaid) male employees
+VF15547         double  %10.0g                Number of hours worked by male employees
+VF15548         int     %8.0g                 Number of (paid and unpaid) female employees
+VF15549         double  %10.0g                Number of hours worked by female employees
+VF15550         int     %8.0g                 Number of employees allocated to research and development
+VF15551         int     %8.0g                 Service providers
+VF15552         long    %12.0g                Number of hours worked by service providers
+VF15553         long    %12.0g                Temporary Agency Employment
+VF15555         double  %10.0g                Salaries of corporate bodies
+VF15556         double  %10.0g                Salaries of corporate bodies- of which participation in profits
+VF15557         double  %10.0g                Salaries
+VF15558         double  %10.0g                Salaries - of which participation in the profits
+VF15559         double  %10.0g                Post-employment benefits
+VF15560         double  %10.0g                Pension premiums
+VF15561         double  %10.0g                Other benefits
+VF15562         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15563         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15564         double  %10.0g                Compensations/indemnities
+VF15565         double  %10.0g                Social security expenses
+VF15566         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF15567         double  %10.0g                Expenses with social actions
+VF15568         double  %10.0g                Other employee expenses
+VF15569         double  %10.0g                Training expenses
+VF15570         double  %10.0g                Other expenses- Expenses with uniforms
+VF18834         double  %10.0g                Expenses with defined pension plans
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2016
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2016/CB_I_YFRM_2016_JUN21_PESSOAL_V01.dta
+  obs:       411,041                          
+ vars:            40                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF15532         double  %10.0g                Number of (paid and unpaid) employees
+VF15533         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF15534         double  %10.0g                Number of paid employees
+VF15535         double  %10.0g                Number of hours worked by paid employees
+VF15536         int     %8.0g                 Number of unpaid employees
+VF15537         long    %12.0g                Number of hours worked by unpaid employees
+VF15538         double  %10.0g                Number of (paid and unpaid) full-time employees
+VF15539         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF15540         double  %10.0g                Number of paid full-time employees
+VF15541         double  %10.0g                Number of hours worked by paid full-time employees
+VF15542         int     %8.0g                 Number of (paid and unpaid) part-time employees
+VF15543         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF15544         int     %8.0g                 Number of paid part-time employees
+VF15545         double  %10.0g                Number of hours worked by paid part-time employees
+VF15546         double  %10.0g                Number of (paid and unpaid) male employees
+VF15547         double  %10.0g                Number of hours worked by male employees
+VF15548         double  %10.0g                Number of (paid and unpaid) female employees
+VF15549         double  %10.0g                Number of hours worked by female employees
+VF15550         int     %8.0g                 Number of employees allocated to research and development
+VF15551         int     %8.0g                 Service providers
+VF15552         double  %10.0g                Number of hours worked by service providers
+VF15553         long    %12.0g                Temporary Agency Employment
+VF15555         double  %10.0g                Salaries of corporate bodies
+VF15556         double  %10.0g                Salaries of corporate bodies- of which participation in profits
+VF15557         double  %10.0g                Salaries
+VF15558         double  %10.0g                Salaries - of which participation in the profits
+VF15559         double  %10.0g                Post-employment benefits
+VF15560         double  %10.0g                Pension premiums
+VF15561         double  %10.0g                Other benefits
+VF15562         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15563         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15564         double  %10.0g                Compensations/indemnities
+VF15565         double  %10.0g                Social security expenses
+VF15566         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF15567         double  %10.0g                Expenses with social actions
+VF15568         double  %10.0g                Other employee expenses
+VF15569         double  %10.0g                Training expenses
+VF15570         double  %10.0g                Other expenses- Expenses with uniforms
+VF18834         double  %10.0g                Expenses with defined pension plans
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2017
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2017/CB_I_YFRM_2017_JUN21_PESSOAL_V01.dta
+  obs:       425,013                          
+ vars:            40                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF15532         int     %8.0g                 Number of (paid and unpaid) employees
+VF15533         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF15534         int     %8.0g                 Number of paid employees
+VF15535         double  %10.0g                Number of hours worked by paid employees
+VF15536         int     %8.0g                 Number of unpaid employees
+VF15537         long    %12.0g                Number of hours worked by unpaid employees
+VF15538         int     %8.0g                 Number of (paid and unpaid) full-time employees
+VF15539         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF15540         int     %8.0g                 Number of paid full-time employees
+VF15541         double  %10.0g                Number of hours worked by paid full-time employees
+VF15542         int     %8.0g                 Number of (paid and unpaid) part-time employees
+VF15543         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF15544         int     %8.0g                 Number of paid part-time employees
+VF15545         double  %10.0g                Number of hours worked by paid part-time employees
+VF15546         int     %8.0g                 Number of (paid and unpaid) male employees
+VF15547         double  %10.0g                Number of hours worked by male employees
+VF15548         int     %8.0g                 Number of (paid and unpaid) female employees
+VF15549         double  %10.0g                Number of hours worked by female employees
+VF15550         int     %8.0g                 Number of employees allocated to research and development
+VF15551         int     %8.0g                 Service providers
+VF15552         long    %12.0g                Number of hours worked by service providers
+VF15553         long    %12.0g                Temporary Agency Employment
+VF15555         double  %10.0g                Salaries of corporate bodies
+VF15556         double  %10.0g                Salaries of corporate bodies- of which participation in profits
+VF15557         double  %10.0g                Salaries
+VF15558         double  %10.0g                Salaries - of which participation in the profits
+VF15559         double  %10.0g                Post-employment benefits
+VF15560         double  %10.0g                Pension premiums
+VF15561         double  %10.0g                Other benefits
+VF15562         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15563         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15564         double  %10.0g                Compensations/indemnities
+VF15565         double  %10.0g                Social security expenses
+VF15566         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF15567         double  %10.0g                Expenses with social actions
+VF15568         double  %10.0g                Other employee expenses
+VF15569         double  %10.0g                Training expenses
+VF15570         double  %10.0g                Other expenses- Expenses with uniforms
+VF18834         double  %10.0g                Expenses with defined pension plans
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2018
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2018/CB_I_YFRM_2018_JUN21_PESSOAL_V01.dta
+  obs:       441,148                          
+ vars:            40                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF15532         int     %8.0g                 Number of (paid and unpaid) employees
+VF15533         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF15534         int     %8.0g                 Number of paid employees
+VF15535         double  %10.0g                Number of hours worked by paid employees
+VF15536         int     %8.0g                 Number of unpaid employees
+VF15537         long    %12.0g                Number of hours worked by unpaid employees
+VF15538         int     %8.0g                 Number of (paid and unpaid) full-time employees
+VF15539         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF15540         int     %8.0g                 Number of paid full-time employees
+VF15541         double  %10.0g                Number of hours worked by paid full-time employees
+VF15542         int     %8.0g                 Number of (paid and unpaid) part-time employees
+VF15543         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF15544         int     %8.0g                 Number of paid part-time employees
+VF15545         double  %10.0g                Number of hours worked by paid part-time employees
+VF15546         int     %8.0g                 Number of (paid and unpaid) male employees
+VF15547         double  %10.0g                Number of hours worked by male employees
+VF15548         int     %8.0g                 Number of (paid and unpaid) female employees
+VF15549         double  %10.0g                Number of hours worked by female employees
+VF15550         int     %8.0g                 Number of employees allocated to research and development
+VF15551         int     %8.0g                 Service providers
+VF15552         long    %12.0g                Number of hours worked by service providers
+VF15553         long    %12.0g                Temporary Agency Employment
+VF15555         double  %10.0g                Salaries of corporate bodies
+VF15556         double  %10.0g                Salaries of corporate bodies- of which participation in profits
+VF15557         double  %10.0g                Salaries
+VF15558         double  %10.0g                Salaries - of which participation in the profits
+VF15559         double  %10.0g                Post-employment benefits
+VF15560         double  %10.0g                Pension premiums
+VF15561         double  %10.0g                Other benefits
+VF15562         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15563         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15564         double  %10.0g                Compensations/indemnities
+VF15565         double  %10.0g                Social security expenses
+VF15566         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF15567         double  %10.0g                Expenses with social actions
+VF15568         double  %10.0g                Other employee expenses
+VF15569         double  %10.0g                Training expenses
+VF15570         double  %10.0g                Other expenses- Expenses with uniforms
+VF18834         double  %10.0g                Expenses with defined pension plans
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+Pessoal - 2019
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2019/CB_I_YFRM_2019_JUN21_PESSOAL_V01.dta
+  obs:       451,581                          
+ vars:            40                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+VF15532         int     %8.0g                 Number of (paid and unpaid) employees
+VF15533         double  %10.0g                Number of hours worked by paid and unpaid employees
+VF15534         int     %8.0g                 Number of paid employees
+VF15535         double  %10.0g                Number of hours worked by paid employees
+VF15536         int     %8.0g                 Number of unpaid employees
+VF15537         long    %12.0g                Number of hours worked by unpaid employees
+VF15538         int     %8.0g                 Number of (paid and unpaid) full-time employees
+VF15539         double  %10.0g                Number of hours worked by paid and unpaid full-time employees
+VF15540         int     %8.0g                 Number of paid full-time employees
+VF15541         double  %10.0g                Number of hours worked by paid full-time employees
+VF15542         int     %8.0g                 Number of (paid and unpaid) part-time employees
+VF15543         double  %10.0g                Number of hours worked by paid and unpaid part-time employees
+VF15544         int     %8.0g                 Number of paid part-time employees
+VF15545         long    %12.0g                Number of hours worked by paid part-time employees
+VF15546         int     %8.0g                 Number of (paid and unpaid) male employees
+VF15547         double  %10.0g                Number of hours worked by male employees
+VF15548         int     %8.0g                 Number of (paid and unpaid) female employees
+VF15549         double  %10.0g                Number of hours worked by female employees
+VF15550         int     %8.0g                 Number of employees allocated to research and development
+VF15551         long    %12.0g                Service providers
+VF15552         long    %12.0g                Number of hours worked by service providers
+VF15553         long    %12.0g                Temporary Agency Employment
+VF15555         double  %10.0g                Salaries of corporate bodies
+VF15556         double  %10.0g                Salaries of corporate bodies- of which participation in profits
+VF15557         double  %10.0g                Salaries
+VF15558         double  %10.0g                Salaries - of which participation in the profits
+VF15559         double  %10.0g                Post-employment benefits
+VF15560         double  %10.0g                Pension premiums
+VF15561         double  %10.0g                Other benefits
+VF15562         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15563         double  %10.0g                Post-employment benefits- Other benefits: of which defined contribution pension
+VF15564         double  %10.0g                Compensations/indemnities
+VF15565         double  %10.0g                Social security expenses
+VF15566         double  %10.0g                Insurance schemes for accidents at work and occupational diseases
+VF15567         double  %10.0g                Expenses with social actions
+VF15568         double  %10.0g                Other employee expenses
+VF15569         double  %10.0g                Training expenses
+VF15570         double  %10.0g                Other expenses- Expenses with uniforms
+VF18834         double  %10.0g                Expenses with defined pension plans
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+</pre>
+</body>
+</html>

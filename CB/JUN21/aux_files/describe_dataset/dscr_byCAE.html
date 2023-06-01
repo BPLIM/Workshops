@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>dscr_byCAE</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px; max-width:45em;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+td {padding:0 0 0 0} /* override */
+table:not([class]) th { padding:4px 6px } 
+table:not([class]) td { padding:4px 6px } 
+table:not([class]) thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+table:not([class]) thead tr:last-child  th {padding-bottom:6px}
+table:not([class]) tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+table:not([class]) tbody tr:last-child  td {padding-bottom:6px;}
+table:not([class]) tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+</head>
+<body>
+<meta charset="utf-8"/>
+<h1 id="central-balance-sheet-database">Central Balance Sheet Database</h1>
+<h2 id="file-description">File Description</h2>
+<p><code>extraction</code>: June 2021</p>
+<h2 id="information-by-sector-of-activity"><strong>Information by Sector of Activity</strong></h2>
+<pre class='stata'>BYCAE - 2006
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2006/CB_I_YFRM_2006_JUN21_BYCAE_V01.dta
+  obs:       336,434                          
+ vars:            27                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF04106         double  %10.0g                Internal Market - Total sales by sector
+VF04107         double  %10.0g                Internal Market - Total services by sector
+VF04108         double  %10.0g                Internal Market - Total purchases by sector
+VF04109         double  %10.0g                Internal Market - Total supplies and external services by sector
+VF04110         double  %10.0g                EU Market - Total sales by sector
+VF04111         double  %10.0g                EU Market - Total services by sector
+VF04112         double  %10.0g                EU Market - Total purchases by sector
+VF04113         double  %10.0g                EU Market - Total supplies and external services by sector
+VF04114         double  %10.0g                Extra-EU Market - Total sales by sector
+VF04115         double  %10.0g                Extra-EU Market - Total services by sector
+VF04116         double  %10.0g                Extra-EU Market - Total purchases by sector
+VF04117         double  %10.0g                Extra-EU Market - Total supplies and external services by sector
+VF04118         double  %10.0g                Total sales by sector
+VF04119         double  %10.0g                Total services by sector
+VF04120         double  %10.0g                Total purchases by sector
+VF04121         double  %10.0g                Total supplies and external services by sector
+VF04122         double  %10.0g                Cost of goods sold by sector
+VF04123         double  %10.0g                Cost of material consumed by sector
+VF04124         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF04125         double  %10.0g                Variation in production by sector
+VF04126         double  %10.0g                Average number of employees by sector
+VF04127         double  %10.0g                Employee costs - Salaries by sector
+VF04128         double  %10.0g                Employee costs - Others by sector
+VF04129         double  %10.0g                Total employee costs by sector
+VF6105          double  %10.0g                Portuguese classification of economic activities
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2007
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2007/CB_I_YFRM_2007_JUN21_BYCAE_V01.dta
+  obs:       351,715                          
+ vars:            27                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF04106         double  %10.0g                Internal Market - Total sales by sector
+VF04107         double  %10.0g                Internal Market - Total services by sector
+VF04108         double  %10.0g                Internal Market - Total purchases by sector
+VF04109         double  %10.0g                Internal Market - Total supplies and external services by sector
+VF04110         double  %10.0g                EU Market - Total sales by sector
+VF04111         double  %10.0g                EU Market - Total services by sector
+VF04112         double  %10.0g                EU Market - Total purchases by sector
+VF04113         double  %10.0g                EU Market - Total supplies and external services by sector
+VF04114         double  %10.0g                Extra-EU Market - Total sales by sector
+VF04115         double  %10.0g                Extra-EU Market - Total services by sector
+VF04116         double  %10.0g                Extra-EU Market - Total purchases by sector
+VF04117         double  %10.0g                Extra-EU Market - Total supplies and external services by sector
+VF04118         double  %10.0g                Total sales by sector
+VF04119         double  %10.0g                Total services by sector
+VF04120         double  %10.0g                Total purchases by sector
+VF04121         double  %10.0g                Total supplies and external services by sector
+VF04122         double  %10.0g                Cost of goods sold by sector
+VF04123         double  %10.0g                Cost of material consumed by sector
+VF04124         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF04125         double  %10.0g                Variation in production by sector
+VF04126         double  %10.0g                Average number of employees by sector
+VF04127         double  %10.0g                Employee costs - Salaries by sector
+VF04128         double  %10.0g                Employee costs - Others by sector
+VF04129         double  %10.0g                Total employee costs by sector
+VF6105          long    %12.0g                Portuguese classification of economic activities
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2008
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2008/CB_I_YFRM_2008_JUN21_BYCAE_V01.dta
+  obs:       360,745                          
+ vars:            27                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF04106         double  %10.0g                Internal Market - Total sales by sector
+VF04107         double  %10.0g                Internal Market - Total services by sector
+VF04108         double  %10.0g                Internal Market - Total purchases by sector
+VF04109         double  %10.0g                Internal Market - Total supplies and external services by sector
+VF04110         double  %10.0g                EU Market - Total sales by sector
+VF04111         double  %10.0g                EU Market - Total services by sector
+VF04112         double  %10.0g                EU Market - Total purchases by sector
+VF04113         double  %10.0g                EU Market - Total supplies and external services by sector
+VF04114         double  %10.0g                Extra-EU Market - Total sales by sector
+VF04115         double  %10.0g                Extra-EU Market - Total services by sector
+VF04116         double  %10.0g                Extra-EU Market - Total purchases by sector
+VF04117         double  %10.0g                Extra-EU Market - Total supplies and external services by sector
+VF04118         double  %10.0g                Total sales by sector
+VF04119         double  %10.0g                Total services by sector
+VF04120         double  %10.0g                Total purchases by sector
+VF04121         double  %10.0g                Total supplies and external services by sector
+VF04122         double  %10.0g                Cost of goods sold by sector
+VF04123         double  %10.0g                Cost of material consumed by sector
+VF04124         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF04125         double  %10.0g                Variation in production by sector
+VF04126         double  %10.0g                Average number of employees by sector
+VF04127         double  %10.0g                Employee costs - Salaries by sector
+VF04128         double  %10.0g                Employee costs - Others by sector
+VF04129         double  %10.0g                Total employee costs by sector
+VF6105          long    %12.0g                Portuguese classification of economic activities
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2009
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2009/CB_I_YFRM_2009_JUN21_BYCAE_V01.dta
+  obs:       359,364                          
+ vars:            27                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF04106         double  %10.0g                Internal Market - Total sales by sector
+VF04107         double  %10.0g                Internal Market - Total services by sector
+VF04108         double  %10.0g                Internal Market - Total purchases by sector
+VF04109         double  %10.0g                Internal Market - Total supplies and external services by sector
+VF04110         double  %10.0g                EU Market - Total sales by sector
+VF04111         double  %10.0g                EU Market - Total services by sector
+VF04112         double  %10.0g                EU Market - Total purchases by sector
+VF04113         double  %10.0g                EU Market - Total supplies and external services by sector
+VF04114         double  %10.0g                Extra-EU Market - Total sales by sector
+VF04115         double  %10.0g                Extra-EU Market - Total services by sector
+VF04116         double  %10.0g                Extra-EU Market - Total purchases by sector
+VF04117         double  %10.0g                Extra-EU Market - Total supplies and external services by sector
+VF04118         double  %10.0g                Total sales by sector
+VF04119         double  %10.0g                Total services by sector
+VF04120         double  %10.0g                Total purchases by sector
+VF04121         double  %10.0g                Total supplies and external services by sector
+VF04122         double  %10.0g                Cost of goods sold by sector
+VF04123         double  %10.0g                Cost of material consumed by sector
+VF04124         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF04125         double  %10.0g                Variation in production by sector
+VF04126         double  %10.0g                Average number of employees by sector
+VF04127         double  %10.0g                Employee costs - Salaries by sector
+VF04128         double  %10.0g                Employee costs - Others by sector
+VF04129         double  %10.0g                Total employee costs by sector
+VF6105          long    %12.0g                Portuguese classification of economic activities
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2010
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2010/CB_I_YFRM_2010_JUN21_BYCAE_V01.dta
+  obs:       363,518                          
+ vars:            44                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF04106         double  %10.0g                Internal Market - Total sales by sector
+VF04107         double  %10.0g                Internal Market - Total services by sector
+VF04108         double  %10.0g                Internal Market - Total purchases by sector
+VF04109         double  %10.0g                Internal Market - Total supplies and external services by sector
+VF04110         double  %10.0g                EU Market - Total sales by sector
+VF04111         double  %10.0g                EU Market - Total services by sector
+VF04112         double  %10.0g                EU Market - Total purchases by sector
+VF04113         double  %10.0g                EU Market - Total supplies and external services by sector
+VF04114         double  %10.0g                Extra-EU Market - Total sales by sector
+VF04115         double  %10.0g                Extra-EU Market - Total services by sector
+VF04116         double  %10.0g                Extra-EU Market - Total purchases by sector
+VF04117         double  %10.0g                Extra-EU Market - Total supplies and external services by sector
+VF04118         double  %10.0g                Total sales by sector
+VF04119         double  %10.0g                Total services by sector
+VF04120         double  %10.0g                Total purchases by sector
+VF04121         double  %10.0g                Total supplies and external services by sector
+VF04122         double  %10.0g                Cost of goods sold by sector
+VF04123         double  %10.0g                Cost of material consumed by sector
+VF04124         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF04125         double  %10.0g                Variation in production by sector
+VF04126         int     %8.0g                 Average number of employees by sector
+VF04127         double  %10.0g                Employee costs - Salaries by sector
+VF04128         double  %10.0g                Employee costs - Others by sector
+VF04129         double  %10.0g                Total employee costs by sector
+VF15571         double  %10.0g                Total sales by sector
+VF15572         double  %10.0g                Sales - Goods by sector
+VF15573         double  %10.0g                Sales - Finished and intermediate products; Subproducts, wastes and scrap; Produ
+VF15574         double  %10.0g                Sales - Biological assets by sector
+VF15575         double  %10.0g                Services by sector
+VF15576         double  %10.0g                Purchases by sector
+VF15577         double  %10.0g                Supplies and external services by sector
+VF15578         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF15579         double  %10.0g                Cost of goods sold and material consumed - Goods by sector
+VF15580         double  %10.0g                Cost of goods sold and material consumed - Raw and subsidiary materials and cons
+VF15581         double  %10.0g                Cost of goods sold and material consumed - Biological assets (purchases) by sect
+VF15582         double  %10.0g                Variation in production by sector
+VF15583         int     %8.0g                 Average number of employees by sector
+VF15584         double  %10.0g                Total employee expenses by sector
+VF15585         double  %10.0g                Employee expenses - Salaries by sector
+VF15586         double  %10.0g                Employee expenses - Others (including pensions) by sector
+VF6105          long    %12.0g                Portuguese classification of economic activities
+VF53120         long    %12.0g                Portuguese classification of economic activities (Rev. 3)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2011
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2011/CB_I_YFRM_2011_JUN21_BYCAE_V01.dta
+  obs:       370,280                          
+ vars:            19                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF15571         double  %10.0g                Total sales by sector
+VF15572         double  %10.0g                Sales - Goods by sector
+VF15573         double  %10.0g                Sales - Finished and intermediate products; Subproducts, wastes and scrap; Produ
+VF15574         double  %10.0g                Sales - Biological assets by sector
+VF15575         double  %10.0g                Services by sector
+VF15576         double  %10.0g                Purchases by sector
+VF15577         double  %10.0g                Supplies and external services by sector
+VF15578         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF15579         double  %10.0g                Cost of goods sold and material consumed - Goods by sector
+VF15580         double  %10.0g                Cost of goods sold and material consumed - Raw and subsidiary materials and cons
+VF15581         double  %10.0g                Cost of goods sold and material consumed - Biological assets (purchases) by sect
+VF15582         double  %10.0g                Variation in production by sector
+VF15583         int     %8.0g                 Average number of employees by sector
+VF15584         double  %10.0g                Total employee expenses by sector
+VF15585         double  %10.0g                Employee expenses - Salaries by sector
+VF15586         double  %10.0g                Employee expenses - Others (including pensions) by sector
+VF53120         long    %12.0g                Portuguese classification of economic activities (Rev. 3)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2012
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2012/CB_I_YFRM_2012_JUN21_BYCAE_V01.dta
+  obs:       369,252                          
+ vars:            19                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF15571         double  %10.0g                Total sales by sector
+VF15572         double  %10.0g                Sales - Goods by sector
+VF15573         double  %10.0g                Sales - Finished and intermediate products; Subproducts, wastes and scrap; Produ
+VF15574         double  %10.0g                Sales - Biological assets by sector
+VF15575         double  %10.0g                Services by sector
+VF15576         double  %10.0g                Purchases by sector
+VF15577         double  %10.0g                Supplies and external services by sector
+VF15578         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF15579         double  %10.0g                Cost of goods sold and material consumed - Goods by sector
+VF15580         double  %10.0g                Cost of goods sold and material consumed - Raw and subsidiary materials and cons
+VF15581         double  %10.0g                Cost of goods sold and material consumed - Biological assets (purchases) by sect
+VF15582         double  %10.0g                Variation in production by sector
+VF15583         int     %8.0g                 Average number of employees by sector
+VF15584         double  %10.0g                Total employee expenses by sector
+VF15585         double  %10.0g                Employee expenses - Salaries by sector
+VF15586         double  %10.0g                Employee expenses - Others (including pensions) by sector
+VF53120         long    %12.0g                Portuguese classification of economic activities (Rev. 3)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2013
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2013/CB_I_YFRM_2013_JUN21_BYCAE_V01.dta
+  obs:       372,904                          
+ vars:            19                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF15571         double  %10.0g                Total sales by sector
+VF15572         double  %10.0g                Sales - Goods by sector
+VF15573         double  %10.0g                Sales - Finished and intermediate products; Subproducts, wastes and scrap; Produ
+VF15574         double  %10.0g                Sales - Biological assets by sector
+VF15575         double  %10.0g                Services by sector
+VF15576         double  %10.0g                Purchases by sector
+VF15577         double  %10.0g                Supplies and external services by sector
+VF15578         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF15579         double  %10.0g                Cost of goods sold and material consumed - Goods by sector
+VF15580         double  %10.0g                Cost of goods sold and material consumed - Raw and subsidiary materials and cons
+VF15581         double  %10.0g                Cost of goods sold and material consumed - Biological assets (purchases) by sect
+VF15582         double  %10.0g                Variation in production by sector
+VF15583         int     %8.0g                 Average number of employees by sector
+VF15584         double  %10.0g                Total employee expenses by sector
+VF15585         double  %10.0g                Employee expenses - Salaries by sector
+VF15586         double  %10.0g                Employee expenses - Others (including pensions) by sector
+VF53120         long    %12.0g                Portuguese classification of economic activities (Rev. 3)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2014
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2014/CB_I_YFRM_2014_JUN21_BYCAE_V01.dta
+  obs:       378,587                          
+ vars:            19                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF15571         double  %10.0g                Total sales by sector
+VF15572         double  %10.0g                Sales - Goods by sector
+VF15573         double  %10.0g                Sales - Finished and intermediate products; Subproducts, wastes and scrap; Produ
+VF15574         double  %10.0g                Sales - Biological assets by sector
+VF15575         double  %10.0g                Services by sector
+VF15576         double  %10.0g                Purchases by sector
+VF15577         double  %10.0g                Supplies and external services by sector
+VF15578         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF15579         double  %10.0g                Cost of goods sold and material consumed - Goods by sector
+VF15580         double  %10.0g                Cost of goods sold and material consumed - Raw and subsidiary materials and cons
+VF15581         double  %10.0g                Cost of goods sold and material consumed - Biological assets (purchases) by sect
+VF15582         double  %10.0g                Variation in production by sector
+VF15583         int     %8.0g                 Average number of employees by sector
+VF15584         double  %10.0g                Total employee expenses by sector
+VF15585         double  %10.0g                Employee expenses - Salaries by sector
+VF15586         double  %10.0g                Employee expenses - Others (including pensions) by sector
+VF53120         long    %12.0g                Portuguese classification of economic activities (Rev. 3)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2015
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2015/CB_I_YFRM_2015_JUN21_BYCAE_V01.dta
+  obs:       390,477                          
+ vars:            19                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF15571         double  %10.0g                Total sales by sector
+VF15572         double  %10.0g                Sales - Goods by sector
+VF15573         double  %10.0g                Sales - Finished and intermediate products; Subproducts, wastes and scrap; Produ
+VF15574         double  %10.0g                Sales - Biological assets by sector
+VF15575         double  %10.0g                Services by sector
+VF15576         double  %10.0g                Purchases by sector
+VF15577         double  %10.0g                Supplies and external services by sector
+VF15578         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF15579         double  %10.0g                Cost of goods sold and material consumed - Goods by sector
+VF15580         double  %10.0g                Cost of goods sold and material consumed - Raw and subsidiary materials and cons
+VF15581         double  %10.0g                Cost of goods sold and material consumed - Biological assets (purchases) by sect
+VF15582         double  %10.0g                Variation in production by sector
+VF15583         int     %8.0g                 Average number of employees by sector
+VF15584         double  %10.0g                Total employee expenses by sector
+VF15585         double  %10.0g                Employee expenses - Salaries by sector
+VF15586         double  %10.0g                Employee expenses - Others (including pensions) by sector
+VF53120         long    %12.0g                Portuguese classification of economic activities (Rev. 3)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2016
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2016/CB_I_YFRM_2016_JUN21_BYCAE_V01.dta
+  obs:       398,299                          
+ vars:            19                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF15571         double  %10.0g                Total sales by sector
+VF15572         double  %10.0g                Sales - Goods by sector
+VF15573         double  %10.0g                Sales - Finished and intermediate products; Subproducts, wastes and scrap; Produ
+VF15574         double  %10.0g                Sales - Biological assets by sector
+VF15575         double  %10.0g                Services by sector
+VF15576         double  %10.0g                Purchases by sector
+VF15577         double  %10.0g                Supplies and external services by sector
+VF15578         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF15579         double  %10.0g                Cost of goods sold and material consumed - Goods by sector
+VF15580         double  %10.0g                Cost of goods sold and material consumed - Raw and subsidiary materials and cons
+VF15581         double  %10.0g                Cost of goods sold and material consumed - Biological assets (purchases) by sect
+VF15582         double  %10.0g                Variation in production by sector
+VF15583         double  %10.0g                Average number of employees by sector
+VF15584         double  %10.0g                Total employee expenses by sector
+VF15585         double  %10.0g                Employee expenses - Salaries by sector
+VF15586         double  %10.0g                Employee expenses - Others (including pensions) by sector
+VF53120         long    %12.0g                Portuguese classification of economic activities (Rev. 3)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2017
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2017/CB_I_YFRM_2017_JUN21_BYCAE_V01.dta
+  obs:       412,265                          
+ vars:            19                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF15571         double  %10.0g                Total sales by sector
+VF15572         double  %10.0g                Sales - Goods by sector
+VF15573         double  %10.0g                Sales - Finished and intermediate products; Subproducts, wastes and scrap; Produ
+VF15574         double  %10.0g                Sales - Biological assets by sector
+VF15575         double  %10.0g                Services by sector
+VF15576         double  %10.0g                Purchases by sector
+VF15577         double  %10.0g                Supplies and external services by sector
+VF15578         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF15579         double  %10.0g                Cost of goods sold and material consumed - Goods by sector
+VF15580         double  %10.0g                Cost of goods sold and material consumed - Raw and subsidiary materials and cons
+VF15581         double  %10.0g                Cost of goods sold and material consumed - Biological assets (purchases) by sect
+VF15582         double  %10.0g                Variation in production by sector
+VF15583         int     %8.0g                 Average number of employees by sector
+VF15584         double  %10.0g                Total employee expenses by sector
+VF15585         double  %10.0g                Employee expenses - Salaries by sector
+VF15586         double  %10.0g                Employee expenses - Others (including pensions) by sector
+VF53120         long    %12.0g                Portuguese classification of economic activities (Rev. 3)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2018
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2018/CB_I_YFRM_2018_JUN21_BYCAE_V01.dta
+  obs:       428,574                          
+ vars:            19                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF15571         double  %10.0g                Total sales by sector
+VF15572         double  %10.0g                Sales - Goods by sector
+VF15573         double  %10.0g                Sales - Finished and intermediate products; Subproducts, wastes and scrap; Produ
+VF15574         double  %10.0g                Sales - Biological assets by sector
+VF15575         double  %10.0g                Services by sector
+VF15576         double  %10.0g                Purchases by sector
+VF15577         double  %10.0g                Supplies and external services by sector
+VF15578         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF15579         double  %10.0g                Cost of goods sold and material consumed - Goods by sector
+VF15580         double  %10.0g                Cost of goods sold and material consumed - Raw and subsidiary materials and cons
+VF15581         double  %10.0g                Cost of goods sold and material consumed - Biological assets (purchases) by sect
+VF15582         double  %10.0g                Variation in production by sector
+VF15583         int     %8.0g                 Average number of employees by sector
+VF15584         double  %10.0g                Total employee expenses by sector
+VF15585         double  %10.0g                Employee expenses - Salaries by sector
+VF15586         double  %10.0g                Employee expenses - Others (including pensions) by sector
+VF53120         long    %12.0g                Portuguese classification of economic activities (Rev. 3)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+BYCAE - 2019
+
+Contains data from S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2019/CB_I_YFRM_2019_JUN21_BYCAE_V01.dta
+  obs:       440,543                          
+ vars:            19                          23 Jun 2021 15:46
+                                              (_dta has notes)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+              storage   display    value
+variable name   type    format     label      variable label
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ano             int     %8.0g                 Year of Reference
+numordem        byte    %8.0g                 Number of order
+VF15571         double  %10.0g                Total sales by sector
+VF15572         double  %10.0g                Sales - Goods by sector
+VF15573         double  %10.0g                Sales - Finished and intermediate products; Subproducts, wastes and scrap; Produ
+VF15574         double  %10.0g                Sales - Biological assets by sector
+VF15575         double  %10.0g                Services by sector
+VF15576         double  %10.0g                Purchases by sector
+VF15577         double  %10.0g                Supplies and external services by sector
+VF15578         double  %10.0g                Total cost of goods sold and material consumed by sector
+VF15579         double  %10.0g                Cost of goods sold and material consumed - Goods by sector
+VF15580         double  %10.0g                Cost of goods sold and material consumed - Raw and subsidiary materials and cons
+VF15581         double  %10.0g                Cost of goods sold and material consumed - Biological assets (purchases) by sect
+VF15582         double  %10.0g                Variation in production by sector
+VF15583         int     %8.0g                 Average number of employees by sector
+VF15584         double  %10.0g                Total employee expenses by sector
+VF15585         double  %10.0g                Employee expenses - Salaries by sector
+VF15586         double  %10.0g                Employee expenses - Others (including pensions) by sector
+VF53120         long    %12.0g                Portuguese classification of economic activities (Rev. 3)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Sorted by: 
+     Note: Dataset has changed since last saved.
+</pre>
+</body>
+</html>

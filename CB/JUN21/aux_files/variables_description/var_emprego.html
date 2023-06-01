@@ -1,0 +1,2203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>var_emprego_new</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<meta charset="utf-8"/>
+<h1 id="central-balance-sheet-database">Central Balance Sheet Database</h1>
+<h1 id="employment-information-file">Employment Information File</h1>
+<p><a href="#variables-description">1. Variables Description</a></p>
+<p><a href="#time-series">2. Time Series</a></p>
+<h2 id="variables-description">Variables Description</h2>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 22%" />
+<col style="width: 12%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 5%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+<th>Unit of measurement</th>
+<th>Start Time</th>
+<th>End time</th>
+<th>Changes in classification</th>
+<th>Accounting Plan</th>
+<th>Accounting Regime</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ano</td>
+<td>Year of reference</td>
+<td>years</td>
+<td>2006</td>
+<td>2019</td>
+<td>no</td>
+<td>.</td>
+<td>.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Identifiers</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>tina</td>
+<td>Anonymized Tax Identification Number</td>
+<td>code</td>
+<td>2006</td>
+<td>2019</td>
+<td>no</td>
+<td>.</td>
+<td>na</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Total Number of Employees</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>VF03319</td>
+<td>Number of (paid and unpaid) employees</td>
+<td>number of people</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>[Q05-0507-Nota7-A0419]+[Q05-0507-Nota7-A1508]</td>
+</tr>
+<tr class="even">
+<td>VF15532</td>
+<td>Number of (paid and unpaid) employees</td>
+<td>number of people</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6012-1-soma</td>
+</tr>
+<tr class="odd">
+<td>VF03321</td>
+<td>Number of paid employees</td>
+<td>number of people</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>[Q05-0507-Nota7-A1509]+[Q05-0507-Nota7-A0422]</td>
+</tr>
+<tr class="even">
+<td>VF15534</td>
+<td>Number of paid employees</td>
+<td>number of people</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6013-1</td>
+</tr>
+<tr class="odd">
+<td>VF04902</td>
+<td>Number of unpaid employees</td>
+<td>number of people</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A1508</td>
+</tr>
+<tr class="even">
+<td>VF15536</td>
+<td>Number of unpaid employees</td>
+<td>number of people</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6014-1</td>
+</tr>
+<tr class="odd">
+<td><strong>Employment by Gender</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>VF15546</td>
+<td>Number of (paid and unpaid) male employees</td>
+<td>number of people</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6019-1</td>
+</tr>
+<tr class="odd">
+<td>VF15548</td>
+<td>Number of (paid and unpaid) female employees</td>
+<td>number of people</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6020-1</td>
+</tr>
+<tr class="even">
+<td><strong>Employment by Contract Type</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>VF03325</td>
+<td>Service providers</td>
+<td>number of people</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A0423</td>
+</tr>
+<tr class="even">
+<td>VF15551</td>
+<td>Service providers</td>
+<td>number of people</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6022-1</td>
+</tr>
+<tr class="odd">
+<td>VF03322</td>
+<td>Number of paid apprentices</td>
+<td>number of people</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A0420</td>
+</tr>
+<tr class="even">
+<td>VF03323</td>
+<td>Number of paid homeworkers</td>
+<td>number of people</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A0421</td>
+</tr>
+<tr class="odd">
+<td><strong>Research and Development Employment</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>VF03326</td>
+<td>Number of employees allocated to research and development</td>
+<td>number of people</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A0424</td>
+</tr>
+<tr class="odd">
+<td>VF15550</td>
+<td>Number of employees allocated to research and development</td>
+<td>number of people</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6021-1</td>
+</tr>
+<tr class="even">
+<td><strong>Employment by Working Time Arrangement</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>VF03320</td>
+<td>Number of (paid and unpaid) full-time employees</td>
+<td>number of people</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A0418</td>
+</tr>
+<tr class="even">
+<td>VF04904</td>
+<td>Number of (paid and unpaid) part-time employees</td>
+<td>number of people</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A1510</td>
+</tr>
+<tr class="odd">
+<td>VF04903</td>
+<td>Number of paid full-time employees</td>
+<td>number of people</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A1509</td>
+</tr>
+<tr class="even">
+<td>VF03324</td>
+<td>Number of paid part-time employees</td>
+<td>number of people</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A0422</td>
+</tr>
+<tr class="odd">
+<td>VF15538</td>
+<td>Number of (paid and unpaid) full-time employees</td>
+<td>number of people</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6015-1</td>
+</tr>
+<tr class="even">
+<td>VF15542</td>
+<td>Number of (paid and unpaid) part-time employees</td>
+<td>number of people</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6017-1</td>
+</tr>
+<tr class="odd">
+<td>VF15540</td>
+<td>Number of paid full-time employees</td>
+<td>number of people</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6016-1</td>
+</tr>
+<tr class="even">
+<td>VF15544</td>
+<td>Number of paid part-time employees</td>
+<td>number of people</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6018-1</td>
+</tr>
+<tr class="odd">
+<td><strong>Temporary Agency Employment</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>VF03327</td>
+<td>Temporary Agency Employment</td>
+<td>number of people</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A0425</td>
+</tr>
+<tr class="odd">
+<td>VF15553</td>
+<td>Temporary Agency Employment</td>
+<td>number of people</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6023-1</td>
+</tr>
+<tr class="even">
+<td><strong>Total Hours Worked</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>VF03328</td>
+<td>Number of hours worked by paid and unpaid employees</td>
+<td>number of hours</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A0426</td>
+</tr>
+<tr class="even">
+<td>VF15533</td>
+<td>Number of hours worked by paid and unpaid employees</td>
+<td>number of hours</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6012-2-soma</td>
+</tr>
+<tr class="odd">
+<td>VF03330</td>
+<td>Number of hours worked by paid employees</td>
+<td>number of hours</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A0428</td>
+</tr>
+<tr class="even">
+<td>VF15535</td>
+<td>Number of hours worked by paid employees</td>
+<td>number of hours</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6013-2</td>
+</tr>
+<tr class="odd">
+<td>VF04905</td>
+<td>Number of hours worked by unpaid employees</td>
+<td>number of hours</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A1511</td>
+</tr>
+<tr class="even">
+<td>VF15537</td>
+<td>Number of hours worked by unpaid employees</td>
+<td>number of hours</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6014-2</td>
+</tr>
+<tr class="odd">
+<td>VF05990</td>
+<td>Total Hours Worked</td>
+<td>number of hours</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>[Q05-0507-Nota7-A0426]</td>
+</tr>
+<tr class="even">
+<td><strong>Hours Worked by Working Time Arrangement</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>VF03329</td>
+<td>Number of hours worked by paid and unpaid full-time employees</td>
+<td>number of hours</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A0427</td>
+</tr>
+<tr class="even">
+<td>VF15539</td>
+<td>Number of hours worked by paid and unpaid full-time employees</td>
+<td>number of hours</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6015-2</td>
+</tr>
+<tr class="odd">
+<td>VF04906</td>
+<td>Number of hours worked by paid full-time employees</td>
+<td>number of hours</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A1512</td>
+</tr>
+<tr class="even">
+<td>VF15541</td>
+<td>Number of hours worked by paid full-time employees</td>
+<td>number of hours</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6016-2</td>
+</tr>
+<tr class="odd">
+<td>VF04907</td>
+<td>Number of hours worked by paid and unpaid part-time employees</td>
+<td>number of hours</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A1513</td>
+</tr>
+<tr class="even">
+<td>VF15543</td>
+<td>Number of hours worked by paid and unpaid part-time employees</td>
+<td>number of hours</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6017-2</td>
+</tr>
+<tr class="odd">
+<td>VF03331</td>
+<td>Number of hours worked by paid part-time employees</td>
+<td>number of hours</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A0429</td>
+</tr>
+<tr class="even">
+<td>VF15545</td>
+<td>Number of hours worked by paid part-time employees</td>
+<td>number of hours</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6018-2</td>
+</tr>
+<tr class="odd">
+<td><strong>Hours Worked by Gender</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>VF15547</td>
+<td>Number of hours worked by male employees</td>
+<td>number of hours</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6019-2</td>
+</tr>
+<tr class="odd">
+<td>VF15549</td>
+<td>Number of hours worked by female employees</td>
+<td>number of hours</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6020-2</td>
+</tr>
+<tr class="even">
+<td><strong>Hours worked by Contract Type</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>VF03332</td>
+<td>Number of hours worked by service providers</td>
+<td>number of hours</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q05-0507-Nota7-A0430</td>
+</tr>
+<tr class="even">
+<td>VF15552</td>
+<td>Number of hours worked by service providers</td>
+<td>number of hours</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05291A-A6022-2</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>VF04036</td>
+<td>Corporate bodies Remunerations</td>
+<td>euros</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q06-A0641</td>
+</tr>
+<tr class="odd">
+<td>VF04037</td>
+<td>Salaries</td>
+<td>euros</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q06-A0642</td>
+</tr>
+<tr class="even">
+<td>VF04038</td>
+<td>Pensions</td>
+<td>euros</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q06-A0643</td>
+</tr>
+<tr class="odd">
+<td>VF04039</td>
+<td>Retirement benefits and pension premiums</td>
+<td>euros</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q06-A0644</td>
+</tr>
+<tr class="even">
+<td>VF04040</td>
+<td>Social security expenses</td>
+<td>euros</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q06-A0645</td>
+</tr>
+<tr class="odd">
+<td>VF04041</td>
+<td>Insurance schemes for accidents at work and occupational diseases</td>
+<td>euros</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q06-A0646</td>
+</tr>
+<tr class="even">
+<td>VF04042</td>
+<td>Expenses with social actions</td>
+<td>euros</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q06-A0647</td>
+</tr>
+<tr class="odd">
+<td>VF04043</td>
+<td>Other employee expenses</td>
+<td>euros</td>
+<td>2006</td>
+<td>2010</td>
+<td>no</td>
+<td>POC</td>
+<td>na</td>
+<td>Q06-A0648</td>
+</tr>
+<tr class="even">
+<td>VF15555</td>
+<td>Salaries of corporate bodies</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6025</td>
+</tr>
+<tr class="odd">
+<td>VF15556</td>
+<td>Salaries of corporate bodies- of which participation in profits</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6026</td>
+</tr>
+<tr class="even">
+<td>VF15557</td>
+<td>Salaries</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6027</td>
+</tr>
+<tr class="odd">
+<td>VF15558</td>
+<td>Salaries - of which participation in the profits</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6028</td>
+</tr>
+<tr class="even">
+<td>VF15559</td>
+<td>Post-employment benefits</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6029-soma</td>
+</tr>
+<tr class="odd">
+<td>VF15560</td>
+<td>Pension premiums</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6030</td>
+</tr>
+<tr class="even">
+<td>VF15561</td>
+<td>Other benefits</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6031</td>
+</tr>
+<tr class="odd">
+<td>VF15562</td>
+<td>Post-employment benefits- Other benefits: of which defined contribution pension plans - corporate bodies</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6032</td>
+</tr>
+<tr class="even">
+<td>VF15563</td>
+<td>Post-employment benefits- Other benefits: of which defined contribution pension plans - other</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6033</td>
+</tr>
+<tr class="odd">
+<td>VF15564</td>
+<td>Compensations/indemnities</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6034</td>
+</tr>
+<tr class="even">
+<td>VF15565</td>
+<td>Social security expenses</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6035</td>
+</tr>
+<tr class="odd">
+<td>VF15566</td>
+<td>Insurance schemes for accidents at work and occupational diseases</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6036</td>
+</tr>
+<tr class="even">
+<td>VF15567</td>
+<td>Expenses with social actions</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6037</td>
+</tr>
+<tr class="odd">
+<td>VF15568</td>
+<td>Other employee expenses</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6038</td>
+</tr>
+<tr class="even">
+<td>VF15569</td>
+<td>Training expenses</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6039</td>
+</tr>
+<tr class="odd">
+<td>VF15570</td>
+<td>Other expenses- Expenses with uniforms</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6040</td>
+</tr>
+<tr class="even">
+<td>VF18834</td>
+<td>Expenses with defined pension plans</td>
+<td>euros</td>
+<td>2010</td>
+<td>2019</td>
+<td>no</td>
+<td>SNC</td>
+<td>N,S,M</td>
+<td>Q05A-05292A-A6137</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Legend</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">na</td>
+<td style="text-align: center;">Not Applicable</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">POC</td>
+<td style="text-align: center;">Official Chart of Accounts</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SNC</td>
+<td style="text-align: center;">Accounting Standards System</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">International Accounting Standards</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">S</td>
+<td style="text-align: center;">Accounting and Financial Reporting Standards and Accounting and Financial Reporting Standards for Small-Sized Entities</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">Accounting and Financial Reporting Standards for Micro-Entities</td>
+</tr>
+</tbody>
+</table>
+<h2 id="time-series">Time Series</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">2006</th>
+<th style="text-align: center;">2007</th>
+<th style="text-align: center;">2008</th>
+<th style="text-align: center;">2009</th>
+<th style="text-align: center;">2010</th>
+<th style="text-align: center;">2011</th>
+<th style="text-align: center;">2012</th>
+<th style="text-align: center;">2013</th>
+<th style="text-align: center;">2014</th>
+<th style="text-align: center;">2015</th>
+<th style="text-align: center;">2016</th>
+<th style="text-align: center;">2017</th>
+<th style="text-align: center;">2018</th>
+<th style="text-align: center;">2019</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">ano</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">tina</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03319</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03320</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03321</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03322</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03323</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03324</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03325</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03326</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03327</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04902</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04903</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04904</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05990</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15532</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15534</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15536</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15538</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15540</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15542</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15544</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15546</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15548</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15550</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15551</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15553</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03328</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03329</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03330</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03331</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03332</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04905</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04906</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04907</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05990</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15533</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15535</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15537</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15539</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15541</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15543</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15545</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15547</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15549</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15552</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04036</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04037</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04038</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04039</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04040</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04041</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04042</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04043</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15555</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15556</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15557</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15558</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15559</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15560</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15561</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15562</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15563</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15564</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15565</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15566</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15567</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15568</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15569</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15570</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF18834</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">[✓]</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Legend</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">[✓]</td>
+<td style="text-align: center;">Variable available in year t</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">[x]</td>
+<td style="text-align: center;">Variable not available in year t</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

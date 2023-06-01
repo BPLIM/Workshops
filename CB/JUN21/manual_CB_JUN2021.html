@@ -1,0 +1,3041 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Central Balance Sheet Database - Data Manual</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Central Balance Sheet Database - Data Manual</h1>
+</header>
+<meta charset="utf-8"/>
+<p><code>Extraction Date</code>: June 2021</p>
+<p><code>Manual Date</code>: 21 June 2021</p>
+<p><strong>Abstract</strong>: The Central Balance Sheet Database (CB) is constructed and made available by <em>Banco de Portugal</em> and provides economic and financial information on non-financial corporations operating in Portugal. This dataset contains annual data from 2006 onwards and is mostly based on information reported through <em>Informação Empresarial Simplificada</em> (IES, Simplified Corporate Information). Until 2009 the data was reported according to the <em>Plano Oficial de Contabilidade</em> (POC, Official Chart of Accounts). Starting in 2010, the data is reported according to a new accounting system, the <em>Sistema de Normalização Contabilística</em> (SNC, Accounting Standards System). This is a significant structural change that is reflected in the way the data is organized.<br />
+</p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<ol type="1">
+<li><a href="#general-information">General Information</a></li>
+<li><a href="#geographical-coverage">Geographical Coverage</a></li>
+<li><a href="#population">Population</a></li>
+<li><a href="#methodology">Methodology</a>
+<ol type="1">
+<li><a href="#a.-changes-in-the-accounting-system-in-portugal">Changes in the Accounting System in Portugal</a></li>
+<li><a href="#b.-what-can-change-with-a-new-extraction">What can change with a new extraction?</a></li>
+</ol></li>
+<li><a href="#description-of-files">Description of Files</a></li>
+<li><a href="#description-of-variables">Description of Variables</a>
+<ol type="1">
+<li><a href="#a.-general-information-file-cover-sheet">General Information File (Cover Sheet)</a></li>
+<li><a href="#b.-economic-and-financial-information-file">Economic and Financial Information File</a></li>
+<li><a href="#c.-employment-information-file">Employment Information File</a></li>
+<li><a href="#d.-trade-information-per-market-file">Trade Information per Market File</a></li>
+<li><a href="#e.-corporate-actions-file">Corporate Actions File</a></li>
+<li><a href="#f.-economic-and-financial-indicators-file">Economic and Financial Indicators File</a></li>
+<li><a href="#g.-cash-flows-file">Cash-Flows File</a></li>
+<li><a href="#h.-information-by-sector-of-activity-file">Information by Sector of Activity File</a></li>
+</ol></li>
+<li><a href="#basic-descriptive-statistics">Basic Descriptive Statistics</a></li>
+<li><a href="#legislation">Legislation</a></li>
+<li><a href="#auxiliary-files">Auxiliary Files</a></li>
+<li><a href="#useful-links">Useful Links</a></li>
+<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+<li><a href="#citation-of-this-dataset">Citation of this Dataset</a></li>
+<li><a href="#references">References</a></li>
+</ol>
+<h1 id="general-information">General Information</h1>
+<blockquote>
+<p><code>Dataset Designation in English</code>: Central Balance Sheet Database (CB)</p>
+</blockquote>
+<blockquote>
+<p><code>Dataset Designation in Portuguese</code>: <em>Central de Balanços</em> (CB)</p>
+</blockquote>
+<blockquote>
+<p><code>Data Type</code>: Longitudinal Data</p>
+</blockquote>
+<blockquote>
+<p><code>Unit of Analysis</code>: Firms</p>
+</blockquote>
+<blockquote>
+<p><code>Frequency</code>: Annual</p>
+</blockquote>
+<blockquote>
+<p><code>Start Year</code>: 2006 <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+</blockquote>
+<blockquote>
+<p><code>Most recent year</code>: 2019 <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+</blockquote>
+<blockquote>
+<p><code>Reference date</code>: The data reports to the fiscal period declared by the firm. For most cases, the fiscal period coincides with the civil year. For those firms with fiscal period different from the civil year, the reference year is the one covering most of the days of the fiscal period.</p>
+</blockquote>
+<blockquote>
+<p><code>Data Organization</code>: Data is organized in eight files per year (see Figure below):</p>
+</blockquote>
+<ul>
+<li>General Information on the firm (Cover Sheet),</li>
+<li>Economic and Financial Information (Balance Sheet and Profit and Loss Statements),</li>
+<li>Employment Information,</li>
+<li>Trade Information per Market,</li>
+<li>Corporate Actions,</li>
+<li>Economic and Financial Indicators,</li>
+<li>Cash-Flows,</li>
+<li>Information by Sector of Activity.</li>
+</ul>
+<p>In all files each row corresponds to one firm in a given year.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> All files are available in Stata format, version 16.</p>
+<blockquote>
+<p><code>Version of the Data</code>: The data made available by BPLIM corresponds to a data freeze at a certain time of the year.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> Therefore, all files contain the information as reported in the extraction date. The most recent update of the data occurred in June 2021.</p>
+</blockquote>
+<blockquote>
+<p><code>Languages Available</code>: Variable labels and value labels are available in Portuguese and for most of the variables also in English. <a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+</blockquote>
+<blockquote>
+<p><code>Related Datasets</code>: BPLIM also makes available the <em>Central Balance Sheet Harmonized Panel Data</em> which contains only variables that are consistent over time either because they were not affected by the POC to SNC change or because it was possible to construct harmonized variables based on the two different accounting systems.</p>
+</blockquote>
+<blockquote>
+<p><code>Digital Object Identifier</code>: 10.17900/CB.CBA.Jun2021.V1</p>
+</blockquote>
+<p><img src="./attachments/structure_CB.PNG" /></p>
+<h1 id="geographical-coverage">Geographical Coverage</h1>
+<p>The data refers to firms located in the Mainland Portugal and Autonomous Regions – Azores and Madeira.</p>
+<h1 id="population">Population</h1>
+<p>CB covers the population of all Portuguese non-financial corporations. The classification of non-financial corporations follows the guidelines on the “European System of National and Regional Accounts” (<a href="http://ec.europa.eu/eurostat/web/esa-2010">ESA 2010</a>). It includes market producers mainly dedicated to the production of non-financial goods and/or services, such as private and public corporations, cooperatives and partnerships recognized as independent legal entities, non-profit institutions or associations serving non-financial corporations, public independent legal entities, private and public quasi-corporations, and head offices.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
+<h1 id="methodology">Methodology</h1>
+<p>The annual data of CB is collected through <em>Informação Empresarial Simplicada</em> (IES). IES is mandatory and contains tax, accounting and statistical information at the firm and establishment level. IES is composed of 21 Annexes:</p>
+<figure>
+<img src="./attachments/ies_annexes.PNG" alt="Source: IES forms, Banco de Portugal, 2014; Oliveira, 2016" /><figcaption>Source: IES forms, Banco de Portugal, 2014; Oliveira, 2016</figcaption>
+</figure>
+<p>CB contains the information reported on Annexes A (Firm Level Data) and R (Establishment Level Data) by non-financial corporations. Firms submit IES electronically to the Ministry of Finance every year.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> The deadline to submit the information was initially set at the last working day of the 6th month after the end of the fiscal year and, since 2009, <a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> at the 15th day of the 7th month after the end of the fiscal year. Firms support a monetary cost when they register the financial statements under IES.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
+<p>After the firm submits the data, the system implements some validation checks and generates an alert if it finds an inconsistency. In that case the firm has 30 days to correct it.<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> Firms may also correct the information previously reported by sending a replacement version of the Annexes along with the “Cover Sheet”. In case the correction is made to Annex A (Balance Sheet or Loss and Profit Statement) or to Annex R (Establishment Level Data), the firm is required to re-send both Annexes even if the information reported in one of them remains unchanged. If the firm changes the fiscal period it is also required to send a declaration before and after the change. The Tax Authority (AT) <a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> sends the information collected through IES in an electronic format to the Institute of Registration and Notary Affairs (IRN).<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> This institute is responsible for sending the information to <em>Banco de Portugal</em>, National Statistics Institute (INE) <a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> and Directorate-General for Economic Activities (DGAE).<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p>
+<p><img src="./attachments/information_flow.PNG" /></p>
+<p>The information reported by these firms is then subject to a quality control procedure by the Statistics Department of <em>Banco de Portugal</em>. The quality control is operated at three levels (Banco de Portugal, 2009):</p>
+<ul>
+<li><p><strong>Temporal consistency</strong>: the information reported over the last three years is used to check the temporal consistency of the reported variables. The outliers identified are then subject to further validation;</p></li>
+<li><p><strong>Internal consistency</strong>: this criterion verifies whether the information is reported according to the accounting rules and concepts in place;</p></li>
+<li><p><strong>External consistency</strong>: the information reported in IES is compared to the information available in other datasets managed by <em>Banco de Portugal</em>, such as: the Quarterly Survey of Non-financial Corporations (ITENF),<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> the Central Credit Responsibility Database (CRC)<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>, the Communication of External Transactions and Positions (COPE)<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a> and the Securities Statistics Integrated System (SIET).<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> This verification may also resort to public information such as official and specialized websites and national or international news.</p></li>
+<li><p>In some cases Banco de Portugal will directly contact the firm to validate the information.</p></li>
+</ul>
+<p>Every year around the month of June, after the quality control process takes place, BPLIM creates a data freeze. <strong>The most recent version of the data was extracted on June 2021 and includes data from 2006 to 2019. The data for firms with fiscal period different from the civil year or firms with a significant delay in the delivery of IES are not yet included in the most recent year available.</strong></p>
+<h2 id="a.-changes-in-the-accounting-system-in-portugal">A. Changes in the Accounting System in Portugal</h2>
+<p>Until 2009 the data was reported according to the <em>Plano Oficial de Contabilidade</em> (POC, Official Chart of Accounts). In 2009, a new accounting system, the <em>Sistema de Normalização Contabilística</em> (SNC, Accounting Standards System) was approved by the Decree-Law no. 158/2009. The main goal of SNC is to make the reporting of accounting information compliable with International Accounting Standards (IAS). Thus, all data reported afterwards follows the SNC.<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a> This is a significant structural change that is reflected in the way the dataset is organized and poses some challenges in the comparability of the variables over time, especially in the Balance Sheet and Profit and Loss Statement. The introduction of SNC was reflected in IES in several dimensions, such as:</p>
+<ol type="1">
+<li>some accounting items were simply redenominated;</li>
+<li>some variables were aggregated or disaggregated, For example, the variables “Statutory reserves”, “Contractual reserves” and “Other reserves” in the Balance Sheet on POC accounting system are reported in an aggregated manner on SNC accounting system in the variable “Other reserves”.<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>;</li>
+<li>Some tables were added to the survey in 2010, such as, the Cash-Flows Statement and Statement of Changes in Equity;</li>
+<li>SNC introduces different reporting standards for firms.<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a> In practical terms, this means that Micro-Entities may report some variables at a more aggregated level of detail and be exempt from reporting some tables such as Changes in Equity and Cash-Flows Statement. The variable “regime” in the “General Information” Files captures the reporting standards indicated by the firm.<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a> In the auxiliary files “variables_*.html”, the column “Accounting Regime” identifies the applicable reporting standards to each variable (N - International Accounting Standards; S - Accounting and Financial Reporting Standards and Accounting and Financial Reporting Standards for Small-Sized Entities; M - Accounting and Financial Reporting Standards for Micro-Entities).</li>
+</ol>
+<h2 id="b.-what-can-change-with-a-new-extraction">B. What can change with a new extraction?</h2>
+<p>The CB database at the <em>Banco de Portugal</em> is updated continuously. Firms send IES declarations for the new fiscal year as well as declarations for previous years. BPLIM performs a single data extraction every year. Around June a data freeze is produced to include the information reported by the firms for a new reference year. This new data freeze includes all available data since 2006. With a new extraction the number of observations for a given year may be slightly different. This discrepancy may be more relevant for recent years of the data. This may occur because in the meantime firms may have sent in declarations for years that were missing at the time of the last extraction. Another reason why there may be differences in the number of observations across extractions is if the firm is reclassified as non-financial or financial corporation and therefore it is (in/ex)cluded from the data. It is also possible that for the same firm and year the reported values for some variables differ across extractions. This will occur if the firm replaces the declaration sent at the time of the last extraction (substitution declaration) or if the information is subject to quality control in the meantime. Finally, after internal revision, BPLIM may decide to add new variables or exclude existing ones.</p>
+<h1 id="description-of-files">Description of Files</h1>
+<p>The firm level data in CB is organized in eight files. Each file provides a different type of information, namely:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Type of Information</th>
+<th style="text-align: left;">File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>A. General Information (Cover sheet)</strong></td>
+<td style="text-align: left;">CB_A_YFRM_yyyy_eeee_ROSTO_V01.dta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>B. Economic and Financial Information</strong></td>
+<td style="text-align: left;">CB_A_YFRM_yyyy_eeee_CONTAS_V01.dta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>C. Employment Information</strong></td>
+<td style="text-align: left;">CB_A_YFRM_yyyy_eeee_PESSOAL_V01.dta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>D. Trade Information per Market</strong></td>
+<td style="text-align: left;">CB_A_YFRM_yyyy_eeee_MG_V01.dta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>E. Corporate Actions</strong></td>
+<td style="text-align: left;">CB_A_YFRM_yyyy_eeee_AMARC_V01.dta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>F. Economic and Financial Indicators</strong></td>
+<td style="text-align: left;">CB_A_YFRM_yyyy_eeee_INDIC_V01.dta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>G. Cash-Flows</strong></td>
+<td style="text-align: left;">CB_A_YFRM_yyyy_eeee_FLUXOSCAIXA_V01.dta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>H. Information by Sector of Activity</strong></td>
+<td style="text-align: left;">CB_A_YFRM_yyyy_eeee_BYCAE_V01.dta</td>
+</tr>
+</tbody>
+</table>
+<p>Where <em>A</em> stands for Anonymized and <em>yyyy</em>=2006,…,2019 and <em>eeee</em> reports the extraction date.</p>
+<p>All files contain a unique firm identifier (<em>tina</em>) allowing the matching of the different types of information by firm. Whenever possible, labels and value labels were attributed to all categorical variables. All datasets are anonymized.</p>
+<h1 id="description-of-variables">Description of Variables</h1>
+<p>Below we provide a general description of the variables included in each of the eight files referred above. For a full account of all variable categories and changes over time see <a href="#auxiliary-files">“Auxiliary Files” section</a>. When applicable, we distinguish between variables reported according to the former Accounting System (POC) and the one introduced in 2010 (SNC).</p>
+<h2 id="a.-general-information-file-cover-sheet">A. General Information File (Cover Sheet)</h2>
+<p>The information contained in this file has three different sources: variables reported by the firm through IES, variables computed by the Statistics Department of <em>Banco de Portugal</em> using the information reported in IES and variables collected by the Ministry of Justice through the Central Registry of Companies.<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a></p>
+<h3 id="a1.-identifiers">A1. Identifiers</h3>
+<p><code>Firm identifier</code> (<em>tina</em>) – Unique identifier that enables tracking the legal entity over time. <em>tina</em> is the anonymized tax identification number.</p>
+<p><code>Reference year of the data</code> (<em>ano</em>) – Reference year of the data.</p>
+<h3 id="a2.-variables-reported-by-the-firm-through-ies">A2. Variables reported by the firm through IES</h3>
+<p><code>Fiscal Period</code> (<em>datainitrib</em>, <em>datafimtrib</em> and <em>numdias</em>):</p>
+<p><em>datainitrib</em> - fiscal year start date;</p>
+<p><em>datafimtrib</em> - fiscal year end date;</p>
+<p><em>numdias</em> - total number of days of the fiscal year.</p>
+<p><code>Reporting Type</code> (<em>planocont</em>) – indicates the accounting system according to which the firm reports the information, i.e., POC or SNC.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">POC</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">SNC</td>
+</tr>
+</tbody>
+</table>
+<p><code>Reporting Standards</code> (<em>regime</em>) – with the introduction of SNC firms must choose their reporting standards. Therefore this variable is only available after 2009.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">-1</td>
+<td style="text-align: left;">Not specified</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">International Accounting Standards (IAS)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Accounting and Financial Reporting Standards</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Accounting and Financial Reporting Standards for Small-Sized Entities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Accounting and Financial Reporting Standards for Micro-Entities</td>
+</tr>
+</tbody>
+</table>
+<p><code>Declaration Motive</code> (<em>motivodec</em>) – indicates the reason to submit the declaration.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Consolidation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Ceasing Period</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Special fiscal period - before the change</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Special fiscal period - after the change</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">First fiscal period</td>
+</tr>
+</tbody>
+</table>
+<p><code>Number of Establishments</code> – firms report the total number of national and foreign establishments (<em>numestabnac</em> and <em>numestabest</em>, respectively).<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a> <em>numestab</em> provides information on the total number of establishments.<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a> According to the filling instructions, the Headquarter should be considered an establishment.</p>
+<p><code>Firm’s Situation</code> (<em>sitempresa</em>) – indicates the firm situation at the end of the fiscal period.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">In business</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">End of business</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Dissolved</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Liquidated</td>
+</tr>
+</tbody>
+</table>
+<p><code>Reference date of firm’s situation</code> (<em>datasitempresa</em>) – reports the reference date of the firm’s situation. This information is required in case the firm reports codes 2, 3 and 4 in <em>sitempresa</em> variable.</p>
+<p><code>Firm in liquidation</code> (<em>liquidacao</em>) - identifies firms in liquidation. According to the <a href="https://dre.pt/web/guest/legislacao-consolidada/-/lc/116042191/201906302305/73599989/diploma/indice">Article 146 of the Portuguese Code of Commercial Companies</a>, dissolved firms are required to add the expression “Em liquidação” to their name while they are in the liquidation process. This variable is created by BPLIM using the information contained in the company’s name as reported by the firm in IES forms. It takes value one if the expression “em liquida” is found in the company’s name.</p>
+<p><code>Share of turnover of the main economic activity</code> (<em>pervvn</em>) – indicates the proportion of turnover that the main economic activity represents among all the activities carried on by the firm.</p>
+<p><code>District</code> (<em>distrito</em>) – provides information on the district in which the firm is located. The classification of this variable is according to <em>DICOFRE</em> and differs from the <a href="http://smi.ine.pt/Versao/Detalhes/17">Code of the administrative division</a> for Autonomous Regions. For a complete list of codes see the auxiliary file <a href="./aux_files/variables_description/var_rosto.html">var_rosto.html</a>.</p>
+<p><code>Branch</code> (<em>sucursal</em>) - dummy variable that takes value one for branches of foreign firms located in Portugal. Branch offices are identified using the information contained in the name as reported by the firm in IES and the tax identification number of the company. Notably, the legislation states that the name of these companies includes expressions such as “Sucursal” or “Representação Permanente” (see, for example, <a href="https://dre.pt/pesquisa/-/search/235919/details/maximized">Article 21 of Ordinance n. 1416-A/2006</a> or <a href="https://dre.pt/pesquisa/-/search/249803/details/maximized">Article 5 of Decree-Law n. 73/2008</a>) and the firms are assigned with tax identification numbers started by “98”.</p>
+<p><code>Exporting Firm</code> (<em>exporta</em>) - categorical variable created by BPLIM to identify firms exporting to the European Union or Extra-European Union Markets. This variable is constructed based on the information reported in the Trade Information per Market files, according to the formulas below:</p>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 25%" />
+<col style="width: 31%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Designation</th>
+<th>Formula using POC variables</th>
+<th>Formula using SNC variables</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Does not Export <a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a></td>
+<td>VF03953 = 0 <strong><em>and</em></strong> VF03954 = 0 <strong><em>and</em></strong> VF03957 = 0 <strong><em>and</em></strong> VF03958 = 0</td>
+<td>VF15620 = 0 <strong><em>and</em></strong> VF15624 = 0 <strong><em>and</em></strong> VF15621 = 0 <strong><em>and</em></strong> VF15625 = 0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Exports to EU Market</td>
+<td>VF03953 (EU Market - Total sales) <span class="math inline">&gt;</span> 0 <strong><em>or</em></strong> VF03954 (EU Market - Total services) <span class="math inline">&gt;</span> 0</td>
+<td>VF15620 (EU Market - Total sales) <span class="math inline">&gt;</span> 0 <strong><em>or</em></strong> VF15624 (EU Market - Total services) <span class="math inline">&gt;</span> 0</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Exports to Extra-EU Market</td>
+<td>VF03957 (Extra-EU Market - Total sales) <span class="math inline">&gt;</span> 0 <strong><em>or</em></strong> VF03958 (Extra-EU Market - Total services) <span class="math inline">&gt;</span> 0</td>
+<td>VF15621 (Extra-EU Market - Total sales) <span class="math inline">&gt;</span> 0 <strong><em>or</em></strong> VF15625 (Extra-EU Market - Total services) <span class="math inline">&gt;</span> 0</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Exports to EU and Extra-EU Market</td>
+<td>(VF03953 <strong><em>or</em></strong> VF03954) <span class="math inline">&gt;</span> 0 <strong><em>and</em></strong> (VF03957 <strong><em>or</em></strong> VF03958) <span class="math inline">&gt;</span> 0</td>
+<td>(VF15620 <strong><em>or</em></strong> VF15624) <span class="math inline">&gt;</span> 0 <strong><em>and</em></strong> (VF15621 <strong><em>or</em></strong> VF15625) <span class="math inline">&gt;</span> 0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a3.-variables-created-by-the-statistics-department-of-banco-de-portugal">A3. Variables created by the Statistics Department of <em>Banco de Portugal</em></h3>
+<p><code>Institutional Sector</code> (<em>sectorinstfinal</em>) - reports the institutional sector to which the firm belongs to. As explained in the Sections “Population” and “Methodology”, CB only includes non-financial corporations. Therefore, this variable identifies the type of non-financial corporation, such as public, private or holding company. The algorithm to allocate firms according to the institutional sector is based on the classification of economic activity, the name of the firm and other variables available at <em>Banco de Portugal</em>. Therefore, in some cases the institutional sector may not be in line with the sector of economic activity.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">348500002</td>
+<td style="text-align: left;">Non-financial corporations</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">348500003</td>
+<td style="text-align: left;">Public non-financial corporations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">348500004</td>
+<td style="text-align: left;">Private non-financial corporations</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">348500005</td>
+<td style="text-align: left;">Foreign controlled non-financial corporations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">348500006</td>
+<td style="text-align: left;">Non-financial corporations of central government - Enterprises</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">348500007</td>
+<td style="text-align: left;">Non-financial corporations of central government - Other entities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">348500008</td>
+<td style="text-align: left;">Non-financial corporations of the regional government of Madeira - Enterprises</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">348500009</td>
+<td style="text-align: left;">Non-financial corporations of the regional government of Madeira - Other entities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">348500010</td>
+<td style="text-align: left;">Non-financial corporations of the regional government of Azores - Enterprises</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">348500011</td>
+<td style="text-align: left;">Non-financial corporations of the regional government of Azores - Other entities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">348500012</td>
+<td style="text-align: left;">Non-financial corporations of the local government of Mainland Portugal - Enterprises</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">348500013</td>
+<td style="text-align: left;">Non-financial corporations of the local government of Mainland Portugal - Other entities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">348500014</td>
+<td style="text-align: left;">Non-financial corporations of the local government of Azores - Enterprises</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">348500015</td>
+<td style="text-align: left;">Non-financial corporations of the local government of Azores - Other entities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">348500016</td>
+<td style="text-align: left;">Non-financial corporations of the local government of Madeira - Enterprises</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">348500017</td>
+<td style="text-align: left;">Non-financial corporations of the local government of Madeira - Other entities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">348500302</td>
+<td style="text-align: left;">Public non-financial holding companies</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">348500308</td>
+<td style="text-align: left;">Private non-financial holding companies</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">348500314</td>
+<td style="text-align: left;">Foreign controlled non-financial holding companies</td>
+</tr>
+</tbody>
+</table>
+<p><code>Indicator of Economic Activity</code> (<em>indactiecon</em>) – this variable reports the firm situation revised by the Statistics Departments of <em>Banco de Portugal</em>. It is constructed using the information reported by the firm in IES (<em>sitempresa</em>) and complemented with other sources. Notably, it takes into account whether the firm contracts new loans, maintains commercial transactions with firms abroad or pays and settles the Value Added Tax, among others.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">Unknown</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Awaiting business start</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">In business</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">30</td>
+<td style="text-align: left;">Suspended activity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">40</td>
+<td style="text-align: left;">Ceased activity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">97</td>
+<td style="text-align: left;">Invalid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">98</td>
+<td style="text-align: left;">Not specified</td>
+</tr>
+</tbody>
+</table>
+<p><code>Dimension Category</code> (<em>dimcomissao</em>) - this variable classifies firms according to four dimension categories following the <a href="./aux_files/legislation/CR_2003_361_ec.pdf">Commission Recommendation 2003/361/CE</a><a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Microenterprises</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Small enterprises</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Medium-sized enterprises</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Large enterprises</td>
+</tr>
+</tbody>
+</table>
+<p>This classification is based on the number of employees and either total turnover or assets:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Company category</th>
+<th>Staff headcount</th>
+<th>and</th>
+<th>(Turnover</th>
+<th>or</th>
+<th>Balance sheet total)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Medium-sized</td>
+<td>&lt;250</td>
+<td>and</td>
+<td>(<span class="math inline">≤</span> €50 m</td>
+<td>or</td>
+<td><span class="math inline">≤</span> €43 m)</td>
+</tr>
+<tr class="even">
+<td>Small</td>
+<td>&lt;50</td>
+<td>and</td>
+<td>(<span class="math inline">≤</span> €10 m</td>
+<td>or</td>
+<td><span class="math inline">≤</span> €10 m)</td>
+</tr>
+<tr class="odd">
+<td>Micro</td>
+<td>&lt;10</td>
+<td>and</td>
+<td>(<span class="math inline">≤</span> €2 m</td>
+<td>or</td>
+<td><span class="math inline">≤</span> €2 m)</td>
+</tr>
+</tbody>
+</table>
+<p>Source: <a href="http://ec.europa.eu/growth/smes/business-friendly-environment/sme-definition_en">European Commission</a></p>
+<p><code>Founding year</code> (<em>ancon</em>) – corresponds to the year of business start according to the Indicator of Economic Activity (<em>indactiecon</em>). This information is complemented with the founding date reported in the Central Registry of Companies.</p>
+<h3 id="a4.-variables-extracted-from-central-registry-of-companies-ministry-of-justice">A4. Variables extracted from Central Registry of Companies (Ministry of Justice)</h3>
+<p><code>Legal form</code> (<em>natju</em>) – this variable reports firm’s legal form. For a complete list of codes see the auxiliary file <a href="./aux_files/variables_description/var_rosto.html">var_rosto.html</a>.</p>
+<p><code>Sector of Activity</code> (<em>cae21</em>, <em>cae3</em>, <em>caekotu</em>):</p>
+<p><code>Main Sector of Activity</code> (<em>cae21</em> and <em>cae3</em>) - reports firm’s main sector of activity. The criteria to define the main sector of activity is the gross value added at factor cost. When it is not possible to use this information to define the main sector of activity, firms are requested to use turnover or the number of people permanently employed by the firm. From 2006 to 2008, firms reported the code of “The Portuguese Classification of Economic Activities - Revision 2.1” (CAE Rev. 2.1) at the highest level of disaggregation. Since 2008, firms report their main activity according to the “The Portuguese Classification of Economic Activities - Revision 3” (CAE Rev. 3). The Statistics Department of <em>Banco de Portugal</em> provides the information on the main sector of activity according to both classifications CAE Rev. 2.1 and CAE Rev. 3 whenever possible. The source of this information is the CAE registered in the “Central Registry of Companies” for each company. Whenever the correspondence is not unique, the match between codes CAE Rev. 2.1 and CAE Rev. 3 is implemented based on the highest frequency of the matches.<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a> For a complete list of codes see the auxiliary file <a href="./aux_files/variables_description/var_rosto.html">var_rosto.html</a>.</p>
+<p><code>CAE sections K, O, T or U</code> (<em>caekotu</em>) - this variable was created by BPLIM using the information in <em>cae3</em> (Classification of Economic Activity Rev. 3). It takes value one if the main economic activity of the firm is within one of the following sections of economic activity:</p>
+<ul>
+<li>K- Financial and insurance activities,</li>
+<li>O-Public administration and defence; compulsory social security,</li>
+<li>T-Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use,</li>
+<li>U-Activities of extraterritorial organizations and bodies.</li>
+</ul>
+<p>This variable allows for the identification of the cases in which the information on the sector of economic activity reported by the firm is not in line with the institutional sector to which the firm is allocated by the Statistics Department of <em>Banco de Portugal</em>. This may happen because <em>Banco de Portugal</em> uses complementary sources of information besides the classification of economic activities to classify firms as non-financial corporations.</p>
+<h2 id="b.-economic-and-financial-information-file">B. Economic and Financial Information File</h2>
+<p>The variables may be classified in two groups: Balance Sheet and Profits and Losses Statement variables. The filling instructions for these variables can be found in the Decree-Law no. 410/89 for POC variables and Ordinance no. 986/2009 for SNC variables. For a full account of all variable characteristics see the auxiliary file <a href="./aux_files/variables_description/var_contas.html">var_contas.html</a>. The missing values in Stata of some variables in this file were coded as “.a” whenever the reporting is not mandatory for the accounting standards adopted by the firm.</p>
+<h3 id="b1.-identifiers">B1. Identifiers</h3>
+<p><code>Firm identifier</code> (<em>tina</em>) – Unique identifier that enables tracking the legal entity over time. <em>tina</em> is the anonymized tax identification number.</p>
+<p><code>Reference year of the data</code> (<em>ano</em>) – Reference year of the data.</p>
+<h3 id="b2.-balance-sheet---variables-reported-according-to-poc">B2. Balance Sheet - Variables reported according to POC</h3>
+<p><strong>ASSETS</strong></p>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 40%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+<th style="text-align: left;">Type of reporting <a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF05681</td>
+<td style="text-align: left;"><strong>Total Assets</strong></td>
+<td style="text-align: left;">Net</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05737</td>
+<td style="text-align: left;">&gt; <strong>Tangible and intangible assets (excluding fixed assets work-in-progress)</strong></td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05739</td>
+<td style="text-align: left;">&gt; &gt; Intangible assets</td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05743</td>
+<td style="text-align: left;">&gt; &gt; Tangible fixed assets</td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05750</td>
+<td style="text-align: left;">&gt; <strong>Fixed assets work-in-progress (including tangible, intangible and financial investments)</strong></td>
+<td style="text-align: left;">Net/Gross</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05685</td>
+<td style="text-align: left;">&gt; <strong>Financial Assets</strong></td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05751</td>
+<td style="text-align: left;">&gt; <strong>Current Assets - Inventories</strong></td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05759</td>
+<td style="text-align: left;">&gt; &gt; Current Assets - Inventories - Finished and intermediate products; Subproducts, wastes and scrap; Products and work in progress)</td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03141</td>
+<td style="text-align: left;">&gt; &gt; Current Assets - Inventories - Raw and subsidiary materials and consumables - Gross Assets</td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03153</td>
+<td style="text-align: left;">&gt; &gt; Current Assets - Inventories - Goods - Gross Assets</td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05696</td>
+<td style="text-align: left;">&gt; <strong>Other Debts</strong></td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05709</td>
+<td style="text-align: left;">&gt; &gt; Other debts</td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05763</td>
+<td style="text-align: left;">&gt; &gt; Accruals and deferrals (Assets)</td>
+<td style="text-align: left;">Net/Gross</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03156</td>
+<td style="text-align: left;">&gt; &gt; Current Assets - Inventories - Advances for purchases</td>
+<td style="text-align: left;">Net/Gross</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05700</td>
+<td style="text-align: left;">&gt; &gt; Other Loans Granted - Trade Credit and Advances</td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05702</td>
+<td style="text-align: left;">&gt; &gt; &gt; Client debts</td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05822</td>
+<td style="text-align: left;">&gt; &gt; &gt; Advances from clients</td>
+<td style="text-align: left;">Net</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05697</td>
+<td style="text-align: left;">&gt; &gt; <em>Short-term accounts receivable</em></td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03253</td>
+<td style="text-align: left;">&gt; <strong>Total depreciation</strong></td>
+<td style="text-align: left;">n.a.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03254</td>
+<td style="text-align: left;">&gt; <strong>Total adjustments</strong></td>
+<td style="text-align: left;">n.a.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03242</td>
+<td style="text-align: left;">&gt; <strong>Current Assets - Negotiable securities - Gross Assets</strong></td>
+<td style="text-align: left;">Gross</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03247</td>
+<td style="text-align: left;">&gt; <strong>Current Assets - Cash and cash equivalents</strong></td>
+<td style="text-align: left;">Net/Gross</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03088</td>
+<td style="text-align: left;">Intangible assets - Net Assets</td>
+<td style="text-align: left;">Net</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03117</td>
+<td style="text-align: left;">Tangible fixed assets - Net Assets</td>
+<td style="text-align: left;">Net</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03140</td>
+<td style="text-align: left;">Financial Assets - Net Assets</td>
+<td style="text-align: left;">Net</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05753</td>
+<td style="text-align: left;">Inventories - Net Assets (BACH)</td>
+<td style="text-align: left;">Net</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05762</td>
+<td style="text-align: left;">&gt; Other Inventories - Net Assets (BACH)</td>
+<td style="text-align: left;">Net</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03143</td>
+<td style="text-align: left;">&gt; Current Assets - Inventories - Raw and subsidiary materials and consumables - Net Assets</td>
+<td style="text-align: left;">Net</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05701</td>
+<td style="text-align: left;">Trade Credits Granted - Net Assets (BACH)</td>
+<td style="text-align: left;">Net</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05710</td>
+<td style="text-align: left;">Other accounts receivable - Net Assets (BACH)</td>
+<td style="text-align: left;">Net</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03223</td>
+<td style="text-align: left;">Short-term accounts receivable - Net Assets</td>
+<td style="text-align: left;">Net</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03244</td>
+<td style="text-align: left;">Current Assets - Negotiable securities - Net Assets</td>
+<td style="text-align: left;">Net</td>
+</tr>
+</tbody>
+</table>
+<p><strong>EQUITY</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF05773</td>
+<td style="text-align: left;"><strong>Total Equity</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05775</td>
+<td style="text-align: left;">&gt; <strong>Shares and other Equity - Capital Accounts</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03258</td>
+<td style="text-align: left;">&gt; &gt; Equity- Capital</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03261</td>
+<td style="text-align: left;">&gt; &gt; &gt; Equity- Supplementary capital</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03262</td>
+<td style="text-align: left;">&gt; &gt; Equity- Share Premiums</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03259</td>
+<td style="text-align: left;">&gt; &gt; Equity- Own shares- Nominal value</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03260</td>
+<td style="text-align: left;">&gt; &gt; Equity- Own shares- Discounts and Premiums</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05786</td>
+<td style="text-align: left;">&gt; <strong>Shares and other Equity - Reserves and Retained Earnings</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03269</td>
+<td style="text-align: left;">&gt; &gt; Equity- Retained earnings</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03271</td>
+<td style="text-align: left;">&gt; &gt; Equity- Interim dividends</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03263</td>
+<td style="text-align: left;">&gt; &gt; Equity- Adjustments to investments in group and associated companies</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03264</td>
+<td style="text-align: left;">&gt; &gt; Equity-Revaluation reserves</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03265</td>
+<td style="text-align: left;">&gt; &gt; Equity- Reserves- Legal reserves</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03266</td>
+<td style="text-align: left;">&gt; &gt; Equity- Reserves- Statutory reserves</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03267</td>
+<td style="text-align: left;">&gt; &gt; Equity- Reserves- Contractual reserves</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03268</td>
+<td style="text-align: left;">&gt; &gt; Equity- Reserves- Other reserves</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03270</td>
+<td style="text-align: left;">&gt; <strong>Equity- Net income</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>LIABILITIES</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF05766</td>
+<td style="text-align: left;"><strong>Total liabilities</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05799</td>
+<td style="text-align: left;">&gt; <strong>Provisions (total)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03273</td>
+<td style="text-align: left;">&gt; &gt; Provisions- Provisions for pension liabilities</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05810</td>
+<td style="text-align: left;">&gt; <strong>Financial Debt- including securities and excluding shares</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05813</td>
+<td style="text-align: left;">&gt; <strong>Financial Debt- Bank loans</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03280</td>
+<td style="text-align: left;">&gt; &gt; Debt- Medium and long term loans from credit institutions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03298</td>
+<td style="text-align: left;">&gt; &gt; Debt- Short term loans from credit institutions</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05824</td>
+<td style="text-align: left;">&gt; <strong>Supplier debts</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05827</td>
+<td style="text-align: left;">&gt; <strong>Other debts</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03299</td>
+<td style="text-align: left;">&gt; &gt; Debt- Short Term advances on sales</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05836</td>
+<td style="text-align: left;">&gt; <strong>Other loans</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05850</td>
+<td style="text-align: left;">&gt; <strong>Accruals and Deferrals (Liabilities)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05704</td>
+<td style="text-align: left;">&gt; <strong>Advance Payments to suppliers (Assets)</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="b3.-balance-sheet---variables-reported-according-to-snc">B3. Balance Sheet - Variables reported according to SNC</h3>
+<p><strong>ASSETS</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF15991</td>
+<td style="text-align: left;"><strong>Total Assets (QS)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15994</td>
+<td style="text-align: left;">&gt; <strong>Total non-current assets (QS)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15995</td>
+<td style="text-align: left;">&gt; &gt; <strong>Fixed tangible assets and intangible assets</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16001</td>
+<td style="text-align: left;">&gt; &gt; &gt; Non-current Assets- Intangible assets (including Goodwill)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF12982</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Goodwill</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16002</td>
+<td style="text-align: left;">&gt; &gt; &gt; Tangible fixed assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16003</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Non-current assets - Land and buildings</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16004</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Non-current assets- Basic equipment</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16005</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Non-current assets-Other fixed assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16006</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Non-current assets- Payments on account of fixed assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16015</td>
+<td style="text-align: left;">&gt; &gt; <strong>Financial investments</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16016</td>
+<td style="text-align: left;">&gt; &gt; &gt; Non-current assets - investments in subsidiary and associated companies</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16017</td>
+<td style="text-align: left;">&gt; &gt; &gt; Non-current assets - Financial investments (excepting investments in subsidiary and associated companies)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF18510</td>
+<td style="text-align: left;">&gt; &gt; <strong>Non-current assets - Remaining non-current assets</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16018</td>
+<td style="text-align: left;">&gt; &gt; &gt; Non-current assets - Shareholders</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16041</td>
+<td style="text-align: left;">&gt; &gt; &gt; Non-current assets - Deferred tax assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16019</td>
+<td style="text-align: left;">&gt; <strong>Total Current assets (QS)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16022</td>
+<td style="text-align: left;">&gt; &gt; <strong>Inventories and consumable biological assets</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16023</td>
+<td style="text-align: left;">&gt; &gt; &gt; Inventories - Raw and subsidiary materials and consumables</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16024</td>
+<td style="text-align: left;">&gt; &gt; &gt; Inventories - Advances for purchases</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16025</td>
+<td style="text-align: left;">&gt; &gt; &gt; Current assets- Inventories (excepting Raw and subsidiary materials and consumables)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16031</td>
+<td style="text-align: left;">&gt; &gt; <strong>Current assets - Customers</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16035</td>
+<td style="text-align: left;">&gt; &gt; <strong>Net non-current assets held for sale</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16039</td>
+<td style="text-align: left;">&gt; &gt; <strong>Current assets - Cash and bank deposits</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF18511</td>
+<td style="text-align: left;">&gt; &gt; <strong>Current assets - Remaining current assets</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16032</td>
+<td style="text-align: left;">&gt; &gt; &gt; Current assets - State and other public entities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16033</td>
+<td style="text-align: left;">&gt; &gt; &gt; Other current assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16034</td>
+<td style="text-align: left;">&gt; &gt; &gt; Current assets - Shareholders</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16046</td>
+<td style="text-align: left;">&gt; &gt; &gt; Current assets - Deferred expense</td>
+</tr>
+</tbody>
+</table>
+<p><strong>EQUITY</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF16050</td>
+<td style="text-align: left;"><strong>Equity and Liabilities (QS)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16051</td>
+<td style="text-align: left;">&gt; <strong>Equity (QS)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16052</td>
+<td style="text-align: left;">&gt; &gt; <strong>Equity - Paid-up capital</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16053</td>
+<td style="text-align: left;">&gt; &gt; <strong>Equity - Other equity instruments</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16056</td>
+<td style="text-align: left;">&gt; &gt; <strong>Equity - Reserves and retained earnings</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13024</td>
+<td style="text-align: left;">&gt; &gt; &gt; Equity- Legal reserves</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13025</td>
+<td style="text-align: left;">&gt; &gt; &gt; Equity- Other reserves</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13026</td>
+<td style="text-align: left;">&gt; &gt; &gt; Retained earnings</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16057</td>
+<td style="text-align: left;">&gt; &gt; <strong>Equity - Other items of equity</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13021</td>
+<td style="text-align: left;">&gt; &gt; &gt; Equity- Own shares</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13023</td>
+<td style="text-align: left;">&gt; &gt; &gt; Equity- Share Premiums</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13027</td>
+<td style="text-align: left;">&gt; &gt; &gt; Adjustments on financial investments</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13028</td>
+<td style="text-align: left;">&gt; &gt; &gt; Revaluation surplus</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13029</td>
+<td style="text-align: left;">&gt; &gt; &gt; Other variations in equity- R1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13030</td>
+<td style="text-align: left;">&gt; &gt; &gt; Other variations in equity- R2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13031</td>
+<td style="text-align: left;">&gt; &gt; &gt; Other variations in equity- R3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13032</td>
+<td style="text-align: left;">&gt; &gt; &gt; Other variations in equity- R4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16063</td>
+<td style="text-align: left;">&gt; &gt; <strong>Equity - Net income</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16064</td>
+<td style="text-align: left;">&gt; &gt; <strong>Equity - Interim dividends</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>LIABILITIES</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF16070</td>
+<td style="text-align: left;">&gt; <strong>Liabilities (QS)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16071</td>
+<td style="text-align: left;">&gt; &gt; <strong>Non-current liabilities</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16075</td>
+<td style="text-align: left;">&gt; &gt; &gt; Non-current liabilities - Obtained funding</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16076</td>
+<td style="text-align: left;">&gt; &gt; &gt; Non-current liabilities -Post-employment benefits</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF18512</td>
+<td style="text-align: left;">&gt; &gt; &gt; Non-current liabilities - Remaining non-current liabilities</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16074</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Non-current liabilities - Provisions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16077</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Non-current liabilities - Other accounts payable</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16107</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Non-current liabilities - Deferred tax liabilities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16079</td>
+<td style="text-align: left;">&gt; &gt; <strong>Current liabilities (QS)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16083</td>
+<td style="text-align: left;">&gt; &gt; &gt; Current liabilities - Suppliers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16086</td>
+<td style="text-align: left;">&gt; &gt; &gt; Current liabilities - Obtained funding</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF18513</td>
+<td style="text-align: left;">&gt; &gt; &gt; Current liabilities - Remaining current liabilities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16084</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Current liabilities - State and other public entities</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16108</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Current liabilities - Deferred income</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16085</td>
+<td style="text-align: left;">&gt; &gt; &gt; &gt; Current liabilities - Other current liabilities</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b4.-profits-and-losses-statement---variables-reported-according-to-poc">B4. Profits and Losses Statement - Variables reported according to POC</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF05908</td>
+<td style="text-align: left;"><strong>Sales</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03045</td>
+<td style="text-align: left;">&gt; Sales - goods</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03046</td>
+<td style="text-align: left;">&gt; Sales - products</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03047</td>
+<td style="text-align: left;"><strong>Provision of services</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03049</td>
+<td style="text-align: left;"><strong>Variation in production</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03050</td>
+<td style="text-align: left;"><strong>Capitalized production</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03051</td>
+<td style="text-align: left;"><strong>Supplementary revenues</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03052</td>
+<td style="text-align: left;"><strong>Operating subsidies</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03053</td>
+<td style="text-align: left;"><strong>Operating revenues</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03055</td>
+<td style="text-align: left;"><strong>Reversals of amortizations and adjustments</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05898</td>
+<td style="text-align: left;"><strong>Operating revenues</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05863</td>
+<td style="text-align: left;"><strong>Cost of goods sold and material consumed</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03017</td>
+<td style="text-align: left;">&gt; Cost of goods sold</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03018</td>
+<td style="text-align: left;">&gt; Cost of material consumed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05873</td>
+<td style="text-align: left;"><strong>Employee costs</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05881</td>
+<td style="text-align: left;"><strong>Depreciations (including adjustments)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03025</td>
+<td style="text-align: left;">&gt; Depreciation of intangible and tangible fixed assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03026</td>
+<td style="text-align: left;">&gt; Adjustments</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03027</td>
+<td style="text-align: left;"><strong>Provisions</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03020</td>
+<td style="text-align: left;"><strong>Supplies and external services</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03029</td>
+<td style="text-align: left;"><strong>Taxes</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03030</td>
+<td style="text-align: left;"><strong>Other operating costs</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05857</td>
+<td style="text-align: left;"><strong>Operating costs</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05925</td>
+<td style="text-align: left;"><strong>Operating profit or loss</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05918</td>
+<td style="text-align: left;"><strong>Financial revenues</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03057</td>
+<td style="text-align: left;">&gt; Gains in group and associated companies</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03058</td>
+<td style="text-align: left;">&gt; Income from equity holdings</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03059</td>
+<td style="text-align: left;">&gt; Income from negotiable securities and other financial applications – relative to group companies</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03060</td>
+<td style="text-align: left;">&gt; Income from negotiable securities and other financial applications - Others</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03061</td>
+<td style="text-align: left;">&gt; Interest Income and similar earnings- relative to group companies</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03062</td>
+<td style="text-align: left;">&gt; Interest Income and similar earnings - Others</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05888</td>
+<td style="text-align: left;"><strong>Financial costs</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03033</td>
+<td style="text-align: left;">&gt; Losses in group and associated companies</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03034</td>
+<td style="text-align: left;">&gt; Depreciation and adjustments of financial fixed assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03035</td>
+<td style="text-align: left;">&gt; Interest and related expense - relative to group companies</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03036</td>
+<td style="text-align: left;">&gt; Interest and related expense - others</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05935</td>
+<td style="text-align: left;"><strong>Financial profit or loss</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03065</td>
+<td style="text-align: left;"><strong>Extraordinary revenues</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03039</td>
+<td style="text-align: left;"><strong>Extraordinary costs</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05940</td>
+<td style="text-align: left;"><strong>Extraordinary items</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03041</td>
+<td style="text-align: left;"><strong>Income tax</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06011</td>
+<td style="text-align: left;"><strong>Costs</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06012</td>
+<td style="text-align: left;"><strong>Revenues</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03043</td>
+<td style="text-align: left;"><strong>Net income</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="b5.-profits-and-losses-statement---variables-reported-according-to-snc">B5. Profits and Losses Statement - Variables reported according to SNC</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF16132</td>
+<td style="text-align: left;"><strong>Turnover</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16133</td>
+<td style="text-align: left;">&gt; Sales</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16134</td>
+<td style="text-align: left;">&gt; Services</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16136</td>
+<td style="text-align: left;"><strong>Operating subsidies</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16137</td>
+<td style="text-align: left;"><strong>Variation in production</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16138</td>
+<td style="text-align: left;"><strong>Capitalized production</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16140</td>
+<td style="text-align: left;"><strong>Other incomes</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16156</td>
+<td style="text-align: left;"><strong>Costs of goods sold and material consumed</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16157</td>
+<td style="text-align: left;"><strong>Supplies and external services</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16160</td>
+<td style="text-align: left;"><strong>Employee expenses</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16166</td>
+<td style="text-align: left;"><strong>Impairment (losses/reversals) and changes (gains/losses) in fair value</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16173</td>
+<td style="text-align: left;"><strong>Provisions (increases/decreases)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16175</td>
+<td style="text-align: left;"><strong>Other expenses</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16215</td>
+<td style="text-align: left;"><strong>Earnings before Interest, Taxes, Depreciation and Amortization - EBITDA</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16172</td>
+<td style="text-align: left;"><strong>Expenses/reversals of depreciations and amortizations</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16216</td>
+<td style="text-align: left;"><strong>Earning before Interest and Tax - EBIT</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16150</td>
+<td style="text-align: left;">Interest income</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16184</td>
+<td style="text-align: left;">Interest expenses</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16191</td>
+<td style="text-align: left;">Income tax</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16152</td>
+<td style="text-align: left;"><strong>Total income</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16193</td>
+<td style="text-align: left;"><strong>Total Expenses</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16218</td>
+<td style="text-align: left;"><strong>Net income</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16219</td>
+<td style="text-align: left;"><strong>Net income from discontinued operations</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="c.-employment-information-file">C. Employment Information File</h2>
+<p>This file contains information on the average number of employees and number of hours worked during the months in which the firm was in business by employment contract arrangement, gender and working time arrangement. This file also provides information on employee expenses.</p>
+<h3 id="c1.-identifiers">C1. Identifiers</h3>
+<p><code>Firm identifier</code> (<em>tina</em>) – Unique identifier that enables tracking the legal entity over time. <em>tina</em> is the anonymized tax identification number.</p>
+<p><code>Reference year of the data</code> (<em>ano</em>) – Reference year of the data.</p>
+<h3 id="c2.-variables-reported-according-to-poc">C2. Variables reported according to POC</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF03319</td>
+<td style="text-align: left;">Number of (paid and unpaid) employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03320</td>
+<td style="text-align: left;">&gt; Number of (paid and unpaid) full-time employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04904</td>
+<td style="text-align: left;">&gt; Number of (paid and unpaid) part-time employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03321</td>
+<td style="text-align: left;">Number of paid employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04903</td>
+<td style="text-align: left;">&gt; Number of paid full-time employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03324</td>
+<td style="text-align: left;">&gt; Number of paid part-time employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03322</td>
+<td style="text-align: left;">Number of paid apprentices</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03323</td>
+<td style="text-align: left;">Number of paid homeworkers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04902</td>
+<td style="text-align: left;">Number of unpaid employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03325</td>
+<td style="text-align: left;">Service providers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03326</td>
+<td style="text-align: left;">Number of employees allocated to research and development</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03327</td>
+<td style="text-align: left;">Temporary Agency Employment</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03328</td>
+<td style="text-align: left;">Number of hours worked by paid and unpaid employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03329</td>
+<td style="text-align: left;">&gt; Number of hours worked by paid and unpaid full-time employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04907</td>
+<td style="text-align: left;">&gt; Number of hours worked by paid and unpaid part-time employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03330</td>
+<td style="text-align: left;">Number of hours worked by paid employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04906</td>
+<td style="text-align: left;">&gt; Number of hours worked by paid full-time employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03331</td>
+<td style="text-align: left;">&gt; Number of hours worked by paid part-time employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04905</td>
+<td style="text-align: left;">Number of hours worked by unpaid employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03332</td>
+<td style="text-align: left;">Number of hours worked by service providers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05990</td>
+<td style="text-align: left;">Total Hours Worked</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04036</td>
+<td style="text-align: left;">Compensation of corporate bodies</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04037</td>
+<td style="text-align: left;">Salaries</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04038</td>
+<td style="text-align: left;">Pensions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04039</td>
+<td style="text-align: left;">Retirement benefits and pension premiums</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04040</td>
+<td style="text-align: left;">Social security expenses</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04041</td>
+<td style="text-align: left;">Insurance schemes for accidents at work and occupational diseases</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04042</td>
+<td style="text-align: left;">Expenses with social actions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04043</td>
+<td style="text-align: left;">Other employee expenses</td>
+</tr>
+</tbody>
+</table>
+<h3 id="c3.-variables-reported-according-to-snc">C3. Variables reported according to SNC</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF15532</td>
+<td style="text-align: left;">Number of (paid and unpaid) employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15534</td>
+<td style="text-align: left;">&gt; Number of paid employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15536</td>
+<td style="text-align: left;">&gt; Number of unpaid employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15538</td>
+<td style="text-align: left;">Number of (paid and unpaid) full-time employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15540</td>
+<td style="text-align: left;">&gt; Number of paid full-time employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15542</td>
+<td style="text-align: left;">Number of (paid and unpaid) part-time employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15544</td>
+<td style="text-align: left;">&gt; Number of paid part-time employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15546</td>
+<td style="text-align: left;">Number of (paid and unpaid) male employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15548</td>
+<td style="text-align: left;">Number of (paid and unpaid) female employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15550</td>
+<td style="text-align: left;">Number of employees allocated to research and development</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15551</td>
+<td style="text-align: left;">Service providers</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15553</td>
+<td style="text-align: left;">Temporary Agency Employment</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15533</td>
+<td style="text-align: left;">Number of hours worked by paid and unpaid employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15535</td>
+<td style="text-align: left;">&gt; Number of hours worked by paid employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15537</td>
+<td style="text-align: left;">&gt; Number of hours worked by unpaid employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15539</td>
+<td style="text-align: left;">Number of hours worked by paid and unpaid full-time employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15541</td>
+<td style="text-align: left;">&gt; Number of hours worked by paid full-time employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15543</td>
+<td style="text-align: left;">Number of hours worked by paid and unpaid part-time employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15545</td>
+<td style="text-align: left;">&gt; Number of hours worked by paid part-time employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15547</td>
+<td style="text-align: left;">Number of hours worked by male employees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15549</td>
+<td style="text-align: left;">Number of hours worked by female employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15552</td>
+<td style="text-align: left;">Number of hours worked by service providers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15555</td>
+<td style="text-align: left;">Compensation of corporate bodies</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15556</td>
+<td style="text-align: left;">&gt; Compensation of corporate bodies- of which participation in profits</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15557</td>
+<td style="text-align: left;">Salaries</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15558</td>
+<td style="text-align: left;">&gt; Salaries - of which participation in the profits</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15559</td>
+<td style="text-align: left;">Post-employment benefits</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15560</td>
+<td style="text-align: left;">&gt; Pension premiums</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15561</td>
+<td style="text-align: left;">&gt; Other benefits</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15562</td>
+<td style="text-align: left;">&gt; &gt; Post-employment benefits- Other benefits: of which defined contribution pension plans - corporate bodies</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15563</td>
+<td style="text-align: left;">&gt; &gt; Post-employment benefits- Other benefits: of which defined contribution pension plans - other</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15564</td>
+<td style="text-align: left;">Indemnities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15565</td>
+<td style="text-align: left;">Social security expenses</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15566</td>
+<td style="text-align: left;">Insurance schemes for accidents at work and occupational diseases</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15567</td>
+<td style="text-align: left;">Expenses with social actions</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15568</td>
+<td style="text-align: left;">Other employee expenses</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15569</td>
+<td style="text-align: left;">&gt; Training expenses</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15570</td>
+<td style="text-align: left;">&gt; Other expenses- Expenses with uniforms</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF18834</td>
+<td style="text-align: left;">Expenses with defined pension plans</td>
+</tr>
+</tbody>
+</table>
+<h3 id="c4.-relevant-definitions">C4. Relevant definitions</h3>
+<p><strong>Average number of employees</strong>: results from the sum of the number of people employed in the last weekday of each month of the fiscal period divided by the total number of months included in the fiscal period.</p>
+<p><strong>Paid employees</strong>: include all employees receiving a salary with the exception of self-employed workers, service providers and the people working at the firm but paid by other firms. It includes apprentices and homeworkers.</p>
+<p><strong>Unpaid employees</strong>: include all those working at the firm without receiving a wage, such as partners, family workers and unpaid managers.</p>
+<p><strong>Service providers</strong>: service providers working for the firm on a regular basis.</p>
+<p><strong>Apprentices</strong>: employees learning an administrative, commercial, productive or other task.</p>
+<p><strong>Homeworkers</strong>: employees working from home.</p>
+<p><strong>Employees allocated to research and development</strong>: employees dedicated to activities of R&amp;D.</p>
+<p><strong>Full-time employees</strong>: full-time workers are those working the normal period of work in the firm for a certain occupation or occupational category.</p>
+<p><strong>Part-time employees</strong>: part-time workers include the employees that work less than the normal period of work in the firm for a certain occupation or occupational category.</p>
+<p><strong>Temporary Agency Employment</strong>: includes the people working for the firm and receiving a salary paid by other firm.</p>
+<p><strong>Hours worked</strong>: the firm reports the number of hours worked in the year. This variable is defined as the number of hours worked (normal or overtime) by the firm’s employees. <a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a> It does not include the paid or unpaid hours in which the workers were absent.</p>
+<h2 id="d.-trade-information-per-market-file">D. Trade Information per Market File</h2>
+<p>Firms are required to provide information on Total Sales, Total Services, Total Purchases and Total Supplies and External Services for each Geographical Market. The territory is divided in three geographical markets: internal market, European Union (EU) market and Extra-EU market. The EU Market includes all European Union countries with the exception of Portugal. All other countries are included in the Extra-EU Market.<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a> The values reported for each geographical market have to sum up to the totals reported at the firm level.</p>
+<h2 id="d1.-identifiers">D1. Identifiers</h2>
+<p><code>Firm identifier</code> (<em>tina</em>) – Unique identifier that enables tracking the legal entity over time. <em>tina</em> is the anonymized tax identification number.</p>
+<p><code>Reference year of the data</code> (<em>ano</em>) – Reference year of the data.</p>
+<h2 id="d2.-variables-reported-according-to-poc">D2. Variables reported according to POC</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF03949</td>
+<td style="text-align: left;">Internal Market - Total sales</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03950</td>
+<td style="text-align: left;">Internal Market - Total services</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03951</td>
+<td style="text-align: left;">Internal Market - Total purchases</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03952</td>
+<td style="text-align: left;">Internal Market - Total supplies and external services</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03953</td>
+<td style="text-align: left;">EU-Market - Total sales</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03954</td>
+<td style="text-align: left;">EU-Market - Total services</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03955</td>
+<td style="text-align: left;">EU-Market - Total purchases</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03956</td>
+<td style="text-align: left;">EU-Market - Total supplies and external services</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03957</td>
+<td style="text-align: left;">Extra EU-Market - Total sales</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03958</td>
+<td style="text-align: left;">Extra EU-Market - Total services</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03959</td>
+<td style="text-align: left;">Extra EU-Market - Total purchases</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03960</td>
+<td style="text-align: left;">Extra EU-Market - Total supplies and external services</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF03961</td>
+<td style="text-align: left;">Total - Total sales</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF03962</td>
+<td style="text-align: left;">Total - Total purchases</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF05195</td>
+<td style="text-align: left;">Total - Total services</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF05196</td>
+<td style="text-align: left;">Total - Total supplies and external services</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d3.-variables-reported-according-to-snc">D3. Variables reported according to SNC</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF15619</td>
+<td style="text-align: left;">Internal Market - Total sales</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15623</td>
+<td style="text-align: left;">Internal Market - Total services</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15627</td>
+<td style="text-align: left;">Internal Market - Total purchases</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15631</td>
+<td style="text-align: left;">Internal Market - Total supplies and external services</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15635</td>
+<td style="text-align: left;">Internal Market - Acquisition of tangible fixed assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15639</td>
+<td style="text-align: left;">Internal Market - Acquisition of investment properties</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15643</td>
+<td style="text-align: left;">Internal Market - Acquisition of intangible assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15620</td>
+<td style="text-align: left;">EU-Market - Total sales</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15624</td>
+<td style="text-align: left;">EU-Market - Total services</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15628</td>
+<td style="text-align: left;">EU-Market - Total purchases</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15632</td>
+<td style="text-align: left;">EU-Market - Total supplies and external services</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15636</td>
+<td style="text-align: left;">EU-Market - Acquisition of tangible fixed assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15640</td>
+<td style="text-align: left;">EU-Market - Acquisition of investment properties</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15644</td>
+<td style="text-align: left;">EU-Market - Acquisition of intangible assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15621</td>
+<td style="text-align: left;">Extra EU-Market - Total sales</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15625</td>
+<td style="text-align: left;">Extra EU-Market - Total services</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15629</td>
+<td style="text-align: left;">Extra EU-Market - Total purchases</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15633</td>
+<td style="text-align: left;">Extra EU-Market - Total supplies and external services</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15637</td>
+<td style="text-align: left;">Extra EU-Market - Acquisition of tangible fixed assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15641</td>
+<td style="text-align: left;">Extra EU-Market - Acquisition of investment properties</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15645</td>
+<td style="text-align: left;">Extra EU-Market - Acquisition of intangible assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15622</td>
+<td style="text-align: left;">Total - Total sales</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15626</td>
+<td style="text-align: left;">Total - Total services</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15630</td>
+<td style="text-align: left;">Total - Total purchases</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15634</td>
+<td style="text-align: left;">Total - Total supplies and external services</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15638</td>
+<td style="text-align: left;">Total - Total acquisition of tangible fixed assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15642</td>
+<td style="text-align: left;">Total - Total acquisition of investment properties</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15646</td>
+<td style="text-align: left;">Total - Total acquisition of intangible assets</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e.-corporate-actions-file">E. Corporate Actions File</h2>
+<p>The Corporate Actions files contain information on firm actions that occurred during the fiscal period altering the structure of the firm and affecting the comparability of the economic and financial information over time. This table is subject to quality control by the Statistics Department of <em>Banco de Portugal</em> and relies on the information reported in IES and other complementary sources. The data has a significant but not exhaustive coverage of the corporate actions that have an impact on the structure of the non-financial corporations included in CB.</p>
+<h3 id="e1.-identifiers">E1. Identifiers</h3>
+<p><code>Firm identifier</code> (<em>tina_origem</em>, <em>tina_destino</em>) – firm identification codes that enable identifying the firm of origin and the firm of destination of the corporate action.</p>
+<p><em>tina_origem</em> - firm of origin’s anonymized tax identification number,</p>
+<p><em>tina_destino</em> - firm of destination’s anonymized tax identification number.</p>
+<p><code>Reference year of the data</code> (<em>ano</em>) – Reference year of the data.</p>
+<p><code>Number of order of the corporate action</code> (<em>numordem</em>): Corporate action’s number of order.</p>
+<h3 id="e2.-information-on-the-corporate-action">E2. Information on the Corporate Action</h3>
+<p><code>Type of corporate action</code> (<em>tipoacont</em>) - this variable reports the type of corporate action:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Designation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Merge</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">Split</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">30</td>
+<td style="text-align: left;">Activity Interruption by non-seasonal companies (&gt;3 months, consecutive or not)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">62</td>
+<td style="text-align: left;">Dissolution of a significant part of productive assets without split</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">67</td>
+<td style="text-align: left;">Other corporate actions</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">70</td>
+<td style="text-align: left;">Disposal of a significant part of productive assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">71</td>
+<td style="text-align: left;">Acquisition of a significant part of productive assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">72</td>
+<td style="text-align: left;">Transfer of a significant part of productive assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">78</td>
+<td style="text-align: left;">Change of economic activity with the creation of a new firm</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">79</td>
+<td style="text-align: left;">Change of economic activity without the creation of a new firm</td>
+</tr>
+</tbody>
+</table>
+<p>Some relevant definitions are available in subsection <a href="#e3.-relevant-definitions">E3. Relevant Definitions</a></p>
+<p><code>Number of months of activity interruption</code> (<em>mesesparagem</em>) - number of months the firm interrupted its activity. This variable is only filled in when the type of corporate action corresponds to an activity interruption (<em>tipoacont</em>=30).</p>
+<p><code>Effect on data comparability</code> (<em>efeitopessoal</em>, <em>efeitobalanco</em>, <em>efeitodemresult</em>, <em>efeitocontas</em>) - set of dummy variables stating whether the corporate action has an effect on data comparability. By default, it is considered that the corporate action has an effect on data comparability if the relative annual change of the relevant variable (Number of Paid and Unpaid Employees, Total Assets or Turnover) exceeds 10%. After the quality control takes place, however, the action may be considered to have or not an effect on data comparability according to the analysis of the firm’s information.</p>
+<p><em>efeitopessoal</em> - dummy variable taking value one (“Yes”) if the corporate action has an impact on the Number of Paid and Unpaid Employees.<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a></p>
+<p><em>efeitobalanco</em> - dummy variable taking value one (“Yes”) if the corporate action has an impact on Total Assets.</p>
+<p><em>efeitodemresult</em> - dummy variable taking value one (“Yes”) if the corporate action has an impact on Turnover.</p>
+<p><em>efeitocontas</em> - dummy variable taking value one (“Yes”) if the corporate action has an impact on the overall economic and financial statements.</p>
+<h3 id="e3.-relevant-definitions">E3. Relevant definitions</h3>
+<p><strong>Merge</strong>- This corporate action occurs if two or more companies combine into a newly created company or an existing one. In this last case, the firm is simultaneously the Firm of Origin and the Firm of Destination.</p>
+<p><strong>Split</strong> – This corporate action occurs when a company divides its activity into two or more existing and/or newly created companies. If the firm splitting its activity stay in business then this firm is simultaneously the Firm of Origin and the Firm of Destination.</p>
+<p><strong>Change of Economic Activity (with/without the creation of a new firm)</strong> - structural change on the firm affecting the comparability of the information over time. For example, a firm being assigned a new Tax Identification Number due to changes in firm’s legal form, sector of activity or institutional sector.</p>
+<p><strong>Dissolution of a significant part of productive assets without split</strong> - significant diminution in the economic activity of the firm that is not explained by the transfer of productive assets to an existing or newly created firm.</p>
+<h2 id="f.-economic-and-financial-indicators-file">F. Economic and Financial Indicators File</h2>
+<p>This file provides some indicators calculated using variables of CB. For more information on how each indicator is calculated see the auxiliary file <a href="./aux_files/variables_description/var_indicadores.html">var_indicadores.html</a>. The methodology and concepts used to compute some of the indicators published in <a href="https://www.bportugal.pt/en/page/sector-tables">Sector Tables</a> have been recently revised (for details see Banco de Portugal, 2019 that replaced Banco de Portugal, 2014) and the formulas used to compute those variables may slightly differ from the ones currently made available by BPLIM.</p>
+<h3 id="f1.-identifiers">F1. Identifiers</h3>
+<p><code>Firm identifier</code> (<em>tina</em>) – Unique identifier that enables tracking the legal entity over time. <em>tina</em> is the anonymized tax identification number.</p>
+<p><code>Reference year of the data</code> (<em>ano</em>) – Reference year of the data.</p>
+<h3 id="f2.-variables-calculated-according-to-poc">F2. Variables calculated according to POC</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF06027</td>
+<td style="text-align: left;">Gross operating margin rate</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06028</td>
+<td style="text-align: left;">Days in receivables (number of days)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06032</td>
+<td style="text-align: left;">Days in accounts payable (number of days)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06036</td>
+<td style="text-align: left;">Inventories turnover (times)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06037</td>
+<td style="text-align: left;">Working capital turnover (times)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06038</td>
+<td style="text-align: left;">Growth rate of turnover</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06039</td>
+<td style="text-align: left;">Growth rate of gross value added (GVA)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06041</td>
+<td style="text-align: left;">Investment rate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06043</td>
+<td style="text-align: left;">Coverage rate of investment by self-financing</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06045</td>
+<td style="text-align: left;">Capital ratio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06050</td>
+<td style="text-align: left;">Coverage of fixed assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06052</td>
+<td style="text-align: left;">Coverage of medium and long term investment</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06054</td>
+<td style="text-align: left;">Debt to equity ratio</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06056</td>
+<td style="text-align: left;">Current ratio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06057</td>
+<td style="text-align: left;">Quick ratio</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06058</td>
+<td style="text-align: left;">Return on assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06060</td>
+<td style="text-align: left;">Asset turnover (times)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06062</td>
+<td style="text-align: left;">Return on sales</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06066</td>
+<td style="text-align: left;">Gross economic profitability</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06067</td>
+<td style="text-align: left;">Gross value added rate (GVA)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06071</td>
+<td style="text-align: left;">Return on equity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06079</td>
+<td style="text-align: left;">Compound leverage factor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06080</td>
+<td style="text-align: left;">Interest burden</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06082</td>
+<td style="text-align: left;">Leverage ratio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06083</td>
+<td style="text-align: left;">Extraordinary income factor</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06085</td>
+<td style="text-align: left;">Tax burden</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06087</td>
+<td style="text-align: left;">Income distribution - Employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06089</td>
+<td style="text-align: left;">Income distribution - Banks and other funders</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06091</td>
+<td style="text-align: left;">Income distribution - State</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06093</td>
+<td style="text-align: left;">Income distribution - Enterprise (self-financing)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06095</td>
+<td style="text-align: left;">Income distribution - Other</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06097</td>
+<td style="text-align: left;">Coefficient GVA / Property, plant and equipment (euros)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF06099</td>
+<td style="text-align: left;">Coefficient GVA / Employee costs (euros)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF06104</td>
+<td style="text-align: left;">Coefficient capital / Employee costs (euros)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="f3.-variables-calculated-according-to-snc">F3. Variables calculated according to SNC</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF16318</td>
+<td style="text-align: left;">Current ratio</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16319</td>
+<td style="text-align: left;">Quick ratio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16320</td>
+<td style="text-align: left;">Capital ratio - QS</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16323</td>
+<td style="text-align: left;">Assets to equity ratio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16324</td>
+<td style="text-align: left;">Solvency ratio - QS</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16326</td>
+<td style="text-align: left;">Non-current assets coverage ratio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16331</td>
+<td style="text-align: left;">Obtained funding over total liabilities</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16338</td>
+<td style="text-align: left;">Cost of obtained funding</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16340</td>
+<td style="text-align: left;">Financial Cost Effect</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16345</td>
+<td style="text-align: left;">Operating effect</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16346</td>
+<td style="text-align: left;">Other financial income effect</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16348</td>
+<td style="text-align: left;">Compound leverage factor - QS</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16350</td>
+<td style="text-align: left;">Tax burden</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16351</td>
+<td style="text-align: left;">Return on sales</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16353</td>
+<td style="text-align: left;">Return on assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16355</td>
+<td style="text-align: left;">GVA over output</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16357</td>
+<td style="text-align: left;">EBITDA over Turnover</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16358</td>
+<td style="text-align: left;">Degree of combined leverage</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16359</td>
+<td style="text-align: left;">Degree of operating leverage</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16360</td>
+<td style="text-align: left;">Degree of other financial income leverage</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16361</td>
+<td style="text-align: left;">Degree of financial leverage</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16362</td>
+<td style="text-align: left;">Days sales outstanding (days)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16363</td>
+<td style="text-align: left;">Days sales outstanding concerning non-residents (days)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16364</td>
+<td style="text-align: left;">Days payable outstanding (days)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16365</td>
+<td style="text-align: left;">Days payable outstanding concerning non-residents (days)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16366</td>
+<td style="text-align: left;">Days sales of inventory (days)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16367</td>
+<td style="text-align: left;">Asset turnover (times) - QS</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16369</td>
+<td style="text-align: left;">Net working capital requirements over turnover</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16370</td>
+<td style="text-align: left;">Coefficient GVA over fixed non-financial assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16371</td>
+<td style="text-align: left;">Coefficient GVA over employee costs</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16373</td>
+<td style="text-align: left;">Coefficient Fixed non-financial assets over employee expenses</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16374</td>
+<td style="text-align: left;">Suppliers - QS</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16375</td>
+<td style="text-align: left;">Employees - QS</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16376</td>
+<td style="text-align: left;">Banks and other sources of funding - QS</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16377</td>
+<td style="text-align: left;">State - QS</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16378</td>
+<td style="text-align: left;">Enterprise - self-financing - QS</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF16379</td>
+<td style="text-align: left;">Others - QS</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF16426</td>
+<td style="text-align: left;">Interest expenses / EBITDA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF17747</td>
+<td style="text-align: left;">Asset turnover ratio</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF17749</td>
+<td style="text-align: left;">Profit or loss of the year before taxes (EBT) / Equity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF17750</td>
+<td style="text-align: left;">Gross value added / Net turnover</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF17752</td>
+<td style="text-align: left;">Profit or loss of the year before taxes (EBT) / Net turnover</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF17753</td>
+<td style="text-align: left;">Equity / Total assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF17754</td>
+<td style="text-align: left;">Trade payables / Total assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF17755</td>
+<td style="text-align: left;">Total income / Net turnover</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF17756</td>
+<td style="text-align: left;">Total expenses / Net turnover</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF17757</td>
+<td style="text-align: left;">Financial fixed assets / Total assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF17758</td>
+<td style="text-align: left;">Trade receivables / Total assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF17759</td>
+<td style="text-align: left;">Other financial assets and cash and bank / Total assets</td>
+</tr>
+</tbody>
+</table>
+<h2 id="g.-cash-flows-file">G. Cash-Flows File</h2>
+<p>With the introduction of SNC, firms are required to report all cash (and equivalents) receipts and payments by type of activity: operating, investing and financing activities. Therefore, this file contains information from 2010 onwards. According to the filling instructions, the reporting of the cash-flow information is only required for firms reporting under two regimes: International Accounting Standards (<em>regime</em>=1) and Accounting and Financial Reporting Standards (<em>regime</em>=2). The missing values in Stata of all the variables in this file were coded as “.a” whenever the reporting is not mandatory for the accounting standards adopted by the firm.</p>
+<h3 id="g1.-identifiers">G1. Identifiers</h3>
+<p><code>Firm identifier</code> (<em>tina</em>) – Unique identifier that enables tracking the legal entity over time. <em>tina</em> is the anonymized tax identification number.</p>
+<p><code>Reference year of the data</code> (<em>ano</em>) – Reference year of the data.</p>
+<h3 id="g2.-variables-reported-according-to-snc">G2. Variables reported according to SNC</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF13265</td>
+<td style="text-align: left;">Operating Activities - Cash receipts from customers</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13266</td>
+<td style="text-align: left;">Operating Activities - Cash payments to suppliers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13267</td>
+<td style="text-align: left;">Operating Activities - Cash payments to employees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13268</td>
+<td style="text-align: left;">Operating Activities - Total cash generated from operating activities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13269</td>
+<td style="text-align: left;">Operating Activities - Cash payments/receipts from income tax</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13270</td>
+<td style="text-align: left;">Operating Activities - Other cash payments/receipts</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13271</td>
+<td style="text-align: left;">Operating Activities - Total cash-flows from operating activities</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13272</td>
+<td style="text-align: left;">Investing Activities - Cash payments relating to tangible fixed assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13273</td>
+<td style="text-align: left;">Investing Activities - Cash payments relating to intangible assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13274</td>
+<td style="text-align: left;">Investing Activities - Cash payments relating to financial fixed assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13275</td>
+<td style="text-align: left;">Investing Activities - Cash payments relating to other assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13276</td>
+<td style="text-align: left;">Investing Activities - Cash receipts from tangible fixed assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13277</td>
+<td style="text-align: left;">Investing Activities - Cash receipts from intangible assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13278</td>
+<td style="text-align: left;">Investing Activities - Cash receipts from financial fixed assets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13279</td>
+<td style="text-align: left;">Investing Activities - Cash receipts from other assets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13280</td>
+<td style="text-align: left;">Investing Activities - Cash receipts from investment subsidies</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13281</td>
+<td style="text-align: left;">Investing Activities - Cash receipts from interest income</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13282</td>
+<td style="text-align: left;">Investing Activities - Cash receipts from dividends</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13283</td>
+<td style="text-align: left;">Investing Activities - Total cash-flows from investing activities</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13284</td>
+<td style="text-align: left;">Financing Activities - Cash receipts from obtained funding</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13285</td>
+<td style="text-align: left;">Financing Activities - Cash receipts from paid-up capital and other equity instruments</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13286</td>
+<td style="text-align: left;">Financing Activities - Cash receipts from loss coverage</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13287</td>
+<td style="text-align: left;">Financing Activities - Cash receipts from donations</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13288</td>
+<td style="text-align: left;">Financing Activities - Cash receipts from other financial operations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13289</td>
+<td style="text-align: left;">Financing Activities - Cash payments relating to obtained funding</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13290</td>
+<td style="text-align: left;">Financing Activities - Cash payments relating to interest expenses</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13291</td>
+<td style="text-align: left;">Financing Activities - Cash payments relating to dividends</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13292</td>
+<td style="text-align: left;">Financing Activities - Cash payments relating to capital reduction and other equity instruments</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13293</td>
+<td style="text-align: left;">Financing Activities - Cash payments relating to other financing activities</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13294</td>
+<td style="text-align: left;">Financing Activities - Total cash-flows from financing activities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13295</td>
+<td style="text-align: left;">Total - Net increase in cash and cash equivalents</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13296</td>
+<td style="text-align: left;">Total - Effect of currency exchange differences</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF13297</td>
+<td style="text-align: left;">Total - Cash and cash equivalents at the beginning of the period</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF13298</td>
+<td style="text-align: left;">Total - Cash and cash equivalents at the end of the period</td>
+</tr>
+</tbody>
+</table>
+<h2 id="h.-information-by-sector-of-activity-file">H. Information by Sector of Activity File</h2>
+<p>This file contains information for each economic activity carried on by the firm. All economic activities should be considered, including the production and supply of goods and services and support activities such as accounting and administrative services. Values reported according to POC detail information by sector of activity and geographic market. The values reported for each activity have to sum up to the overall values reported by the firm.</p>
+<h3 id="h1.-identifiers">H1. Identifiers</h3>
+<p><code>Firm identifier</code> (<em>tina</em>) – Unique identifier that enables tracking the legal entity over time. <em>tina</em> is the anonymized tax identification number.</p>
+<p><code>Reference year of the data</code> (<em>ano</em>) – Reference year of the data.</p>
+<p><code>Number of order of the sector</code> (<em>numordem</em>) - Number of order identifying each sector of activity of the firm in that year.</p>
+<h3 id="h2.-sector-of-activity">H2. Sector of activity</h3>
+<p><code>Portuguese classification of economic activities</code> (<em>VF6105</em>) - categorical variable providing information on the economic activity. This variable is available when the firm reports information according to POC. It suffers a change in classification in 2008, when the Revision 2.1 of the Classification of Economic Activities is replaced by the Revision 3 of that classification.</p>
+<p><code>Portuguese classification of economic activities (Rev. 3)</code> (<em>VF53120</em>) - categorical variable providing information on the economic activity. This variable follows the Revision 3 of the Classification of Economic Activities. It is available since 2010, when firms report the information according to SNC.</p>
+<p>For a complete list of codes see the variables <em>cae2</em> and <em>cae3</em> in the auxiliary file <a href="./aux_files/variables_description/var_rosto.html">var_rosto.html</a>.</p>
+<h3 id="h3.-variables-reported-according-to-poc">H3. Variables reported according to POC</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF04106</td>
+<td style="text-align: left;">Internal Market - Total sales by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04107</td>
+<td style="text-align: left;">Internal Market - Total services by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04108</td>
+<td style="text-align: left;">Internal Market - Total purchases by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04109</td>
+<td style="text-align: left;">Internal Market - Total supplies and external services by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04110</td>
+<td style="text-align: left;">EU Market - Total sales by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04111</td>
+<td style="text-align: left;">EU Market - Total services by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04112</td>
+<td style="text-align: left;">EU Market - Total purchases by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04113</td>
+<td style="text-align: left;">EU Market - Total supplies and external services by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04114</td>
+<td style="text-align: left;">Extra-EU Market - Total sales by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04115</td>
+<td style="text-align: left;">Extra-EU Market - Total services by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04116</td>
+<td style="text-align: left;">Extra-EU Market - Total purchases by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04117</td>
+<td style="text-align: left;">Extra-EU Market - Total supplies and external services by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04118</td>
+<td style="text-align: left;">Total sales by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04119</td>
+<td style="text-align: left;">Total services by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04120</td>
+<td style="text-align: left;">Total purchases by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04121</td>
+<td style="text-align: left;">Total supplies and external services by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04124</td>
+<td style="text-align: left;">Total cost of goods sold and material consumed by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04122</td>
+<td style="text-align: left;">Cost of goods sold by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04123</td>
+<td style="text-align: left;">Cost of material consumed by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04125</td>
+<td style="text-align: left;">Variation in production by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04126</td>
+<td style="text-align: left;">Average number of employees by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04129</td>
+<td style="text-align: left;">Total employee costs by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF04127</td>
+<td style="text-align: left;">Employee costs - Salaries by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF04128</td>
+<td style="text-align: left;">Employee costs - Others by sector</td>
+</tr>
+</tbody>
+</table>
+<h3 id="h4.-variables-reported-according-to-snc">H4. Variables reported according to SNC</h3>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: left;">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">VF15571</td>
+<td style="text-align: left;">Total sales by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15572</td>
+<td style="text-align: left;">Sales - Goods by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15573</td>
+<td style="text-align: left;">Sales - Finished and intermediate products; Subproducts, wastes and scrap; Products and work in progress by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15574</td>
+<td style="text-align: left;">Sales - Biological assets by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15575</td>
+<td style="text-align: left;">Services by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15576</td>
+<td style="text-align: left;">Purchases by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15577</td>
+<td style="text-align: left;">Supplies and external services by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15578</td>
+<td style="text-align: left;">Total cost of goods sold and material consumed by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15579</td>
+<td style="text-align: left;">Cost of goods sold and material consumed - Goods by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15580</td>
+<td style="text-align: left;">Cost of goods sold and material consumed - Raw and subsidiary materials and consumables by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15581</td>
+<td style="text-align: left;">Cost of goods sold and material consumed - Biological assets (purchases) by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15582</td>
+<td style="text-align: left;">Variation in production by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15583</td>
+<td style="text-align: left;">Average number of employees by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15584</td>
+<td style="text-align: left;">Total employee expenses by sector</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VF15585</td>
+<td style="text-align: left;">Employee expenses - Salaries by sector</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VF15586</td>
+<td style="text-align: left;">Employee expenses - Others (including pensions) by sector</td>
+</tr>
+</tbody>
+</table>
+<h1 id="basic-descriptive-statistics">Basic Descriptive Statistics</h1>
+<p>Table 2- Number of firms over the data period (as of June 2021 extraction)</p>
+<pre class='stata'>──────────┬───────────
+Year of   │
+reference │    Freq.  
+──────────┼───────────
+     2006 │   344,417 
+     2007 │   359,638 
+     2008 │   369,909 
+     2009 │   369,928 
+     2010 │   370,692 
+     2011 │   379,575 
+     2012 │   380,911 
+     2013 │   386,118 
+     2014 │   391,405 
+     2015 │   403,788 
+     2016 │   411,041 
+     2017 │   425,013 
+     2018 │   441,148 
+     2019 │   451,581 
+──────────┴───────────
+</pre>
+<h1 id="legislation">Legislation</h1>
+<p>The most relevant legislation for IES that may have an impact on CB is presented below:</p>
+<ul>
+<li><strong>Decree-Law no. 8/2007</strong>, January 17 – this Decree-Law creates IES, which is a platform allowing firms to fulfill four different reporting duties: to send the Annual Declaration on Accounting and Tax Information to the Ministry of Finance, the Financial Statements to the Ministry of Justice and the obligation to provide statistical information to the National Statistics Institute and to <em>Banco de Portugal</em>;</li>
+</ul>
+<p><a href="./aux_files/legislation/Decreto-Lei_8-2007.pdf">Internal Link</a> / <a href="https://dre.pt/web/guest/pesquisa/-/search/522813/details/normal?l=1">External Link</a></p>
+<ul>
+<li><strong>Ordinance no. 208/2007</strong>, February 16 – this ordinance approves the form used by firms to report information on IES. The form is composed by a cover sheet and the following Annexes: A, A1, B, B1, C, C1, D, E, F, G, H, I, L, M, N, O, P, Q, R, S, T. These changes apply to the fiscal year of 2006 onwards;</li>
+</ul>
+<p><a href="./aux_files/legislation/Portaria_208_2007.pdf">Internal Link</a> / <a href="https://dre.pt/pesquisa/-/search/517868/details/maximized">External Link</a></p>
+<ul>
+<li><strong>Ordinance no. 499/2007</strong>, April 30 – establishes how firms are required to submit IES electronically. This Ordinance also clarifies that the Directorate General for Informatics and Assistance to Taxation and Custom Services (Ministry of Finance and Public Administration) is responsible to send the relevant information to the Institute of Registration and Notary Affairs (IRN) (Ministry of Justice). The latter is then required to send the data to the National Statistics Institute and <em>Banco de Portugal</em>;</li>
+</ul>
+<p><a href="./aux_files/legislation/Portaria_499-2007.pdf">Internal Link</a> / <a href="https://dre.pt/pesquisa/-/search/521203/details/maximized">External Link</a></p>
+<ul>
+<li><strong>Ordinance no. 562/2007</strong>, April 30 – regulates the submission of the financial statements using IES and establishes a submission fee of 85€ that needs to be paid within 5 working days;</li>
+</ul>
+<p><a href="./aux_files/legislation/Portaria_562-2007.pdf">Internal Link</a> / <a href="https://dre.pt/pesquisa/-/search/521224/details/maximized">External Link</a></p>
+<ul>
+<li><strong>Ordinance no. 8/2008</strong>, January 3 – approves a new form that firms are required to fill in to submit IES after January 1st 2008 independently of the fiscal year being reported. It changes the cover sheet and the following Annexes of IES: A, A1, B, C, C1, F, L, M, N, R, S, T. All other annexes remain unchanged;</li>
+</ul>
+<p><a href="./aux_files/legislation/Portaria_8-2008.pdf">Internal Link</a> / <a href="https://dre.pt/web/guest/pesquisa/-/search/386794/details/maximized">External Link</a></p>
+<ul>
+<li><strong>Ordinance no. 245/2008</strong>, March 27 – changes the Ordinance no. 499/2007 by establishing that those firms reporting the information using the International Accounting Standards or those with consolidated accounts are required to scan the documentation and send it electronically. This applies to the fiscal period of 2007 onwards;</li>
+</ul>
+<p><a href="./aux_files/legislation/Portaria_245_2008.pdf">Internal Link</a> / <a href="https://dre.pt/pesquisa/-/search/246371/details/maximized">External Link</a></p>
+<ul>
+<li><strong>Ordinance no. 64-A/2011</strong>, February 3 – to accommodate the changes on the accounting system, this ordinance approves new versions of the following Annexes of IES: A, B, C, D, F, G, I, L, M , R;</li>
+</ul>
+<p><a href="./aux_files/legislation/Portaria_64-A_2011.pdf">Internal Link</a> / <a href="https://dre.pt/pesquisa/-/search/666701/details/maximized">External Link</a></p>
+<ul>
+<li><strong>Ordinance no. 271/2014</strong>, December 23 – the cover sheet and Annexes A, B, C, D, I of IES are changed to accommodate the alterations to the legislation on the Corporate Income Tax and complement the statistical information;</li>
+</ul>
+<p><a href="./aux_files/legislation/Portaria_271_2014.pdf">Internal Link</a> / <a href="https://dre.pt/home/-/dre/65983202/details/maximized?p_auth=8AGl1gr6">External Link</a></p>
+<ul>
+<li><strong>Ordinance no. 370/2015</strong>, October 20 – revokes Ordinance no. 499/2007 and establishes that the Tax Authority (Ministry of Finance) is required to send the information collected through IES electronically to the Institute of Registration and Notary Affairs (IRN) (Ministry of Justice). Subsequently, the latter is responsible to send the information to <em>Banco de Portugal</em>, National Statistics Institute and Directorate-General for Economic Activities.</li>
+</ul>
+<p><a href="./aux_files/legislation/Portaria_370_2015.pdf">Internal Link</a> / <a href="https://dre.pt/home/-/dre/70748594/details/maximized?p_auth=q6uHsEL4">External Link</a></p>
+<p>Given that <em>Central de Balanços</em> provides financial information such as Balance Sheet and Profits and Losses Statement data, the legislation implementing changes to the accounting standards should also be briefly enumerated:</p>
+<ul>
+<li><strong>Decree-Law no. 158/2009</strong>, July 13 – revokes the Official Chart of Accounts (POC) and creates the Accounting Standards System (SNC).<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> Starting in the first fiscal period after January 1, 2010 firms are required to adopt the “Accounting and Financial Reporting Standards” or the “Accounting and Financial Reporting Standards for Small-Sized Entities” when reporting the financial statements. If the firm chooses to report according to the “Accounting and Financial Reporting Standards for Small-Sized Entities” then it is required to report a smaller number of variables. This option is available for firms satisfying at least two of the following conditions: i) total assets below 500.000 euros; ii) total net sales and other income lower than 1.000.000 euros or; iii) average number of employees less than 20;</li>
+</ul>
+<p><a href="./aux_files/legislation/Decreto-Lei_158_2009.pdf">Internal Link</a> / <a href="https://dre.pt/pesquisa/-/search/492428/details/maximized">External Link</a></p>
+<ul>
+<li><p><strong>Ordinance no. 986/2009</strong>, September 7 - approves the financial statements under the Accounting Standards System (SNC) (Balance Sheet, Profit and Loss Statement itemized and by activity, Statement of Changes in Equity and Cash Flows);</p>
+<p><a href="./aux_files/legislation/Portaria_986_2009.pdf">Internal Link</a> / <a href="https://dre.pt/pesquisa/-/search/489212/details/maximized">External Link</a></p></li>
+<li><p><strong>Law no. 20/2010</strong>, August 23 - changes the criteria to adopt the “Accounting and Financial Reporting Standards for Small-Sized Entities”. This regime is available for firms satisfying at least two of the following conditions: i) total assets below 1.500.000 euros; ii) Total net sales and other income lower than 3.000.000 euros or; iii) average number of employees less than 50;</p>
+<p><a href="./aux_files/legislation/Lei_20_2010.pdf">Internal Link</a> / <a href="https://dre.pt/pesquisa/-/search/343473/details/maximized">External Link</a></p></li>
+<li><p><strong>Law no. 35/2010</strong>, September 2 – introduces a new simplified reporting standard for Micro-Entities, the “Accounting and Financial Reporting Standards for Micro-Entities”. A micro-entity is defined as a firm that falls below in at least two of the following criteria at the balance sheet date: i) total assets equal to 500.000 euros; ii) net turnover equal to 500.000 euros; or iii) average number of employees equal to 5. If a firm does not comply for two consecutive fiscal periods with at least two of the criteria to be considered a Micro-Entity, it is no longer subject to a simplified reporting standard. Only after complying again with at least two of the criteria for two consecutive fiscal periods, the firm is entitled to report according to the “Accounting and Financial Reporting Standards for Micro-Entities”;</p>
+<p><a href="./aux_files/legislation/Lei_35_2010.pdf">Internal Link</a> / <a href="https://dre.pt/pesquisa/-/search/344271/details/normal?q=Lei+n%C2%BA35%2F2010%2C%20de+2+de+setembro">External Link</a></p></li>
+<li><p><strong>Decree-Law no. 36-A/2011</strong>, March 9 – approves the “Accounting and Financial Reporting Standards for Micro-Entities”. Micro-Entities are only required to report a modified version of the Balance Sheet, the Profits and Losses Statement and the respective Annexes. They are exempt to fill in, for example, the Cash-Flows Statement and Changes in Equity.</p></li>
+</ul>
+<p><a href="./aux_files/legislation/Decreto-Lei_36-A_2011.pdf">Internal Link</a> / <a href="https://dre.pt/pesquisa/-/search/647296/details/maximized">External Link</a></p>
+<h1 id="auxiliary-files">Auxiliary Files</h1>
+<p>For a description of each variable in each dataset (name, unit of measurement, data and storage type, format, year of first and last observation), an account of the changes occurred over time, summary statistics for each dataset and a codebook for each dataset please check the following auxiliary files<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">File</th>
+<th style="text-align: center;">Description of Variables</th>
+<th style="text-align: center;">Summary Statistics</th>
+<th style="text-align: center;">Codebook</th>
+<th style="text-align: center;">Dataset Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Summary of all variables (Portuguese and English labels)</td>
+<td style="text-align: center;"><a href="./aux_files/variables_description/variables_pt_en.html">variables_pt_en</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">General Information File</td>
+<td style="text-align: center;"><a href="./aux_files/variables_description/var_rosto.html">var_rosto</a></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_Rosto.html">stat_Rosto</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_Rosto.html">cdbk_Rosto</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_Rosto.html">dscr_Rosto</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Economic and Financial Information File</td>
+<td style="text-align: center;"><a href="./aux_files/variables_description/var_contas.html">var_contas</a></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_Contas.html">stat_Contas</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_Contas.html">cdbk_Contas</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_Contas.html">dscr_Contas</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Employment Information File</td>
+<td style="text-align: center;"><a href="./aux_files/variables_description/var_emprego.html">var_emprego</a></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_Pessoal.html">stat_Pessoal</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_Pessoal.html">cdbk_Pessoal</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_Pessoal.html">dscr_Pessoal</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Trade Information per Market File</td>
+<td style="text-align: center;"><a href="./aux_files/variables_description/var_mg.html">var_mg</a></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_MG.html">stat_MG</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_MG.html">cdbk_MG</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_MG.html">dscr_MG</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Corporate Actions File</td>
+<td style="text-align: center;"><a href="./aux_files/variables_description/var_AMARC.html">var_amarc</a></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_AMARC.html">stat_amarc</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_AMARC.html">cdbk_amarc</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_AMARC.html">dscr_amarc</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Economic and Financial Indicators File</td>
+<td style="text-align: center;"><a href="./aux_files/variables_description/var_indicadores.html">var_indicadores</a></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_Indic.html">stat_Indic</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_Indic.html">cdbk_Indic</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_Indic.html">dscr_Indic</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cash Flows File</td>
+<td style="text-align: center;"><a href="./aux_files/variables_description/var_cashflow.html">var_cashflow</a></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_FluxosCaixa.html">stat_FluxosCaixa</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_FluxosCaixa.html">cdbk_FluxosCaixa</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_FluxosCaixa.html">dscr_FluxosCaixa</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Information by Sector of Activity File</td>
+<td style="text-align: center;"><a href="./aux_files/variables_description/var_bycae.html">var_bycae</a></td>
+<td style="text-align: center;"><a href="./aux_files/descriptive_statistics/stat_byCAE.html">stat_byCAE</a></td>
+<td style="text-align: center;"><a href="./aux_files/codebook/cdbk_byCAE.html">cdbk_byCAE</a></td>
+<td style="text-align: center;"><a href="./aux_files/describe_dataset/dscr_byCAE.html">dscr_byCAE</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="useful-links">Useful Links</h1>
+<p><a href="https://www.bportugal.pt/en/page/sector-tables">Sector Tables (Quadros de Setor)</a></p>
+<p><a href="https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/decl_anual_inf_contabilistica_fiscal/Pages/IES_DA_grupo.aspx">Informação Empresarial Simplificada (IES)</a></p>
+<p><a href="https://www.bportugal.pt/publications/banco-de-portugal/all/124">Central Balance Sheet Studies</a></p>
+<p><a href="https://www.bportugal.pt/en/publications/banco-de-portugal/all/123">Statistical Bulletin</a></p>
+<h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+<p>The most frequently asked questions can be found <a href="./aux_files/faq/faq.html">here</a>. If you have a question that is not covered in this manual, please send an email to bplim@bportugal.pt.</p>
+<h1 id="citation-of-this-dataset">Citation of this dataset</h1>
+<p>Banco de Portugal Microdata Research Laboratory (BPLIM) (2021): Central Balance Sheet Annual Data. Extraction: June 2021. Version: V1. BANCO DE PORTUGAL. Dataset. https://doi.org/10.17900/CB.CBA.Jun2021.V1</p>
+<h2 id="references">References</h2>
+<p>Banco de Portugal (2009). Estatísticas das Sociedades Não Financeiras da Central de Balanços- Documento Metodológico. Departamento de Estatística.</p>
+<p>Banco de Portugal (2014). Quadros do Setor e Quadros da Empresa e do Setor- Notas Metodológicas Série Longa 1995-2013. Estudos da Central de Balanços. Lisboa.</p>
+<p>Banco de Portugal (2015). Central de Balanços. Cadernos do Banco de Portugal. Lisboa</p>
+<p>Oliveira, Mariana (2016). Bases de Microdados com Informação Económico-Financeira da IES (Informação Empresarial Simplificada). Tese de Mestrado. Faculdade de Economia da Universidade do Porto. Porto.</p>
+<p>Banco de Portugal (2019). Quadros do setor e quadros da empresa e do setor. Estudos da Central de Balanços. Lisboa.</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>From 1991 to 2004 the source of CB was a survey conducted by <em>Banco de Portugal</em>, covering approximately 5% of firms. For 2005 there is data available from IES but with some limitations. These datasets are also available at BPLIM. For more information contact bplim@bportugal.pt.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>The data for firms with fiscal period different from the civil year or firms with a significant delay in the delivery of IES are not yet included in the most recent year available.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>For 'Corporate Actions' and 'Information by Sector of Activity' data files, there may be multiple firm entries per year since the firm may report more than one event or Economic Activity for the same reference year, respectively.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>For more information, see the Section “Methodology”.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>To see the labels in English type the following command line in Stata: ‘label language en’.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>When the main activity of the group of corporations (measured at the value added) is the production of non-financial goods and services.<a href="#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>According to Decree-Law no. 8/2007, the reporting of financial statements is mandatory for Commercial Companies, Civil Companies under a commercial form, European Public Limited Liability Companies, Public Companies, Foreign Companies with permanent representation in Portugal and Individual Limited Liability Establishments.<a href="#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>According to the changes introduced by Decree-Law no. 292/2009.<a href="#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>This cost was equal to 85€ for fiscal periods up to 2011 and 80€ for fiscal periods after 2012.<a href="#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p>According to Ordinance no. 370/2015.<a href="#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p>Autoridade Tributária e Aduaneira.<a href="#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn12"><p>Instituto dos Registos e do Notariado.<a href="#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p>Instituto Nacional de Estatística.<a href="#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p>Direção Geral das Atividades Económicas.<a href="#fnref14" class="footnote-back">↩</a></p></li>
+<li id="fn15"><p>Inquérito Trimestral às Empresas Não Financeiras which is conducted jointly with INE.<a href="#fnref15" class="footnote-back">↩</a></p></li>
+<li id="fn16"><p>Central Responsabilidades de Crédito.<a href="#fnref16" class="footnote-back">↩</a></p></li>
+<li id="fn17"><p>Comunicação de Operações e Posições com o Exterior.<a href="#fnref17" class="footnote-back">↩</a></p></li>
+<li id="fn18"><p>Sistema Integrado de Estatísticas de Títulos.<a href="#fnref18" class="footnote-back">↩</a></p></li>
+<li id="fn19"><p>In 2010 some declarations were reported according to POC. This situation occurs mostly for declarations sent in the cessation period and before or after the firms adopts a special fiscal period - a fiscal period different from the calendar year.<a href="#fnref19" class="footnote-back">↩</a></p></li>
+<li id="fn20"><p>For a more detailed comparison of SNC versus POC see <a href="https://www.occ.pt/pt/a-ordem/publicacoes/poc-versus-snc">POCvsSNC</a><a href="#fnref20" class="footnote-back">↩</a></p></li>
+<li id="fn21"><p>See Decree-Law no. 158/2009 and Law no. 35/2010 for example.<a href="#fnref21" class="footnote-back">↩</a></p></li>
+<li id="fn22"><p>For a brief description of the eligibility criteria for the accounting regimes see the Section “Legislation”, Decree-Law no. 158/2009, Law no. 20/2010, Law no. 35/2010 and Decree-Law no. 36-A/2011.<a href="#fnref22" class="footnote-back">↩</a></p></li>
+<li id="fn23"><p><em>Ficheiro Central de Pessoas Colectivas</em>.<a href="#fnref23" class="footnote-back">↩</a></p></li>
+<li id="fn24"><p>All establishments, including those in which no productive activity is carried on are included.<a href="#fnref24" class="footnote-back">↩</a></p></li>
+<li id="fn25"><p>Establishment is defined as an enterprise or part of an enterprise that carries on economic activities in a geographically identified place, with one or more workers.<a href="#fnref25" class="footnote-back">↩</a></p></li>
+<li id="fn26"><p>Missing values in the referred variables are treated as zeros.<a href="#fnref26" class="footnote-back">↩</a></p></li>
+<li id="fn27"><p>Note that the firms belonging to a business group are not being excluded from the definition of microenterprises in the variable <em>dimcomissao</em>.<a href="#fnref27" class="footnote-back">↩</a></p></li>
+<li id="fn28"><p>For more information on firm’s sector of activity please see <a href="http://www.sicae.pt/Default.aspx">SICAE Website</a>.<a href="#fnref28" class="footnote-back">↩</a></p></li>
+<li id="fn29"><p>In POC, firms are required to report the gross value and the amortization and adjustment of the assets. Therefore, this column states whether each variable is reported in net or gross terms and identify the variables that do not have amortization or adjustments to be deducted and, therefore, are equivalent in net and gross terms (net/gross).<a href="#fnref29" class="footnote-back">↩</a></p></li>
+<li id="fn30"><p>IES survey states that the hours worked include the time spent in the preparation of work tools and instruments and paid hours not effectively worked due to occasional absence, machinery stop, accident, coffee breaks.<a href="#fnref30" class="footnote-back">↩</a></p></li>
+<li id="fn31"><p>Note that the EU Market includes 24 countries in 2006 (25 European Union members with the exception of Portugal), 26 countries in 2007 and 27 countries since 2013.<a href="#fnref31" class="footnote-back">↩</a></p></li>
+<li id="fn32"><p>Please note that the variable Number of Paid and Unpaid Employees is only reported in IES from 2006 onwards. Therefore, it is not possible to assess the effects of the corporate actions reported in 2006 on employment information (<em>efeitopessoal</em>). For this reason, the variable <em>efeitocontas</em> may also be understated in 2006.<a href="#fnref32" class="footnote-back">↩</a></p></li>
+<li id="fn33"><p>The Accounting Standards System is not mandatory for individuals carrying on a commercial, industrial or agricultural activity with a three-year average turnover of less than 150.000 euros.<a href="#fnref33" class="footnote-back">↩</a></p></li>
+<li id="fn34"><p>The Summary Statistics, Codebook and Dataset Description files are available on BPLIM’s servers.<a href="#fnref34" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+</body>
+</html>
