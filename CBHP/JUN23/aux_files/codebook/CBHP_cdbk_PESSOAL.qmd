@@ -1,0 +1,42 @@
+---
+title: Central Balance Sheet Harmonized Panel Data - Codebook
+subtitle: Extraction Date - June 2023
+date: 11 July 2023
+doi: 10.17900/CB.CBHP.Jun2023.V1
+pdf-engine: pdflatex
+execute:
+  echo: false
+format:
+  html:
+    theme: default
+jupyter:
+  kernelspec:
+    display_name: Stata
+    language: stata
+    name: stata
+---
+
+# Employment Information File
+
+```{stata}
+*| output: false
+*| echo: false
+set linesize 255
+local extraction="JUN23"
+local ref="2023_06"
+local startyr="2006"
+local finyear="2021"
+local version="V01"
+local file1="YFRM"
+local class="PESSOAL"
+```
+
+```{stata}
+*| output: true
+*| echo: false
+quietly use  "S:/data/Products/CB/`ref'/CB_Panel/Output/Data/Firms/CBHP_I_`file1'_`startyr'`finyear'_`extraction'_`class'_`version'.dta", clear
+quietly drop nipc*
+label language en
+codebook, all mv
+```
+
