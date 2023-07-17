@@ -1,6 +1,5 @@
 # BPLIM Manuals
 
-This folder contains the markdown versions of manuals created by BPLIM.
+This folder contains the markdown versions of manuals and auxiliary documents created by BPLIM, organized by data product.
 
-The folder is used for versioning purposes, but in each folder we provide a batch file that allows for the creation of an *html* version of the manuals. In order to do this you will need to install <a href="https://pandoc.org/installing.html">pandoc</a>. 
-Please note that all batch files assume that you preserve the same folder structure as in Github. Also keep in mind that some of the manuals for datasets may ommit descriptive statistics. In that case we only report the Stata commands, but not the output of the analysis. The full version of the Manuals is available in the BPLIM Servers.
+The folder is used for versioning purposes, and in the case of auxiliary documentation (summary statistics, codebook, and dataset description files) we only report the Stata commands, not the output of the analysis. The full version of the Manuals is available in the BPLIM Servers.
