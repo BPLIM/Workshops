@@ -189,7 +189,7 @@ All files contain a unique firm identifier (*tina*) allowing the matching of the
 
 # Description of Variables
 
-Below we provide a general description of the variables included in each of the eight files referred above. For a full account of all variable categories and changes over time see [“Auxiliary Files” section](#auxiliary-files).
+Below we provide a general description of the variables included in each of the eight files referred above. The metadata files and more detailed information about each variable is available in the [“Auxiliary Files” section](#auxiliary-files).
 When applicable, we distinguish between variables reported according to the former Accounting System (POC) and the one introduced in 2010 (SNC).
 
 ## A. General Information File (Cover Sheet)
@@ -258,7 +258,7 @@ The information contained in this file has three different sources: variables re
 
 `Share of turnover of the main economic activity` (*pervvn*) – indicates the proportion of turnover that the main economic activity represents among all the activities carried on by the firm.
 
-`District` (*distrito*) – provides information on the district in which the firm is located. The classification of this variable is according to *DICOFRE* and differs from the [Code of the administrative division](http://smi.ine.pt/Versao/Detalhes/17) for Autonomous Regions. For a complete list of codes see the auxiliary file [var_rosto.html](./aux_files/variables_description/var_rosto.html).
+`District` (*distrito*) – provides information on the district in which the firm is located. The classification of this variable is according to *DICOFRE* and differs from the [Code of the administrative division](http://smi.ine.pt/Versao/Detalhes/17) for Autonomous Regions. For a complete list of codes see the metadata file [CB_meta_YFRM_JUN23_ROSTO_V01](./aux_files/metafiles/CB_meta_YFRM_JUN23_ROSTO_V01.xlsx).
 
 `Branch` (*sucursal*) - dummy variable that takes value one for branches of foreign firms located in Portugal. Branch offices are identified using the information contained in the name as reported by the firm in IES and the tax identification number of the company. Notably, the legislation states that the name of these companies includes expressions such as "Sucursal" or "Representação Permanente" (see, for example, [Article 21 of Ordinance n. 1416-A/2006](https://dre.pt/pesquisa/-/search/235919/details/maximized) or [Article 5 of Decree-Law n. 73/2008](https://dre.pt/pesquisa/-/search/249803/details/maximized)) and the firms are assigned with tax identification numbers started by "98".
 
@@ -345,11 +345,11 @@ Source: [European Commission](http://ec.europa.eu/growth/smes/business-friendly-
 
 ### A4. Variables extracted from Central Registry of Companies (Ministry of Justice)
 
-`Legal form` (*natju*) – this variable reports firm’s legal form. For a complete list of codes see the auxiliary file [var_rosto.html](./aux_files/variables_description/var_rosto.html).
+`Legal form` (*natju*) – this variable reports firm’s legal form. For a complete list of codes see the metadata file [CB_meta_YFRM_JUN23_ROSTO_V01](./aux_files/metafiles/CB_meta_YFRM_JUN23_ROSTO_V01.xlsx).
 
 `Sector of Activity` (*cae21*, *cae3*, *caekotu*):
 
-`Main Sector of Activity` (*cae21* and *cae3*) - reports firm's main sector of activity. The criteria to define the main sector of activity is the gross value added at factor cost. When it is not possible to use this information to define the main sector of activity, firms are requested to use turnover or the number of people permanently employed by the firm. From 2006 to 2008, firms reported the code of “The Portuguese Classification of Economic Activities - Revision 2.1” (CAE Rev. 2.1) at the highest level of disaggregation. Since 2008, firms report their main activity according to the “The Portuguese Classification of Economic Activities - Revision 3” (CAE Rev. 3). The Statistics Department of *Banco de Portugal* provides the information on the main sector of activity according to both classifications CAE Rev. 2.1 and CAE Rev. 3 whenever possible. The source of this information is the CAE registered in the “Central Registry of Companies” for each company. Whenever the correspondence is not unique, the match between codes CAE Rev. 2.1 and CAE Rev. 3 is implemented based on the highest frequency of the matches.[^26] For a complete list of codes see the auxiliary file [var_rosto.html](./aux_files/variables_description/var_rosto.html).
+`Main Sector of Activity` (*cae21* and *cae3*) - reports firm's main sector of activity. The criteria to define the main sector of activity is the gross value added at factor cost. When it is not possible to use this information to define the main sector of activity, firms are requested to use turnover or the number of people permanently employed by the firm. From 2006 to 2008, firms reported the code of “The Portuguese Classification of Economic Activities - Revision 2.1” (CAE Rev. 2.1) at the highest level of disaggregation. Since 2008, firms report their main activity according to the “The Portuguese Classification of Economic Activities - Revision 3” (CAE Rev. 3). The Statistics Department of *Banco de Portugal* provides the information on the main sector of activity according to both classifications CAE Rev. 2.1 and CAE Rev. 3 whenever possible. The source of this information is the CAE registered in the “Central Registry of Companies” for each company. Whenever the correspondence is not unique, the match between codes CAE Rev. 2.1 and CAE Rev. 3 is implemented based on the highest frequency of the matches.[^26] For a complete list of codes see the metadata file [CB_meta_YFRM_JUN23_ROSTO_V01](./aux_files/metafiles/CB_meta_YFRM_JUN23_ROSTO_V01.xlsx).
 
 
 `CAE sections K, O, T or U` (*caekotu*) - this variable was created by BPLIM using the information in *cae3* (Classification of Economic Activity Rev. 3). It takes value one if the main economic activity of the firm is within one of the following sections of economic activity:
@@ -1029,7 +1029,7 @@ This file contains information for each economic activity carried on by the firm
 
 `Portuguese classification of economic activities (Rev. 3)` (*VF53120*) - categorical variable providing information on the economic activity. This variable follows the Revision 3 of the Classification of Economic Activities. It is available since 2010, when firms report the information according to SNC.
 
-For a complete list of codes see the variables *cae21* and *cae3* in the auxiliary file [var_rosto.html](./aux_files/variables_description/var_rosto.html).
+For a complete list of codes see the variables *cae21* and *cae3* in the metadata file [CB_meta_YFRM_JUN23_ROSTO_V01](./aux_files/metafiles/CB_meta_YFRM_JUN23_ROSTO_V01.xlsx).
 
 ### H3. Variables reported according to POC
 
