@@ -43,7 +43,6 @@
 | cae3 | Portuguese classification of economic activities- Revision 3 | code | 2006 | 2020 | no |
 | cae21 | Portuguese classification of economic activities- Revision 2.1 | code | 2006 | 2020 | no |
 | caekotu | CAE sections K, O, T or U | dummy | 2006 | 2020 | no |
-| activ_rel | Firm without signs of relevant activity | dummy | 2006 | 2020 | no |
 
 
 
