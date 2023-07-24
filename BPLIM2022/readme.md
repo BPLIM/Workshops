@@ -51,7 +51,7 @@ Recordings of all sessions can be found on [Youtube](https://www.youtube.com/wat
 
 [Miguel Portela](http://www1.eeg.uminho.pt/economia/mangelo/), Universidade do Minho
 
-[Nelson Area](https://nelsonareal.net/), Universidade do Minho
+[Nelson Areal](https://nelsonareal.net/), Universidade do Minho
 
 - [Slides](https://nareal.net/bplim2022) 
 - Singularity container: `singularity pull library://reisportela/bplim/workshop2022` <br/><br/>
