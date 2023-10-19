@@ -1,7 +1,7 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
 author: "[BPLIM](https://bplim.bportugal.pt/): External Server Manual"
-date: "September 21, 2023"
+date: "October, 2023"
 output:
   pdf_document:
     template: bplim-template.tex
@@ -1367,7 +1367,7 @@ Explore [Jupyter lab](https://jupyter.org/):
 
 Start Jupyter Lab by typing:
 
-  > `jupyter lab`
+  > `jupyter lab --browser=firefox`
 
 Sample session:
 
