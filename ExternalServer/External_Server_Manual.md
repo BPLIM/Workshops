@@ -1,7 +1,7 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
 author: "[BPLIM](https://bplim.bportugal.pt/): External Server Manual"
-date: "October, 2023"
+date: "November, 2023"
 output:
   pdf_document:
     template: bplim-template.tex
@@ -13,19 +13,12 @@ papersize: a4
 fontsize: 11pt
 header-includes:
   \usepackage[paperwidth=210mm,paperheight=297mm,left=27mm,right=27mm,top=25mm,bottom=25mm]{geometry}
-  \usepackage{hyperref}
-  \hypersetup{colorlinks=true}
-  \hypersetup{citecolor=black}
-  \hypersetup{linkcolor=blue!75!black}
-  \hypersetup{urlcolor=blue!75!black}
-  \hypersetup{filecolor=blue!75!black}
-  \hypersetup{citecolor=black}
+  \usepackage[colorlinks=true,linkcolor=blue!75!black]{hyperref}
   \usepackage{float}
   \usepackage{dcolumn}
   \usepackage{color}
   \usepackage{pdfpages}
   \usepackage{setspace}
-  \doublespacing
 mainfont: Times New Roman
 sansfont: Times New Roman
 documentclass: article
@@ -1249,11 +1242,28 @@ and type:
 
 > Use your credentials for the external server to login. 
 
-5.	In your profile go to settings and on the left-side bar click in SSH Keys and paste the contents of the clipboard in the text box on the top right corner under "Key"
+5.	In your profile go to settings
+
+    ![](./media/GitLab2.png){width="2in"}
+
+and on the left-side bar click in SSH Keys
+
+![](./media/GitLab3.png){width="2in"}
+
+and paste the contents of the clipboard in the text box on the top right corner under "Key"
+
+![](./media/GitLab4.png){width="2in"}
+
 
 > Give a title, e.g., "BPLIM git", and click in "Add key"
 
-6. Go to `Projects` and create a `New project`, e.g., myfirst
+6. Go to `Projects`
+
+    ![](./media/GitLab5.png){width="2in"}
+
+and create a `New project`, e.g., `scripts_your_project_ID_number`, `scripts_P999`
+
+![](./media/GitLab6.png){width="2in"}
 
 To use git, it is necessary to modify or create the .gitconfig file in your user's home directory. You can use KWrite to edit/create the file. The file should have the following format. In this file, you can adapt the name and replace 'investa' with your own user.
 
@@ -1270,9 +1280,28 @@ To use git, it is necessary to modify or create the .gitconfig file in your user
   
           editor = kwrite
 
-7. You can clone the project by typing in the `Terminal`
+7. You can clone the project by opening a `Terminal` and moving to your work_area:
 
-`git clone git@vxpp-bplimgit.bplim.local:investa/myfirst.git`
+`cd /bplimext/projects/your_project_ID/work_area/`
+
+and typing
+
+`git clone git@vxpp-bplimgit.bplim.local:investa/scripts_P999.git`
+
+8. Add the file `.gitignore` available in folder `tools` of your project:
+
+`cd scripts_P999`
+
+`cp /bplimext/projects/your_project_ID/tools/.gitignore .`
+
+9. Do your first commit & push
+
+`git add *`
+
+`git commit -a -m "First"`
+
+`git push`
+
 
 <!--- 1. move to a specific folder; _e.g._, `cd /bplimext/projects/your_project_ID/work_area/`
 2. create a .gitignore file (check [toptal](https://www.toptal.com/developers/gitignore) for some examples)
