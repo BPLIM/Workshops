@@ -13,12 +13,8 @@ papersize: a4
 fontsize: 11pt
 header-includes:
   \usepackage[paperwidth=210mm,paperheight=297mm,left=27mm,right=27mm,top=25mm,bottom=25mm]{geometry}
-  \usepackage[colorlinks=true,linkcolor=blue!75!black]{hyperref}
-  \usepackage{float}
-  \usepackage{dcolumn}
-  \usepackage{color}
-  \usepackage{pdfpages}
-  \usepackage{setspace}
+  \usepackage[colorlinks=true]{hyperref}
+  \usepackage[doublespacing]{setspace}
 mainfont: Times New Roman
 sansfont: Times New Roman
 documentclass: article
@@ -1216,7 +1212,10 @@ Configuring browser access
 
 ## Version control
 
-The server runs [GitLab](https://about.gitlab.com/). In case you want to use Git you should request it from BPLIM (bplim@bportugal.pt).
+The server runs [GitLab](https://about.gitlab.com/). If you need to use Git for your projects, please send your request to BPLIM (bplim@bportugal.pt).
+
+
+In case you want to use Git you should request it from BPLIM (bplim@bportugal.pt).
   
   > [Wikipedia](https://en.wikipedia.org/wiki/Git):
   > 
@@ -1224,84 +1223,92 @@ The server runs [GitLab](https://about.gitlab.com/). In case you want to use Git
 
 First steps
 
-1.	Authenticate by `ssh-key`. Open a `Terminal` in your home folder
+1.	First, authenticate using an `ssh-key`. Open a **Terminal** in your home folder
 
-    `cd ~`
+  ```
+    cd ~
+  ```
 
 and type:
 
-    `ssh-keygen -t rsa -C “BPLIM git”`
+  ```
+    ssh-keygen -t rsa -C "BPLIM git"
+    cat ~/.ssh/id_rsa.pub
+  ```
 
-    `cat ~/.ssh/id_rsa.pub`
+2. Second, after generating your SSH key, you'll need to select the text of the key in your terminal. You can usually do this by clicking and dragging your mouse over the key text. Once the key is highlighted, right-click on the selection and choose 'Copy' to copy the resulting key to your clipboard.
 
-3.	Select and Copy the resulting key to the clipboard
-
-4.	Open Firefox and navigate to [https://vxpp-bplimgit.bplim.local/](https://vxpp-bplimgit.bplim.local/)
+3. Third, open **Firefox** (go to the RedHat icon and type Firefox in the search box) and navigate to [https://vxpp-bplimgit.bplim.local/](https://vxpp-bplimgit.bplim.local/)
 
   ![](./media/GitLab.png){width="3in"}
 
-> Use your credentials for the external server to login. 
+Once you've navigated to the website, use your credentials for the external server to log in.
 
-5.	In your profile go to settings
+4. Once logged in, navigate to your profile. In the upper-right corner of the webpage, you will find the **Settings** option.
 
     ![](./media/GitLab2.png){width="2in"}
 
-and on the left-side bar click in SSH Keys
+Now, on the left-side bar, click in **SSH Keys**
 
 ![](./media/GitLab3.png){width="2in"}
 
-and paste the contents of the clipboard in the text box on the top right corner under "Key"
+and paste the contents of the clipboard in the text box on the top right corner under **Key**.
 
 ![](./media/GitLab4.png){width="2in"}
 
 
-> Give a title, e.g., "BPLIM git", and click in "Add key"
+Give a title, e.g., "BPLIM git", and click in **Add key**.
 
-6. Go to `Projects`
+5. Go to **Projects**
 
     ![](./media/GitLab5.png){width="2in"}
 
-and create a `New project`, e.g., `scripts_your_project_ID_number`, `scripts_P999`
+and create a **New project**, e.g., `scripts_P999`, where P999 is your_project_ID_number
 
 ![](./media/GitLab6.png){width="2in"}
 
-To use git, it is necessary to modify or create the .gitconfig file in your user's home directory. You can use KWrite to edit/create the file. The file should have the following format. In this file, you can adapt the name and replace 'investa' with your own user.
+To use git, it is necessary to modify or create the .gitconfig file in your user's home directory. You can use **KWrite** (click in the RedHat icon and search for KWrite) to edit/create the file. The file should have the following format. In this file, you can adapt the name and replace 'investa' with your own user.
 
-
+```
   [cola]
-
           spellcheck = false  
   [user]
-
           name = Investigador A
-
           email = investa@sxpe-bplim01.bplim.local
   [gui]
-  
           editor = kwrite
+```
 
-7. You can clone the project by opening a `Terminal` and moving to your work_area:
+6. You can clone the project by opening a **Terminal** and moving to your work_area:
 
-`cd /bplimext/projects/your_project_ID/work_area/`
+```
+  cd /bplimext/projects/your_project_ID/work_area/
+```
 
 and typing
 
-`git clone git@vxpp-bplimgit.bplim.local:investa/scripts_P999.git`
+```
+  git clone git@vxpp-bplimgit.bplim.local:investa/scripts_P999.git
+```
 
-8. Add the file `.gitignore` available in folder `tools` of your project:
+7. Add the file `.gitignore` available in folder `tools` of your project:
 
-`cd scripts_P999`
+```
+  cd scripts_P999
+  cp /bplimext/projects/your_project_ID/tools/.gitignore .
+```
 
-`cp /bplimext/projects/your_project_ID/tools/.gitignore .`
+8. Do your first commit & push
 
-9. Do your first commit & push
+```
+  git add *
 
-`git add *`
+  git commit -a -m "First"
 
-`git commit -a -m "First"`
+  git push
+```
 
-`git push`
-
+10. **To use the version control system effectively, please place all your scripts and code files in the folder named 'scripts_P999'. This organization is important for maintaining a structured and efficient workflow with the version control system.**
 
 <!--- 1. move to a specific folder; _e.g._, `cd /bplimext/projects/your_project_ID/work_area/`
 2. create a .gitignore file (check [toptal](https://www.toptal.com/developers/gitignore) for some examples)
