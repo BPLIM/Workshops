@@ -1246,15 +1246,15 @@ Once you've navigated to the website, use your credentials for the external serv
 
 4. Once logged in, navigate to your profile. In the upper-right corner of the webpage, you will find the **Settings** option.
 
-    ![](./media/GitLab2.png){width="2in"}
+    ![](./media/GitLab2.png){width="1in"}
 
 Now, on the left-side bar, click in **SSH Keys**
 
-![](./media/GitLab3.png){width="2in"}
+![](./media/GitLab3.png){width="1in"}
 
 and paste the contents of the clipboard in the text box on the top right corner under **Key**.
 
-![](./media/GitLab4.png){width="2in"}
+![](./media/GitLab4.png){width="3in"}
 
 
 Give a title, e.g., "BPLIM git", and click in **Add key**.
@@ -1265,7 +1265,7 @@ Give a title, e.g., "BPLIM git", and click in **Add key**.
 
 and create a **New project**, e.g., `scripts_P999`, where P999 is your_project_ID_number
 
-![](./media/GitLab6.png){width="2in"}
+![](./media/GitLab6.png){width="1in"}
 
 To use git, it is necessary to modify or create the .gitconfig file in your user's home directory. You can use **KWrite** (click in the RedHat icon and search for KWrite) to edit/create the file. The file should have the following format. In this file, you can adapt the name and replace 'investa' with your own user.
 
