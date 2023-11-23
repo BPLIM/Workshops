@@ -1231,15 +1231,21 @@ The server runs [GitLab](https://about.gitlab.com/). In case you want to use Git
 
 First steps
 
-1.	Authenticate by `ssh-key`. Open a `Terminal` in your home folder and type:
+1.	Authenticate by `ssh-key`. Open a `Terminal` in your home folder
+
+    `cd ~`
+
+and type:
 
     `ssh-keygen -t rsa -C “BPLIM git”`
 
     `cat ~/.ssh/id_rsa.pub`
 
-3.	Copy the resulting key to the clipboard
+3.	Select and Copy the resulting key to the clipboard
 
 4.	Open Firefox and navigate to [https://vxpp-bplimgit.bplim.local/](https://vxpp-bplimgit.bplim.local/)
+
+  ![](./media/GitLab.png){width="3in"}
 
 > Use your credentials for the external server to login. 
 
