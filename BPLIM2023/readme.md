@@ -51,7 +51,7 @@ Recordings of all sessions can be found on [Youtube]().
 
 [Aaron Peikert](https://www.mpib-berlin.mpg.de/person/103737), Max Planck Institute for Human Development
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2023/) <br/><br/>
+- [Slides](https://aaronpeikert.github.io/repro-talk/) <br/><br/>
 
 
 **Friends don’t let friends copy-paste: Computationally reproducible APA-style manuscripts with the R package papaja**
