@@ -86,6 +86,10 @@ Recordings of all sessions can be found on [Youtube]().
 
 - https://github.com/BPLIM/ReplicationApp
 
+- https://github.com/crsh/papaja/
+
+- https://frederikaust.com/papaja-workshop/
+
 
 
 
