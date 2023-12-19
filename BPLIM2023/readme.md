@@ -56,7 +56,7 @@ Recordings of all sessions can be found on [Youtube]().
 
 **Friends don’t let friends copy-paste: Computationally reproducible APA-style manuscripts with the R package papaja**
 
-[Frederik Aust](https://frederikaust.com/), University of Cologne
+[Frederik Aust](https://methexp.uni-koeln.de/en/members/frederik-aust/), University of Cologne
 
 - [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2023/) <br/><br/>
 
