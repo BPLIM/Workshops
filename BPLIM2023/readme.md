@@ -73,7 +73,7 @@ Recordings of all sessions can be found on [Youtube]().
 
 [Nicola Rennie](https://nrennie.rbind.io/), Lancaster University
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2023/) <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2023/Day_2_4_Nicola_Rennie.pdf) <br/><br/>
 
 **WORCS: A Workflow for Open Reproducible Code in Science**
 
