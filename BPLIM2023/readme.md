@@ -79,7 +79,7 @@ Recordings of all sessions can be found on [Youtube]().
 
 [Caspar van Lissa](https://cjvanlissa.github.io/resume/), Tilburg University
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2023/) <br/><br/>
+- [Slides](https://cjvanlissa.github.io/worcshop/Porto_2023.html) <br/><br/>
 
 
 ## Useful Links
