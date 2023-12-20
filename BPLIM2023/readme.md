@@ -38,9 +38,9 @@ Recordings of all sessions can be found on [Youtube]().
 
 [BPLIM Team](https://bplim.bportugal.pt/), Banco de Portugal
 
-- [Slides - Part 1](https://github.com/BPLIM/Workshops/blob/master/BPLIM2023/Day_1_5_BPLIM_p1.html)
+- [Slides - Part 1](https://github.com/BPLIM/Workshops/blob/master/BPLIM2023/Day_1_5_BPLIM_1.pdf)
 
-- [Slides - Part 2](https://github.com/BPLIM/Workshops/blob/master/BPLIM2023/Day_1_5_BPLIM_p2.html) <br/><br/>
+- [Slides - Part 2](https://github.com/BPLIM/Workshops/blob/master/BPLIM2023/Day_1_5_BPLIM_2.pdf) <br/><br/>
 
 
 
