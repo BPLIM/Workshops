@@ -66,7 +66,7 @@ In this folder you can find the materials from the Workshop on "Automation of th
 
 [Jannik Buhr](https://jmbuhr.de/), Heidelberg Institute for Theoretical Studies
 
-- Slides not available yet <br/><br/>
+- [Slides](https://jmbuhr.de/2023-workflow/) <br/><br/>
 
 **Styling documents and building extensions with Quarto**
 
