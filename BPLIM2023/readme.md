@@ -1,7 +1,6 @@
 # BPLIM Workshop 2023
 
 In this folder you can find the materials from the Workshop on "Automation of the Research Process".
-Recordings of all sessions can be found on [Youtube]().
 
 
 ## Presentations
@@ -32,7 +31,7 @@ Recordings of all sessions can be found on [Youtube]().
 
 [Alex Hollingsworth](https://hollina.github.io/), Ohio State University
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2023/) <br/><br/>
+- Slides not available <br/><br/>
 
 **Research workflow with confidential data: The experience of BPLIM**
 
@@ -60,14 +59,14 @@ Recordings of all sessions can be found on [Youtube]().
 
 [Frederik Aust](https://methexp.uni-koeln.de/en/members/frederik-aust/), University of Cologne
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2023/) <br/><br/>
+- Slides not available <br/><br/>
 
 
 **Reproducible Data Analysis at the Speed of Thought**
 
 [Jannik Buhr](https://jmbuhr.de/), Heidelberg Institute for Theoretical Studies
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2023/) <br/><br/>
+- Slides not available <br/><br/>
 
 **Styling documents and building extensions with Quarto**
 
