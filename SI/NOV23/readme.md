@@ -1,7 +1,7 @@
 # Incentives Systems Data
 
 
-In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/SI/NOV23/SI_manual_NOV2023.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/tree/master/SI/NOV23/aux_files/metafiles)) of the most recent extraction of Incentives Systems Data (November 2023).
+In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/SI/NOV23/SI_manual_NOV23.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/tree/master/SI/NOV23/aux_files/metafiles)) of the most recent extraction of Incentives Systems Data (November 2023).
 
 
 **Citation of this Dataset**
