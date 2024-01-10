@@ -1,6 +1,6 @@
 # Historical Series of the Portuguese Banking Sector
 
-In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/SLB/OCT2023/manual_SLB_Oct23.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/blob/master/SLB/OCT2023/aux_files/metafiles) of the most recent extraction of Historical Series of the Portuguese Banking Sector (October 2023).
+In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/SLB/OCT2023/SLB_manual_Oct23.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/blob/master/SLB/OCT2023/aux_files/metafiles)) of the most recent extraction of Historical Series of the Portuguese Banking Sector (October 2023).
 
 **Citation of this Dataset**
 
