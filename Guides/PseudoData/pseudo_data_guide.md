@@ -138,7 +138,7 @@ but instead use the global in the name of the file:
 use "${path_source}/CB_${M4}_2006.dta"
 ```
 
-It is really important to follow these guidelines to ensure that results can be safely replicated on the original data. If the code is well organized and follows these guidelines then BPLIM staff (or an internal co-author) just needs to change the configuration file *profile.do*. The template file that we provide provides some examples on how the researcher should code, based on the settings defined in *profile.do*. Below we show the contents of *template.do*:
+It is really important to follow these guidelines to ensure that results can be safely replicated on the original data. If the code is well organized and follows these guidelines then BPLIM staff (or an internal co-author) can easily change the configuration file *profile.do* to rerun the analysis on the original data. The template file that we provide shows examples on how the researcher should code, based on the settings defined in *profile.do*. Below we show the contents of *template.do*:
 
 ```stata
 * Project      :  pxxx_BPLIM
