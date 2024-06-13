@@ -1,0 +1,55 @@
+---
+title: "Monetary Financial Institutions Balance Sheet Database"
+subtitle: "Codebook"
+author: "BPLIM"
+output:
+  pdf_document: default
+  # html_document: default
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+require("knitr")
+knitr::opts_chunk$set(echo = TRUE)
+## setting working directory
+opts_knit$set(root.dir = "Z:/data/Products/BBS/2023_06/BBS_Panel/Output/Data/")
+library(Statamarkdown)
+engine.path = "C:/Program Files/Stata16/StataMP-64.exe"
+```
+
+<br />
+
+#### `Extraction Date`: June 2023
+
+#### `Manual Date`: 27 July 2023
+
+<br />
+
+
+```{stata}
+*| output: TRUE
+*| echo: FALSE
+
+set linesize 200
+local extraction="JUN23"
+local ref="2023_06"
+local period="SEP1997DEC2022"
+local version="V01"
+local file1="MBNK"
+local year = 2022
+local month = 12
+
+di _new _new "BBS Panel - Asset Side Variables - December `year'"
+
+quietly use "Z:/data/Products/BBS/`ref'/BBS_Panel/Output/Data/BBS_P_`file1'_`period'_`extraction'_ASSET_`version'.dta", clear
+quietly keep if year(dofm(date))== `year' & month(dofm(date))==`month'
+codebook, all
+
+di _new _new "BBS Panel - Liability Side Variables - December  `year'"
+
+quietly use "Z:/data/Products/BBS/`ref'/BBS_Panel/Output/Data/BBS_P_`file1'_`period'_`extraction'_LIAB_`version'.dta", clear
+
+quietly keep if year(dofm(date))== `year' & month(dofm(date))==`month'
+codebook, all
+    
+```
