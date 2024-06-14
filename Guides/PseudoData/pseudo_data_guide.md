@@ -154,7 +154,8 @@ capture run "profile.do"
 * Change to work path - global `path_rep` defined in profile.do
 cd "${path_rep}"
 
-/* You should create a `results` folder to save outputs (this is ideal for replications)
+/* You may create a `results` folder inside `path_rep` to save outputs (this 
+is optional since there is already a `results` folder outside `path_rep`)
 Always use capture when creating directories in scripts*/
 capture mkdir results
 * You may create the structure that you want, adding sub-diectories to `results`
@@ -176,20 +177,14 @@ log using "logexample.log", replace
 *                  Open data files                      *
 *********************************************************
 /*
-Please note the VERY IMPORTANT use of globals `M1` and `M4`, ${M1} and ${M4}, 
-in the file names of the modified data. The first is for perturbed data and
-the second is for dummy data. Failing to use these globals when working with
-modified data will cause the REPLICATION TO FAIL.
+Please note the VERY IMPORTANT use of global `M4`, ${M4}, 
+in the file names of the modified data. Failing to use the 
+globals when working with modified data will cause the 
+REPLICATION TO FAIL.
 */
 
-* Example on how to read a non-perturbed data file provided by BPLIM:
-use "${path_source}/P*###_CBHP_A_YFRM_20062016_JUN18_ROSTO_V01.dta", clear
-
-* Example on how to read a perturbed data file provided by BPLIM:
-use "${path_source_p}/P*###_${M1}_CRC2011_FRM_COBR_V01", clear
-
 * Example on how to read a dummy data file provided by BPLIM:
-use "${path_source_p}/P*###_${M4}_CRC2011_FRMBNK_COBR_V01", clear
+use "${path_source}/P*###_${M4}_CRC2011_FRMBNK_COBR_V01", clear
 
 *********************************************************
 *            Start data analysis                        *
@@ -283,6 +278,95 @@ global results_figures "${path_rep}/results/figures"
 
 From here, there are examples of straightforward **Stata** commands and examples of how you should structure your code.
 
-<hr>
+## 5. Reproducibility Guidelines
+
+Usually, in **BPLIM** projects, researchers work on **BPLIM** servers, where there is a controlled environment to ensure future reproducibility. In projects with pseudo data, the researcher is working in her own environment, so it is important to follow additional guidelines to make the replication process as smooth as possible. 
+
+### 5.1 Tools
+
+In the beginning of the project, researchers identify the necessary tools (ados / packages) to run their analysis. These tools will be installed in the *tools* directory of the project - *.../package/pxxx_BPLIM/tools/* - by **BPLIM** staff. 
+
+Researchers must not install additional tools on their own. [OR ALLOW INSTALLATION AND RUN COMMAND require?].
+
+### 5.2 Master script
+
+Researchers should create a master script that runs their analysis from top to bottom. This file should be based on *template.do* and must create a log file that proves that the code ran without errors. Still, researchers are free to organize code in the *work_area* as they please. For example, the following structure would be acceptable:
 
 
+```
+.../package/pxxx_BPLIM/work_area/
+│
+├── profile.do
+├── master.do
+│
+├── 01_data_management/
+│   ├── 01_data_manipulation.do
+│   └── ...
+│
+├── 02_exploratory/
+│   ├── 01_tables.do
+│   ├── 02_figures.do
+│   └── ...
+│
+└── 03_regressions/
+    ├── 01_regressions.do
+    └── ...
+```
+
+Then, within *master.do*, the researcher only has to run the dependencies:
+
+```stata
+...
+cd ${path_rep}
+...
+
+do 01_data_management/01_data_manipulation.do
+
+do 02_exploratory/01_tables.do
+do 02_exploratory/02_figures.do
+
+do 03_regressions/01_regressions.do
+
+log close
+``` 
+
+### 5.3 Workflow
+
+It is important that the researcher follows the guidelines and the proper workflow:
+
+1. Researcher identifies the datasets and tools for the project
+
+2. **BPLIM** staff prepares the package and sends it to the researcher in a zip file
+
+3. Researcher unpacks the file and creates the project structure
+
+4. Researcher runs the do-file to create the pseudo data in the project initial dataset folder
+
+5. Researcher adapts *profile.do*, namely the global `root_path`, so that it points to the correct directory 
+ in her computer
+
+6. Researcher creates a *master.do* file based on *template.do* (it can be copied) and organizes the code as she desires 
+
+7. After the analysis is finished, the researcher runs the ado `archive_rep` and sends the output zip file to **BPLIM** (see section **5.5**)
+
+8. **BPLIM** checks that the analysis runs from top to bottom. In case that it does, the staff will run the analysis on the original data
+
+9. **BPLIM** sends the results to the researcher
+
+**Important notes**:
+
+  - Results should be saved in the project *results* directory or in a results folder created in your work_area. Either way, the researcher must inform **BPLIM** staff which results should be extracted and where can we find them.
+
+  - Intermediate datasets must be created during the analysis. Remember that the researcher is only allowed to send scripts and logs for replications, so **BPLIM** only has access to datasets in the *initial_dataset* folder. Trying to reference intermediate data that is not created during the analysis will cause the replication to **fail**. 
+
+
+### 5.5 `archive_rep`
+
+Ado `archive_rep` can be run in Stata to zip all the necessary files for the replication. It also generates a list of all the files used and a requirements file with all the dependencies (ados). Please note that only script files (ados, dos, etc) are copied to the archive. In this case, we would run the following in Stata:
+
+```stata
+adopath + "C:/Users/Jane/pxxx_BPLIM/tools"
+archive_rep, rep(1) path("C:/Users/Jane/pxxx_BPLIM")
+```
+
+The output of the command is a folder named **Rep001** with the folders and files (scripts) needed for the replication. This folder, and the zip file *Rep001.zip* (zip file of the folder) are created in the work_area directory. The researcher only has to send the zip file to **BPLIM**.
