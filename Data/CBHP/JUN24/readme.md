@@ -1,7 +1,7 @@
 # Central Balance Sheet Harmonized Panel Data
 
 
-In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/tree/master/Data/CBHP/JUN24/CBHP_manual_JUN2024.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/tree/master/Data/CBHP/JUN24/aux_files/metafiles), [variables description](https://github.com/BPLIM/Manuals/tree/master/Data/CBHP/JUN24/aux_files/variables_description), and [Frequently Asked Questions](https://github.com/BPLIM/Manuals/tree/master/Data/CBHP/JUN24/aux_files/faq/CBHP_faq.qmd)) of the most recent extraction of Central Balance Sheet Harmonized Panel Data (June 2024).
+In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/tree/master/Data/CBHP/JUN24/CBHP_manual_JUN2024.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/tree/master/Data/CBHP/JUN24/aux_files/metafiles), [variables description](https://github.com/BPLIM/Manuals/tree/master/Data/CBHP/JUN24/aux_files/variables_description), and [Frequently Asked Questions](https://github.com/BPLIM/Manuals/tree/master/Data/CBHP/JUN24/aux_files/faq/CBHP_faq.md)) of the most recent extraction of Central Balance Sheet Harmonized Panel Data (June 2024).
 
 
 **Citation of this Dataset**
