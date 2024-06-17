@@ -1,7 +1,7 @@
 # Incentives Systems Data
 
 
-In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/SI/NOV23/SI_manual_NOV23.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/tree/master/SI/NOV23/aux_files/metafiles)) of the most recent extraction of Incentives Systems Data (November 2023).
+In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/SI/NOV23/SI_manual_NOV23.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/blob/master/Data/SI/NOV23/aux_files/metafiles)) of the most recent extraction of Incentives Systems Data (November 2023).
 
 
 **Citation of this Dataset**
@@ -10,7 +10,7 @@ Banco de Portugal Microdata Research Laboratory (BPLIM) (2023): Incentives Syste
 
 
 
-To cite this data set you can use the package biblatex with the following [BibTeX entry](https://github.com/BPLIM/Manuals/tree/master/SI/NOV23/aux_files/bibtex/SI.bib):
+To cite this data set you can use the package biblatex with the following [BibTeX entry](https://github.com/BPLIM/Manuals/blob/master/Data/SI/NOV23/aux_files/bibtex/SI.bib):
 
 ```
 @dataset{SI.Nov2023.V1,

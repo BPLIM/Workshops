@@ -7,7 +7,7 @@ In this folder we make available the [data manual](https://github.com/BPLIM/Manu
 
 Banco de Portugal Microdata Research Laboratory - BPLIM (2023): Central Balance Sheet Annual Data. Extraction: June 2023. Version: V1. Banco de Portugal. Dataset. https://doi.org/10.17900/CB.CBA.Jun2023.V1
 
-To cite this data set you can use the package biblatex with the following [BibTeX entry](https://github.com/BPLIM/Manuals/tree/master/CB/JUN23/aux_files/bibtex/CB.bib):
+To cite this data set you can use the package biblatex with the following [BibTeX entry](https://github.com/BPLIM/Manuals/blob/master/Data/CB/JUN23/aux_files/bibtex/CB.bib):
 
 ```
 @dataset{CB.CBA.Jun2023.V1,
