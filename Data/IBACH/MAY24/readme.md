@@ -1,7 +1,7 @@
 # Spanish and Portuguese Companies Microdata (iBACH)
 
 
-In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/IBACH/MAY24/iBACH_manual_MAY24.pdf), auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/tree/master/IBACH/MAY24/aux_files/metafiles), and [Formulas](https://github.com/BPLIM/Manuals/blob/master/IBACH/MAY24/aux_files/formulas/ratios_formulas.xlsx)) of the most recent extraction of the Spanish and Portuguese Companies Microdata (May 2024).
+In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/IBACH/MAY24/iBACH_manual_MAY24.pdf), auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/blob/master/Data/IBACH/MAY24/aux_files/metafiles), and [Formulas](https://github.com/BPLIM/Manuals/blob/master/Data/IBACH/MAY24/aux_files/formulas/ratios_formulas.xlsx)) of the most recent extraction of the Spanish and Portuguese Companies Microdata (May 2024).
 
 **Citation of this Dataset**
 
@@ -9,7 +9,7 @@ Banco de Portugal Microdata Research Laboratory - BPLIM (2024): Portuguese Compa
 
 BELab. Banco de España/CORPME, Colegio de Registradores de la Propiedad y Mercantiles de España. Spanish Companies Microdata (iBACH). DOI: 10.48719/BELab.iBACH0822_01
 
-To cite this data set you can use the package biblatex with the following [BibTeX entry](https://github.com/BPLIM/Manuals/tree/master/IBACH/MAY24/aux_files/bibtex/IBACH.bib):
+To cite this data set you can use the package biblatex with the following [BibTeX entry](https://github.com/BPLIM/Manuals/blob/master/Data/IBACH/MAY24/aux_files/bibtex/IBACH.bib):
 
 ```
 @dataset{iBACH.May2024.V1,
