@@ -1,7 +1,7 @@
 # Spanish and Portuguese Companies Microdata (iBACH)
 
 
-In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/IBACH/MAY24/iBACH_manual_MAY24.pdf), auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/blob/master/Data/IBACH/MAY24/aux_files/metafiles), and [Formulas](https://github.com/BPLIM/Manuals/blob/master/Data/IBACH/MAY24/aux_files/formulas/ratios_formulas.xlsx)) of the most recent extraction of the Spanish and Portuguese Companies Microdata (May 2024).
+In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/IBACH/MAY24/iBACH_manual_MAY24.pdf) and auxiliary documentation ([metadata file](https://github.com/BPLIM/Manuals/blob/master/Data/IBACH/MAY24/aux_files/metafiles), and [Formulas for ratios and derived variables](https://github.com/BPLIM/Manuals/blob/master/Data/IBACH/MAY24/aux_files/formulas/ratios_formulas.xlsx)) of the most recent extraction of the Spanish and Portuguese Companies Microdata (May 2024).
 
 **Citation of this Dataset**
 
