@@ -63,7 +63,7 @@ After unzipping the file, the researcher should open the file *master.do* in **S
     └── template.do
 ```
 
-where we show the pseudo-data files that were created. These files will contain "*\_D\_*" in their names to reflect the fact that they are "dummy" data. After creating the pseudo data, you may relocate the project directory wherever you wish. However, the structure of the project directory must remain the same, because it mirrors the structure that BPLIM (or an internal user) has to replicate the code using original data. Also, you should note copy any additional data files to the folder *initial_dataset*.
+where we show the pseudo-data files that were created. These files will contain "*\_D\_*" in their names to reflect the fact that they are "dummy" data. After creating the pseudo data, you may relocate the project directory wherever you wish. However, the structure of the project directory must remain the same, because it mirrors the structure that BPLIM (or an internal user) has to replicate the code using original data. You should not copy any additional data files to the folder *initial_dataset*.
 
 ## 4. Working on the project
 
