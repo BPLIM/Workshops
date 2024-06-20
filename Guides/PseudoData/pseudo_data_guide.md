@@ -97,10 +97,6 @@ global path_rep "${root_path}/work_area"
 **** Paths for data ****
 * Set the path for non perturbed data source
 global path_source "${root_path}/initial_dataset"
-* Set the path for perturbed data source
-global path_source_p "${path_source}/modified"
-* Set the path for intermediate data source
-global path_source_i "${path_source}/intermediate"
 
 **** Globals for type of modified dataset
 * Dummy 
