@@ -2,7 +2,7 @@
 title: Variables in the Monetary Financial Institutions Balance Sheet Database
 subtitle: Extraction Date -  June 2024
 date: June 2024
-doi: 110.17900/BBS.JUN2023.V1
+doi: 110.17900/BBS.JUN2024.V1
 pdf-engine: pdflatex
 execute:
   echo: false
