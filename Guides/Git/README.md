@@ -1,0 +1,1 @@
+Here you can find the user manual with instructions on how to use Git on BPLIM's External Server. Click on `Git_Manual.html`, and on the next screen, click on the download button in the top right corner.
