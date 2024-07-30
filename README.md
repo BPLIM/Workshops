@@ -1,5 +1,9 @@
 # BPLIM Manuals
 
-This folder contains the markdown versions of manuals and auxiliary documents created by BPLIM, organized by data product.
+This folder contains the markdown versions of data manuals and general Guides created by BPLIM:
 
-The folder is used for versioning purposes, and in the case of auxiliary documentation (summary statistics, codebook, and dataset description files) we only report the Stata commands, not the output of the analysis. The full version of the Manuals is available in the BPLIM Servers.
+- [Data Manuals](https://github.com/BPLIM/Manuals/tree/master/Data)
+
+- [Guides](https://github.com/BPLIM/Manuals/tree/master/Guides)
+
+The folder is used for versioning purposes. The full version of the Manuals, including descriptive statistics, is available in the BPLIM Servers.
