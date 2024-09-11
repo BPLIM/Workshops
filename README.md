@@ -1,9 +1,9 @@
 # BPLIM Manuals
 
-This folder contains the markdown versions of data manuals and general Guides created by BPLIM:
+This folder contains the Markdown and PDF versions of Data Manuals and general Guides created by BPLIM:
 
 - [Data Manuals](https://github.com/BPLIM/Manuals/tree/master/Data)
 
 - [Guides](https://github.com/BPLIM/Manuals/tree/master/Guides)
 
-The folder is used for versioning purposes. The full version of the Manuals, including descriptive statistics, is available in the BPLIM Servers.
+The folder is used for versioning purposes. The full versions of the Manuals, including descriptive statistics, are available on the BPLIM Servers.
