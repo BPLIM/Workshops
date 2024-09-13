@@ -1,6 +1,6 @@
 # Monetary Financial Institutions Balance Sheet (BBS) Database
 
-In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/BBS/JUN21/manual_BBS_Jun2021.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/blob/master/Data/BBS/JUN21/aux_files/describe_dataset) and [variables description](https://github.com/BPLIM/Manuals/blob/master/Data/BBS/JUN21/aux_files/variables_description/var_bbs.md)) of the most recent extraction of Monetary Financial Institutions Balance Sheet (BBS) Database.
+In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/BBS/JUN21/manual_BBS_Jun2021.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/blob/master/Data/BBS/JUN21/aux_files/describe_dataset) and [variables description](https://github.com/BPLIM/Manuals/blob/master/Data/BBS/JUN21/aux_files/variables_description)) of the most recent extraction of Monetary Financial Institutions Balance Sheet (BBS) Database.
 
 **Citation of this Dataset**
 
