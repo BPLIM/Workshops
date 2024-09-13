@@ -1,8 +1,3 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
 <meta charset="utf-8"/>
 
 ---
@@ -10,13 +5,13 @@ title: Central Balance Sheet Database - Data Manual
 ---
 
 
-`Extraction Date`: June 2019
+`Extraction Date`: June 2021
 
-`Manual Date`: 17 August 2020
+`Manual Date`: 21 June 2021
 
 
 
-**Abstract**: The Central Balance Sheet Database (CB) is constructed and made available by *Banco de Portugal* and provides economic and financial information on non-financial corporations operating in Portugal. This dataset contains annual data from 2006 onwards and is mostly based on information reported through *Informação Empresarial Simplificada* (IES, Simplified Corporate Information). Until 2009 the data was reported according to the Plano Oficial de Contabilidade (POC, Official Chart of Accounts). Starting in 2010, the data is reported according to a new accounting system, the Sistema de Normalização Contabilística (SNC, Accounting Standards System). This is a significant structural change that is reflected in the way the data is organized. \
+**Abstract**: The Central Balance Sheet Database (CB) is constructed and made available by *Banco de Portugal* and provides economic and financial information on non-financial corporations operating in Portugal. This dataset contains annual data from 2006 onwards and is mostly based on information reported through *Informação Empresarial Simplificada* (IES, Simplified Corporate Information). Until 2009 the data was reported according to the *Plano Oficial de Contabilidade* (POC, Official Chart of Accounts). Starting in 2010, the data is reported according to a new accounting system, the *Sistema de Normalização Contabilística* (SNC, Accounting Standards System). This is a significant structural change that is reflected in the way the data is organized. \
 
 
 
@@ -28,7 +23,6 @@ title: Central Balance Sheet Database - Data Manual
 4. [Methodology](#methodology)
     1. [Changes in the Accounting System in Portugal](#a.-changes-in-the-accounting-system-in-portugal)
     2. [What can change with a new extraction?](#b.-what-can-change-with-a-new-extraction)
-    3. [Changes introduced with the extraction of June 2019](#c.-changes-introduced-with-the-extraction-of-june-2019)
 5. [Description of Files](#description-of-files)
 6. [Description of Variables](#description-of-variables)
     1. [General Information File (Cover Sheet)](#a.-general-information-file-cover-sheet)
@@ -63,7 +57,9 @@ title: Central Balance Sheet Database - Data Manual
 
 > `Start Year`: 2006 [^1]
 
->`Most recent year`: 2017
+>`Most recent year`: 2019 [^36]
+
+[^36]: The data for firms with fiscal period different from the civil year or firms with a significant delay in the delivery of IES are not yet included in the most recent year available.
 
 > `Reference date`: The data reports to the fiscal period declared by the firm. For most cases, the fiscal period coincides with the civil year. For those firms with fiscal period different from the civil year, the reference year is the one covering most of the days of the fiscal period.
 
@@ -78,13 +74,13 @@ title: Central Balance Sheet Database - Data Manual
 - Cash-Flows,
 - Information by Sector of Activity.
 
-In all files each row corresponds to one firm in a given year.[^2] All files are available in Stata format, version 15.
+In all files each row corresponds to one firm in a given year.[^2] All files are available in Stata format, version 16.
 
 [^1]: From 1991 to 2004 the source of CB was a survey conducted by *Banco de Portugal*, covering approximately 5% of firms. For 2005 there is data available from IES but with some limitations. These datasets are also available at BPLIM. For more information contact bplim@bportugal.pt.
 
 [^2]: For \'Corporate Actions\' and \'Information by Sector of Activity\' data files, there may be multiple firm entries per year since the firm may report more than one event or Economic Activity for the same reference year, respectively.
 
-> `Version of the Data`: The data made available by BPLIM corresponds to a data freeze at a certain time of the year.[^3] Therefore, all files contain the information as reported in the extraction date. The most recent update of the data occurred in June 2019.
+> `Version of the Data`: The data made available by BPLIM corresponds to a data freeze at a certain time of the year.[^3] Therefore, all files contain the information as reported in the extraction date. The most recent update of the data occurred in June 2021.
 
 [^3]: For more information, see the Section “Methodology”.
 
@@ -94,7 +90,7 @@ In all files each row corresponds to one firm in a given year.[^2] All files are
 
 > `Related Datasets`: BPLIM also makes available the *Central Balance Sheet Harmonized Panel Data* which contains only variables that are consistent over time either because they were not affected by the POC to SNC change or because it was possible to construct harmonized variables based on the two different accounting systems.
 
-> `Digital Object Identifier`: 10.17900/CB.CBA.Jun2019.V1
+> `Digital Object Identifier`: 10.17900/CB.CBA.Jun2021.V1
 
 ![](./attachments/structure_CB.PNG)
 
@@ -118,7 +114,7 @@ The annual data of CB is collected through *Informação Empresarial Simplicada*
 
 CB contains the information reported on Annexes A (Firm Level Data) and R (Establishment Level Data) by non-financial corporations. Firms submit IES electronically to the Ministry of Finance every year.[^6] The deadline to submit the information was initially set at the last working day of the 6th month after the end of the fiscal year and, since 2009, [^7] at the 15th day of the 7th month after the end of the fiscal year. Firms support a monetary cost when they register the financial statements under IES.[^8]
 
-After the firm submits the data, the system implements some validation checks and generate an alert if it finds an inconsistency. In that case the firm has 30 days to correct it.[^9] Firms may also correct the information previously reported by sending a replacement version of the Annexes along with the “Cover Sheet”. In case the correction is made to Annex A (Balance Sheet or Loss and Profit Statement) or to Annex R (Establishment Level Data), the firm is required to re-send both Annexes even if the information reported in one of them remains unchanged. If the firm changes the fiscal period it is also required to send a declaration before and after the change. The Tax Authority (AT) [^10] sends the information collected through IES in an electronic format to the Institute of Registration and Notary Affairs (IRN).[^11] This institute is responsible for sending the information to *Banco de Portugal*, National Statistics Institute (INE) [^12] and Directorate-General for Economic Activities (DGAE).[^13]
+After the firm submits the data, the system implements some validation checks and generates an alert if it finds an inconsistency. In that case the firm has 30 days to correct it.[^9] Firms may also correct the information previously reported by sending a replacement version of the Annexes along with the “Cover Sheet”. In case the correction is made to Annex A (Balance Sheet or Loss and Profit Statement) or to Annex R (Establishment Level Data), the firm is required to re-send both Annexes even if the information reported in one of them remains unchanged. If the firm changes the fiscal period it is also required to send a declaration before and after the change. The Tax Authority (AT) [^10] sends the information collected through IES in an electronic format to the Institute of Registration and Notary Affairs (IRN).[^11] This institute is responsible for sending the information to *Banco de Portugal*, National Statistics Institute (INE) [^12] and Directorate-General for Economic Activities (DGAE).[^13]
 
 ![](./attachments/information_flow.PNG)
 
@@ -132,7 +128,7 @@ The information reported by these firms is then subject to a quality control pro
 
 -    In some cases Banco de Portugal will directly contact the firm to validate the information.
 
-Every year around the month of June, after the quality control process takes place, BPLIM creates a data freeze. The most recent version of the data was extracted on June 2019.
+Every year around the month of June, after the quality control process takes place, BPLIM creates a data freeze. **The most recent version of the data was extracted on June 2021 and includes data from 2006 to 2019. The data for firms with fiscal period different from the civil year or firms with a significant delay in the delivery of IES are not yet included in the most recent year available.**
 
 
 [^6]: According to Decree-Law no. 8/2007, the reporting of financial statements is mandatory for Commercial Companies, Civil Companies under a commercial form, European Public Limited Liability Companies, Public Companies, Foreign Companies with permanent representation in Portugal and Individual Limited Liability Establishments.
@@ -160,8 +156,8 @@ Until 2009 the data was reported according to the *Plano Oficial de Contabilidad
 The variable “regime” in the “General Information” Files captures the reporting standards indicated by the firm.[^20] In the auxiliary files “variables_*.html”, the column “Accounting Regime” identifies the applicable reporting standards to each variable (N - International Accounting Standards; S - Accounting and Financial Reporting Standards and Accounting and Financial Reporting Standards for Small-Sized Entities; M - Accounting and Financial Reporting Standards for Micro-Entities).
 
 [^18]: For a more detailed comparison of SNC versus POC see [POCvsSNC](https://www.occ.pt/pt/a-ordem/publicacoes/poc-versus-snc)
-[^19]: See Decree-Law no. 158/2009 and Law no. 35/2010.
-[^20]: For a brief description of the eligibility criteria for the accounting regimes see the Section “Legislation”, Decree-Law no. 158/2009, Law no. 35/2010 and Decree-Law no. 36-A/2011.
+[^19]: See Decree-Law no. 158/2009 and Law no. 35/2010 for example.
+[^20]: For a brief description of the eligibility criteria for the accounting regimes see the Section “Legislation”, Decree-Law no. 158/2009, Law no. 20/2010, Law no. 35/2010 and Decree-Law no. 36-A/2011.
 [^35]: In 2010 some declarations were reported according to POC. This situation occurs mostly for declarations sent in the cessation period and before or after the firms adopts a special fiscal period - a fiscal period different from the calendar year.
 
 ## B. What can change with a new extraction?
@@ -170,30 +166,6 @@ BPLIM performs a single data extraction every year. Around June a data freeze is
 With a new extraction the number of observations for a given year may be slightly different. This discrepancy may be more relevant for recent years of the data. This may occur because in the meantime firms may have sent in declarations for years that were missing at the time of the last extraction. Another reason why there may be differences in the number of observations across extractions is if the firm is reclassified as non-financial or financial corporation and therefore it is (in/ex)cluded from the data.
 It is also possible that for the same firm and year the reported values for some variables differ across extractions. This will occur if the firm replaces the declaration sent at the time of the last extraction (substitution declaration) or if the information is subject to quality control in the meantime.
 Finally, after internal revision, BPLIM may decide to add new variables or exclude existing ones.
-
-
-## C. Changes introduced with the extraction of June 2019
-
-The main changes introduced in the extraction of *June 2019* relatively to the previous one (*June 2018*) are:
-
-1. **General Information file** [^21]:
-
-    1.1. Three new variables are available: *liquidacao*, *sucursal* and *exporta*
-
-    The variables *liquidacao* and *sucursal* are constructed based on the information contained in the company's name. The variable *liquidacao* allows to identify firms in liquidation, complementing the information in the indicator of economic activity (*indactiecon*) and firm's situation (*sitempresa*). The variable *sucursal* allows to identify branches of foreign companies.
-    Finally, the variable *exporta* is built based on the information reported in the Trade Information per Market Files and allows to easily identify whether the firms are exporting to the European Union (EU) and/or to Extra-EU Markets.
-
-    1.2. The variable reporting the founding date of the firm (*ancon*) was replaced by the one constructed by the Statistics Department of *Banco de Portugal*
-
-    This variable replaces the information reported through the Central Registry of Companies (Ministry of Justice). This new variable has a lower number of missing values because it is complemented with other sources of information available at *Banco de Portugal*.
-
-2. **Corporate Actions** [^22]:
-
-    In the current extraction, we provide a dataset produced by the Statistics Department of *Banco de Portugal* that is subject to quality control and uses not only the information reported through IES but also other complementary sources.
-
-[^21]: For more detailed information see the description of the variables in the [General Information File](#a.-general-information-file-cover-sheet).
-
-[^22]: For more detailed information see the description of the variables in the [Corporate Actions File](#e.-corporate-actions-file).
 
 
 # Description of Files
@@ -212,12 +184,12 @@ The firm level data in CB is organized in eight files. Each file provides a diff
 
 
 
-Where *A* stands for Anonymized and *yyyy*=2006,…,2017 and *eeee* reports the extraction date.
+Where *A* stands for Anonymized and *yyyy*=2006,…,2019 and *eeee* reports the extraction date.
 
 All files contain a unique firm identifier (*tina*) allowing the matching of the different types of information by firm. Whenever possible, labels and value labels were attributed to all categorical variables. All datasets are anonymized.
 
 # Description of Variables
-Below we provide a general description of the variables included in each of the eight files referred above. For a full account of all variable categories and changes over time see [“Auxiliary Files” section](#auxiliary-files). The variables whose label ends in “(QS)” are those used to produce [*Quadros do Sector* (QS)](https://www.bportugal.pt/en/page/sector-tables), a publication by the Statistics Department of *Banco de Portugal*, which is composed of a set of financial and economic indicators by sector of activity and dimension class.
+Below we provide a general description of the variables included in each of the eight files referred above. For a full account of all variable categories and changes over time see [“Auxiliary Files” section](#auxiliary-files).
 When applicable, we distinguish between variables reported according to the former Accounting System (POC) and the one introduced in 2010 (SNC).
 
 ## A.    General Information File (Cover Sheet)
@@ -281,11 +253,11 @@ The information contained in this file has three different sources: variables re
 
 `Reference date of firm’s situation` (*datasitempresa*) – reports the reference date of the firm’s situation. This information is required in case the firm reports codes 2, 3 and 4 in *sitempresa* variable.
 
-`Firm in liquidation` (*liquidacao*) - identifies firms in liquidation. According to the [Article 146 of the Portuguese Code of Commercial Companies](https://dre.pt/web/guest/legislacao-consolidada/-/lc/116042191/201906302305/73599989/diploma/indice), dissolved firms are required to add the expression "Em liquidação" to the their name while they are in the liquidation process. This variable is created by BPLIM using the information contained in the company's name as reported by the firm in IES forms. It takes value one if the expression "em liquida" is found in the company's name.
+`Firm in liquidation` (*liquidacao*) - identifies firms in liquidation. According to the [Article 146 of the Portuguese Code of Commercial Companies](https://dre.pt/web/guest/legislacao-consolidada/-/lc/116042191/201906302305/73599989/diploma/indice), dissolved firms are required to add the expression "Em liquidação" to their name while they are in the liquidation process. This variable is created by BPLIM using the information contained in the company's name as reported by the firm in IES forms. It takes value one if the expression "em liquida" is found in the company's name.
 
 `Share of turnover of the main economic activity` (*pervvn*) – indicates the proportion of turnover that the main economic activity represents among all the activities carried on by the firm.
 
-`District` (*distrito*) – provides information on the district in which the firm is located. For a complete list of codes see the auxiliary file [var_rosto.html](./aux_files/variables_description/var_rosto.html).
+`District` (*distrito*) – provides information on the district in which the firm is located. The classification of this variable is according to *DICOFRE* and differs from the [Code of the administrative division](http://smi.ine.pt/Versao/Detalhes/17) for Autonomous Regions. For a complete list of codes see the auxiliary file [var_rosto.html](./aux_files/variables_description/var_rosto.html).
 
 `Branch` (*sucursal*) - dummy variable that takes value one for branches of foreign firms located in Portugal. Branch offices are identified using the information contained in the name as reported by the firm in IES and the tax identification number of the company. Notably, the legislation states that the name of these companies includes expressions such as "Sucursal" or "Representação Permanente" (see, for example, [Article 21 of Ordinance n. 1416-A/2006](https://dre.pt/pesquisa/-/search/235919/details/maximized) or [Article 5 of Decree-Law n. 73/2008](https://dre.pt/pesquisa/-/search/249803/details/maximized)) and the firms are assigned with tax identification numbers started by "98".
 
@@ -302,9 +274,7 @@ The information contained in this file has three different sources: variables re
 
 ### A3. Variables created by the Statistics Department of *Banco de Portugal*
 
-`Institutional Sector` (*sectorinstfinal*):
-
-*sectorinstfinal* - reports the institutional sector to which the firm belongs to. As explained in the Sections “Population” and “Methodology”, CB only includes non-financial corporations. Therefore, this variable identifies the type of non-financial corporation, such as public, private or holding company. The algorithm to allocate firms according to the institutional sector is based on the classification of economic activity, the name of the firm and other variables available at *Banco de Portugal*. Therefore, in some cases the institutional sector may not be in line with the sector of economic activity.
+`Institutional Sector` (*sectorinstfinal*) - reports the institutional sector to which the firm belongs to. As explained in the Sections “Population” and “Methodology”, CB only includes non-financial corporations. Therefore, this variable identifies the type of non-financial corporation, such as public, private or holding company. The algorithm to allocate firms according to the institutional sector is based on the classification of economic activity, the name of the firm and other variables available at *Banco de Portugal*. Therefore, in some cases the institutional sector may not be in line with the sector of economic activity.
 
 | Code | Designation |
 | :----: | :----------- |
@@ -373,7 +343,7 @@ Source: [European Commission](http://ec.europa.eu/growth/smes/business-friendly-
 
 `Sector of Activity` (*cae21*, *cae3*, *caekotu*):
 
-`Main Sector of Activity` (*cae21* and *cae3*) - reports firm's main sector of activity. The criteria to define the main sector of activity is the gross value added at factor cost. When it is not possible to use this information to define the main sector of activity, firms are requested to use turnover or the number of people permanently employed by the firm. From 2006 to 2008, firms reported the code of “The Portuguese Classification of Economic Activities - Revision 2.1” (CAE Rev. 2.1) at the highest level of disaggregation. Since 2009, firms report their main activity according to the “The Portuguese Classification of Economic Activities - Revision 3” (CAE Rev. 3). The Statistics Department of *Banco de Portugal* provides the information on the main sector of activity according to both classifications CAE Rev2.1 and CAE Rev3 whenever possible. The source of this information is the CAE registered in the “Central Registry of Companies” for each company. Whenever the correspondence is not unique, the match between codes CAE Rev. 2.1 and CAE Rev. 3 is implemented based on the highest frequency of the matches.[^26] For a complete list of codes see the auxiliary file [var_rosto.html](./aux_files/variables_description/var_rosto.html).
+`Main Sector of Activity` (*cae21* and *cae3*) - reports firm's main sector of activity. The criteria to define the main sector of activity is the gross value added at factor cost. When it is not possible to use this information to define the main sector of activity, firms are requested to use turnover or the number of people permanently employed by the firm. From 2006 to 2008, firms reported the code of “The Portuguese Classification of Economic Activities - Revision 2.1” (CAE Rev. 2.1) at the highest level of disaggregation. Since 2008, firms report their main activity according to the “The Portuguese Classification of Economic Activities - Revision 3” (CAE Rev. 3). The Statistics Department of *Banco de Portugal* provides the information on the main sector of activity according to both classifications CAE Rev. 2.1 and CAE Rev. 3 whenever possible. The source of this information is the CAE registered in the “Central Registry of Companies” for each company. Whenever the correspondence is not unique, the match between codes CAE Rev. 2.1 and CAE Rev. 3 is implemented based on the highest frequency of the matches.[^26] For a complete list of codes see the auxiliary file [var_rosto.html](./aux_files/variables_description/var_rosto.html).
 
 
 `CAE sections K, O, T or U` (*caekotu*) - this variable was created by BPLIM using the information in *cae3* (Classification of Economic Activity Rev. 3). It takes value one if the main economic activity of the firm is within one of the following sections of economic activity:
@@ -408,8 +378,8 @@ The variables may be classified in two groups: Balance Sheet and Profits and Los
 | VF05681 | **Total Assets** | Net |
 | VF05737 | > **Tangible and intangible assets (excluding fixed assets work-in-progress)** | Gross |
 | VF05739 | > > Intangible assets | Gross |
-| VF05750 | > **Fixed assets work-in-progress (including tangible, intangible and financial investments)** | Net/Gross |
 | VF05743 | > > Tangible fixed assets | Gross |
+| VF05750 | > **Fixed assets work-in-progress (including tangible, intangible and financial investments)** | Net/Gross |
 | VF05685 | > **Financial Assets** | Gross |
 | VF05751 | > **Current Assets - Inventories** | Gross |
 | VF05759 | > > Current Assets - Inventories - Finished and intermediate products; Subproducts, wastes and scrap; Products and work in progress) | Gross |
@@ -431,8 +401,8 @@ The variables may be classified in two groups: Balance Sheet and Profits and Los
 | VF03117 | Tangible fixed assets - Net Assets | Net |
 | VF03140 | Financial Assets - Net Assets | Net |
 | VF05753 | Inventories - Net Assets (BACH) | Net |
-| VF05762 | Other Inventories - Net Assets (BACH) | Net |
-| VF03143 | Current Assets - Inventories - Raw and subsidiary materials and consumables - Net Assets | Net |
+| VF05762 | > Other Inventories - Net Assets (BACH) | Net |
+| VF03143 | > Current Assets - Inventories - Raw and subsidiary materials and consumables - Net Assets | Net |
 | VF05701 | Trade Credits Granted - Net Assets (BACH) | Net |
 | VF05710 | Other accounts receivable - Net Assets (BACH) | Net |
 | VF03223 | Short-term accounts receivable - Net Assets | Net |
@@ -506,7 +476,7 @@ The variables may be classified in two groups: Balance Sheet and Profits and Los
 | VF16018    | > > > Non-current assets - Shareholders |
 | VF16041    | > > > Non-current assets - Deferred tax assets |
 | VF16019    | > **Total Current assets (QS)** |
-| VF16022 |    > > **Current assets - Inventories and biological assets** |
+| VF16022 |    > > **Inventories and consumable biological assets** |
 | VF16023    | > > > Inventories - Raw and subsidiary materials and consumables |
 | VF16024    | > > > Inventories - Advances for purchases |
 | VF16025    | > > > Current assets- Inventories (excepting Raw and subsidiary materials and consumables) |
@@ -532,16 +502,16 @@ The variables may be classified in two groups: Balance Sheet and Profits and Los
 | VF13025    | > > > Equity- Other reserves |
 | VF13026    | > > > Retained earnings |
 | VF16057    | > > **Equity - Other items of equity** |
-| VF13021    | > > Equity- Own shares |
-| VF13023    | > > Equity- Share Premiums |
-| VF13027    | > > Adjustments on financial investments |
-| VF13028    | > > Revaluation surplus |
-| VF13030 |    > > Other variations in equity- R2 |
-| VF13029    | > > Other variations in equity- R1 |
-| VF13031 |    > > Other variations in equity- R3 |
-| VF13032 |    > > Other variations in equity- R4 |
-| VF16063 |    > **Equity - Net income** |
-| VF16064 |    > **Equity - Interim dividends** |
+| VF13021    | > > > Equity- Own shares |
+| VF13023    | > > > Equity- Share Premiums |
+| VF13027    | > > > Adjustments on financial investments |
+| VF13028    | > > > Revaluation surplus |
+| VF13029    | > > > Other variations in equity- R1 |
+| VF13030 |    > > > Other variations in equity- R2 |
+| VF13031 |    > > > Other variations in equity- R3 |
+| VF13032 |    > > > Other variations in equity- R4 |
+| VF16063 |    > > **Equity - Net income** |
+| VF16064 |    > > **Equity - Interim dividends** |
 
 
 **LIABILITIES**
@@ -596,7 +566,7 @@ The variables may be classified in two groups: Balance Sheet and Profits and Los
 | VF03057    | > Gains in group and associated companies |
 | VF03058    | > Income from equity holdings |
 | VF03059    | > Income from negotiable securities and other financial applications – relative to group companies |
-| VF03060    | > Income from negotiable securities and other financial applications |
+| VF03060    | > Income from negotiable securities and other financial applications - Others |
 | VF03061    | > Interest Income and similar earnings- relative to group companies |
 | VF03062    | > Interest Income and similar earnings - Others |
 | VF05888    | **Financial costs** |
@@ -662,7 +632,7 @@ This file contains information on the average number of employees and number of 
 | VF03324    | > Number of paid part-time employees |
 | VF03322    | Number of paid apprentices |
 | VF03323    | Number of paid homeworkers |
-| VF04902    | > Number of unpaid employees |
+| VF04902    | Number of unpaid employees |
 | VF03325    | Service providers |
 | VF03326    | Number of employees allocated to research and development |
 | VF03327    | Temporary Agency Employment |
@@ -711,21 +681,21 @@ This file contains information on the average number of employees and number of 
 | VF15549    | Number of hours worked by female employees |
 | VF15552    | Number of hours worked by service providers |
 | VF15555    | Compensation of corporate bodies |
-| VF15556    | Compensation of corporate bodies- of which participation in profits |
+| VF15556    | > Compensation of corporate bodies- of which participation in profits |
 | VF15557    | Salaries |
-| VF15558    | Salaries - of which participation in the profits |
+| VF15558    | > Salaries - of which participation in the profits |
 | VF15559    | Post-employment benefits |
-| VF15560    | Pension premiums |
-| VF15561    | Other benefits |
-| VF15562    | Post-employment benefits- Other benefits: of which defined contribution pension plans - corporate bodies |
-| VF15563    | Post-employment benefits- Other benefits: of which defined contribution pension plans - other |
+| VF15560    | > Pension premiums |
+| VF15561    | > Other benefits |
+| VF15562    | > > Post-employment benefits- Other benefits: of which defined contribution pension plans - corporate bodies |
+| VF15563    | > > Post-employment benefits- Other benefits: of which defined contribution pension plans - other |
 | VF15564    | Indemnities |
 | VF15565    | Social security expenses |
 | VF15566    | Insurance schemes for accidents at work and occupational diseases |
 | VF15567    | Expenses with social actions |
 | VF15568    | Other employee expenses |
-| VF15569    | Training expenses |
-| VF15570    | Other expenses- Expenses with uniforms |
+| VF15569    | > Training expenses |
+| VF15570    | > Other expenses- Expenses with uniforms |
 | VF18834 | Expenses with defined pension plans |
 
 
@@ -883,7 +853,7 @@ Some relevant definitions are available in subsection [E3. Relevant Definitions]
 
 
 ## F.    Economic and Financial Indicators File
-This file provides some indicators calculated using variables of CB. For more information on how each indicator is calculated see the auxiliary file [var_indicadores.html](./aux_files/variables_description/var_indicadores.html).
+This file provides some indicators calculated using variables of CB. For more information on how each indicator is calculated see the auxiliary file [var_indicadores.html](./aux_files/variables_description/var_indicadores.html). The methodology and concepts used to compute some of the indicators published in [Sector Tables](https://www.bportugal.pt/en/page/sector-tables) have been recently revised (for details see Banco de Portugal, 2019 that replaced Banco de Portugal, 2014) and the formulas used to compute those variables may slightly differ from the ones currently made available by BPLIM.
 
 ### F1. Identifiers
 `Firm identifier` (*tina*) – Unique identifier that enables tracking the legal entity over time. *tina* is the anonymized tax identification number.
@@ -894,94 +864,94 @@ This file provides some indicators calculated using variables of CB. For more in
 ### F2. Variables calculated according to POC
 | Variable Name | Variable Description |
 | :------: | :------- |
-| VF06027   | Gross operating margin rate |
-| VF06028   | Days in receivables (number of days) |
-| VF06032   | Days in accounts payable (number of days) |
-| VF06036   | Inventories turnover (times) |
-| VF06037   | Working capital turnover (times) |
-| VF06038   | Growth rate of turnover |
-| VF06039   | Growth rate of gross value added (GVA) |
-| VF06041   | Investment rate |
-| VF06043 |   Coverage rate of investment by self-financing |
-| VF06045 |   Capital ratio |
-| VF06050 |   Coverage of fixed assets |
-| VF06052 |   Coverage of medium and long term investment |
-| VF06054 |   Debt to equity ratio |
-| VF06056 |   Current ratio |
-| VF06057 |   Quick ratio |
-| VF06058 |   Return on assets |
-| VF06060 |  Asset turnover (times) |
-| VF06062 |  Return on sales |
-| VF06066 |  Gross economic profitability |
-| VF06067 |  Gross value added rate (GVA) |
-| VF06071 |  Return on equity |
-| VF06079 |  Compound leverage factor |
-| VF06080 |  Interest burden (QS) |
-| VF06082 |  Leverage ratio |
-| VF06083 |  Extraordinary income factor |
-| VF06085 |  Tax burden (QS) |
-| VF06087 |  Income distribution - Employees |
-| VF06089 |   Income distribution - Banks and other funders |
-| VF06091 |   Income distribution - State |
-| VF06093 |   Income distribution - Enterprise (self-financing) |
-| VF06095 |  Income distribution - Other |
-| VF06097 |  Coefficient GVA / Property, plant and equipment (euros) |
-| VF06099 |   Coefficient GVA / Employee costs (euros) |
-| VF06104 |   Coefficient capital / Employee costs (euros) |
+| VF06027 | Gross operating margin rate |
+| VF06028 | Days in receivables (number of days) |
+| VF06032 | Days in accounts payable (number of days) |
+| VF06036 | Inventories turnover (times) |
+| VF06037 | Working capital turnover (times) |
+| VF06038 | Growth rate of turnover |
+| VF06039 | Growth rate of gross value added (GVA) |
+| VF06041 | Investment rate |
+| VF06043 | Coverage rate of investment by self-financing |
+| VF06045 | Capital ratio |
+| VF06050 | Coverage of fixed assets |
+| VF06052 | Coverage of medium and long term investment |
+| VF06054 | Debt to equity ratio |
+| VF06056 | Current ratio |
+| VF06057 | Quick ratio |
+| VF06058 | Return on assets |
+| VF06060 | Asset turnover (times) |
+| VF06062 | Return on sales |
+| VF06066 | Gross economic profitability |
+| VF06067 | Gross value added rate (GVA) |
+| VF06071 | Return on equity |
+| VF06079 | Compound leverage factor |
+| VF06080 | Interest burden |
+| VF06082 | Leverage ratio |
+| VF06083 | Extraordinary income factor |
+| VF06085 | Tax burden |
+| VF06087 | Income distribution - Employees |
+| VF06089 | Income distribution - Banks and other funders |
+| VF06091 | Income distribution - State |
+| VF06093 | Income distribution - Enterprise (self-financing) |
+| VF06095 | Income distribution - Other |
+| VF06097 | Coefficient GVA / Property, plant and equipment (euros) |
+| VF06099 | Coefficient GVA / Employee costs (euros) |
+| VF06104 | Coefficient capital / Employee costs (euros) |
 
 
 ### F3. Variables calculated according to SNC
 | Variable Name | Variable Description |
 | :------: | :------- |
-| VF16318 |   Current ratio |
-| VF16319 |   Quick ratio |
-| VF16320 |   Capital ratio (QS) |
-| VF16323 |   Assets to equity ratio |
-| VF16324   | Solvency ratio QS |
-| VF16326 |   Non-current assets coverage ratio |
-| VF16331 |   Obtained funding over total liabilities (QS) |
-| VF16338 |  Cost of obtained funding |
-| VF16340 |   Financial Cost Effect |
-| VF16345 |   Operating effect |
-| VF16346   | Other financial income effect |
-| VF16348   | Compound leverage factor - QS |
-| VF16350   | Tax burden |
-| VF16351 |   Return on sales |
-| VF16353 |   Return on assets |
-| VF16355 | GVA over output - QS |
-| VF16357   | EBITDA over Turnover |
-| VF16358   | Degree of combined leverage |
-| VF16359   | Degree of operating leverage |
-| VF16360  | Degree of other financial income leverage |
-| VF16361   | Degree of financial leverage |
-| VF16362   | Days sales outstanding (days) |
-| VF16363  | Days sales outstanding concerning non-residents (days) |
-| VF16364  | Days payable outstanding (days) |
-| VF16365  | Days payable outstanding concerning non-residents (days) |
-| VF16366  | Days sales of inventory (days) |
-| VF16367  | Asset turnover (times) - QS |
-| VF16369  | Net working capital requirements over turnover |
-| VF16370  | Coefficient GVA over fixed non-financial assets |
-| VF16371  | Coefficient GVA over employee costs |
-| VF16373   | Coefficient Fixed non-financial assets over employee expenses |
-| VF16374   | Suppliers - QS |
-| VF16375   | Employees - QS |
-| VF16376   | Banks and other sources of funding - QS |
-| VF16377   | State - QS |
-| VF16378   | Enterprise - self-financing - QS |
-| VF16379   | Others - QS |
-| VF16426   | Interest expenses / EBITDA |
-| VF17747   | Asset turnover ratio |
-| VF17749   | Profit or loss of the year before taxes (EBT) / Equity |
-| VF17750   | Gross value added / Net turnover |
-| VF17752   | Profit or loss of the year before taxes (EBT) / Net turnover |
-| VF17753  | Equity / Total assets |
-| VF17754  | Trade payables / Total assets |
-| VF17755   | Total income / Net turnover |
-| VF17756  | Total expenses / Net turnover |
-| VF17757  | Financial fixed assets / Total assets |
-| VF17758  | Trade receivables / Total assets |
-| VF17759   | Other financial assets and cash and bank / Total assets |
+| VF16318 | Current ratio |
+| VF16319 | Quick ratio |
+| VF16320 | Capital ratio - QS |
+| VF16323 | Assets to equity ratio |
+| VF16324 | Solvency ratio - QS |
+| VF16326 | Non-current assets coverage ratio |
+| VF16331 | Obtained funding over total liabilities |
+| VF16338 | Cost of obtained funding |
+| VF16340 | Financial Cost Effect |
+| VF16345 | Operating effect |
+| VF16346 | Other financial income effect |
+| VF16348 | Compound leverage factor - QS |
+| VF16350 | Tax burden |
+| VF16351 | Return on sales |
+| VF16353 | Return on assets |
+| VF16355 | GVA over output |
+| VF16357 | EBITDA over Turnover |
+| VF16358 | Degree of combined leverage |
+| VF16359 | Degree of operating leverage |
+| VF16360 | Degree of other financial income leverage |
+| VF16361 | Degree of financial leverage |
+| VF16362 | Days sales outstanding (days) |
+| VF16363 | Days sales outstanding concerning non-residents (days) |
+| VF16364 | Days payable outstanding (days) |
+| VF16365 | Days payable outstanding concerning non-residents (days) |
+| VF16366 | Days sales of inventory (days) |
+| VF16367 | Asset turnover (times) - QS |
+| VF16369 | Net working capital requirements over turnover |
+| VF16370 | Coefficient GVA over fixed non-financial assets |
+| VF16371 | Coefficient GVA over employee costs |
+| VF16373 | Coefficient Fixed non-financial assets over employee expenses |
+| VF16374 | Suppliers - QS |
+| VF16375 | Employees - QS |
+| VF16376 | Banks and other sources of funding - QS |
+| VF16377 | State - QS |
+| VF16378 | Enterprise - self-financing - QS |
+| VF16379 | Others - QS |
+| VF16426 | Interest expenses / EBITDA |
+| VF17747 | Asset turnover ratio |
+| VF17749 | Profit or loss of the year before taxes (EBT) / Equity |
+| VF17750 | Gross value added / Net turnover |
+| VF17752 | Profit or loss of the year before taxes (EBT) / Net turnover |
+| VF17753 | Equity / Total assets |
+| VF17754 | Trade payables / Total assets |
+| VF17755 | Total income / Net turnover |
+| VF17756 | Total expenses / Net turnover |
+| VF17757 | Financial fixed assets / Total assets |
+| VF17758 | Trade receivables / Total assets |
+| VF17759 | Other financial assets and cash and bank / Total assets |
 
 
 ## G.    Cash-Flows File
@@ -1104,21 +1074,23 @@ For a complete list of codes see the variables *cae2* and *cae3* in the auxiliar
 
 # Basic Descriptive Statistics
 
-Table 2- Number of firms over the data period (as of June 2019 extraction)
+Table 2- Number of firms over the data period (as of June 2021 extraction)
 
-```
-    quietly use "S:/data/Products/CB/2019_06/CB_Annual/Output/Data/Firms/2006/CB_A_YFRM_2006_JUN19_ROSTO_V01.dta", clear
-    quietly append using "S:/data/Products/CB/2019_06/CB_Annual/Output/Data/Firms/2007/CB_A_YFRM_2007_JUN19_ROSTO_V01.dta"
-    quietly append using "S:/data/Products/CB/2019_06/CB_Annual/Output/Data/Firms/2008/CB_A_YFRM_2008_JUN19_ROSTO_V01.dta"
-    quietly append using "S:/data/Products/CB/2019_06/CB_Annual/Output/Data/Firms/2009/CB_A_YFRM_2009_JUN19_ROSTO_V01.dta"
-    quietly append using "S:/data/Products/CB/2019_06/CB_Annual/Output/Data/Firms/2010/CB_A_YFRM_2010_JUN19_ROSTO_V01.dta"
-    quietly append using "S:/data/Products/CB/2019_06/CB_Annual/Output/Data/Firms/2011/CB_A_YFRM_2011_JUN19_ROSTO_V01.dta"
-    quietly append using "S:/data/Products/CB/2019_06/CB_Annual/Output/Data/Firms/2012/CB_A_YFRM_2012_JUN19_ROSTO_V01.dta"
-    quietly append using "S:/data/Products/CB/2019_06/CB_Annual/Output/Data/Firms/2013/CB_A_YFRM_2013_JUN19_ROSTO_V01.dta"
-    quietly append using "S:/data/Products/CB/2019_06/CB_Annual/Output/Data/Firms/2014/CB_A_YFRM_2014_JUN19_ROSTO_V01.dta"
-    quietly append using "S:/data/Products/CB/2019_06/CB_Annual/Output/Data/Firms/2015/CB_A_YFRM_2015_JUN19_ROSTO_V01.dta"
-    quietly append using "S:/data/Products/CB/2019_06/CB_Annual/Output/Data/Firms/2016/CB_A_YFRM_2016_JUN19_ROSTO_V01.dta"
-    quietly append using "S:/data/Products/CB/2019_06/CB_Annual/Output/Data/Firms/2017/CB_A_YFRM_2017_JUN19_ROSTO_V01.dta"
+```s/
+    quietly use "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2006/CB_I_YFRM_2006_JUN21_ROSTO_V01.dta", clear
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2007/CB_I_YFRM_2007_JUN21_ROSTO_V01.dta"
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2008/CB_I_YFRM_2008_JUN21_ROSTO_V01.dta"
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2009/CB_I_YFRM_2009_JUN21_ROSTO_V01.dta"
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2010/CB_I_YFRM_2010_JUN21_ROSTO_V01.dta"
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2011/CB_I_YFRM_2011_JUN21_ROSTO_V01.dta"
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2012/CB_I_YFRM_2012_JUN21_ROSTO_V01.dta"
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2013/CB_I_YFRM_2013_JUN21_ROSTO_V01.dta"
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2014/CB_I_YFRM_2014_JUN21_ROSTO_V01.dta"
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2015/CB_I_YFRM_2015_JUN21_ROSTO_V01.dta"
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2016/CB_I_YFRM_2016_JUN21_ROSTO_V01.dta"
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2017/CB_I_YFRM_2017_JUN21_ROSTO_V01.dta"
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2018/CB_I_YFRM_2018_JUN21_ROSTO_V01.dta"
+    quietly append using "S:/data/Products/CB/2021_06/CB_Annual/Output/Data/Firms/2019/CB_I_YFRM_2019_JUN21_ROSTO_V01.dta"
     label language en
     table ano, contents(freq) center
 ```
@@ -1173,7 +1145,7 @@ The most relevant legislation for IES that may have an impact on CB is presented
 
 Given that *Central de Balanços* provides financial information such as Balance Sheet and Profits and Losses Statement data, the legislation implementing changes to the accounting standards should also be briefly enumerated:
 
--    **Decree-Law no. 158/2009**, July 13 – revokes the Official Chart of Accounts (POC) and creates the Accounting Standards System (SNC).[^31]  Starting in the first fiscal period after January 1, 2010 firms are required to adopt the “Accounting and Financial Reporting Standards” or the “Accounting and Financial Reporting Standards for Small-Sized Entities” when reporting the financial statements. If the firm chooses to report according to the “Accounting and Financial Reporting Standards for Small-Sized Entities” then it is required to report a smaller number of variables. This option is available for firms satisfying at least two of the following conditions: i) total assets below 500.000 euros; ii) total gross sales and other income lower than 1.000.000 euros or; iii) average number of employees less than 20;
+-    **Decree-Law no. 158/2009**, July 13 – revokes the Official Chart of Accounts (POC) and creates the Accounting Standards System (SNC).[^31]  Starting in the first fiscal period after January 1, 2010 firms are required to adopt the “Accounting and Financial Reporting Standards” or the “Accounting and Financial Reporting Standards for Small-Sized Entities” when reporting the financial statements. If the firm chooses to report according to the “Accounting and Financial Reporting Standards for Small-Sized Entities” then it is required to report a smaller number of variables. This option is available for firms satisfying at least two of the following conditions: i) total assets below 500.000 euros; ii) total net sales and other income lower than 1.000.000 euros or; iii) average number of employees less than 20;
 
   [Internal Link](./aux_files/legislation/Decreto-Lei_158_2009.pdf) /
   [External Link](https://dre.pt/pesquisa/-/search/492428/details/maximized)
@@ -1183,7 +1155,12 @@ Given that *Central de Balanços* provides financial information such as Balance
   [Internal Link](./aux_files/legislation/Portaria_986_2009.pdf) /
   [External Link](https://dre.pt/pesquisa/-/search/489212/details/maximized)
 
--    **Law no. 35/2010**, September 2 – introduces a new simplified reporting standard for Micro-Entities, the "Accounting and Financial Reporting Standards for Micro-Entities”. A micro-entity is defined as a firm that falls below in at least two of the following criteria at the balance sheet date: i) total assets equal to 500.000 euros; ii) net turnover equal to 500.000 euros; or iii) average number of employees equal to 5. If a firm does not comply for two consecutive fiscal periods with at least two of the criteria to be considered a Micro-Entity, it is no longer subject to a simplified reporting standard. Only after complying again with at least two of the criteria for two consecutive fiscal periods, the firm is entitled to report according to the "Accounting and Financial Reporting Standards for Micro-Entities”;
+- **Law no. 20/2010**, August 23 - changes the criteria to adopt the “Accounting and Financial Reporting Standards for Small-Sized Entities”. This regime is available for firms satisfying at least two of the following conditions: i) total assets below 1.500.000 euros; ii) Total net sales and other income lower than 3.000.000 euros or; iii) average number of employees less than 50;
+
+  [Internal Link](./aux_files/legislation/Lei_20_2010.pdf) /
+  [External Link](https://dre.pt/pesquisa/-/search/343473/details/maximized)
+
+- **Law no. 35/2010**, September 2 – introduces a new simplified reporting standard for Micro-Entities, the "Accounting and Financial Reporting Standards for Micro-Entities”. A micro-entity is defined as a firm that falls below in at least two of the following criteria at the balance sheet date: i) total assets equal to 500.000 euros; ii) net turnover equal to 500.000 euros; or iii) average number of employees equal to 5. If a firm does not comply for two consecutive fiscal periods with at least two of the criteria to be considered a Micro-Entity, it is no longer subject to a simplified reporting standard. Only after complying again with at least two of the criteria for two consecutive fiscal periods, the firm is entitled to report according to the "Accounting and Financial Reporting Standards for Micro-Entities”;
 
   [Internal Link](./aux_files/legislation/Lei_35_2010.pdf) /
   [External Link](https://dre.pt/pesquisa/-/search/344271/details/normal?q=Lei+n%C2%BA35%2F2010%2C%20de+2+de+setembro)
@@ -1201,15 +1178,15 @@ For a description of each variable in each dataset (name, unit of measurement, d
 
 | File | Description of Variables | Summary Statistics | Codebook | Dataset Description |
 | :---- | :----: | :----: | :----: |  :----: |
-| Summary of all variables (Portuguese and English labels) | [variables_pt_en.html](./aux_files/variables_description/variables_pt_en.html) |
+| Summary of all variables (Portuguese and English labels) | [variables_pt_en](./aux_files/variables_description/variables_pt_en.html) |
 | General Information File | [var_rosto](./aux_files/variables_description/var_rosto.html) | [stat_Rosto](./aux_files/descriptive_statistics/stat_Rosto.html) | [cdbk_Rosto](./aux_files/codebook/cdbk_Rosto.html) | [dscr_Rosto](./aux_files/describe_dataset/dscr_Rosto.html) |
-| Economic and Financial Information File |    [var_contas](./aux_files/variables_description/var_contas.html) | [stat_Contas](./aux_files/descriptive_statistics/stat_Contas.html) |     [cdbk_Contas](./aux_files/codebook/cdbk_Contas.html) | [dscr_Contas](./aux_files/describe_dataset/dscr_Contas.html) |
-| Employment Information File |    [var_emprego](./aux_files/variables_description/var_emprego.html) | [stat_Pessoal](./aux_files/descriptive_statistics/stat_Pessoal.html) |     [cdbk_Pessoal](./aux_files/codebook/cdbk_Pessoal.html) | [dscr_Pessoal](./aux_files/describe_dataset/dscr_Pessoal.html) |
-| Trade Information per Market File |    [var_mg](./aux_files/variables_description/var_mg.html) | [stat_MG](./aux_files/descriptive_statistics/stat_MG.html) |     [cdbk_MG](./aux_files/codebook/cdbk_MG.html) | [dscr_MG](./aux_files/describe_dataset/dscr_MG.html) |
+| Economic and Financial Information File | [var_contas](./aux_files/variables_description/var_contas.html) | [stat_Contas](./aux_files/descriptive_statistics/stat_Contas.html) | [cdbk_Contas](./aux_files/codebook/cdbk_Contas.html) | [dscr_Contas](./aux_files/describe_dataset/dscr_Contas.html) |
+| Employment Information File | [var_emprego](./aux_files/variables_description/var_emprego.html) | [stat_Pessoal](./aux_files/descriptive_statistics/stat_Pessoal.html) | [cdbk_Pessoal](./aux_files/codebook/cdbk_Pessoal.html) | [dscr_Pessoal](./aux_files/describe_dataset/dscr_Pessoal.html) |
+| Trade Information per Market File | [var_mg](./aux_files/variables_description/var_mg.html) | [stat_MG](./aux_files/descriptive_statistics/stat_MG.html) | [cdbk_MG](./aux_files/codebook/cdbk_MG.html) | [dscr_MG](./aux_files/describe_dataset/dscr_MG.html) |
 | Corporate Actions File | [var_amarc](./aux_files/variables_description/var_AMARC.html) | [stat_amarc](./aux_files/descriptive_statistics/stat_AMARC.html) | [cdbk_amarc](./aux_files/codebook/cdbk_AMARC.html) | [dscr_amarc](./aux_files/describe_dataset/dscr_AMARC.html) |
-| Economic and Financial Indicators File |    [var_indicadores](./aux_files/variables_description/var_indicadores.html) | [stat_Indic](./aux_files/descriptive_statistics/stat_Indic.html) |     [cdbk_Indic](./aux_files/codebook/cdbk_Indic.html) | [dscr_Indic](./aux_files/describe_dataset/dscr_Indic.html) |
-| Cash Flows File |    [var_cashflow](./aux_files/variables_description/var_cashflow.html) | [stat_FluxosCaixa](./aux_files/descriptive_statistics/stat_FluxosCaixa.html) |     [cdbk_FluxosCaixa](./aux_files/codebook/cdbk_FluxosCaixa.html) | [dscr_FluxosCaixa](./aux_files/describe_dataset/dscr_FluxosCaixa.html) |
-| Information by Sector of Activity File |    [var_bycae](./aux_files/variables_description/var_bycae.html) | [stat_byCAE](./aux_files/descriptive_statistics/stat_byCAE.html) |     [cdbk_byCAE](./aux_files/codebook/cdbk_byCAE.html) | [dscr_byCAE](./aux_files/describe_dataset/dscr_byCAE.html) |
+| Economic and Financial Indicators File | [var_indicadores](./aux_files/variables_description/var_indicadores.html) | [stat_Indic](./aux_files/descriptive_statistics/stat_Indic.html) | [cdbk_Indic](./aux_files/codebook/cdbk_Indic.html) | [dscr_Indic](./aux_files/describe_dataset/dscr_Indic.html) |
+| Cash Flows File | [var_cashflow](./aux_files/variables_description/var_cashflow.html) | [stat_FluxosCaixa](./aux_files/descriptive_statistics/stat_FluxosCaixa.html) | [cdbk_FluxosCaixa](./aux_files/codebook/cdbk_FluxosCaixa.html) | [dscr_FluxosCaixa](./aux_files/describe_dataset/dscr_FluxosCaixa.html) |
+| Information by Sector of Activity File | [var_bycae](./aux_files/variables_description/var_bycae.html) | [stat_byCAE](./aux_files/descriptive_statistics/stat_byCAE.html) | [cdbk_byCAE](./aux_files/codebook/cdbk_byCAE.html) | [dscr_byCAE](./aux_files/describe_dataset/dscr_byCAE.html) |
 
 
 [^32]: The Summary Statistics, Codebook and Dataset Description files are available on BPLIM's servers.
@@ -1217,18 +1194,20 @@ For a description of each variable in each dataset (name, unit of measurement, d
 # Useful Links
 [Sector Tables (Quadros de Setor)](https://www.bportugal.pt/en/page/sector-tables)
 
-[Informação Empresarial Simplificada (IES)](http://www.ies.gov.pt/site_IES/site/home.htm)
+[Informação Empresarial Simplificada (IES)](https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/modelos_formularios/decl_anual_inf_contabilistica_fiscal/Pages/IES_DA_grupo.aspx)
+
+[Central Balance Sheet Studies](https://www.bportugal.pt/publications/banco-de-portugal/all/124)
 
 [Statistical Bulletin](https://www.bportugal.pt/en/publications/banco-de-portugal/all/123)
 
 
 # Frequently Asked Questions
-The most frequently asked questions can be found [here](./aux_files/FAQ/faq.html).
+The most frequently asked questions can be found [here](./aux_files/faq/faq.html).
 If you have a question that is not covered in this manual, please send an email to bplim@bportugal.pt.
 
 
 # Citation of this dataset
-Banco de Portugal Microdata Research Laboratory (BPLIM) (2019): Central Balance Sheet Annual Data. Extraction: June 2019. Version: V1. BANCO DE PORTUGAL. Dataset. https://doi.org/10.17900/CB.CBA.Jun2019.V1
+Banco de Portugal Microdata Research Laboratory (BPLIM) (2021): Central Balance Sheet Annual Data. Extraction: June 2021. Version: V1. BANCO DE PORTUGAL. Dataset. https://doi.org/10.17900/CB.CBA.Jun2021.V1
 
 
 ## References
@@ -1240,9 +1219,4 @@ Banco de Portugal (2015). Central de Balanços. Cadernos do Banco de Portugal. L
 
 Oliveira, Mariana (2016). Bases de Microdados com Informação Económico-Financeira da IES (Informação Empresarial Simplificada). Tese de Mestrado. Faculdade de Economia da Universidade do Porto. Porto.
 
-
-
-
-
-
-
+Banco de Portugal (2019). Quadros do setor e quadros da empresa e do setor. Estudos da Central de Balanços. Lisboa.
