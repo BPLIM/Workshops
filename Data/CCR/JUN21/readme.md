@@ -23,6 +23,7 @@ version = {{ V1, Extraction June 2019}},
 doi = {10.17900/CRC.FRM.Jun2019.V1},
 url = {https://doi.org/10.17900/CRC.FRM.Jun2019.V1}
 }
+
 ```
 @dataset{CRC.FRMBNK.Jun2019.V1,
 author = {{Banco de Portugal Microdata Research Laboratory - BPLIM}},
@@ -33,6 +34,7 @@ version = {{ V1, Extraction June 2019}},
 doi = {10.17900/CRC.FRMBNK.Jun2019.V1},
 url = {https://doi.org/10.17900/CRC.FRMBNK.Jun2019.V1}
 }
+
 ```
 @dataset{CRC.EXP.Jun2019.V1,
 author = {{Banco de Portugal Microdata Research Laboratory - BPLIM}},
