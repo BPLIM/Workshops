@@ -19,7 +19,7 @@ author = {{Banco de Portugal Microdata Research Laboratory - BPLIM}},
 publisher = {Banco de Portugal},
 title = {{C}entral {C}redit {R}egister - {F}irm {L}evel {D}ata},
 year = {2024},
-version = {{ V1, Extraction June 2019}},
+version = {{V1, Extraction June 2019}},
 doi = {10.17900/CRC.FRM.Jun2019.V1},
 url = {https://doi.org/10.17900/CRC.FRM.Jun2019.V1}
 }
@@ -29,9 +29,9 @@ url = {https://doi.org/10.17900/CRC.FRM.Jun2019.V1}
 @dataset{CRC.FRMBNK.Jun2019.V1,
 author = {{Banco de Portugal Microdata Research Laboratory - BPLIM}},
 publisher = {Banco de Portugal},
-title = {{C}entral {C}redit {R}egister - {F}irm-{B}ank {L}evel {D}ata},
+title = {{C}entral {C}redit {R}egister - {F}irm{B}ank {L}evel {D}ata},
 year = {2024},
-version = {{ V1, Extraction June 2019}},
+version = {{V1, Extraction June 2019}},
 doi = {10.17900/CRC.FRMBNK.Jun2019.V1},
 url = {https://doi.org/10.17900/CRC.FRMBNK.Jun2019.V1}
 }
@@ -43,7 +43,7 @@ author = {{Banco de Portugal Microdata Research Laboratory - BPLIM}},
 publisher = {Banco de Portugal},
 title = {{C}entral {C}redit {R}egister - {E}xposure {L}evel {D}ata},
 year = {2024},
-version = {{ V1, Extraction June 2019}},
+version = {{V1, Extraction June 2019}},
 doi = {10.17900/CRC.EXP.Jun2019.V1},
 url = {https://doi.org/10.17900/CRC.EXP.Jun2019.V1}
 }
