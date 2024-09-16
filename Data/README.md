@@ -6,7 +6,7 @@
 
 - [Central Balance Sheet - Harmonized Panel (CBHP)](https://github.com/BPLIM/Manuals/tree/master/Data/CBHP)
 
-- [Central Credit Register (CRC)](https://github.com/BPLIM/Manuals/tree/master/Data/CRC)
+- [Central Credit Register (CCR)](https://github.com/BPLIM/Manuals/tree/master/Data/CCR)
 
 - [Harmonized Central Credit Register (HCRC)](https://github.com/BPLIM/Manuals/tree/master/Data/HCRC)
 
