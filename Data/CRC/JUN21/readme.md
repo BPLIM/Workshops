@@ -1,4 +1,4 @@
-# Central Credit Register (CCR) Database
+# Central Credit Register (CRC) Database
 
 In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/CRC/JUN21/manual_CRC_Internal_Jan2021.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/blob/master/Data/CRC/JUN21/aux_files/describe_dataset) and [variables description](https://github.com/BPLIM/Manuals/blob/master/Data/CRC/JUN21/aux_files/variables_description)) of the most recent extraction of Central Credit Register (CRC) Database.
 
