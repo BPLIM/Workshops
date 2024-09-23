@@ -1,6 +1,6 @@
 # Harmonized Central Credit Register
 
- This folder contains the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/HCRC/JUL23/manual_HCRC_Jul2023.pdf) and auxiliary documentation (including [metadata files](https://github.com/BPLIM/Manuals/blob/master/Data/HCRC/JUL23/aux_files/metafiles) and [variables description](https://github.com/BPLIM/Manuals/blob/master/Data/HCRC/JUL23/aux_files/variables_description)) for the 2023 extraction of the Harmonized Central Credit Registerr Database (HCRC).
+ This folder contains the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/HCRC/JUL23/manual_hcrc_Jul2023.pdf) and auxiliary documentation (including [metadata files](https://github.com/BPLIM/Manuals/blob/master/Data/HCRC/JUL23/aux_files/metafiles) and [variables description](https://github.com/BPLIM/Manuals/blob/master/Data/HCRC/JUL23/aux_files/variables_description)) for the 2023 extraction of the Harmonized Central Credit Registerr Database (HCRC).
 
 
 **Citation of this Dataset**
