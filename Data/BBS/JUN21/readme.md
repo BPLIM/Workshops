@@ -1,11 +1,11 @@
-# Monetary Financial Institutions Balance Sheet (BBS) Database
+# Monetary Financial Institutions Balance Sheet Database
 
-In this folder we make available the This folder contains the and auxiliary documentation (including [metadata files](https://github.com/BPLIM/Manuals/blob/master/Data/BBS/JUN21/aux_files/describe_dataset) and [variables description](https://github.com/BPLIM/Manuals/blob/master/Data/BBS/JUN21/aux_files/variables_description)) for the 2021 extraction of the of Monetary Financial Institutions Balance Sheet Database (BBS).
+ This folder contains the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/BBS/JUN21/manual_BBS_Jun2021.pdf) and auxiliary documentation (including [metadata files](https://github.com/BPLIM/Manuals/blob/master/Data/BBS/JUN21/aux_files/describe_dataset) and [variables description](https://github.com/BPLIM/Manuals/blob/master/Data/BBS/JUN21/aux_files/variables_description)) for the 2021 extraction of the of Monetary Financial Institutions Balance Sheet Database (BBS).
 
 
 **Citation of this Dataset**
 
-Banco de Portugal Microdata Research Laboratory (BPLIM)(2021): Bank Balance Sheet Monthly Data. Extraction: June 2021. Version:V1. Banco de Portugal. Dataset. https://doi.org/10.17900/BBS.Jun2021.V1
+Banco de Portugal Microdata Research Laboratory (BPLIM) (2021): Bank Balance Sheet Monthly Data. Extraction: June 2021. Version: V1. Banco de Portugal - BPLIM. Dataset. https://doi.org/10.17900/BBS.Jun2021.V1
 
 
 To cite this data set you can use the package biblatex with the following [BibTeX entry](https://github.com/BPLIM/Manuals/blob/master/Data/BBS/JUN21/aux_files/bibtex/BBS.bib):

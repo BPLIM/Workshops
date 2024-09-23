@@ -9,7 +9,6 @@
 Banco de Portugal Microdata Research Laboratory - BPLIM (2024): Central Balance Sheet Harmonized Panel. Extraction: June 2024. Version: V1. Banco de Portugal. Dataset. https://doi.org/10.17900/CB.CBHP.Jun2024.V1
 
 
-
 To cite this data set you can use the package biblatex with the following [BibTeX entry](https://github.com/BPLIM/Manuals/tree/master/Data/CBHP/JUN24/aux_files/bibtex/CBHP.bib):
 
 ```
