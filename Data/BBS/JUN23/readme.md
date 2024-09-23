@@ -12,11 +12,11 @@ To cite this data set you can use the package biblatex with the following [BibTe
 
 ```
 @dataset{BBS.Jun2023.V1,
-author = {{Banco de Portugal Microdata Research Laboratory - BPLIM}},
-publisher = {Banco de Portugal},
+author = {{Banco de Portugal Microdata Research Laboratory (BPLIM)}},
+publisher = {Banco de Portugal - BPLIM. Dataset},
 title = {{B}ank {B}alance {S}heet {M}onthly {D}ata},
 year = {2023},
-version = {{V1, Extraction June 2023}},
+version = {{ V1, Extraction: June 2023}},
 doi = {10.17900/BBS.Jun2023.V1},
 url = {https://doi.org/10.17900/BBS.Jun2023.V1}
 }
