@@ -5,7 +5,7 @@ This folder contains the [data manual](https://github.com/BPLIM/Manuals/blob/mas
 
 **Citation of this Dataset**
 
-Banco de Portugal Microdata Research Laboratory (BPLIM) (2024): Portuguese Companies Microdata (iBACH). Extraction: May 2024. Version: V1. Banco de Portugal. Dataset. https://doi.org/10.17900/iBACH.May2024.V1
+Banco de Portugal Microdata Research Laboratory (BPLIM) (2024): Portuguese Companies Microdata (iBACH). Extraction: May 2024. Version: V1. Banco de Portugal - BPLIM. Dataset. https://doi.org/10.17900/iBACH.May2024.V1
 
 BELab. Banco de España/CORPME, Colegio de Registradores de la Propiedad y Mercantiles de España. Spanish Companies Microdata (iBACH). DOI: 10.48719/BELab.iBACH0822_01
 
@@ -14,7 +14,7 @@ To cite this data set you can use the package biblatex with the following [BibTe
 ```
 @dataset{iBACH.May2024.V1,
 author = {{Banco de Portugal Microdata Research Laboratory (BPLIM)}},
-publisher = {Banco de Portugal},
+publisher = {Banco de Portugal - BPLIM. Dataset},
 title = {{P}ortuguese {C}ompanies {M}icrodata (iBACH)},
 year = {2024},
 version = {V1, Extraction: May 2024},
