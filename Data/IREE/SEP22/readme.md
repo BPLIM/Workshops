@@ -1,7 +1,7 @@
 # Fast and Exceptional Enterprise Survey - COVID-19
 
 
-This folder contains the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/IREE/SEP22/manual_IREE_SEP2022.pdf) and auxiliary documentation (including [variables description](https://github.com/BPLIM/Manuals/tree/master/Data/IREE/SEP22/aux_files/variables_description)) for the September 2022 extraction of the Fast and Exceptional Enterprise Survey - COVID-19.
+This folder contains the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/IREE/SEP22/manual_IREE_SEP2022.pdf) and auxiliary documentation (including [variables description](https://github.com/BPLIM/Manuals/tree/master/Data/IREE/SEP22/aux_files/variables_description)), for the most recent extraction of the Fast and Exceptional Enterprise Survey - COVID-19 (September 2022).
 
 
 **Citation of this Dataset**
