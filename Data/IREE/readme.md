@@ -1,0 +1,4 @@
+# Fast and Exceptional Enterprise Survey - COVID-19
+
+This folder contains Data Manuals and supporting documentation for the Fast and Exceptional Enterprise Survey (COVID-IREE), launched by Statistics Portugal (INE) and Banco de Portugal. The COVID-IREE was designed to assess the main impacts of the COVID-19 pandemic on various aspects of business activity, including turnover, workforce, prices, credit conditions, and the use of government support measures. Data collection began on a weekly basis from April 6-10, 2020, and transitioned to a biweekly frequency starting in May 2020. Although the survey was suspended after July 2020, three additional editions were conducted in November 2020, February 2021, and May 2022 in response to the evolving pandemic situation.
+BPLIM published four products based on this data in 2020, 2021, and 2022.
