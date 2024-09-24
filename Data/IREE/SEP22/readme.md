@@ -17,7 +17,7 @@ author = {{Statistics Portugal and Bank of Portugal}},
 publisher = {Banco de Portugal},
 title = {{F}ast and {E}xceptional {E}nterprise {S}urvey – {COVID-19}},
 year = {2022},
-version = {{ V1, Extraction September 2022}},
+version = {{ V1, Extraction: September 2022}},
 url = {https://bplim.bportugal.pt/content/fast-and-exceptional-enterprise-survey-covid-iree}
 }
 ```

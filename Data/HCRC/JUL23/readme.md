@@ -16,7 +16,7 @@ author = {{Banco de Portugal Microdata Research Laboratory (BPLIM)}},
 publisher = {Banco de Portugal - BPLIM. Dataset},
 title = {{H}armonized {C}entral {C}redit {R}esponsibility {D}atabase},
 year = {2023},
-version = {{V1, Extraction: June 2023}},
+version = {{ V1, Extraction: June 2023}},
 doi = {10.17900/HCRC.Jun2023.V1},
 url = {https://doi.org/10.17900/HCRC.Jun2023.V1}
 }
