@@ -8,7 +8,7 @@
 Banco de Portugal Microdata Research Laboratory (BPLIM) (2023): Historical Series of the Portuguese Banking Sector. Extraction: October 2023. Version: V1. Banco de Portugal - BPLIM. Dataset. https://doi.org/10.17900/SLB.Oct2023.V1
 
 
-To cite this data set you can use the package biblatex with the following [BibTeX entry](https://github.com/BPLIM/Manuals/blob/master/SLB/OCT2023/aux_files/bibtex/SLB.bib):
+To cite this data set you can use the package biblatex with the following [BibTeX entry](https://github.com/BPLIM/Manuals/tree/master/Data/SLB/OCT2023/aux_files/bibtex/SLB.bib):
 
 ```
 @dataset{SLB.Oct2023.V1,
