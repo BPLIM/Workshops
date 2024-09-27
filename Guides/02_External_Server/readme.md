@@ -1,4 +1,3 @@
-Here you can find the user manual for the external server of BPLIM intended for external researchers.
+# External Server Guide
 
-
-#### The manual is available **[here](https://github.com/BPLIM/Manuals/blob/master/Guides/ExternalServer/External_Server_Manual.pdf)**.
+This folder contains the User Guide for BPLIM's External Server, specifically designed for External Researchers.
