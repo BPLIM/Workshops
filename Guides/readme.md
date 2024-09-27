@@ -1,4 +1,4 @@
-# BPLIM - Guides
+# BPLIM Guides
 
 - [01_Guide for Researchers](https://github.com/BPLIM/Manuals/tree/master/Guides/01_Guide_for_Researchers)
 

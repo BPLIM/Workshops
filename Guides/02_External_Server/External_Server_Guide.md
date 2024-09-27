@@ -1,6 +1,6 @@
 ---
 title: "Banco de Portugal's Microdata Research Laboratory"
-author: "[BPLIM](https://bplim.bportugal.pt/): External Server Manual"
+author: "[BPLIM](https://bplim.bportugal.pt/): External Server Guide"
 date: "July, 2024"
 output:
   pdf_document:
