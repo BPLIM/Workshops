@@ -1,4 +1,4 @@
-# External Server Guide
+# Guide for Researchers
 
-This folder contains the [User Guide for BPLIM's External Server](https://github.com/BPLIM/Manuals/blob/master/Guides/02_External_Server/External_Server_Guide.pdf), specifically designed for External Researchers.
+This folder contains the [Guide for Researchers](https://github.com/BPLIM/Manuals/blob/master/Guides/01_Guide_for_Researchers/Guide_for_researchers_v072024.pdf), where
 
