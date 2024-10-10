@@ -1,14 +1,44 @@
+---
+title: How to Work with Pseudo-Data
+author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
+date: "June 2024"
+format:
+  pdf: 
+    documentclass: scrartcl
+    papersize: A4
+    toc: true
+    toc-title: Contents
+    toc-depth: 3
+    number-sections: true  
+  html:
+    theme: cosmo
+    embed-resources: true
+    toc: true
+    toc-location: left
+    html-math-method: katex
+    code-copy: true
+    number-sections: true
+    
+##bibliography: references.bib
+##csl: apa-6th-edition
+##output:
+  ##html_document:
+    ##citation_package: citeproc
+---
+
+{{< pagebreak >}}
+
 
 # BPLIM Guide to working with pseudo-data
 
 This document serves as a guide for researchers working with pseudo-data prepared by **BPLIM**. Pseudo-data here refers to data that is generated randomly but respects the metadata, the links, and the time structure of the original data. Its purpose is solely to help researchers prepare the Stata scripts for surrogate access (a.k.a. remote execution).
 Please read this [article](https://medium.com/the-stata-gallery/the-bplim-workflow-for-anonymizing-confidential-data-for-research-6ea4c0d01396) for a brief introduction to **BPLIM**'s workflow for working with confidential data for research.
 
-## 1. Data structure and links
+## Data structure and links
 
 To prepare the pseudo-data BPLIM must work with the researchers to identify all original datasets to use in the project along with the linking variables. For each original dataset, BPLIM will create a metafile and a file with a sample of the id (linking) variables. These files are needed to create the pseudo-data. As mentioned in the article, **BPLIM** does not provide the actual pseudo-data, but instead provides a set of *Stata* do-files that will generate the pseudo-data. 
 
-## 2. The package
+## The package
 
 **BPLIM** will prepare and send to the external researchers a compressed file with all the necessary files. For illustrative purposes, let's assume that the name of the project is **pxxx_BPLIM** and that the researcher identified two original files to work with:"CB_2006" and "CB_2007". The researcher will receive a zipped file, for example, *pxxx_BPLIM_pseudo.zip*. The researcher only has to unzip that file. This will create the following directory/file structure:
 
@@ -39,7 +69,7 @@ To prepare the pseudo-data BPLIM must work with the researchers to identify all 
 
 All the files in the first four directories - *ados*, *dos*, *ids*, and *metadata* - are needed to generate the pseudo datasets. The directory *pxxx_BPLIM* is the project folder, where the researcher is supposed to develop his/her work. Below we will further detail the structure of the project folder. 
 
-## 3. Creating the pseudo data
+## Creating the pseudo data
 
 After unzipping the file, the researcher should open the file *master.do* in **Stata** (located in the *dos* folder). Please make sure that the **Stata** working directory is *.../package/dos* (where the *master.do* file is located) because we use relative paths in this script to reference other necessary files. Running *master.do* will create the pseudo datasets and place them in the project directory *pxxx_BPLIM* under the folder *initial_dataset*. The project directory has the following structure:
 
@@ -66,9 +96,9 @@ After unzipping the file, the researcher should open the file *master.do* in **S
 where we show the pseudo-data files that were created. These files will contain "*\_D\_*" in their names to reflect the fact that they are "dummy" data. After creating the pseudo data, you may relocate the project directory wherever you wish. However, the structure of the project directory must remain the same, because it mirrors the structure that BPLIM (or an internal user) has to replicate the code using original data. You should not copy any additional data files to the folder *initial_dataset*.
 
 
-## 4. Setting up the project
+## Setting up the project
 
-### 4.1 Modifying the profile.do
+### Modifying the profile.do
 
 After creating the pseudo data, the researcher is ready to start coding. The researcher should place all scripts in the *work_area* directory. In this area, the researcher is free to organize the code as it pleases. However, you may have noticed that this folder  already contains two files: "*template.do*" and "*profile.do*". As the name suggests, *template.do* is a template that you should use to prepare your scripts. But before you can start coding you must edit *profile.do*. This do-file sets all the configurations (globals, paths, etc.) and must be placed in the same directory as the script file that you are executing. **Stata** will run this file first automatically. For example, suppose that you decide to place your project directory under the folder *C:/Users/Jane/*. 
 In that case you edit *profile.do* and adjust the global `root_path`, to "C:/Users/Jane/pxxx_BPLIM", the path to the project directory.
@@ -130,7 +160,7 @@ but instead use the global in the name of the file:
 use "${path_source}/CB_${M1}_2006.dta"
 ```
 
-### 4.2 Installing tools for your project
+### Installing tools for your project
 
 All the external user-written ados must be installed in the *tools* directory of your project. We recommend using [adoinstall](https://github.com/BPLIM/Tools/tree/master/ados/General/adoinstall) for this purpose. Fo example, to install `reghdfe` in the *tools* directory, you need to type the following in Stata:
 
@@ -141,7 +171,7 @@ adoinstall reghdfe, to("C:/Users/Jane/package/pxxx_BPLIM/tools")
 
 The scripts that you prepare should only use user-written commands that are placed in the *tools* directory of your project.
 
-## 5. Preparing your code
+## Preparing your code
 
 It is really important to follow the above guidelines to ensure that results can be safely replicated on the original data. If the code is well organized and follows the guidelines then BPLIM staff (or an internal co-author) can easily change the configuration file *profile.do* to rerun the analysis on the original data. The template file that we provide shows examples on how the researcher should code, based on the settings defined in *profile.do*. Below we show the contents of *template.do*:
 
@@ -323,7 +353,7 @@ do 03_regressions/01_regressions.do
 log close
 ```
 
-## 6. Creating the replicability package
+## Creating the replicability package
 
 After completing your analysis, you must prepare your replication package to send to **BPLIM**. With that package, **BPLIM** wil be able to replicate your results using the original data.
 
@@ -337,7 +367,7 @@ archive_rep, rep(1) path("C:/Users/Jane/pxxx_BPLIM")
 The output of the command is a folder named **Rep001** with the folders and files (scripts) needed for the replication. This folder, and the zip file *Rep001.zip* (zip file of the folder) are created in the *work_area* directory. The researcher only has to send the zip file to **BPLIM**.
 
 
-## 7. Recap
+## Recap
 
 It is important that the researcher follows the guidelines and the proper workflow:
 
@@ -364,4 +394,4 @@ It is important that the researcher follows the guidelines and the proper workfl
   - Intermediate datasets must be created during the analysis. Remember that the researcher is only allowed to send scripts and logs for replications, so **BPLIM** only has access to datasets in the *initial_dataset* folder. Trying to reference intermediate data that is not created during the analysis will cause the replication to **fail**. 
 
 
-.
+

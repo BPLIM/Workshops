@@ -1,24 +1,33 @@
 ---
-title: "Banco de Portugal's Microdata Research Laboratory"
-author: "[BPLIM](https://bplim.bportugal.pt/): External Server Guide"
-date: "July, 2024"
-output:
-  pdf_document:
-    template: bplim-template.tex
+title: External Server Guide
+author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
+date: "July 2024"
+format:
+  pdf: 
+    documentclass: scrartcl
+    papersize: A4
     toc: true
-    toc_depth: 2
-    fig_caption: true
-    number_sections: true
-papersize: a4
-fontsize: 11pt
-header-includes:
-  \usepackage[paperwidth=210mm,paperheight=297mm,left=27mm,right=27mm,top=25mm,bottom=25mm]{geometry}
-  \usepackage[colorlinks=true]{hyperref}
-  \usepackage[doublespacing]{setspace}
-mainfont: Times New Roman
-sansfont: Times New Roman
-documentclass: article
+    toc-title: Contents
+    toc-depth: 3
+    number-sections: true  
+  html:
+    theme: cosmo
+    embed-resources: true
+    toc: true
+    toc-location: left
+    html-math-method: katex
+    code-copy: true
+    number-sections: true
+    
+##bibliography: references.bib
+##csl: apa-6th-edition
+##output:
+  ##html_document:
+    ##citation_package: citeproc
 ---
+
+
+{{< pagebreak >}}
 
 <!---
 

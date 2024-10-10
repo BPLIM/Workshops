@@ -1,28 +1,24 @@
 ---
 title: Guide for Researchers
-author: Banco de Portugal's Microdata Research Laboratory (BPLIM)
+author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
 date: "July 24, 2024"
 logo: logo.png
 format: 
     pdf: 
-        documentclass: scrartcl
-        papersize: A4
-        toc: true
-        toc-title: Contents
-        toc-depth: 2
-        number-sections: true  
-        includes:
-         in-header: |
-           \usepackage{graphicx}
-           \usepackage{titling}
-              
+      documentclass: scrartcl
+      papersize: A4
+      toc: true
+      toc-title: Contents
+      toc-depth: 2
+      number-sections: true  
     html:
-        theme: cosmo
-        toc: true
-        toc-title: Contents
-        toc-depth: 2
-        number-sections: true
-        fontfamily: libertinus
+      theme: cosmo
+      embed-resources: true
+      toc: true
+      toc-location: left
+      html-math-method: katex
+      code-copy: true
+      number-sections: true
 ---
 
 {{< pagebreak >}}
