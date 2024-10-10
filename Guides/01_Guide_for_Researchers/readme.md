@@ -1,4 +1,3 @@
 # Guide for Researchers
 
-This folder contains the [Guide for Researchers](https://github.com/BPLIM/Manuals/blob/master/Guides/01_Guide_for_Researchers/Guide_for_researchers_v072024.pdf), where
-
+This folder contains the [Guide for Researchers](https://github.com/BPLIM/Manuals/blob/master/Guides/01_Guide_for_Researchers/Guide_for_researchers_v072024.pdf), which provides comprehensive information on all procedures related to data access at BPLIM. The guide includes detailed instructions on how to request data, outlines the approval process and access conditions, and explains the proper handling and use of datasets.

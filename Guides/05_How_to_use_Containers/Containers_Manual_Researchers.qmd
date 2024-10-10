@@ -1,22 +1,33 @@
 ---
-title: "Banco de Portugal's Microdata Research Laboratory: Using Containers"
-author: "[BPLIM](https://bplim.bportugal.pt/)"
-date: "`r Sys.setlocale('LC_TIME','English'); format(Sys.time(), '%B %Y')`"
+title: Using Containers
+author: Banco de Portugal's Microdata Research Laboratory <br> (BPLIM)
+date: "February 1, 2024"
 format:
+  pdf: 
+    documentclass: scrartcl
+    papersize: A4
+    toc: true
+    toc-title: Contents
+    toc-depth: 3
+    number-sections: true  
   html:
-    theme: journal
+    theme: cosmo
     embed-resources: true
     toc: true
     toc-location: left
     html-math-method: katex
     code-copy: true
     number-sections: true
-bibliography: references.bib
 csl: apa-6th-edition
 output:
   html_document:
     citation_package: citeproc
 ---
+
+
+{{< pagebreak >}}
+
+# General Information
 
 This guide provides instructions on how to use containers in BPLIM's infrastructure. Follow these steps to request a container for your project:
 
@@ -30,6 +41,7 @@ This guide provides instructions on how to use containers in BPLIM's infrastruct
 
 5.  Review the container: Upon receiving the container, carefully review it to ensure that it meets your requirements. Contact BPLIM if you have any questions or concerns that need clarification.
 
+
 # Access to the container
 
 ## Alternative A: use a pre-defined setup
@@ -40,9 +52,13 @@ Once you have logged in to the server, you will see an icon that opens the conta
 
 This solution makes use of the `Terminal`, giving you more freedom to interact with the container. Follow the steps below:
 
-1.  Open a Terminal in your project's work_area (e.g., `/bplimext/projects/PROJECT_ID/work_area`).
+1.  Open a Terminal in your project's work_area <br>
 
-2.  The container is located in your project's tools folder (`/bplimext/projects/PROJECT_ID/tools/_container`).
+    (e.g., `/bplimext/projects/PROJECT_ID/work_area`).
+
+2.  The container is located in your project's tools folder <br>
+
+    (`/bplimext/projects/PROJECT_ID/tools/_container`).
 
 3.  Run the container using the following command:
 
@@ -64,12 +80,14 @@ If you want to use Stata or RStudio, type `xstata-mp` or `rstudio`, respectively
 
 6.  When you're finished using the container, type exit to leave the Singularity image.
 
+
 # Build and replicate the container of your project
 
 In this section, we will discuss how to replicate your project's container locally. To do this, you'll need a running instance of Singularity and the script used to build the container for your project (which can be requested from BPLIM). If you have these, just open a `Terminal` on your computer and type:
 
 ```sh
-singularity build --fake-root iPROJECT_ID.BPLIM_Python_R_Jupyter.sif PROJECT_ID.BPLIM_Python_R_Jupyter.def
+singularity build --fake-root iPROJECT_ID.BPLIM_Python_R_Jupyter.sif 
+PROJECT_ID.BPLIM_Python_R_Jupyter.def
 ```
 
 
@@ -84,6 +102,7 @@ Note that although it is possible to build Singularity containers on Windows, it
 In addition to this guide, please refer to BPLIM's Guide for Researchers (@BPLIMguide) for more information.[^2]
 
 [^2]: For more information, please visit [BPLIM's GitHub resources](https://github.com/BPLIM).
+
 
 ## Starting point: the container
 
@@ -136,6 +155,7 @@ In a Singularity definition file, you can write a variety of commands and instru
 
 It's worth noting that depending on the complexity of your container and the requirements of your application, you may need to include additional commands and instructions in your definition file.
 
+
 ### **`header`**
 
 In a Singularity definition file, the "header" refers to the first section of the file that contains metadata and instructions for building the container. The header typically includes information such as the container's name, version, and author, as well as instructions for obtaining and installing the software that the container is designed to run. The header also can include instructions for configuring the build environment, such as setting environment variables or installing dependencies. The header is usually written in a specific format (e.g. #!Singularity) and starts at the first line of the file.
@@ -156,6 +176,7 @@ In a Singularity definition file, the "header" refers to the first section of th
 This header uses the `Bootstrap: library` to indicate that the container should be built using the Singularity Library, and uses the `From: ubuntu:20.04` to indicate that the container is based on the Ubuntu 20.04 image. This header also includes a `%help` section that provides a brief description of the container, and a `%labels` section that includes information about the container's author and version.
 
 It's worth noting that the way headers are written is not fixed and different instructions could be included.
+
 
 ### **`runscript`**
 
@@ -216,7 +237,8 @@ The `%files` section in a Singularity definition file is used to specify files o
     /path/to/mydir1
     /path/to/myfile2.sh
     /path/to/mydir2
-```sh
+```
+
 
 
 This would include the files `myfile1.txt` and `myfile2.sh` and the directories `mydir1` and `mydir2` in the container image, with the same paths.
@@ -232,6 +254,7 @@ You can also use wildcard to copy multiple files or directories, for example :
 This would include all files and directories in the folder `mydir` in the container image.
 
 It's worth noting that the `%files` section is optional, you don't need to include it in your definition file if you don't need to add any additional files to your container. Also, the `%files` section is only useful when creating a new container, if you want to add files to an existing container you can use the singularity copy command.
+
 
 ### **`environment`**
 
@@ -259,6 +282,7 @@ This will set the environment variable `R_VERSION` to 4.1.1, the environment var
 
 It's worth noting that you can also use `ENV` instruction in place of export and you can use `%environment` section to set any environment variable you want, not only R.
 
+
 ### **`post`**
 
 The `%post` section in a Singularity definition file is used to specify commands that should be run during the container build process, after the base image has been imported. Here is an example of what you might include in the `%post` section to build a container running R version 4.1.1 and the most recent version of RStudio Server:
@@ -267,9 +291,13 @@ The `%post` section in a Singularity definition file is used to specify commands
     %post
         # update package lists and install R 4.1.1
         apt-get update && apt-get install -y r-base=$R_VERSION
+        
         # add RStudio repository and key
-        echo "deb https://cran.rstudio.com/bin/linux/ubuntu bionic-cran35/" | tee -a /etc/apt/sources.list
-        apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+        echo "deb https://cran.rstudio.com/bin/linux/ubuntu <br>
+        bionic-cran35/" | tee -a /etc/apt/sources.list
+        apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <br>
+        E298A3A825C0D65DFD57CBB651716619E084DAB9
+        
         # install RStudio Server
         apt-get update && apt-get install -y rstudio-server
 ```
@@ -287,20 +315,32 @@ If you also want to include Jupyter Notebook, the R kernel and R *nbextensions* 
     %post
         # update package lists and install R 4.1.1
         apt-get update && apt-get install -y r-base=$R_VERSION
+        
         # add RStudio repository and key
-        echo "deb https://cran.rstudio.com/bin/linux/ubuntu bionic-cran35/" | tee -a /etc/apt/sources.list
-        apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+        echo "deb https://cran.rstudio.com/bin/linux/ubuntu 
+        bionic-cran35/" | tee -a /etc/apt/sources.list
+        apt-key adv --keyserver keyserver.ubuntu.com --recv-keys
+        E298A3A825C0D65DFD57CBB651716619E084DAB9
+        
         # install RStudio Server
         apt-get update && apt-get install -y rstudio-server
+        
         # install Jupyter
         apt-get install -y jupyter-core
+        
         # install R kernel for Jupyter
-        R -e "install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'), repos='https://cloud.r-project.org/')"
+        R -e "install.packages(c('repr', 'IRdisplay', 'evaluate', 
+        'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'), 
+        repos='https://cloud.r-project.org/')"
         R -e "devtools::install_github('IRkernel/IRkernel')"
         R -e "IRkernel::installspec(user = FALSE)"
+        
+        
         # install R nbextensions
-        R -e "install.packages('devtools', repos = 'https://cloud.r-project.org/')"
+        R -e "install.packages('devtools', repos = 
+        'https://cloud.r-project.org/')"
         R -e "devtools::install_github('randy3k/r-notebook')"
+        
 ```
 
 
@@ -310,6 +350,7 @@ It's worth noting that these commands are installing R packages from CRAN and Gi
 
 Note: you can install packages from binaries.
 
+
 ### Including additional packages
 
 To include TinyTeX and machine learning packages in your container, you can add the following commands to the `%post` section of your Singularity definition file:
@@ -318,28 +359,54 @@ To include TinyTeX and machine learning packages in your container, you can add 
     %post
         # update package lists and install R 4.1.1
         apt-get update && apt-get install -y r-base=$R_VERSION
+        
         # add RStudio repository and key
-        echo "deb https://cran.rstudio.com/bin/linux/ubuntu bionic-cran35/" | tee -a /etc/apt/sources.list
-        apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+        echo "deb https://cran.rstudio.com/bin/linux/ubuntu
+        bionic-cran35/" | tee -a /etc/apt/sources.list
+        apt-key adv --keyserver keyserver.ubuntu.com --recv-keys
+        E298A3A825C0D65DFD57CBB651716619E084DAB9
+        
+        
         # install RStudio Server
         apt-get update && apt-get install -y rstudio-server
+        
+        
         # install Jupyter
         apt-get install -y jupyter-core
+        
+        
         # install R kernel for Jupyter
-        R -e "install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'), repos='https://cloud.r-project.org/')"
+        R -e "install.packages(c('repr', 'IRdisplay', 'evaluate',
+        'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'),
+        repos='https://cloud.r-project.org/')"
         R -e "devtools::install_github('IRkernel/IRkernel')"
         R -e "IRkernel::installspec(user = FALSE)"
+        
+        
         # install R nbextensions
-        R -e "install.packages('devtools', repos = 'https://cloud.r-project.org/')"
+        R -e "install.packages('devtools', repos = 
+        'https://cloud.r-project.org/')"
         R -e "devtools::install_github('randy3k/r-notebook')"
+        
+        
         # install TinyTeX
-        wget -qO- "https://github.com/yihui/tinytex/raw/main/tools/install-unx.sh" | sh
+        wget -qO- "https://github.com/yihui/tinytex/raw/main/tools/inst
+        all-unx.sh" | sh
+        
+        
         # install additional R packages
-        R -e "install.packages(c('caret','randomForest','e1071','gbm','xgboost','lightgbm','catboost','mlr','tidymodels','h2o','caretEnsemble','pROC','ROCR','pROC.plot','ROCR.plot','kernlab','pls','neuralnet','nnet'), repos='https://cloud.r-project.org/')"
+        R -e "install.packages(c('caret','randomForest','e1071','gbm','
+        xgboost', 'lightgbm','catboost','mlr','tidymodels','h2o','caret
+        Ensemble','pROC','ROCR',  
+        'pROC.plot','ROCR.plot','kernlab','pls','neuralnet','nnet'), 
+        repos='https://cloud.r-project.org/')"
+        
+        
 ```
 
 
 This will install TinyTeX, which is a lightweight, cross-platform, and easy-to-maintain LaTeX distribution and also some popular machine learning packages such as caret, `randomForest`, `e1071`, `gbm`, `xgboost`, `lightgbm`, `catboost`, `mlr`, `tidymodels`, `h2o`, `caretEnsemble`, `pROC`, `ROCR`, `pROC.plot`, `ROCR.plot`, `kernlab`, `pls`, `neuralnet`, and `nnet`.
+
 
 ### Cleaning temporary files
 
@@ -374,7 +441,6 @@ In the example provided in the [Appendix](#appendix) we also added:
         apt-get autoclean
 ```
 
-
 ## Building the container
 
 ```sh
@@ -383,6 +449,9 @@ time singularity build --fakeroot iPROJECT_ID_BPLIM.sif PROJECT_ID_BPLIM.def
 
 
 We usually name the image with the prefix `i` followed by the name of the definition file. For example, `iBPLIM-Stata_V1.sif`, where the definition file is named `BPLIM-Stata_V1.def`.
+
+{{< pagebreak >}}
+
 
 # Building the container online
 
@@ -401,6 +470,9 @@ There are several cloud-based solutions that allow you to build Singularity cont
 6.  [**GitLab's Container Registry**](https://about.gitlab.com/blog/2016/05/23/gitlab-container-registry/): GitLab's Container Registry is a built-in feature of GitLab that allows you to build and store your container images directly in your GitLab repository.
 
 Each of these services has its own unique set of features and pricing plans. You should evaluate each one based on your specific needs and requirements.
+
+
+{{< pagebreak >}}
 
 # Appendix {#appendix}
 
@@ -428,9 +500,14 @@ Each of these services has its own unique set of features and pricing plans. You
 
 
         %files
-          /mnt/cephfs/home/exu0o9@bdp.pt/containers/_SOURCES/libpng12-0_1.2.54-1ubuntu1.11ppa0eoan_amd64.deb
-          /mnt/cephfs/home/exu0o9@bdp.pt/containers/_SOURCES/stata17.tar.gz
-          /mnt/cephfs/home/exu0o9@bdp.pt/containers/_SOURCES/stata_container_just_Stata.do
+          /mnt/cephfs/home/exu0o9@bdp.pt/containers/
+          _SOURCES/libpng12-0_1.2.54-1ubuntu1.11ppa0eoan_amd64.deb
+          
+          /mnt/cephfs/home/exu0o9@bdp.pt/containers/
+          _SOURCES/stata17.tar.gz
+          
+          /mnt/cephfs/home/exu0o9@bdp.pt/containers/
+          _SOURCES/stata_container_just_Stata.do
 
 
         %environment
@@ -448,28 +525,54 @@ Each of these services has its own unique set of features and pricing plans. You
 
         %labels
 
-          Author         :: Gustavo Iglesias and Miguel Portela -- BPLIM
+          Author         :: Gustavo Iglesias and Miguel Portela -- 
+                            BPLIM
+                            
           Version        :: (just) Stata -- V1.0.1
+          
           Build_date     :: January 12, 2023
 
 
         %post
 
-        apt update && apt-get update && DEBIAN_FRONTEND="noninteractive" TZ="Europe/London" apt-get -y install apt-transport-https apt-utils software-properties-common dirmngr curl wget xkb-data x11-apps bzip2 qt5-default mesa-utils libgl1-mesa-dev libgl1-mesa-glx libegl1-mesa libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 iproute2 swig build-essential libnss3 net-tools unixodbc-dev git vim krb5-user libncurses5 libxml2-dev libsasl2-dev libldap2-dev libssl-dev libnlopt-dev gnupg gnupg2 unixodbc gfortran nano cmake libblas3 libblas-dev liblapack-dev liblapack3 aptitude xorg-dev libreadline-dev libpcre3-dev liblzma-dev libbz2-dev libcurl4-openssl-dev libmagick++-dev libhdf5-dev hdf5-helpers gsl-bin libgsl-dev libgsl23 libgslcblas0 libgdal-dev libproj-dev libnss3 libzmq3-dev libgtk2.0-0
+        apt update && apt-get update &&
+        DEBIAN_FRONTEND="noninteractive" TZ="Europe/London" apt-get
+        -y install apt-transport-https apt-utils
+        software-properties-common dirmngr curl wget xkb-data x11-apps
+        bzip2 qt5-default mesa-utils libgl1-mesa-dev libgl1-mesa-glx
+        libegl1-mesa libxrandr2 libxss1 libxcursor1 libxcomposite1
+        libasound2 libxi6 libxtst6 iproute2 swig build-essential
+        libnss3 net-tools unixodbc-dev git vim krb5-user libncurses5
+        libxml2-dev libsasl2-dev libldap2-dev libssl-dev libnlopt-dev
+        gnupg gnupg2 unixodbc gfortran nano cmake libblas3 libblas-dev
+        liblapack-dev liblapack3 aptitude xorg-dev libreadline-dev
+        libpcre3-dev liblzma-dev libbz2-dev libcurl4-openssl-dev
+        libmagick++-dev libhdf5-dev hdf5-helpers gsl-bin libgsl-dev
+        libgsl23 libgslcblas0 libgdal-dev libproj-dev libnss3
+        libzmq3-dev libgtk2.0-0
+        
 
 
         #  Stata
 
-            tar -xvzf /mnt/cephfs/home/exu0o9@bdp.pt/containers/_SOURCES/stata17.tar.gz --no-same-owner
+            tar -xvzf/mnt/cephfs/home/exu0o9@bdp.pt/containers/_SOURCES
+            /stata17.tar.gz --no-same-owner
+            
             mv stata17 /opt/
-            dpkg -i /mnt/cephfs/home/exu0o9@bdp.pt/containers/_SOURCES/libpng12-0_1.2.54-1ubuntu1.11ppa0eoan_amd64.deb
+            
+            dpkg -i/mnt/cephfs/home/exu0o9@bdp.pt/containers/_SOURCES
+            /libpng12-0_1.2.54-1ubuntu1.11ppa0eoan_amd64.deb
+            
             export PATH="/opt/stata17:$PATH"
 
+            
             # install ado files
-              mkdir /opt/stata17/ado/plus
+            mkdir /opt/stata17/ado/plus
 
-                stata-mp -b do /mnt/cephfs/home/exu0o9@bdp.pt/containers/_SOURCES/stata_container_just_Stata.do
-
+            stata-mp -b do
+            /mnt/cephfs/home/exu0o9@bdp.pt/containers/_SOURCES/
+            stata_container_just_Stata.do
+            
                 chmod -R ugo=rx /opt/stata17/
 
 
@@ -479,4 +582,7 @@ Each of these services has its own unique set of features and pricing plans. You
             apt-get autoremove
             apt-get autoclean
 ```
+{{< pagebreak >}}
+
+
 

@@ -1,1 +1,0 @@
-Here you can find the user manual with instructions on how to use containers on BPLIM's External Server. Click on `Containers_Manual_Researchers.html`, and on the next screen, click on the download button in the top right corner.
