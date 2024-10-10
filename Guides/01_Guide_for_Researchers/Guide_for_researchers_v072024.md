@@ -46,9 +46,9 @@ Data is stored in an efficient way that minimizes file size and follows BPLIM's 
 Whenever possible, labels can be displayed in Portuguese and English.<br>
 
 All datasets are accompanied by a **Manual** that contains all relevant information regarding the data.
-The data manuals, the metafiles[^1] and citation information for the different data extractions are available on [**GitHub**](https://github.com/BPLIM/Manuals).
+The data manuals, the metafiles[^1] and citation information for the different data extractions are available on [**GitHub**](https://github.com/BPLIM/Manuals/tree/master/Data).
 A metafile that contains additional descriptive statistics for each dataset can be obtained once researchers are given access to the server.
-Please refer to the [**External Server Manual**](https://github.com/BPLIM/Manuals/tree/master/Guides/ExternalServer) on how to access this information.
+Please refer to the [**External Server Manual**](https://github.com/BPLIM/Manuals/tree/master/Guides/03_External_Server) on how to access this information.
 <br>
 
 [^1]: All metafiles are created with the [*metaxl*](https://github.com/BPLIM/Tools/tree/master/ados/General/metaxl) Stata command.
@@ -59,7 +59,7 @@ Most datasets have an associated [**Digital Object Identifier**](https://www.da-
 
 ## What data are available?
 
-The complete **list of datasets**, including a short description and the access conditions, is available in the *BPLIM Dataset Guide*.
+The complete **list of datasets**, including a short description and the access conditions, is available in the [**BPLIM Datasets Guide**](https://github.com/BPLIM/Manuals/tree/master/Guides/02_BPLIM_Datasets_Guide).
 On [**BPLIM´s website**](https://www.bplim.bportugal.pt) you will find a list of the latest version of the datasets available for external researchers, along with a link to the respective documentation.
 
 # Data Access
@@ -69,7 +69,7 @@ On [**BPLIM´s website**](https://www.bplim.bportugal.pt) you will find a list o
 Access is restricted to BPLIM accredited researchers who intend to utilize the data for scientific purposes.
 Individuals affiliated with BdP are classified as **Internal Researchers** and have unrestricted access to all datasets maintained by BPLIM.
 Those not affiliated with BdP are considered **External Researchers**, and their access is subject to several restrictions.
-*BPLIM Dataset Guide* summarizes the access restrictions for each dataset.
+[**BPLIM Datasets Guide**](https://github.com/BPLIM/Manuals/tree/master/Guides/02_BPLIM_Datasets_Guide) summarizes the access restrictions for each dataset.
 
 ## How can researchers request access to the data?
 
@@ -106,7 +106,7 @@ Due to a limited number of terminals available, external researchers must book t
 If the account is on the **External Server**, then the data must be accessed remotely (**"remote access"**) using a secure connection.
 BPLIM uses the [***NoMachine***](https://www.nomachine.com/) software for this purpose.
 With this connection, it is not possible to exchange files between the external server and the local computer.
-For more details on using the External Server, please refer to the [**External Server Manual**](https://github.com/BPLIM/Manuals/tree/master/Guides/ExternalServer).
+For more details on using the External Server, please refer to the [**External Server Manual**](https://github.com/BPLIM/Manuals/tree/master/Guides/03_External_Server).
 
 In special circumstances explained below, the external researcher may be granted indirect access to the data (**"surrogate access"**, also known as, **"remote execution"**).
 With surrogate access, there is no need for the external researcher to have an account, as BPLIM staff (or an internal researcher) will act as a proxy for data access.
@@ -148,7 +148,7 @@ For instructions on how to use the Replication App, please refer to the [**Repli
 While not strictly enforced, use of the BPLIM's Replication App, will ensure that the replication on the original data is implemented correctly and in a much more timely manner. We strongly encourage use of the BPLIM's Replication App.
 
 Researchers working with Level 4 data (**pseudo-data**) in their personal computers, will receive a package along with instructions to create the pseudo-data.
-For instructions on how to work with pseudo-data, please refer to the [**BPLIM Guide to Working with Pseudo-data**](https://github.com/BPLIM/Manuals/tree/master/Guides/PseudoData).
+For instructions on how to work with pseudo-data, please refer to the [**BPLIM Guide to Working with Pseudo-data**](https://github.com/BPLIM/Manuals/tree/master/Guides/07_Working_with_Pseudo-Data).
 
 ## How are projects involving co-authorship between Internal Researchers and External Researchers handled?
 
@@ -234,7 +234,7 @@ However, internal researchers have the flexibility to transfer files to and from
 When internal researchers collaborate with external co-authors, it becomes their responsibility to ensure that all files shared with external co-authors comply with BPLIM's data security and confidentiality policies.
 This ensures that no sensitive or restricted information is improperly disseminated.
 
-For further details, please refer to the [**Output Control at BPLIM**](https://github.com/BPLIM/Manuals/blob/master/Guides/OutputControl/Output_Control_Manual_FEV2024.pdf).
+For further details, please refer to the [**Output Control at BPLIM**](https://github.com/BPLIM/Manuals/blob/master/Guides/06_Output_Control).
 
 ## What restrictions apply to the release of output logs?
 
@@ -255,7 +255,7 @@ For projects involving only external researchers, BPLIM staff will verify the co
 BPLIM staff will only answer requests for **output extraction sent by email** and will take the necessary time to ensure that all **confidentiality requirements are safeguarded**.
 Researchers should keep their output requests to a minimum and, whenever feasible, these requests should be of **final outputs**.
 
-For further details, please refer to the [**Output Control at BPLIM**](https://github.com/BPLIM/Manuals/blob/master/Guides/OutputControl/Output_Control_Manual_FEV2024.pdf).
+For further details, please refer to the [**Output Control at BPLIM**](https://github.com/BPLIM/Manuals/blob/master/Guides/06_Output_Control).
 
 ## What happens if the researcher violates the rules?
 
