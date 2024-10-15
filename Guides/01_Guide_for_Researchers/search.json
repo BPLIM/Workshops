@@ -159,5 +159,12 @@
     "title": "Guide for Researchers",
     "section": "8.1 How can I contact BPLIM?",
     "text": "8.1 How can I contact BPLIM?\nThe preferred way to contact BPLIM is through email: BPLIM@bportugal.pt. For projects already ongoing the subject line should always include the project reference (eg: p###_Surname). If necessary you can contact us at:\nAddress: \nBanco de Portugal \nMicrodata Research Laboratory \nRua do Almada, 71 \n4050-036 Porto \nPortugal"
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Guide for Researchers",
+    "section": "",
+    "text": "All metafiles are created with the metaxl Stata command.↩︎"
   }
 ]
