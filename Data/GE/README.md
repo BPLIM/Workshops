@@ -1,0 +1,3 @@
+# Enterprise Groups Database
+
+This folder contains Data Manuals and supporting documentation for the Enterprise Groups Database (GE). GE is constructed and made available by *Banco de Portugal* and provides information on the participations in equity capital and voting rights of non-financial corporations operating in Portugal. This dataset contains annual data from 2014 onwards and is mainly based on the information reported through *Informação Empresarial Simplificada* (IES, Simplified Corporate Information).
