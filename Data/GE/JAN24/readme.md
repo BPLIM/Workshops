@@ -1,6 +1,6 @@
 # Enterprise Groups Database
 
-This folder contains the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/GE/JAN24/GE_manual_JAN24.pdf) and auxiliary documentation (including [metadata files](https://github.com/BPLIM/Manuals/tree/master/Data/GE/JAN24/aux_files/metafiles) for the 2024 extraction of the Enterprise Groups Database (GE).
+This folder contains the [data manual](https://github.com/BPLIM/Manuals/blob/master/Data/GE/JAN24/GE_manual_JAN2024.pdf) and auxiliary documentation (including [metadata files](https://github.com/BPLIM/Manuals/tree/master/Data/GE/JAN24/aux_files/metafiles) for the 2024 extraction of the Enterprise Groups Database (GE).
 
 **Citation of this Dataset**
 
