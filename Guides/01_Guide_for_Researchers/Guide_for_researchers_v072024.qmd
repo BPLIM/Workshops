@@ -3,6 +3,7 @@ title: Guide for Researchers
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
 date: "July 24, 2024"
 logo: logo.png
+downloads: [pdf, epub]
 format: 
     pdf: 
       documentclass: scrartcl
