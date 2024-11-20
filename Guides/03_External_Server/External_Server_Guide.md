@@ -794,9 +794,9 @@ Ex: `du /bplimext/projects/I001_jdoe/work_area/`
 |                       |                       | in the next login.    |
 |                       |                       | The password can be   |
 |                       |                       | changed at any moment |
-|                       |                       | using: **(1)**, "All  |
-|                       |                       | Applications \|       |
-|                       |                       | Settings \| System    |
+|                       |                       | using: **(1)**,"Redhat|
+|                       |                       | icon \| Applications  |
+|                       |                       | \|Settings \| System  |
 |                       |                       | Settings -- Account   |
 |                       |                       | Details", click       |
 |                       |                       | "Change Password";    |
