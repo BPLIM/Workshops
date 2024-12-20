@@ -38,7 +38,7 @@ In this folder you can find the materials from the Workshop on "Empirical Resear
 
 [Michael Dowling](https://business.dcu.ie/staff/professor-michael-dowling/), DCU Business School, Dublin City University
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/) (available soon)<br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_05_Michael_Dowling.pdf) <br/><br/>
 
 
 
