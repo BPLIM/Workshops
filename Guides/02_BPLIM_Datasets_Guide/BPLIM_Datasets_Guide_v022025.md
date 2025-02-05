@@ -2,7 +2,8 @@
 title: BPLIM Datasets Guide
 subtitle: ""
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
-date: "October, 2024"
+date: "February, 2025"
+#downloads: [pdf, epub]
 format:
   pdf: 
     documentclass: scrartcl
@@ -52,16 +53,17 @@ The first part of the Guide outlines the datasets accessible to **External Resea
 
 The second part of the Guide details the additional datasets provided by BPLIM, which are primarily available to **Internal Researchers**. 
 
-Lastly, the Guide highlights the datasets that BPLIM plans to make available in the near future for both internal and external researchers.
+Lastly, the Guide highlights the datasets that BPLIM plans to make available in the near **future** for both internal and external researchers.
+
+{{< pagebreak >}}
+
+
+
+# Datasets Available for External Researchers
 
 
 ![Summary of External Researcher Access Options](./images/Fluxog.png)
 
-
-
-{{< pagebreak >}}
-
-# Datasets Available for External Researchers
 
 
 ## Central Balance Sheet Database (CB)
@@ -89,9 +91,9 @@ For more information on this dataset, please refer to the **Manuals and Auxiliar
 {{< pagebreak >}}
 
 
-## Fast and Exceptional Enterprise Survey - COVID-19 (COVID-IREE)
+## Fast and Exceptional Enterprise Survey - COVID-19 (IREE-COVID)
 
-The Fast and Exceptional Enterprise Survey - COVID-19 (COVID-IREE) was launched by Statistics Portugal (INE) and the BdP aiming to identify the main effects of the COVID-19 pandemic on key aspects of the enterprises activity, such as firm's turnover, workforce, prices, credit conditions and the use of Government support measures. This survey was addressed to a representative sample of non-financial firms located in Portugal. The data started being collected with a weekly frequency on April 6-10, 2020 and refers to a fortnight from May 2020 onwards. Although the survey was suspended after July 2020, two new editions were implemented, in November 2020 and in the first fortnight of February 2021 given the evolution of the pandemic situation. 
+The Fast and Exceptional Enterprise Survey - COVID-19 (IREE-COVID) was launched by Statistics Portugal (INE) and the BdP aiming to identify the main effects of the COVID-19 pandemic on key aspects of the enterprises activity, such as firm's turnover, workforce, prices, credit conditions and the use of Government support measures. This survey was addressed to a representative sample of non-financial firms located in Portugal. The data started being collected with a weekly frequency on April 6-10, 2020 and refers to a fortnight from May 2020 onwards. Although the survey was suspended after July 2020, two new editions were implemented, in November 2020 and in the first fortnight of February 2021 given the evolution of the pandemic situation. 
 
 For more information on this dataset, please refer to the **Manuals and Auxiliary Documentation** (metadata files, variable descriptions) available in the [**BPLIM Github Repository - IREE**](https://github.com/BPLIM/Manuals/tree/master/Data/IREE).
 <br>
@@ -223,28 +225,17 @@ For more information on this dataset, please refer to the **Manuals and Auxiliar
 
 
 
-# Aditional Datasets Available for Internal Researchers
+# Additional Datasets Available for Internal Researchers
 
 
-![Aditional Datasets Available for Internal Researchers](./images/internal.png)
+![Additional Datasets Available for Internal Researchers](./images/internal.png)
 
 
 
 ## Central Credit Register (CRC) - Households
 
-The Central Credit Register (CRC) database contains credit exposure data for both firms and **households**. Data on credit granted to households is only available for Internal Researchers, **with no exceptions**. This information is considered **highly confidential** due to its sensitive nature. 
+The Central Credit Register (CRC) database contains credit exposure data for both firms and **households**. Data on credit granted to households is only available for Internal Researchers. This information is considered **highly confidential** due to its sensitive nature. 
 
-
-
-
-
-## Quadros de Pessoal (QP)
-
-Quadros de Pessoal (QP) dataset is available through a **Protocol** between BdP and the Ministry of Labour and Social Solidarity. The QP dataset includes all public and private firms with at least one employee, providing annual data on firms, establishments, and their workers. 
-
-It offers comprehensive details on worker characteristics and covers the period from 1982 onwards. BPLIM has data available up to 2013.
-
-This dataset is only available for Internal Researchers.
 
 
 ## Supermarket Daily Prices (SDP) and Matched Supermarket Daily Prices (MSDP)
@@ -259,7 +250,6 @@ This data can only be used for research projects involving Internal Researchers.
 
 
 
-
 {{< pagebreak >}}
 
 
@@ -267,15 +257,7 @@ This data can only be used for research projects involving Internal Researchers.
 # Future Developments
 
 
-![Upcoming Datasets to Be Available](./images/future.png)
-
-
-## Balance of Payments (BoP)
-
-The Portuguese Balance of Payments records the transactions that take place between residents and non-residents in Portugal over a given period of time, typically a month, quarter, or year. Transactions are classified in the balance of payments according to the nature of the underlying economic resources. There are **three main categories**: **current account**, **capital account**, and **financial account**.
-
-The current account includes transactions between residents and non-residents involving produced assets (goods and services), primary income (income from the use of factors of production such as capital and labor), and secondary income (current transfers).
-
+![Upcoming Datasets](./images/future.png)
 
 
 ## Statistical Central Credit Register (SCRC)
@@ -290,9 +272,17 @@ The data will be available at the **firm level**, **firm-bank level**, and **ins
 
 
 
+## Balance of Payments (BoP)
+
+The Portuguese Balance of Payments records the transactions that take place between residents and non-residents in Portugal over a given period of time, typically a month, quarter, or year. Transactions are classified in the balance of payments according to the nature of the underlying economic resources. There are **three main categories**: **current account**, **capital account**, and **financial account**.
+
+The current account includes transactions between residents and non-residents involving produced assets (goods and services), primary income (income from the use of factors of production such as capital and labor), and secondary income (current transfers).
+
+
+
 ## E-Fatura
 
-EFATURA data is received monthly under a **Protocol** signed between BdP and INE. This database contains **information regarding invoices** issued by entities that have their headquarters or permanent establishment in the national territory. The information is aggregated by the tax identification number (NIF) of the issuer (only for legal persons) and the acquirer.
+EFATURA data is received monthly under a **Protocol** signed between BdP and INE. This database contains **information regarding invoices** issued by entities that have their headquarters or permanent establishment in the national territory. The information is aggregated by the tax identification number (NIF) of the issuer (only for legal persons) and the acquirer. 
 
 INE implements some data cleaning, like imputation of missings or outliers, before sharing the data with BdP.
 
