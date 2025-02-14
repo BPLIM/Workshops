@@ -1,6 +1,6 @@
 # BPLIM Workshop 2024
 
-In this folder you can find the materials from the Workshop on "Empirical Research in the AI Era". Recordings of all sessions will be available soon.
+In this folder you can find the materials from the Workshop on "Empirical Research in the AI Era". Recordings of all sessions are available [here](https://www.bportugal.pt/evento/workshop-empirical-research-ai-era-bplim).
 
 
 ## Presentations
