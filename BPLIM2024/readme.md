@@ -14,31 +14,31 @@ In this folder you can find the materials from the Workshop on "Empirical Resear
 
 [Jesse Lastunen](https://sites.google.com/view/lastunen/), UNU-WIDER
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_01_Jesse_Lastunen.pdf) / [Video](https://www.youtube.com/watch?v=CeIYtotZhw0)<br/><br/> 
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_01_Jesse_Lastunen.pdf) / [Video](https://www.youtube.com/watch?v=CeIYtotZhw0) <br/><br/> 
 
 **Uses of Generative AI for Economics Research**
 
 [Kevin Bryan](http://www.kevinbryanecon.com/),  University of Toronto
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_02_Kevin_Bryan.pdf) <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_02_Kevin_Bryan.pdf) / [Video](https://www.youtube.com/watch?v=Rabwlzf0Nsg) <br/><br/> 
 
 **Unlocking Economic Data with LLM**
 
 [Sérgio Correia](https://scorreia.com/), Board of Governors of the Federal Reserve System
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_03_Sergio_Correia.pdf) <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_03_Sergio_Correia.pdf) / [Video](https://www.youtube.com/watch?v=9iboTI3g92s) <br/><br/>
 
 **Using Local LLMs and RAG for Exploring Research Papers**
 
 [Nelson Areal](https://nelsonareal.net/), Universidade do Minho
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_04_Nelson_Areal.pdf) <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_04_Nelson_Areal.pdf) / [Video](https://www.youtube.com/watch?v=Lx3IW2AiZkg) <br/><br/>
 
 **Financial Agents for Research and Practice**
 
 [Michael Dowling](https://business.dcu.ie/staff/professor-michael-dowling/), DCU Business School, Dublin City University
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_05_Michael_Dowling.pdf) <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_05_Michael_Dowling.pdf) / [Video](https://www.youtube.com/watch?v=K-vnIimlKJI) <br/><br/>
 
 
 
@@ -50,27 +50,27 @@ In this folder you can find the materials from the Workshop on "Empirical Resear
 
 [Ricardo Mora](https://economics.uc3m.es/personal/ricardo-mora/), Universidad Carlos III Madrid
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day2_01_Ricardo_Mora.pdf) <br/><br/> 
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day2_01_Ricardo_Mora.pdf) / [Video](https://www.youtube.com/watch?v=l9gtMr0Vw5E) <br/><br/> 
 
 
 **How Large Language Models Support Statistical Analysis**
 
 [Peter Gruber](https://search.usi.ch/people/4829015abeb9d8ad2e65ca4a746b56c7/gruber-peter), USI Università della Svizzera Italiana
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day2_02_Peter_Gruber.pdf) <br/><br/> 
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day2_02_Peter_Gruber.pdf) / [Video](https://www.youtube.com/watch?v=MElyyjYlFS0) <br/><br/> 
 
 
 **Using Large Language Models for Text-As-Data Studies in the Social Sciences**
 
 [Ulrich Matter](https://umatter.github.io/), Bern University of Applied Sciences, and University of St. Gallen
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day2_03_Ulrich_Matter.pdf) <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day2_03_Ulrich_Matter.pdf) / [Video](https://www.youtube.com/watch?v=JRtuf4EdLko) <br/><br/>
 
 **Reproducibility and AI: Potential, Challenges, and Other Preliminary Thoughts**
 
 [Lars Vilhuber](https://www.vilhuber.com/lars/), Cornell University, and American Economic Association
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day2_04_Lars_Vilhuber.pdf) <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day2_04_Lars_Vilhuber.pdf) / [Video](https://www.youtube.com/watch?v=EqzTzjo5MZs) <br/><br/>
 
 
 
