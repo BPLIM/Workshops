@@ -14,7 +14,7 @@ In this folder you can find the materials from the Workshop on "Empirical Resear
 
 [Jesse Lastunen](https://sites.google.com/view/lastunen/), UNU-WIDER
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_01_Jesse_Lastunen.pdf) <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2024/Day1_01_Jesse_Lastunen.pdf) / [Video](https://www.youtube.com/watch?v=CeIYtotZhw0)<br/><br/> 
 
 **Uses of Generative AI for Economics Research**
 
