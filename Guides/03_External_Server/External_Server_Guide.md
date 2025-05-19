@@ -1,11 +1,13 @@
 ---
 title: External Server Guide
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
-date: "July 2024"
+date: "May 2025"
 format:
   pdf: 
     documentclass: scrartcl
+    pdf-engine: xelatex
     papersize: A4
+    geometry: top=27mm, bottom=27mm, left=27mm, right=27mm
     toc: true
     toc-title: Contents
     toc-depth: 3
@@ -27,23 +29,24 @@ format:
 ---
 
 
-{{< pagebreak >}}
+\newpage
 
 <!---
 
 1. open TERMINAL
 2. RUN THE FOLLOWING LINE IN THE TERMINAL
 
-> MAC > cd /Users/zxc/Documents/GitHub/Manuals/ExternalServer
+> MAC > cd /Users/zxc/Documents/GitHub/Manuals/Guides/ExternalServer
 
-> Gab. 1.19 > C:\Users\fst.EEG\Documents\Manuals\ExternalServer
+> Gab. 1.19 > C:\Users\mangelo\OneDrive - Universidade do Minho\Documentos\GitHub119\Manuals\Guides\03_External_Server
 
-> ACREM > C:\Users\asd\Documents\GitHub\Manuals\ExternalServer
+> ACREM > C:\Users\asd\Documents\GitHub\Manuals\Guides\ExternalServer
 
-> Desktop > C:\Users\exu0o9\Documents\GitHub\Manuals\ExternalServer
+> Desktop > C:\Users\exu0o9\Documents\GitHub\Manuals\Guides\ExternalServer
 
-pandoc --toc --number-sections External_Server_Manual.md --pdf-engine=xelatex -o External_Server_Manual.pdf
+pandoc --toc --number-sections External_Server_Guide.md --pdf-engine=xelatex -o External_Server_Guide.pdf
 
+pandoc --toc --number-sections External_Server_Guide.md --pdf-engine=xelatex -V geometry:top=27mm -V geometry:bottom=27mm -V geometry:left=27mm -V geometry:right=27mm -o External_Server_Guide.pdf
 
 
 ALTERNATIVE
@@ -127,7 +130,9 @@ The User will be able to connect to the external server using `NoMachine` client
 
 Once you start `NoMachine`, these are the first three screens you will see:
 
+::: center
 ![](./media/image1.png){width=65%}
+:::
 
 ![](./media/image2.png){width=65%}
 
@@ -895,161 +900,231 @@ Ex: `du /bplimext/projects/I001_jdoe/work_area/`
 |                       |                       | attempts is reached.  |
 +-----------------------+-----------------------+-----------------------+
 
+\newpage
 
 ## Download, install and configure NoMachine client{#install_nomachine}
 
-**Step 1**: go to the link below and use the credentials provided by
-BPLIM to access the site. **Note**: sometimes the internet provider,
-*e.g.*, a University, may block access to this particular website.
-Please check with your provider in case you get an error while trying to
-use the link.
+>
 
-[https://www.bportugal.pt/webdrive/index.php/s/irAzxZmir8KHyzD/authenticate](https://www.bportugal.pt/webdrive/index.php/s/irAzxZmir8KHyzD/authenticate)
+**Step 1**: Go to the following link and use the credentials provided by BPLIM to access the site:
 
-![](./media/image17.png){width="3.052795275590551in"
-height="2.3622047244094486in"}
+>
 
-**Step 2**: download the file with an extension compatible with your OS
-(Operation System)
+> [https://www.bportugal.pt/webdrive/index.php/s/irAzxZmir8KHyzD/authenticate](https://www.bportugal.pt/webdrive/index.php/s/irAzxZmir8KHyzD/authenticate)
 
-![](./media/image18.png){width="3.6681966316710413in"
-height="2.3622047244094486in"}
+>
 
-**Step 3**: install 'NoMachine'
+> **Note**: sometimes the internet provider,*e.g.*, a University, may block access to this particular website.
+Please check with your provider in case you get an error while trying to use the link.
 
-![](./media/image19.png){width="4.079410542432196in"
-height="3.1496062992125986in"}
+>
 
-![](./media/image20.png){width="4.068589238845145in"
-height="3.1496062992125986in"}
+> ![](./media/image17.png){width="3.052795275590551in" height="2.3622047244094486in"}
 
-![](./media/image21.png){width="4.063740157480315in"
-height="3.1496062992125986in"}
+>
 
-![](./media/image22.png){width="4.093652668416448in"
-height="3.1496062992125986in"}
+**Step 2**: Download the file with an extension compatible with your OS (Operating System).
 
-![](./media/image23.png){width="4.093652668416448in"
-height="3.1496062992125986in"}
+>
 
-![](./media/image24.png){width="4.091154855643045in"
+> ![](./media/image18.png){width="3.6681966316710413in" height="2.3622047244094486in"}
+
+>
+
+\newpage
+
+**Step 3**: Install 'NoMachine'.
+
+>
+
+> ![](./media/image19.png){width="4.079410542432196in" height="3.1496062992125986in"}
+
+**\
+**
+
+> ![](./media/image21.png){width="4.063740157480315in" height="3.1496062992125986in"}
+
+>
+
+> ![](./media/image22.png){width="4.093652668416448in"
 height="3.1496062992125986in"}
 
 **\
 **
 
-**Step 4**: reboot your computer
+> ![](./media/image24.png){width="4.091154855643045in" height="3.1496062992125986in"}
 
-![](./media/image25.png){width="2.7559055118110236in"
-height="1.2160203412073491in"}
+\newpage
 
-**Step 5**: NoMachine client access configuration
+**Step 4**: Reboot your computer
 
-**Step 5.1**: start 'NoMachine' and create a new connection
+>
 
-> ![](./media/image26.png){width="4.724409448818897in"
-> height="3.0297101924759406in"}
-
-**Step 5.2**: Choose 'NX protocol'
-
-> ![](./media/image27.png){width="4.724409448818897in"
-> height="3.0301957567804023in"}
-
-**Step 5.3**: Define the 'Host' as bplimexterno.bportugal.pt, 'Port' 4000
-
-> Click 'Use UDP communication for multimedia data'
->
-> ![](./media/image28_new.png){width="4.724409448818897in"
-> height="3.0200164041994753in"}
->
-> **Step 5.4**: Use password authentication, with or without proxy,
-> depending on the instructions of the network administrator/user \'s
-> computer support, with the name "BPLIM-LabInvestMicrodados Banco de
-> Portugal".
->
-> ![](./media/image29.png){width="4.724409448818897in"
-> height="3.024378827646544in"}
->
-> **Step 5.5**: Do not use a 'proxy'
->
-> ![](./media/image30.png){width="4.724409448818897in"
-> height="3.0316502624671915in"}
->
-> **Step 5.6**: Define a name for the connection
->
-> ![](./media/image31.png){width="4.724409448818897in"
-> height="3.0316502624671915in"}
->
-> **Step 5.7**: Once the entry for bplimexterno.bportugal.pt has been created,
-> connect:
->
-> ![](./media/image32.png){width="4.724409448818897in"
-> height="3.036981627296588in"}
+> ![](./media/image25_clean.png){width="2.7559055118110236in" height="1.2160203412073491in"}
 
 **\
 **
 
-> **Step 5.8**: Before the first effective connection, it may be
-> necessary to accept the certificate from bplimexterno.bportugal.pt
+**Step 5**: NoMachine client access configuration.
+
 >
-> The Investigator should verify that the \"fingerprint\" (verification
-> code) is:
+
+> **Step 5.1**: Start 'NoMachine' and create a new connection.
+
 >
+
+> ![](./media/image26.png){width="4.724409448818897in" height="3.0297101924759406in"}
+
+**\
+**
+
+> ![](./media/image27.png){width="4.724409448818897in" height="3.0301957567804023in"}
+
+**\
+**
+
+> **Step 5.2**: Define the 'Host' as bplimexterno.bportugal.pt, 'Port' 4000, 'Protocol' NX and set a 'Friendly Name' for 'Name'.
+
+>
+
+> ![](./media/image28_new.png){width="4.724409448818897in" height="3.0200164041994753in"}
+
+>
+
+\newpage
+
+> **Step 5.3**: Use password authentication, with or without proxy, depending on the instructions of the network administrator/user \'s
+computer support. Click 'Add' to create the connection.
+
+>
+
+> ![](./media/image29.png){width="4.724409448818897in" height="3.024378827646544in"}
+
+**\
+**
+
+> **Step 5.4**: Once the entry for `bplimexterno.bportugal.pt` has been created, connect:
+
+>
+
+> ![](./media/image32.png){width="4.724409448818897in" height="3.036981627296588in"}
+
+\newpage
+
+> **Step 5.5**: Before the first effective connection, it may be necessary to accept the certificate from bplimexterno.bportugal.pt. You should verify that the \"fingerprint\" (verification code) is:
+
+>
+
 > **SHA256 ED 1B D9 E2 C2 F8 C6 08 1A 53 5F 97 DA 71 77 D9 D2 EE 7A 5F 9C 35 87 B3 19 F4 7E A1 CB 2C 68 0B**
+
 >
-> ![](./media/image33.png){width="4.724409448818897in"
-> height="2.985113735783027in"}
+
+> ![](./media/image33.png){width="4.724409448818897in" height="2.985113735783027in"}
 
 **\
 **
 
-> **Step 5.9**: Connect with the UserID (**case sensitive**) and
-> password provided by Banco de Portugal:
+> **Step 5.6**: Connect with the UserID (**case sensitive**) and password provided by Banco de Portugal:
+
 >
-> ![](./media/image34.png){width="4.724409448818897in"
-> height="3.0350426509186352in"}
+
+> ![](./media/image34.png){width="4.724409448818897in" height="3.0350426509186352in"}
+
+\newpage
+
+> **Step 5.7**: After the first successful login, it is necessary to change the password, which must comply with the Password Policy defined above.
+
 >
-> **Step 5.10**: After the first successful login, it is necessary to
-> change the password, which must comply with the Password Policy
-> defined above.
+
+> ![](./media/password_prompt_enhanced_1_small.png){width="4.724409448818897in" height="3.029721128608924in"}
+
 >
-> If the new password does not comply with the Password Policy, the
-> original password provided by the Banco de Portugal will be
-> re-requested. See Appendix 3 for details.
+
+> If the new password does not comply with the Password Policy, the original password provided by the Banco de Portugal will be re-requested. You get the message authentication failed, please try again." See Appendix 3 for details.
+
 >
-> The NoMachine client does not tell you why the new password was not
-> accepted -- it is the responsibility of the user to verify that the
-> new password is in compliance.
+
+> ![](./media/password_prompt_enhanced_2_small.png){width="4.724409448818897in" height="3.029721128608924in"}
+
+> The NoMachine client does not tell you why the new password was not accepted -- it is the responsibility of the user to verify that the new password is in compliance.
+
 >
-> ![](./media/image35.png){width="4.724409448818897in"
-> height="3.029721128608924in"}
+
+\newpage
+
+> **Step 5.8**: Upon login success, the following screens should appear.
+
 >
-> **Step 5.11**: Upon login success, the following screens should appear
+
+> ![](./media/image36.png){width="4.724409448818897in" height="3.0297101924759406in"}
+
 >
-> ![](./media/image36.png){width="4.724409448818897in"
-> height="3.0297101924759406in"}
+
+> Create a new desktop.
+
 >
-> ![](./media/image37.png){width="4.724409448818897in"
-> height="3.0238943569553807in"}
+
+> ![](./media/image37.png){width="4.724409448818897in" height="3.0297101924759406in"}
+
+\newpage
+
+> **Step 5.9**: In the following screend define the settings of your monitor.
+
 >
-> Once logged in and with access to a KDE session, click on the upper
-> right corner of the KDE desktop, as shown below, to access the menu
-> and then expand the screen as exemplified for greater ease of use.
+
+> ![](./media/image38_A.png){width="4.724409448818897in" height="3.0297101924759406in"}
+
+**\
+**
+
+> ![](./media/image38_B.png){width="4.724409448818897in" height="3.0297101924759406in"}
+
 >
-> **Step 5.12**: You should see the following screen.
+
+> ![](./media/image38_C.png){width="4.724409448818897in" height="3.0297101924759406in"}
+
+**\
+**
+
+> ![](./media/image38_D.png){width="4.724409448818897in" height="3.0297101924759406in"}
+
+\newpage
+
+> **Step 5.10**: Upon login success, the following screens should appear.
+
 >
-> ![](./media/image38.png){width="4.724409448818897in"
-> height="3.0127438757655294in"}
+
+> Once logged in and with access to a KDE session, click on the upper right corner of the KDE desktop, as shown below, to access the menu and then expand the screen as exemplified for greater ease of use.
+
 >
-> **Step 5.13**: Click 'Display'
+
+> ![](./media/image38.png){width="4.724409448818897in" height="3.0127438757655294in"}
+
+**\
+**
+
+> **Step 5.11**: You should see the following screen.
+
 >
-> ![](./media/image39.png){width="4.724409448818897in"
-> height="3.0268011811023623in"}
+
+> ![](./media/image39.png){width="4.724409448818897in" height="3.0127438757655294in"}
+
+\newpage
+
+> **Step 5.12**: Click 'Display'.
+
 >
-> **Step 5.14**: Click 'Fit to window' and click 'Done'
+
+> ![](./media/image39.png){width="4.724409448818897in" height="3.0268011811023623in"}
+
+**\
+**
+
+> **Step 5.13**: Choose the option that best fits your monitor.
+
 >
-> ![](./media/image40.png){width="4.724409448818897in"
-> height="3.0219542869641294in"}
+
+> ![](./media/image40.png){width="4.724409448818897in" height="3.0219542869641294in"}
 
 
 <!---
@@ -1111,6 +1186,7 @@ Configuring browser access
 
 -->
 
+\newpage
 
 ## Frequently Asked Questions
 
@@ -1123,22 +1199,24 @@ Configuring browser access
  Please try the download outside the firewall.
 -->
 
-1.  Mac users are not able to install NoMachine, receiving the following
-    message
+1.  Mac users are not able to install NoMachine, receiving the following message:
 
-> ![](./media/image45.png){width="2.1653543307086616in"
-> height="1.4969652230971129in"}
+> ![](./media/image45.png){width="2.1653543307086616in" height="1.4969652230971129in"}
 
- Please check if your Mac OSX is updated. Temporary solution: download
- NoMachine Enterprise Client from the official website, and run the
- installation file:
+ Please check if your Mac OSX is updated. Temporary solution: download  NoMachine Enterprise Client from the official website, and run the installation file:
 
- https://www.nomachine.com/download-enterprise\#NoMachine-Enterprise-Client
+> https://www.nomachine.com/download-enterprise\#NoMachine-Enterprise-Client
+
+**\
+**
 
 2.  NoMachine authentication failure
 
-> ![](./media/image46.png){width="2.1653543307086616in"
-> height="1.4077252843394576in"}
+>
+
+> ![](./media/image46.png){width="4.724409448818897in" height="3.0219542869641294in"}
+
+>
 
 <!---
   - We have observed that some users who change their password within
@@ -1152,12 +1230,17 @@ Configuring browser access
     when you type the password. Alternatively, change the password after
     the first login with NoMachine. Use linux's command 'passwd'.
 
+>
+
   - Login fails, and the system shows the message: \"Could not connect to
     the server. Error is 138: Connection is timed out\" Please check if
     your network has a strict firewall; e.g., some researchers are not
     able to reach BPLIM's server within their University network. Please
     check if in a different location, like at home, the connection
     works.
+
+**\
+**
 
 3.  User pressed 'Lock' instead of 'Log out' and the unlock/password
     does not work:
@@ -1168,42 +1251,60 @@ Configuring browser access
         last step -before the \'Login'- right-click and choose 'Logout'.
         Double-click for the new connection
 
+**\
+**
+
 4.  "Cannot see the screen in NoMachine" (see image below)
 
-> ![](./media/image47.png){width="4.016666666666667in"
-> height="2.4999496937882766in"}
+>
 
-5.  [OPTION A]{.underline}: move your mouse on top the upper right
-    corner of NoMachine, you should see a "folded like sheet",
-    left-click your mouse, go to 'Display', 'Change settings', and click
-    in 'Disable client side hardware decoding'
+> ![](./media/image47.png){width="4.016666666666667in" height="2.4999496937882766in"}
 
-![](./media/image48.png){width="1.5652176290463693in" height="0.15in"}
+**\
+**
 
-6.  [OPTION B]{.underline}: Close the 'NoMachine' connection and start a
+- [OPTION A]{.underline}: move your mouse on top the upper right corner of NoMachine, you should see a "folded like sheet", left-click your mouse, go to 'Display', 'Change settings', and click in 'Disable client side hardware decoding'.
+
+>
+
+> ![](./media/image48.png){width="1.5652176290463693in" height="0.15in"}
+
+**\
+**
+
+- [OPTION B]{.underline}: Close the 'NoMachine' connection and start a
     new one. Before the last step -before the \'Login'- right click and
     choose 'Logout'. Double-click for the new connection
 
-7.  "Error: Parameter 'agentm_display' has bad value" (see image below)
+\newpage
 
-> ![](./media/parameter_bad_value.png){width="4.016666666666667in"
-> height="2.4999496937882766in"}
+5.  "Error: Parameter 'agentm_display' has bad value" (see image below)
+
+> ![](./media/parameter_bad_value.png){width="4.016666666666667in" height="2.4999496937882766in"}
+
+>
 
   - Your home folder is full (/home/USER_LOGIN): **_Do not save files in your home folder_**
 
   - Ask BPLIM Staff to empty space in your home folder
 
-8. Session is frozen
+**\
+**
+
+6. Session is frozen
 
   - Go to NoMachine first screen and double-click in the following icon
 
-  ![](./media/logout1.png){width="3in"}
+> ![](./media/logout1.png){width="3in"}
 
   - right-click on the icon below and choose "Terminar sessão" 
 
-  ![](./media/logout2.png){width="3in"}
+> ![](./media/logout2.png){width="3in"}
 
-9. Visualizing \LaTeX  tables
+**\
+**
+
+7. Visualizing \LaTeX  tables
 
   - In case you want to see the pdf of tables you have exported to \LaTeX  you can create a generic tex file, `main.tex`, with the following content:
 
@@ -1223,60 +1324,101 @@ Configuring browser access
 
 The server runs [GitLab](https://about.gitlab.com/). If you need to use Git for your projects, please send your request to BPLIM (bplim@bportugal.pt).
 
-
 In case you want to use Git you should request it from BPLIM (bplim@bportugal.pt).
   
   > [Wikipedia](https://en.wikipedia.org/wiki/Git):
   > 
   > ``Git is a distributed version-control system for tracking changes in any set of files, originally designed for coordinating work among programmers cooperating on source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows''
 
+>
+
 First steps
 
+>
+
 1.	First, authenticate using an `ssh-key`. Open a **Terminal** in your home folder
+
+>
 
   ```
     cd ~
   ```
 
-and type:
+>
+
+> and type:
+
+>
 
   ```
     ssh-keygen -t rsa -C "BPLIM git"
     cat ~/.ssh/id_rsa.pub
   ```
+>
 
 2. Second, after generating your SSH key, you'll need to select the text of the key in your terminal. You can usually do this by clicking and dragging your mouse over the key text. Once the key is highlighted, right-click on the selection and choose 'Copy' to copy the resulting key to your clipboard.
 
+>
+
 3. Third, open **Firefox** (go to the RedHat icon and type Firefox in the search box) and navigate to [https://vxpp-bplimgit.bplim.local/](https://vxpp-bplimgit.bplim.local/)
 
-  ![](./media/GitLab.png){width="3in"}
+>
 
-Once you've navigated to the website, use your credentials for the external server to log in.
+> ![](./media/GitLab.png){width="3in"}
+
+>
+
+> Once you've navigated to the website, use your credentials for the external server to log in.
+
+>
 
 4. Once logged in, navigate to your profile. In the upper-right corner of the webpage, you will find the **Settings** option.
 
-    ![](./media/GitLab2.png){width="1in"}
+>
 
-Now, on the left-side bar, click in **SSH Keys**
+> ![](./media/GitLab2.png){width="1in"}
 
-![](./media/GitLab3.png){width="1in"}
+>
 
-and paste the contents of the clipboard in the text box on the top right corner under **Key**.
+> Now, on the left-side bar, click in **SSH Keys**
 
-![](./media/GitLab4.png){width="3in"}
+>
 
+> ![](./media/GitLab3.png){width="1in"}
+
+>
+
+> and paste the contents of the clipboard in the text box on the top right corner under **Key**.
+
+>
+
+> ![](./media/GitLab4.png){width="3in"}
+
+>
 
 Give a title, e.g., "BPLIM git", and click in **Add key**.
 
+>
+
 5. Go to **Projects**
 
-    ![](./media/GitLab5.png){width="2in"}
+>
+
+> ![](./media/GitLab5.png){width="2in"}
+
+>
 
 and create a **New project**, e.g., `scripts_P999`, where P999 is your_project_ID_number
 
-![](./media/GitLab6.png){width="1in"}
+>
+
+> ![](./media/GitLab6.png){width="1in"}
+
+>
 
 To use git, it is necessary to modify or create the .gitconfig file in your user's home directory. You can use **KWrite** (click in the RedHat icon and search for KWrite) to edit/create the file. The file should have the following format. In this file, you can adapt the name and replace 'investa' with your own user.
+
+>
 
 ```
   [cola]
@@ -1288,26 +1430,41 @@ To use git, it is necessary to modify or create the .gitconfig file in your user
           editor = kwrite
 ```
 
+\newpage
+
 6. You can clone the project by opening a **Terminal** and moving to your work_area:
+
+>
 
 ```
   cd /bplimext/projects/your_project_ID/work_area/
 ```
+>
 
-and typing
+> and typing
+
+>
 
 ```
   git clone git@vxpp-bplimgit.bplim.local:investa/scripts_P999.git
 ```
 
+>
+
 7. Add the file `.gitignore` available in folder `tools` of your project:
+
+>
 
 ```
   cd scripts_P999
   cp /bplimext/projects/your_project_ID/tools/.gitignore .
 ```
 
+>
+
 8. Do your first commit & push
+
+>
 
 ```
   git add *
@@ -1317,7 +1474,9 @@ and typing
   git push
 ```
 
-10. **To use the version control system effectively, please place all your scripts and code files in the folder named 'scripts_P999'. This organization is important for maintaining a structured and efficient workflow with the version control system.**
+>
+
+9. **To use the version control system effectively, please place all your scripts and code files in the folder named 'scripts_P999'. This organization is important for maintaining a structured and efficient workflow with the version control system.**
 
 <!--- 1. move to a specific folder; _e.g._, `cd /bplimext/projects/your_project_ID/work_area/`
 2. create a .gitignore file (check [toptal](https://www.toptal.com/developers/gitignore) for some examples)
@@ -1326,6 +1485,8 @@ and typing
 5. `git commit -a -m "First"`
 6. `git show first_do_file.do`
 -->
+
+\newpage
 
 ## Containers
 
@@ -1368,11 +1529,19 @@ Now you are inside the container and can run commands such as:
 
 - Click in 'CREATE'
 
-![](media/SylabsCreate.png){width="1.2in"}
+>
+
+> ![](media/SylabsCreate.png){width="1.2in"}
+
+>
 
 - In the following step upload your '.def' file or copy/paste its contents in the Text box:
 
-![](media/SylabsBuildContainer.png){width="1.7in"}
+>
+
+> ![](media/SylabsBuildContainer.png){width="1.7in"}
+
+>
 
 - Sylabs runs a first test on the validity of your script and releases the button 'Build' (click on it)
 
@@ -1381,6 +1550,8 @@ Now you are inside the container and can run commands such as:
 - Once you succeed in building the container, you can send us the definition file with your changes
 
 ### Use the container in BPLIM's server
+
+>
 
 - Open a `Terminal`
 
@@ -1396,25 +1567,41 @@ Now you are inside the container and can run commands such as:
 
 - Start RStudio by typping `rstudio` (small caps)
 
-![](media/Singularity_Terminal_Prompt.png){width="1.7in"}
+>
 
+> ![](media/Singularity_Terminal_Prompt.png){width="1.7in"}
 
+>
 
-- Once inside RStudio you have access to the original folder structure of your project
+- Once inside RStudio you have access to the original folder structure of your project.
+
+>
 
 ## Jupyter Lab
 
 Explore [Jupyter lab](https://jupyter.org/):
 
+>
+
   > "JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. JupyterLab is extensible and modular: write plugins that add new components and integrate with existing ones."
+
+>
 
 Start Jupyter Lab by typing:
 
-  > `jupyter lab --browser=firefox`
+>
+
+> `jupyter lab --browser=firefox`
+
+>
 
 Sample session:
 
-![](./media/JupyterLab.png){width=65%}
+>
+
+> ![](./media/JupyterLab.png){width=65%}
+
+>
 
 [^1]: Dolphin is an intuitive and easy-to-use file manager. You can use it, for example, to browse the directory, to
     create or delete files/directories (by using the right mouse
