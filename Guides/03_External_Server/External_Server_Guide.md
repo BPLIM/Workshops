@@ -1040,7 +1040,7 @@ computer support. Click 'Add' to create the connection.
 
 >
 
-> If the new password does not comply with the Password Policy, the original password provided by the Banco de Portugal will be re-requested. You get the message authentication failed, please try again." See Appendix 3 for details.
+> If the new password does not comply with the Password Policy, the original password provided by the Banco de Portugal will be re-requested. You get the message "Authentication failed, please try again." See Appendix 3 for details.
 
 >
 
