@@ -578,7 +578,7 @@ height="2.0134241032370954in"}
 ## Build a container to fine-tune your statistical packages
 
   You can use Singularity containers in the server. To do so, please send us the definition file so we build the image and put it in your working area.
-  You can find detailed information on Singularity containers at [https://sylabs.io/](https://sylabs.io/). We provide some notes in the Appendix
+  You can find detailed information on Singularity containers at [https://sylabs.io/](https://sylabs.io/).[^8] We provide some notes in the Appendix.
 
 
 
@@ -1631,3 +1631,5 @@ Sample session:
     that allow identification. For all the graphs you request as an
     output you must provide the corresponding Table to replicate it. You
     may only export graphs in .PNG format (no vector graph is allowed).
+
+[^8]: Singularity is now called [Apptainer](https://apptainer.org). You can find further information here: [https://apptainer.org](https://apptainer.org).
