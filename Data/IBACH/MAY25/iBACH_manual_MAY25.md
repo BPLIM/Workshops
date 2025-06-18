@@ -2,7 +2,7 @@
 title: Spanish and Portuguese Companies Microdata (iBACH) - Data Manual
 subtitle: Extraction Date - May 2025
 author: BPLIM
-date: 11 June 2025
+date: 16 June 2025
 abstract: 'The Spanish and Portuguese Companies Microdata contain economic and financial granular information on non-financial Spanish and Portuguese corporations from iBACH. This dataset derives from BACH dataset. BACH is a database of aggregated and harmonized accounting data of non-financial companies, based on national accounting standards (individual annual accounts).'
 doi: 10.17900/iBACH.May2025.V1 | 10.48719/BELab.iBACH0823_01
 pdf-engine: pdflatex
@@ -425,10 +425,10 @@ Table 2- Number of firms over the data period - Spain (as of May 2025 extraction
 *| output: true
 *| echo: false
 forval yy=`startyr'/`finyear' {
-    if `yy'<2023 {
+    if `yy'<2022 {
         local per "0822"
 }
-    if `yy'==2023 {
+    if (`yy'==2022 | `yy'==2023) {
         local per "0823"
 }
 
