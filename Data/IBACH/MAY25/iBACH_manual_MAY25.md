@@ -51,7 +51,7 @@ jupyter: nbstata
 
 > **Access**: This dataset is also made available by [BELab data laboratory](https://www.bde.es/wbe/en/para-ciudadano/servicios/belab/).
 
-> **New in this extraction**: Data for 2023 is now available for Portugal and Spain. The Portuguese iBACH data was revised for the period 2019-2022 and a new classification for the variable `dregio` was introduced for the whole period (NUTS III - version 2024).
+> **New in this extraction**: Data for 2023 is now available for Portugal and Spain. The Spanish iBACH data for 2022 and the Portuguese iBACH data for 2019-2022 were updated. A new classification for the variable `dregio` was introduced for the whole period (NUTS III - version 2024).
 
 # Geographical Coverage
 
