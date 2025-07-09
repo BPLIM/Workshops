@@ -2,7 +2,7 @@
 title: Spanish and Portuguese Companies Microdata (iBACH) - Data Manual
 subtitle: Extraction Date - May 2025
 author: BPLIM
-date: 16 June 2025
+date: 30 June 2025
 abstract: 'The Spanish and Portuguese Companies Microdata contain economic and financial granular information on non-financial Spanish and Portuguese corporations from iBACH. This dataset derives from BACH dataset. BACH is a database of aggregated and harmonized accounting data of non-financial companies, based on national accounting standards (individual annual accounts).'
 doi: 10.17900/iBACH.May2025.V1 | 10.48719/BELab.iBACH0823_01
 pdf-engine: pdflatex
@@ -75,7 +75,7 @@ In December of year N the information for the year N-1 is uploaded for the first
 
 Every year BPLIM and BELab create a data freeze. The most recent version of the data was extracted on May 2025 and includes data from 2008 to 2023.
 
-This manual summarizes the variables available. For more complete information please see the [BACH's User Guide](https://www.bach.banque-france.fr/documents/Summary_Userguide.pdf).
+This manual summarizes the variables available. For more complete information please see the [BACH's Documentation](https://www.bach.banque-france.fr/).
 
 # Description of Files
 
@@ -91,7 +91,7 @@ Where *A* stands for anonymized, *yyyy* corresponds to the reference year, and *
 All files contain a unique firm identifier (*did*) that does not allow the matching with other datasets available at BPLIM or BELab. All datasets are anonymized.
 
 Files are provided in a *.csv* file with all the metadata available in the file:
-[ibach_meta_YFRM_MAY25_PTES_V01](./aux_files/metafiles/ibach_meta_YFRM_MAY25_PTES_V01.xlsx).
+[META_IBACH_A_YFRM_20082023_MAY25_PTES_V01](./aux_files/metadata/META_IBACH_A_YFRM_20082023_MAY25_PTES_V01.xlsx).
 
 # Description of Variables
 
@@ -110,7 +110,7 @@ Below we provide a general description of the variables included in the data. Th
 <br>
 <br>
 
-`Localization of the firm` (*dregio*) - Localization of the firm (or the headquarter of the firm), at NUTS-3 level. For a complete list of codes see the metadata file [iBACH_meta_YFRM_MAY25_PTES_V01](./aux_files/metafiles/iBACH_meta_YFRM_MAY25_PTES_V01.xlsx). Codes started by "1" are specific to Spain and by "2" to Portugal.
+`Localization of the firm` (*dregio*) - Localization of the firm (or the headquarter of the firm), at NUTS-3 level. For a complete list of codes see the metadata file [META_IBACH_A_YFRM_20082023_MAY25_PTES_V01](./aux_files/metadata/META_IBACH_A_YFRM_20082023_MAY25_PTES_V01.xlsx). Codes started by "1" are specific to Spain and by "2" to Portugal.
 
 <br>
 <br>
@@ -151,7 +151,7 @@ Below we provide a general description of the variables included in the data. Th
 <br>
 <br>
 
-`Sector of activity` (*dsector*) - Main economic activity of the firm, according to the NACE Rev. 2 classification at 4-digit level.[^5] For a complete list of codes see the metadata file [iBACH_meta_YFRM_MAY25_PTES_V01](./aux_files/metafiles/iBACH_meta_YFRM_MAY25_PTES_V01.xlsx).
+`Sector of activity` (*dsector*) - Main economic activity of the firm, according to the NACE Rev. 2 classification at 4-digit level.[^5] For a complete list of codes see the metadata file [META_IBACH_A_YFRM_20082023_MAY25_PTES_V01](./aux_files/metadata/META_IBACH_A_YFRM_20082023_MAY25_PTES_V01.xlsx).
 
 [^5]: There are some codes that are invalid according to NACE Rev. 2 classification, but valid according to each country's national classifications. This is the case of codes *5511* and *5512* ('Hotels and similar establishments with restaurant' and 'Hotels and similar establishments without restaurant', respectively) for Portuguese data. The same occurs in the Spanish data, for example, with codes *1021* and *1022* ('Processing of fish, crustaceans and molluscs' and 'Manufacture of canned and preserved fish', respectively).
 
@@ -335,7 +335,7 @@ compute these variables check the auxiliary file [ratios_formulas.xlsx](./aux_fi
 | r0250 | Interest and similar charges / Gross operating profit |
 | r0260 | Net financial income / Gross operating profit |
 | r0270 | Gross operating profit / Total net debt |
-| r0280 | Credit institutions net indebtness ratio |
+| r0280 | Credit institutions net indebtedness ratio |
 | r0290 | Financing cost (strict sense definition) |
 | r2900 | Financing cost (broad definition) |
 | | |
@@ -449,7 +449,9 @@ A **dashboard** with some basic descriptive statistics is available on [BELab we
 
 # Auxiliary Files
 
-For a description of each variable please check the metadata file [ibach_meta_YFRM_MAY25_PTES_V01](./aux_files/metafiles/ibach_meta_YFRM_MAY25_PTES_V01.xlsx).
+For a description of each variable please check the metadata file
+
+   [META_IBACH_A_YFRM_20082023_MAY25_PTES_V01](./aux_files/metadata/META_IBACH_A_YFRM_20082023_MAY25_PTES_V01.xlsx).
 
 Summary statistics for each data set are available on BPLIM's servers:
 
@@ -461,7 +463,8 @@ Summary statistics for each data set are available on BPLIM's servers:
 # Reading the data in Stata
 
 Files are provided in a *.csv* file with all the metadata available in the file:
-[ibach_meta_YFRM_MAY25_PTES_V01](./aux_files/metafiles/ibach_meta_YFRM_MAY25_PTES_V01.xlsx).
+
+   [META_IBACH_A_YFRM_20082023_MAY25_PTES_V01](./aux_files/metadata/META_IBACH_A_YFRM_20082023_MAY25_PTES_V01.xlsx).
 
 `metaxl` Stata package, which can be installed from [BPLIM's Github repository](https://github.com/BPLIM/Tools/tree/master/ados/General/metaxl), can be used to apply the metadata to the data.
 
@@ -474,7 +477,7 @@ For example, using the file with Portuguese data for 2023:
 import delimited using "./BPLIM_IBACH_A_YFRM_2023_MAY25_PT_V01.csv", ///
 clear varnames(1) delimiter(";")
 metaxl clear, force
-metaxl apply, meta(ibach_meta_YFRM_MAY25_PTES_V01)
+metaxl apply, meta(./metadata/META_IBACH_A_YFRM_20082023_MAY25_PTES_V01)
 describe
 ```
 
