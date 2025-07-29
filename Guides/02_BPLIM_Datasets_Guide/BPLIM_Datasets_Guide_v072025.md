@@ -2,7 +2,7 @@
 title: BPLIM Datasets Guide
 subtitle: ""
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
-date: "February, 2025"
+date: "August, 2025"
 #downloads: [pdf, epub]
 format:
   pdf: 
@@ -227,6 +227,8 @@ For more information on this dataset, please refer to the **Manuals and Auxiliar
 
 # Additional Datasets Available for Internal Researchers
 
+Although these datasets are primarily available for internal use, all datasets produced by the Bank of Portugal can be made available to **external researchers** through **remote execution**, provided that the project’s research topic is considered relevant to the Bank of Portugal’s **research agenda**.
+
 
 ![Additional Datasets Available for Internal Researchers](./images/internal.png)
 
@@ -244,7 +246,7 @@ The Supermarket Daily Prices (SDP) database provides **daily data on the prices*
 
 Using this data, BPLIM created the Matched Supermarket Daily Prices (MSDP), which offers daily data on the prices of food and beverage products sold across multiple supermarkets included in the SDP database. This enables **price comparisons** across different supermarkets. 
 
-Both the SDP and MSDP datsets cover the period from 2021 to 2023 and are updated **annually for research purposes**. 
+Both the SDP and MSDP datsets cover the period starting in 2021 and are updated **annually for research purposes**. 
 
 This data can only be used for research projects involving Internal Researchers. 
 
@@ -282,7 +284,7 @@ The current account includes transactions between residents and non-residents in
 
 ## E-Fatura
 
-EFATURA data is received monthly under a **Protocol** signed between BdP and INE. This database contains **information regarding invoices** issued by entities that have their headquarters or permanent establishment in the national territory. The information is aggregated by the tax identification number (NIF) of the issuer (only for legal persons) and the acquirer. 
+E-Fatura data is received monthly under a **Protocol** signed between BdP and INE. This database contains **information regarding invoices** issued by entities that have their headquarters or permanent establishment in the national territory. The information is aggregated by the tax identification number (NIF) of the issuer (only for legal persons) and the acquirer. 
 
 INE implements some data cleaning, like imputation of missings or outliers, before sharing the data with BdP.
 
