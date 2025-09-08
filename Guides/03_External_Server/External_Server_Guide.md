@@ -1,7 +1,7 @@
 ---
 title: External Server Guide
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
-date: "May 2025"
+date: "September 2025"
 format:
   pdf: 
     documentclass: scrartcl
@@ -35,14 +35,6 @@ format:
 
 1. open TERMINAL
 2. RUN THE FOLLOWING LINE IN THE TERMINAL
-
-> MAC > cd /Users/zxc/Documents/GitHub/Manuals/Guides/ExternalServer
-
-> Gab. 1.19 > C:\Users\mangelo\OneDrive - Universidade do Minho\Documentos\GitHub119\Manuals\Guides\03_External_Server
-
-> ACREM > C:\Users\asd\Documents\GitHub\Manuals\Guides\ExternalServer
-
-> Desktop > C:\Users\exu0o9\Documents\GitHub\Manuals\Guides\ExternalServer
 
 pandoc --toc --number-sections External_Server_Guide.md --pdf-engine=xelatex -o External_Server_Guide.pdf
 
@@ -634,6 +626,11 @@ Researchers will be provided with the necessary scientific and
 computational support (*i.e.*, advises on programming, computational
 resources, micro econometrics, and econometrics of panel data for
 research undertaken with the selected microdata).
+
+
+# Project Archival Policy
+
+Projects that remain inactive for more than two (2) years will be archived. Archived projects will no longer be available and can be reactivated upon request.
 
 
 # Appendix
