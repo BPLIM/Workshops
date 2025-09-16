@@ -148,10 +148,9 @@ keyboard shortcut 'F4'.
 
 > c. Files with the \"**sh**\" extension allow you to send
     commands to your operating system or to enter your operating
-    system for interactive use (for example, the file *xstata17mp.sh*
-    will launch the graphical version of Stata 17). You can start the
+    system for interactive use (for example, the file `stata_container.sh` will launch the graphical version of Stata). You can start the
     application by double-clicking
-    the file name in 'Dolphin'[^2] or by typing in the Terminal `xstata17mp.sh`
+    the file name in 'Dolphin'[^2] or by typing in the Terminal `./stata_container.sh`
 
 6. The directories that you have access to within the folder include:
 
@@ -278,9 +277,37 @@ The installation of additional commands/packages must be requested from the BPLI
 
 ## Stata
 
-Stata versions available in the server: 15, 16 and 17 (adjust the following lines to the Stata version you want to use)
+Stata versions available on the server: **15 to 19.5 (Stata Now)**. Below are the options for running Stata depending on your project setup.
 
-1. Stata can be accessed in interactive graphical or non-graphical
+### Running Stata within a container
+
+For projects configured with a container, Stata runs inside that environment. In this case, you will find a file named **`stata_container.sh`** in the project’s folder. You can start Stata in any of the following ways:  
+
+- **Using the file manager**: double-click the `stata_container.sh` file to launch Stata.  
+- **Using the Terminal**:  
+  1. Open a Terminal in the project’s folder.  
+  2. Execute:  
+     ```bash
+     ./stata_container.sh
+     ```  
+- **Directly opening the container** (advanced):  
+  ```bash
+  singularity shell tools/_container/CONTAINER_ID.sif
+  ```
+and type
+
+  ```bash
+  xstata-mp
+  ```
+
+  If your project does **not** currently use a container and you would like to upgrade to the latest version of Stata, please contact the BPLIM Team.
+
+### Running native (installed localy) Stata versions
+
+For accessing the native Stata installations (versions 15 to 18), follow the instructions below.
+
+
+2.1 Stata can be accessed in interactive graphical or non-graphical
         modes.[^6]
 
   - Interactive non-graphical mode
@@ -558,7 +585,7 @@ height="2.0134241032370954in"}
 
 1. Request a container with **`Julia`** for your project
 
-> The container will be in the folder `tools` inside the project folder
+> The container will be in the folder `tools\_container` inside the project folder
 
 > **Advantages**: you can build a Julia setup fine-tuned to your project, including the definition of Julia's version and packages
 
