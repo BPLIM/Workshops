@@ -107,24 +107,47 @@ confidentiality (low, medium, high).
 
 # Access to the External Server
 
+## Overview
+
+This guide will help you connect to BPLIM's external server, navigate your project environment, and use statistical software (Stata, R, Python, Julia) for your research. The server runs on Linux and uses containerized environments to ensure reproducibility and consistency across projects.
+
+**Key features:**
+
+- Secure remote access via NoMachine client
+- Isolated project environments with defined folder structures
+- Statistical software running in containers
+- Support for interactive and batch processing modes
+
 ## Upon Access Approval
 
-Once access is approved, you can connect to the external server using the **NoMachine** client.  
+Once access is approved, you can connect to the external server using the **NoMachine** client.
 See [Download, install and configure NoMachine client](#install_nomachine) for detailed instructions.
 
 ---
 
 ## Password Policy
 
-- The first password provided must be changed at your first login.  
-- Passwords expire after **60 days**. When this happens, the login window will prompt you for a new password.  
-- Passwords must comply with the rules described in [Password requirements](#password).
+Passwords are a critical security component. Your initial password must be changed at first login, and all passwords must comply with the requirements below.
+
+**Password requirements:**
+
+- **Minimum length:** 8 characters
+- **Character classes:** At least 4 different types (uppercase, lowercase, numbers, punctuation)
+- **History:** Cannot reuse any of your last 7 passwords
+- **Expiration:** Passwords expire after 60 days and must be changed at next login
+- **Failed attempts:** After 6 consecutive failed login attempts, your account will be locked for 10 minutes
+
+For complete password policy details, see [Appendix: Password Requirements](#password)
 
 
 
 ## First Steps
 
-1. When you start **NoMachine**, you will see the following three screens:
+This section guides you through your initial login and introduces the basic interface and folder structure.
+
+### Logging In
+
+1. When you start **NoMachine**, you will see the following connection screens:
 
 >
 
@@ -140,7 +163,9 @@ See [Download, install and configure NoMachine client](#install_nomachine) for d
 
 >
 
-2. Select the "**Kickoff Application Launcher**" menu:
+### Accessing Your Project
+
+2. Once logged in, select the **Kickoff Application Launcher** menu:
 
 >
 
@@ -152,12 +177,13 @@ See [Download, install and configure NoMachine client](#install_nomachine) for d
 
 >
 
-3. Then:
+3. Navigate to your project:
 
    1. Click on **Applications**.
 
-   2. Select **BPLIM** and click on your project (e.g., `PXXX_name`).  
-      You will then see a graphical environment (the **Dolphin** file manager[^1]): 
+   2. Select **BPLIM** and click on your project (e.g., `P999_research_project`).
+
+      This opens the **Dolphin** file manager[^1], showing your project folder:
 
 >
 
@@ -165,31 +191,34 @@ See [Download, install and configure NoMachine client](#install_nomachine) for d
 
 >
 
- You can display the command line (`Terminal`) alongside Dolphin by pressing **F4**.
+ You can display the Terminal (command line) alongside Dolphin by pressing **F4**.
 
-4. Files with the `.sh` extension are scripts used to launch applications or enter an interactive environment.  
-   For example, `stata_container.sh` starts the graphical version of Stata.[^9]  
-   You can run these scripts either by double-clicking them in Dolphin or by typing in the Terminal:
+### Understanding Your Project Structure
 
-   ```bash
-    ./stata_container.sh
-   ```
+4. **Launcher scripts**: Files with the `.sh` extension are scripts that launch applications or enter containerized environments. For example, `stata_container.sh` starts Stata.[^9]
 
-5. Within your project folder, you will have access to the following directories:
+   You can run launcher scripts in two ways:
+
+   - **GUI method:** Double-click the `.sh` file in Dolphin
+   - **Terminal method:** Type `./stata_container.sh` in the Terminal
+
+5. **Project folders**: Your project folder contains the following directories:
 
 | Directory              | Purpose                               | Access     |
 |------------------------|---------------------------------------|------------|
 | `initial_dataset`      | Data sources provided by BPLIM        | Read-only  |
-| `external`             | Data provided by the researcher       | Read-only  |
-| `intermediate`         | Intermediate files                    | Read-only  |
-| `modified`             | Modified data provided by BPLIM       | Read-only  |
+| --- `external`         | Data provided by the researcher       | Read-only  |
+| --- `intermediate`     | Intermediate files                    | Read-only  |
+| --- `modified`         | Modified data provided by BPLIM       | Read-only  |
 | `results`              | Output files generated by researchers | Read-write |
 | `tools`                | Project-specific analysis tools       | Read-only  |
 | `work_area`            | Temporary working directory           | Read-write |
 
-   **Note:** Your **work_area** folder also contains templates for both Stata and R. By default, these template files are read-only.
+   **Note:** Your `work_area` folder also contains templates for Stata and R. By default, these template files are read-only.
 
-6. To reset and disconnect the remote desktop session, log out as shown below. After logging out, close the NoMachine window.[^3]
+### Logging Out
+
+6. To properly disconnect, log out as shown below, then close the NoMachine window:[^3]
 
 >
 
@@ -197,7 +226,7 @@ See [Download, install and configure NoMachine client](#install_nomachine) for d
 
 >
 
-Confirm before exiting by clicking **Logout**:[^4]
+   Confirm by clicking **Logout**:[^4]
 
 >
 
@@ -205,149 +234,202 @@ Confirm before exiting by clicking **Logout**:[^4]
 
 >
 
-- If you do not log out, your session will remain open until your next login. This may be useful to keep programs running, but note:
+**Important notes about session management:**
 
-    - Leaving sessions open consumes server resources.
+- **Persistent sessions:** If you do not log out, your session remains open until your next login. While this keeps programs running, it consumes server resources.
 
-    - The recommended method for running programs overnight is **batch mode** (see discussion below).
+- **Best practice for long-running tasks:** Use **batch mode** (see [Running Programs in Batch Mode](#batch-mode)) instead of leaving sessions open.
 
-    - If the server is rebooted for maintenance, your session will be closed and unsaved work will be lost. We strongly recommend saving your statistical programs at regular intervals.
+- **Server maintenance:** During server reboots, open sessions are terminated and unsaved work is lost. Save your work regularly.
 
 
 
 # Important Guidelines
 
-## Keep your home area tidy
+## Managing Disk Space
 
-- **Do not save files in your home area** (`/home/USER_LOGIN`).  
-  If you exceed its size limit, you will not be able to log in.
+Proper disk space management is essential for maintaining access to the server.
 
-- Check the size of your project regularly. Open a Terminal and follow these steps:
+### Critical Rule: Do Not Save Files in Your Home Folder
 
-  1. Move to the project folder:
+**Never save files in your home folder** (`/home/USER_LOGIN`).
+If you exceed its size limit, you will not be able to log in. Always save files in your project's `work_area` folder.
+
+### Monitoring and Cleaning Your Project Folder
+
+Check your project size regularly to avoid exceeding storage limits. Follow these steps in the Terminal:
+
+1. Navigate to your project folder:
+
+   ```bash
+   cd /bplimext/projects/P999_research_project/
+   ```
+
+2. List the total project size:
+
+   ```bash
+   du -h
+   ```
+
+3. Check folder sizes and list those larger than or equal to 1 GB:
+
+   ```bash
+   du --max-depth=1 -h | sort -h | grep G
+   ```
+
+4. Move to the `work_area` folder:
+
+   ```bash
+   cd work_area
+   ```
+
+5. Repeat the size check in this folder:
+
+   ```bash
+   du --max-depth=1 -h | sort -h | grep G
+   ```
+
+6. Identify duplicate or temporary files and remove them:
+
+   ```bash
+   rm FILE_TO_DELETE
+   ```
+
+7. Compress large files or folders you are not currently using:
+
+   - Compress a folder:
 
      ```bash
-      cd /bplimext/projects/PXXX_name/
+     tar -zcvf YOUR_FOLDER.tar.gz YOUR_FOLDER
      ```
 
-  2. List the total project size:
+   - Compress an individual file:
 
      ```bash
-      du -h
+     gzip YOUR_FILE
      ```
-
-  3. Check folder sizes and list those $\geq$ 1 GB:
-
-     ```bash
-      du --max-depth=1 -h | sort -h | grep G
-     ```
-
-  4. Move to the `work_area` folder:
-
-     ```bash
-      cd work_area
-     ```
-
-  5. Repeat the size check in this folder:
-
-     ```bash
-      du --max-depth=1 -h | sort -h | grep G
-     ```
-
-  6. Identify duplicate or temporary files and remove them:
-
-     ```bash
-      rm FILE_TO_DELETE
-     ```
-
-  7. Compress large files or folders you are not currently using:
-
-     - Compress a folder:
-       ```bash
-        tar -zcvf YOUR_FOLDER.tar.gz YOUR_FOLDER
-       ```
-
-     - Compress an individual file:
-       ```bash
-        gzip YOUR_FILE
-       ```
 
 
 ## Using the Terminal
 
-The Linux Terminal is a command-line interpreter. You can use the shell for many tasks, such as searching files and contents, organizing your workspace, and—most importantly—running programs in **batch mode**.
+The Terminal is a command-line interface for interacting with the Linux system. It is essential for running programs in batch mode, managing files, and monitoring processes.
 
-1. Access the Terminal from:  
-   **Red Hat → Applications → System → Terminal**
+### Accessing the Terminal
+
+You can access the Terminal in two ways:
+
+- **From the menu:** Red Hat → Applications → System → Terminal
 
 >
 
->   ![](./media/image9.png){width=50%}
+> ![](./media/image9.png){width=50%}
 
 >
 
-2. See [Shell Commands](#shell_commands) for a list of frequently used commands.
+- **From Dolphin:** Press **F4** to open an integrated Terminal at the current location
 
-3. If you use a non-English keyboard, the actual key mapping may differ from what you see on the screen. This mainly affects symbols.
+### Essential Terminal Tips
 
-   Example: on a Portuguese keyboard, `+` is on the `?` key, and `*` is on `SHIFT + ?`. This depends on your operating system.
+**Quick reference:**
 
-4. Linux is **case-sensitive**. For example, `LS` and `ls` are different commands.
+1. **Case sensitivity:** Linux commands are case-sensitive (`ls` is not the same as `LS`)
 
-5. Use the **arrow keys** to scroll through previously entered commands.
+2. **Command history:** Use arrow keys (up/down) to scroll through previous commands
 
-6. Use the **Tab** key for automatic command-line completion.
+3. **Auto-completion:** Press **Tab** to auto-complete file names and commands
 
-7. Example: list elements within a folder in a human-readable format (`h`), long list (`l`), reverse order (`r`), sorted by modification time (`t`), including almost all files (`A`):
+4. **Keyboard layouts:** Non-English keyboards may have different symbol mappings. For example, on a Portuguese keyboard, `+` is on the `?` key
+
+5. **Common commands:** See [Appendix: Shell Commands](#shell_commands) for a comprehensive list
+
+**Example command:**
 
    ```bash
-     ls -lArth
+   ls -lArth
    ```
+
+   Lists files in human-readable format (`h`), long format (`l`), reverse order (`r`), sorted by modification time (`t`), including hidden files (`A`)
 
 \newpage
 
 
+# Working with Containers
+
+All statistical software on the server runs inside **containers** -- isolated, self-contained environments that ensure reproducibility and consistency.[^9] Understanding how to work with containers is essential before using any statistical software.
+
+## What Are Containers?
+
+A container is a self-contained environment that includes a program along with all its dependencies, libraries, and configurations. This ensures:
+
+- **Consistency:** Programs behave identically across different sessions
+- **Reproducibility:** Your analysis can be replicated exactly
+- **Isolation:** Project-specific packages don't conflict with other projects
+
+## Starting Containers
+
+There are three ways to start a container:
+
+### Method 1: Using Launcher Scripts (Recommended)
+
+Each project includes launcher scripts (`.sh` files) for different software:
+
+- `stata_container.sh` - Launches Stata
+- `r_container.sh` - Launches R/RStudio
+- `python_container.sh` - Launches Python/Jupyter
+- `julia_container.sh` - Launches Julia
+
+**To use:** Double-click the script in Dolphin or run `./script_name.sh` in the Terminal.
+
+### Method 2: From the Terminal
+
+```bash
+cd /bplimext/projects/P999_research_project
+singularity shell tools/_container/CONTAINER_ID.sif
+```
+
+After entering the container, the Terminal prompt changes to show `Singularity>`. You can then launch applications manually.
+
+### Method 3: Direct Execution
+
+Run commands directly inside the container without entering an interactive shell:
+
+```bash
+singularity exec tools/_container/CONTAINER_ID.sif <command>
+```
+
+**When to use each method:**
+
+- **Method 1:** Best for interactive work with graphical interfaces
+- **Method 2:** Good for running multiple commands or programs within the same container session
+- **Method 3:** Ideal for batch processing and automated scripts
+
+
 # Statistical Software {#statistical_software}
+
+This section covers how to use Stata, R, Python, and Julia on the server. All software runs inside containers (see [Working with Containers](#working-with-containers) above).
 
 ## Stata
 
-### Running Stata
+### Starting Stata
 
-Stata runs inside a container. You will find a launcher script named **`stata_container.sh`** in your project folder.  
+Use the `stata_container.sh` launcher script in your project folder:
 
-You can start Stata in any of the following ways:
+- **GUI method:** Double-click `stata_container.sh` in Dolphin
+- **Terminal method:** Run `./stata_container.sh` from your project folder
 
-- **Using the file manager** (Dolphin): double-click the `stata_container.sh` file to launch Stata.
+**Manual container access:**
 
-- **Using the Terminal**:  
-  1. Open a Terminal in the project folder.  
-  
-  2. Run:  
-  
-  ```bash
-    ./stata_container.sh
-  ```
+If you need to manually access the Stata container:
 
-- **Manually opening the container**:
+```bash
+cd /bplimext/projects/P999_research_project
+singularity shell tools/_container/CONTAINER_ID.sif
+```
 
-The project’s container image is stored in the `tools/_container` directory. You can enter the container environment by running:
+Then launch Stata:
 
-  ```bash
-    cd /bplimext/projects/PXXX_name
-    singularity shell tools/_container/CONTAINER_ID.sif
-  ```
-
-Then start Stata inside the container:
-
-  ```bash
-    xstata-mp
-  ```
-
-Stata can be run in **non-graphical** modes
-
-  ```bash
-    stata-mp
-  ```
+- **Graphical version:** `xstata-mp`
+- **Command-line version:** `stata-mp`
 
 ### Ado-files
 
@@ -364,12 +446,12 @@ Stata looks for ado-files in several locations, typically organized as:
 - **OLDPLACE** – legacy location for ado-files
 
 
-Ado-files created for your project can be found in the current directory (`.`). Specific ado-files requested from BPLIM will be placed in `/bplimext/projects/PXXX_name/tools`.
+Ado-files created for your project can be found in the current directory (`.`). Specific ado-files requested from BPLIM will be placed in `/bplimext/projects/P999_research_project/tools`.
 To make sure Stata recognizes this directory, add the following line at the beginning of your `.do` file:
 
-  ```bash
-    adopath + "/bplimext/projects/PXXX_name/tools"
-  ```
+```stata
+adopath + "/bplimext/projects/P999_research_project/tools"
+```
 
 The `sysdir` command within Stata will list all directories currently in use:
 
@@ -379,60 +461,60 @@ The `sysdir` command within Stata will list all directories currently in use:
 
 >
 
-### Temporary files
+### Temporary Files
 
 To manage Stata's temporary files:
 
 1. Check the current temporary folder:
 
-```bash
-  tempfile junk
-  display "`junk'"
-  ```
+   ```stata
+   tempfile junk
+   display "`junk'"
+   ```
 
-2. It should display something like "/tmp/St98278.000001"
+2. It should display something like `/tmp/St98278.000001`
 
-3. In case the temporary file is not in the path "/tmp", exit Stata and edit your `.bashrc` in your home directory (`cd ~`) with `kwrite` or `vi` and add:
+3. If the temporary file is not in the path `/tmp`, exit Stata and edit your `.bashrc` in your home directory (`cd ~`) with `kwrite` or `vi` and add:
 
-
-```bash
-  export STATATMP="/tmp"
-```
+   ```bash
+   export STATATMP="/tmp"
+   ```
 
 4. Apply the changes:
 
-  ```bash
-    source .bashrc
-  ```
+   ```bash
+   source .bashrc
+   ```
 
 5. Start a new Stata session (inside the container).
 
 
-### 'batch' mode: an example using Stata
+### Running Stata in Batch Mode {#stata-batch}
 
-1. Open a **shell** in Linux and navigate to the directory containing the do-file you want to run (e.g., `prog1.do`):
+Batch mode is the recommended method for long-running or computationally intensive programs. For general information about batch processing, see [Running Programs in Batch Mode](#batch-mode).
 
-  ```bash
-    cd /bplimext/projects/PXXX_name/work_area/
-  ```
+**Stata-specific steps:**
 
-2. You may find it easier to use **Dolphin** (the File Manager) to browse your folder structure.
-In Dolphin, press **F4** to open an integrated Terminal.
-This allows quick navigation between folders and the ability to run shell commands in the same window.
+1. Navigate to the folder containing your do-file (e.g., `prog1.do`):
 
-3. Create a plain text file (ASCII) named, for example, `batch_prog1`.
+   ```bash
+   cd /bplimext/projects/P999_research_project/work_area/
+   ```
 
-4. Inside this file, write the execution command you would normally type in the shell. For example:
+   **Tip:** Use Dolphin to navigate, then press **F4** to open a Terminal at that location.
 
-```bash
-  stata-mp do /bplimext/projects/PXXX_name/work_area/prog1.do
-```
+2. Create a batch script file (plain text) named, for example, `batch_prog1`.
 
-5. To create the batch file, you can use any text editor. For instance, with the command-line editor `vi`:
+3. In this file, write the command to execute your do-file:
 
-  ```bash
-    vi batch_prog1
-  ```
+   ```bash
+   stata-mp do /bplimext/projects/P999_research_project/work_area/prog1.do
+   ```
+
+4. Create the batch file using a text editor:
+
+   - **Command-line editor:** `vi batch_prog1`
+   - **Graphical editors:** KWrite or Stata Do-file Editor
 
 >
 
@@ -440,307 +522,151 @@ This allows quick navigation between folders and the ability to run shell comman
 
 >
 
-6. The batch file can also be created using graphical editors such as **KWrite** or the Stata **Do-file Editor**:
+   **Tip:** Adding a `.txt` extension (e.g., `batch_prog1.txt`) can help some editors recognize the file.
 
->
+5. Enter the container environment and submit the batch job:
 
-> ![](./media/image15.png){width=50%}
+   ```bash
+   singularity shell ../tools/_container/CONTAINER_ID.sif
+   at now -f batch_prog1
+   ```
 
->
+6. Monitor your program using `top` or check the log file:
 
-or
+   ```bash
+   tail -f prog1.log
+   ```
 
->
+For detailed information on batch processing, monitoring, and troubleshooting, see the [Running Programs in Batch Mode](#batch-mode) section.
 
-> ![](./media/image16.png){width=50%}
+### Running Stata with Screen
 
->
-
-7. You may add the extension `.txt` to the batch file name. Sometimes the Stata Do-file Editor does not recognize files without an extension (e.g., `batch`), but it does recognize `batch.txt`.
-
-8. Once the batch file is created, make sure you are in the container environment and run the `.do` file in batch mode by typing in the Terminal:
-
-
-  ```bash
-    at now -f batch_prog1
-  ```
-
-9. To explore more options for `at`, type `man at`. For example:
-
-  ```bash
-    at now + 5 hours -f batch_prog1
-  ```
-
-  or
-
-  ```bash
-    at now + 4 minutes -f batch_prog1
-  ```
-
-This runs the Stata program 5 hours or 4 minutes from now, respectively. (`man` displays the Linux help manual.)
-
-10. Type `top` in the Terminal to confirm the program is running.
-
-11. Inside `top`, press `i` to hide irrelevant processes and reduce the output shown.
-
-12. To terminate a running process in `top`:
-
-    - Press `k` (for kill).
-    - Enter the process number (PID, shown in the first column).
-    - Then type `9` to force termination.
-
-13. To exit `top`, press `q`.
-
-
-**Useful features of the `at` command**
-
-- `atq` — lists programs in the batch queue (`=` indicates the program is running, `a` indicates it is queued along with its scheduled execution time).
-
-- `atrm <job_number>` — removes a program from the batch queue.
-
-- Monitor progress by checking the log file with `tail`:
-
-  ```bash
-    tail --f logcrc_may21.log
-  ```
-
-This continuously updates the last lines of the log without overwriting it.
-
-### Running programs in the background with `screen`
-
-- `screen` is useful if you want to run Stata interactively and ensure the session is preserved even if your network connection drops. You can disconnect from NoMachine and later recover the session by typing:
-
-  ```bash
-    screen --r
-  ```
-
-- Multiple `screen` sessions can run simultaneously. After reconnecting with NoMachine, list the running sessions:
-
-  ```bash
-    screen -d
-  ```
-
-Then recover a specific session by typing:
-
-  ```bash
-    screen -r <pid>
-  ```
-
-(replace <PID> with the actual process ID).
+To run Stata interactively while preserving your session if the connection drops, use `screen`. See [Using Screen for Persistent Sessions](#screen-sessions) for detailed instructions.
 
 
 ## R
 
-### 'interactive' mode
+### Starting R/RStudio
 
-R is used within a container environment. You will find a launcher script named **`r_container.sh`** in the project folder. You can start R in the following ways:
+Use the `r_container.sh` launcher script in your project folder:
 
-- **Using the file manager** (Dolphin): double-click the `r_container.sh` file to launch RStudio inside the container.
+- **GUI method:** Double-click `r_container.sh` in Dolphin
+- **Terminal method:** Run `./r_container.sh` from your project folder
 
-- **Using the Terminal**:  
-  1. Open a Terminal in the project folder.  
-  2. Run:
+This launches RStudio inside the container environment.
 
-  ```bash
-    ./r_container.sh
-  ```
+**Manual container access:**
 
-**Manually opening the container**:
-
-The container is in the `tools/_container` directory. Open a Terminal and type:
-
-  ```bash
-    cd /bplimext/projects/PXXX_name
-    singularity shell tools/_container/CONTAINER_ID.sif
-  ```
-
-Once inside the container, then start RStudio
-
-  ```bash
-    rstudio
-  ```
-
-
-**IMPORTANT**: Do **not** save your workspace image in your home folder when prompted (`Save workspace image? [y/n/c]`).
-If you need to keep the workspace, save it inside your project folder under `work_area`.
-
-
-### 'batch' mode
-
-Running R scripts in batch mode is recommended for long-running programs or computationally intensive tasks.
-
-1. Open a **shell** in Linux and navigate to the directory containing the R script you want to run (e.g., `analysis.R`):
-
-  ```bash
-    cd /bplimext/projects/PXXX_name/work_area/
-  ```
-
-2. You may find it easier to use **Dolphin** (the File Manager) to browse your folder structure.
-In Dolphin, press **F4** to open an integrated Terminal.
-This allows quick navigation between folders and the ability to run shell commands in the same window.
-
-3. Create a plain text file (ASCII) named, for example, `batch_r_analysis`.
-
-4. Inside this file, write the execution command you would normally type in the shell. For example:
+If you need to manually access the R container:
 
 ```bash
-  Rscript /bplimext/projects/PXXX_name/work_area/analysis.R \
-    > /bplimext/projects/PXXX_name/work_area/analysis.log 2>&1
+cd /bplimext/projects/P999_research_project
+singularity shell tools/_container/CONTAINER_ID.sif
+rstudio
 ```
 
-The `> analysis.log 2>&1` redirects both standard output and error messages to a log file.
-
-5. To create the batch file, you can use any text editor. For instance, with the command-line editor `vi`:
-
-  ```bash
-    vi batch_r_analysis
-  ```
-
-6. The batch file can also be created using graphical editors such as **KWrite**:
-
-  ```bash
-    kwrite batch_r_analysis
-  ```
-
-7. **Start the container environment** before creating the batch file, since R must run inside the container:
-
-  ```bash
-    singularity shell ../tools/_container/CONTAINER_ID.sif
-  ```
-
-8. Once the batch file is created and you are inside the container environment, run the R script in batch mode by typing in the Terminal:
-
-  ```bash
-    at now -f batch_r_analysis
-  ```
-
-9. To explore more options for `at`, type `man at`. For example:
-
-  ```bash
-    at now + 5 hours -f batch_r_analysis
-  ```
-
-  or
-
-  ```bash
-    at now + 4 minutes -f batch_r_analysis
-  ```
-
-This runs the R program 5 hours or 4 minutes from now, respectively.
-
-10. Type `top` in the Terminal to confirm the program is running. Look for processes named `Rscript` or `R`.
-
-11. Inside `top`, press `i` to hide irrelevant processes and reduce the output shown.
-
-12. To terminate a running process in `top`:
-
-    - Press `k` (for kill).
-    - Enter the process number (PID, shown in the first column).
-    - Then type `9` to force termination.
-
-13. To exit `top`, press `q`.
+**IMPORTANT:** When exiting R, do **not** save your workspace image to your home folder. If you need to preserve your workspace, save it in your project's `work_area` folder.
 
 
-**Useful features of the `at` command**
+### Running R in Batch Mode {#r-batch}
 
-- `atq` — lists programs in the batch queue (`=` indicates the program is running, `a` indicates it is queued along with its scheduled execution time).
+Batch mode is recommended for long-running R scripts. For general information about batch processing, see [Running Programs in Batch Mode](#batch-mode).
 
-- `atrm <job_number>` — removes a program from the batch queue.
+**R-specific steps:**
 
-- Monitor progress by checking the log file with `tail`:
+1. Navigate to the folder containing your R script (e.g., `analysis.R`):
 
-  ```bash
-    tail -f analysis.log
-  ```
+   ```bash
+   cd /bplimext/projects/P999_research_project/work_area/
+   ```
 
-This continuously updates the last lines of the log without overwriting it. Press `CTRL + C` to stop monitoring.
+2. Create a batch script file named, for example, `batch_r_analysis`:
 
+   ```bash
+   Rscript /bplimext/projects/P999_research_project/work_area/analysis.R /
+   > analysis.log 2>&1
+   ```
 
-### Running R programs in the background with `screen`
+   The `> analysis.log 2>&1` redirects both output and errors to a log file.
 
-Similar to Stata, `screen` is useful for running R interactively while preserving the session if your network connection drops:
+3. Create the file using `vi`, `kwrite`, or any text editor:
 
-  ```bash
-    screen -S r_session
-    singularity shell tools/_container/CONTAINER_ID.sif
-    R
-  ```
+   ```bash
+   vi batch_r_analysis
+   ```
 
-To detach from the screen session, press `CTRL + A`, then `D`.
+4. Enter the container environment and submit the batch job:
 
-To reattach to your R session:
+   ```bash
+   singularity shell tools/_container/CONTAINER_ID.sif
+   at now -f batch_r_analysis
+   ```
 
-  ```bash
-    screen -r r_session
-  ```
+5. Monitor your program:
 
-List all running screen sessions:
+   ```bash
+   tail -f analysis.log
+   ```
 
-  ```bash
-    screen -ls
-  ```
+For detailed information on batch processing, see the [Running Programs in Batch Mode](#batch-mode) section.
+
+### Running R with Screen
+
+To run R interactively while preserving your session, use `screen`. See [Using Screen for Persistent Sessions](#screen-sessions) for detailed instructions.
 
 
 ## Python
 
-You will find a launcher script named **`python_container.sh`** in the project root. You can start the Python container by double-clicking this script in **Dolphin**.
+**Starting Python/Jupyter**
 
-Alternatively, start the container from the **Terminal**:
+Use the `python_container.sh` launcher script in your project folder:
 
-  ```bash
-    ./python_container.sh
-  ```
+- **GUI method:** Double-click `python_container.sh` in Dolphin
+- **Terminal method:** Run `./python_container.sh` from your project folder
 
-You can also start the container manually:
+**Manual container access:**
 
-  ```bash
-    cd /bplimext/projects/PXXX_name
-    singularity shell tools/_container/CONTAINER_ID.sif
-  ```
-Once inside the container, you can use Python directly or launch a Jupyter Notebook:
+```bash
+cd /bplimext/projects/P999_research_project
+singularity shell tools/_container/CONTAINER_ID.sif
+```
 
-  ```bash
-    jupyter notebook
-  ```
+Once inside the container, launch Jupyter Notebook:
 
-A Jupyter Notebook will open in **Firefox**. Click New and select the **Python** kernel.
+```bash
+jupyter notebook
+```
+
+This opens Jupyter in Firefox. Click **New** and select the **Python** kernel to create a notebook.
+
+You can also use VSCode:
+
+```bash
+code
+```
 
 
 ## Julia
 
-You will also find a launcher script named **`julia_container.sh`** in the project root. You can start Julia by double-clicking this script in **Dolphin**.
+**Starting Julia**
 
-Alternatively, start Julia from the **Terminal**:
+Use the `julia_container.sh` launcher script in your project folder:
 
-  ```bash
-    cd /bplimext/projects/PXXX_name
-    ./julia_container.sh
-  ```
+- **GUI method:** Double-click `julia_container.sh` in Dolphin
+- **Terminal method:** Run `./julia_container.sh` from your project folder
 
-You can also start the container manually:
+**Manual container access:**
 
-  ```bash
-    cd /bplimext/projects/PXXX_name
-    singularity shell tools/_container/CONTAINER_ID.sif
-  ```
+```bash
+cd /bplimext/projects/P999_research_project
+singularity shell tools/_container/CONTAINER_ID.sif
+```
 
-Once inside the container, you can launch the Julia REPL or Jupyter:
+Once inside the container, you can launch:
 
-  ```bash
-    # Julia REPL
-    julia
-
-    # or Jupyter Notebook
-    jupyter notebook
-  ```
-
-A Jupyter Notebook will open in **Firefox**. Click New and select the **Julia** kernel.
-
-Alternatively, you can use **VS Code** to run Julia. Open VS Code from the terminal (in your project folder):
-
-  ```bash
-    code
-  ```
+- **Julia REPL:** `julia`
+- **Jupyter Notebook:** `jupyter notebook` (opens in Firefox; select the Julia kernel)
+- **VS Code:** `code` (opens VS Code for Julia development)
 
 
 ## Updates to Commands and Packages
@@ -750,14 +676,164 @@ Requests for additional commands or packages, as well as updates to existing one
 
 ## Build a Container to Fine-Tune Your Statistical Packages
 
-The server uses **Apptainer (formerly Singularity)** containers. To request one, please send the BPLIM Team the **definition file**. We will build the image and place it in your project’s `work_area`. Detailed information about Apptainer/Singularity containers is available at [https://sylabs.io/](https://sylabs.io/).[^8] Additional notes are provided in the Appendix.
+The server uses **Apptainer (formerly Singularity)** containers. To request one, please send the BPLIM Team the **definition file**. We will build the image and place it in your project's `tools`. Detailed information about Apptainer/Singularity containers is available at [https://sylabs.io/](https://sylabs.io/).[^8] Additional notes are provided in the Appendix.
 
 
+# Running Programs in Batch Mode {#batch-mode}
+
+Batch mode is the **recommended method** for running long-running or computationally intensive programs. Instead of keeping an interactive session open, batch mode allows you to submit jobs that run in the background.
+
+## Why Use Batch Mode?
+
+- **Efficiency:** Frees up your interactive session
+- **Reliability:** Programs continue running even if you disconnect
+- **Resource management:** Better server performance for all users
+- **Recommended for:** Any program that runs longer than 30 minutes
+
+## Basic Batch Workflow
+
+1. **Navigate to your working folder:**
+
+   ```bash
+   cd /bplimext/projects/P999_research_project/work_area/
+   ```
+
+2. **Create a batch script file** (plain text) containing the command to execute:
+
+   Example for Stata (`batch_prog1`):
+
+   ```bash
+   stata-mp do /bplimext/projects/P999_research_project/work_area/prog1.do
+   ```
+
+   Example for R (`batch_r_analysis`):
+
+   ```bash
+   Rscript /bplimext/projects/P999_research_project/work_area/analysis.R /
+     analysis.log 2>&1
+   ```
+
+3. **Enter the container environment:**
+
+   ```bash
+   singularity shell ../tools/_container/CONTAINER_ID.sif
+   ```
+
+4. **Submit the batch job:**
+
+   ```bash
+   at now -f batch_prog1
+   ```
+
+## Scheduling Jobs
+
+The `at` command allows you to schedule jobs:
+
+- **Run immediately:** `at now -f batch_script`
+- **Run in 5 hours:** `at now + 5 hours -f batch_script`
+- **Run in 30 minutes:** `at now + 30 minutes -f batch_script`
+
+For more options, type `man at` in the Terminal.
+
+## Managing Batch Jobs
+
+**View queued/running jobs:**
+
+```bash
+atq
+```
+
+- `=` indicates the job is currently running
+- `a` indicates the job is queued with its scheduled time
+
+**Remove a job from the queue:**
+
+```bash
+atrm <job_number>
+```
+
+## Monitoring Running Programs
+
+### Using `top`
+
+```bash
+top
+```
+
+- Press `i` to hide background processes
+- Press `k` to kill a process (enter PID, then type `9` to force termination)
+- Press `q` to exit
+
+### Using `tail` to monitor log files
+
+```bash
+tail -f logfile.log
+```
+
+This continuously displays new lines as they are written. Press `CTRL + C` to stop monitoring.
+
+
+# Using Screen for Persistent Sessions {#screen-sessions}
+
+`screen` is a session manager that allows you to run programs interactively while preserving your session if your network connection drops.
+
+## Basic Screen Usage
+
+**Start a new screen session:**
+
+```bash
+screen -S my_session_name
+```
+
+**Detach from a screen session** (keeps it running):
+
+Press `CTRL + A`, then `D`
+
+**List all running screen sessions:**
+
+```bash
+screen -ls
+```
+
+**Reattach to a screen session:**
+
+```bash
+screen -r my_session_name
+```
+
+Or, if only one session exists:
+
+```bash
+screen -r
+```
+
+**Reattach to a specific session by PID:**
+
+```bash
+screen -r <pid>
+```
+
+## Example: Running Stata with Screen
+
+```bash
+screen -S stata_session
+singularity shell tools/_container/CONTAINER_ID.sif
+stata-mp
+```
+
+To detach: Press `CTRL + A`, then `D`
+
+To return later: `screen -r stata_session`
+
+## When to Use Screen vs Batch Mode
+
+- **Use screen:** For interactive work where you need to see results immediately and may want to modify your approach
+- **Use batch mode:** For fully scripted analyses that don't require interaction
 
 
 # Allowed Outputs
 
-Results can be exported to disk in the following formats (see the *Output Control Guide*):
+Results can be exported to disk in the following formats (see the [*Output Control Guide*](https://github.com/BPLIM/Manuals/blob/master/Guides/06_Output_Control/Output_Control_Guide.pdf)):
 
 1. **ASCII files** — e.g., log files
 2. **Graphs** — export as `.png`
@@ -766,45 +842,63 @@ Results can be exported to disk in the following formats (see the *Output Contro
 
 # Requesting Outputs
 
-Output files (e.g., log files, images) must be requested from the **BPLIM Team** at **bplim@bportugal.pt**.
-Researchers are not allowed to place or remove files on the server independently. All outputs must comply with the [output control rules](https://github.com/BPLIM/Manuals/tree/master/Guides/06_Output_Control).
+All output files (log files, tables, graphs) must be requested from the **BPLIM Team** at <bplim@bportugal.pt>. Researchers cannot independently extract files from the server. All outputs must comply with the [output control rules](https://github.com/BPLIM/Manuals/tree/master/Guides/06_Output_Control).
 
-After validation, the requested results will be sent to you by email. The extraction process depends on whether you are working with modified data.
+After validation, approved results will be sent to you by email. The extraction process depends on your project type:
 
-## Projects using modified data
+## Projects Using Modified Data
 
-1. Run the replication app successfully before requesting outputs. See the [Replication App manual](https://github.com/BPLIM/ReplicationApp/tree/main/Server) for detailed instructions.
+If your project uses modified data provided by BPLIM:
 
-2. Send an email to **bplim@bportugal.pt** with the subject line:
+1. **Run the replication app** successfully before requesting outputs. See the [Replication App manual](https://github.com/BPLIM/ReplicationApp/tree/main/Server) for instructions.
 
-   > **PXXX_name: request replication**
+2. **Send an email** to <bplim@bportugal.pt> with the subject line:
+
+   **Subject:** `P999_research_project: request replication`
+
+   Replace `P999_research_project` with your actual project ID.
+
+## Projects NOT Using Modified Data
+
+If your project does not use modified data:
+
+1. **Place all outputs** in the `results` folder within your project.[^7]
+
+2. **Send an email** to <bplim@bportugal.pt> with the subject line:
+
+   **Subject:** `P999_research_project: request for result extraction`
+
+   Replace `P999_research_project` with your actual project ID.
 
 
-## Projects NOT using modified data
+# Managing Your Home Folder
 
-1. Place all outputs you wish to extract in the **`results`** folder.[^7]
+Your home folder (`/home/USER_ID/`) has a strict size limit. Exceeding this limit will prevent you from logging in.
 
-2. Send an email to **bplim@bportugal.pt** with the subject line:
+**Critical guidelines:**
 
-   > **PXXX_name: request for result extraction**
+1. **Never save work files in your home folder.** Always use your project's `work_area` folder.
 
+2. **Regularly empty your Trash folder.** To clean the Trash via Terminal:
 
-# User's Home Folder
+   ```bash
+   rm -rf ~/.local/share/Trash/*
+   ```
 
-1. Do **not** save files in your home folder: `/home/USER_ID/`
+3. **Keep your home folder minimal.** Only configuration files and small settings should be stored there.
 
-2. Regularly empty your **Trash** folder. If your disk usage exceeds the quota, you will not be able to log in. To clean the Trash via Terminal, type:
-    
-  ```bash
-    rm -rf ~/.local/share/Trash/*
-  ```
-
+If you cannot log in due to disk quota issues, contact the BPLIM Team for assistance.
 
 
 # Project Archival Policy
 
-Projects that remain inactive for more than **two (2) years** will be archived.  
-Archived projects will no longer be directly accessible but can be reactivated upon request to the **BPLIM Team**.
+Projects that remain **inactive for more than 2 years** will be archived automatically.
+
+**What this means:**
+
+- Archived projects are no longer directly accessible on the server
+- All project data is preserved and can be restored
+- To reactivate an archived project, contact the **BPLIM Team** at <bplim@bportugal.pt>
 
 
 
@@ -1058,7 +1152,7 @@ Please check with your provider in case you get an error while trying to use the
 >
 
 
-> **Step 5.3**: Use password authentication - with or without a proxy - according to the instructions provided by your network administrator or IT support. The proxy settings can be customized under Proxy in the bottom-right corner. After completing the configurations, click Add to create the connection.
+> **Step 5.3**: Use password authentication -- with or without a proxy -- according to the instructions provided by your network administrator or IT support. The proxy settings can be customized under Proxy in the bottom-right corner. After completing the configurations, click Add to create the connection.
 
 >
 
@@ -1347,63 +1441,51 @@ Please check with your provider in case you get an error while trying to use the
    ```
   
 
-## Version Control
+## Version Control with GitLab
 
-The server runs [GitLab](https://about.gitlab.com/).  
-If you need Git for your projects, please request access from the **BPLIM Team** (bplim@bportugal.pt).
+The server provides [GitLab](https://about.gitlab.com/) for version control. Git is a distributed version-control system for tracking changes in files, ideal for managing code and scripts across your research project.
 
-From [Wikipedia](https://en.wikipedia.org/wiki/Git):
+**To request Git access:** Contact the BPLIM Team at <bplim@bportugal.pt>.
 
-> *"Git is a distributed version-control system for tracking changes in any set of files, originally designed for coordinating work among programmers cooperating on source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows."*
+### Benefits of Using Version Control
 
----
+- Track all changes to your code and scripts
+- Revert to previous versions if needed
+- Collaborate with team members
+- Maintain a complete history of your research workflow
 
-**First Steps**
+### Getting Started with Git
 
-1. **Generate an SSH key**  
-   Open a **Terminal** in your home folder:
+#### Generate an SSH Key
 
-  ```bash
-    cd ~
-  ```
+Open a Terminal in your home folder and generate an SSH key:
 
+```bash
+cd ~
+ssh-keygen -t rsa -C "BPLIM git"
+cat ~/.ssh/id_rsa.pub
+```
 
-Then type:
+Highlight the generated key, right-click, and select **Copy** to copy it to your clipboard.
 
+#### Access GitLab
 
-  ```bash
-    ssh-keygen -t rsa -C "BPLIM git"
-    cat ~/.ssh/id_rsa.pub
-  ```
+Open Firefox (Red Hat → Search → Firefox) and navigate to:
 
-2. **Copy your SSH key**
-
-Highlight the generated key in the terminal, right-click, and choose **Copy** to copy it to your clipboard.
-
-<!--
-\newpage
--->
-
-
-3. **Access GitLab**
-
-Open **Firefox** (Red Hat → Search → Firefox) and navigate to: [https://vxpp-bplimgit.bplim.local/](https://vxpp-bplimgit.bplim.local/)
+[https://vxpp-bplimgit.bplim.local/](https://vxpp-bplimgit.bplim.local/)
 
 
 >
 
 > ![](./media/GitLab.png){width=50%}
 
-
 >
 
 Log in with your external server credentials.
 
+#### Add Your SSH Key in GitLab
 
-4. **Add your SSH key in GitLab**
-
-- Navigate to your profile (**Settings** in the top-right corner).
-
+- Navigate to your profile by clicking **Settings** in the top-right corner
 
 >
 
@@ -1411,9 +1493,7 @@ Log in with your external server credentials.
 
 >
 
-
-- In the left sidebar, click **SSH Keys**.
-
+- In the left sidebar, click **SSH Keys**
 
 >
 
@@ -1421,9 +1501,7 @@ Log in with your external server credentials.
 
 >
 
-
-- Paste the contents of the clipboard in the text box on the top right corner under **Key**.
-
+- Paste your SSH key in the **Key** text box
 
 >
 
@@ -1431,13 +1509,12 @@ Log in with your external server credentials.
 
 >
 
+- Enter a title (e.g., "BPLIM git") and click **Add key**
 
-- Give a title, e.g., "BPLIM git", and click in **Add key**.
 
+#### Create a New GitLab Project
 
-5. **Create a new project**
-
-Go to **Projects** → **New project**, e.g., `scripts_P999` (replace `P999` with your project ID).
+Go to **Projects** → **New project** and create a repository (e.g., `scripts_P999`).
 
 
 >
@@ -1446,66 +1523,71 @@ Go to **Projects** → **New project**, e.g., `scripts_P999` (replace `P999` wit
 
 >
 
-
 > ![](./media/GitLab6.png){width=40%}
 
 >
 
+#### Configure Git
 
-Configure Git by editing/creating the `.gitconfig` file in your home folder. You can use KWrite (Red Hat → Search → KWrite). Example:
+Create or edit the `.gitconfig` file in your home folder. Use KWrite (Red Hat → Search → KWrite):
 
-  ```bash
-    [cola]
-            spellcheck = false  
-    [user]
-            name = Investigador A
-            email = investa@sxpe-bplim01.bplim.local
-    [gui]
-            editor = kwrite
-  ```
+```bash
+[cola]
+        spellcheck = false
+[user]
+        name = Your Name
+        email = your_username@sxpe-bplim01.bplim.local
+[gui]
+        editor = kwrite
+```
+
+#### Clone Your Project
+
+In the Terminal, navigate to your `work_area` and clone the repository:
+
+```bash
+cd /bplimext/projects/P999_research_project/work_area/
+git clone git@vxpp-bplimgit.bplim.local:username/scripts_P999.git
+```
+
+#### Add .gitignore File
+
+Copy the `.gitignore` template from your project's `tools` folder:
+
+```bash
+cd scripts_P999
+cp /bplimext/projects/P999_research_project/tools/.gitignore .
+```
+
+#### Make Your First Commit
+
+```bash
+git add *
+git commit -a -m "Initial commit"
+git push
+```
+
+#### Best Practices
+
+- Store all your scripts and code in the Git repository folder (e.g., `scripts_P999`)
+- Commit changes regularly with descriptive messages
+- Pull before you push to avoid conflicts
+- Use branches for experimental work
 
 
-6. **Clone the project**
+## Building Custom Containers
 
-In the Terminal, move to your `work_area` and clone the repository:
+If you need custom software packages or specific versions, you can request a custom container.
 
-  ```bash
-    cd /bplimext/projects/your_project_ID/work_area/
-    git clone git@vxpp-bplimgit.bplim.local:investa/scripts_P999.git
-  ```
+### Steps to Build a Custom Container
 
-7. **Add** the file `.gitignore` available in folder `tools` of your project:
+#### Create a Container Definition
 
-  ```bash
-    cd scripts_P999
-    cp /bplimext/projects/your_project_ID/tools/.gitignore .
-  ```
+Use the template files available in the [BPLIM Containers GitHub repository](https://github.com/BPLIM/Containers).
 
-8. **First commit & push**
+#### Test and Build Using Sylabs Cloud
 
-  ```bash
-    git add *
-    git commit -a -m "First"
-    git push
-  ```
-
-<!---
-\newpage
--->
-
-9. **Best practice**
-
-Place all your scripts and code files in the `scripts_P999` folder. This ensures a structured and efficient workflow with version control.
-
-
-## Containers
-
-### Build Your Container
-
-- Create a container definition using the template files available in our [GitHub repository](https://github.com/BPLIM/Containers).
-
-- Test your script and build the container using [SylabsCloud](https://cloud.sylabs.io/) (you can sign in with your GitHub account).
-
+- Sign in to [Sylabs Cloud](https://cloud.sylabs.io/) (use your GitHub account)
 - Click **CREATE**:
 
 >
@@ -1514,7 +1596,7 @@ Place all your scripts and code files in the `scripts_P999` folder. This ensures
 
 >
 
-- In the next step, upload your `.def` file or copy/paste its contents into the text box:
+- Upload your `.def` file or paste its contents:
 
 >
 
@@ -1522,32 +1604,22 @@ Place all your scripts and code files in the `scripts_P999` folder. This ensures
 
 >
 
-- Sylabs will validate your script. Once successful, the **Build** button will become available. Click it to start the build process.
+- Sylabs validates your script. Once successful, click **Build**
+- Monitor the build process for any errors
+- After successful build, send the **definition file** to the BPLIM Team
 
-- Monitor the build process at the bottom of the screen and check for any error messages.
+#### Using Your Custom Container
 
-- After the container is built successfully, send the **updated definition file** to the BPLIM Team.
+Once the BPLIM Team builds your container, it will be placed in your project's `tools/_container` folder.
 
+To use it:
 
-### Use the container in BPLIM's server
+```bash
+cd /bplimext/projects/P999_research_project/tools/_container
+singularity shell YOUR_CONTAINER_ID.sif
+```
 
-1. Open a **Terminal**.
-
-2. Navigate to your project’s container folder:
-
-  ```bash
-    cd /bplimext/projects/PXXX_name/tools/containers
-  ```
-
-3. Start the container
-
-  ```bash
-    singularity shell YOURPROJECTID.sif
-  ```
-
-4. The Terminal prompt will change to indicate that you are inside the container, showing: `Singularity`
-
-5. Launch RStudio by typing `rstudio` (small caps)
+The Terminal prompt changes to `Singularity>`, indicating you're inside the container. You now have access to your custom software environment.
 
 >
 
@@ -1555,28 +1627,29 @@ Place all your scripts and code files in the `scripts_P999` folder. This ensures
 
 >
 
-6. Once inside RStudio, you will have access to the original folder structure of your project.
-
+Launch applications as needed (e.g., `rstudio` for RStudio).
 
 
 ## Jupyter Lab
 
-Explore [Jupyter lab](https://jupyter.org/):
-
-> *"JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data.  
-> It is flexible, allowing you to configure and arrange the interface to support diverse workflows in data science, scientific computing, and machine learning.  
-> JupyterLab is also extensible and modular, enabling plugins that add new components or integrate with existing ones."*
-
+[JupyterLab](https://jupyter.org/) is a web-based interactive development environment for notebooks, code, and data. It provides a flexible interface for data science, scientific computing, and machine learning workflows.
 
 ### Starting JupyterLab
 
-Run the following command in the Terminal:
+From within a container (Python or Julia), run:
 
-  ```bash
-    jupyter lab --browser=firefox
-  ```
+```bash
+jupyter lab --browser=firefox
+```
 
-### Sample session
+This opens JupyterLab in Firefox, providing an integrated environment for:
+
+- Interactive notebooks (Python, Julia, R)
+- Code editing and execution
+- Data visualization
+- Terminal access
+
+### Example JupyterLab Session
 
 >
 
@@ -1584,14 +1657,16 @@ Run the following command in the Terminal:
 
 >
 
-[^1]: Dolphin is an intuitive and easy-to-use file manager. You can use it, for example, to browse directories or to create and delete files and folders (by right-clicking with the mouse). For more information about Dolphin, visit: [https://userbase.kde.org/Dolphin](https://userbase.kde.org/Dolphin).
+**Tip:** JupyterLab is ideal for exploratory data analysis and prototyping. For production scripts, consider using dedicated `.py`, `.R`, or `.jl` files.
 
-[^3]: Click the cross button in the upper-right corner to close.
+[^1]: **Dolphin** is the file manager included with the KDE desktop environment. You can browse folders, create/delete files and folders (right-click for context menu), and manage your project files. More information: [https://userbase.kde.org/Dolphin](https://userbase.kde.org/Dolphin)
 
-[^4]: Note that before exiting the server, you must ensure that all active programs are closed (unless they were launched in batch mode). Running programs in batch mode is appropriate for procedures that require significant computational resources, intensive calculations, and/or long processing times.
+[^3]: Click the cross button in the upper-right corner of the NoMachine window to close the connection.
 
-[^7]: You may only remove text files that do not contain data or any information that could allow identification. For every graph you request as an output, you must also provide the corresponding table required to replicate it. Graphs may only be exported in .PNG format - vector graphics are not permitted.
+[^4]: Before logging out, ensure all active programs are closed (unless running in batch mode). Batch mode is recommended for computationally intensive or long-running tasks.
 
-[^8]: Singularity is now called [Apptainer](https://apptainer.org). You can find more information here: [https://apptainer.org](https://apptainer.org).
+[^7]: **Output extraction rules:** Only non-sensitive text files without identifiable information can be extracted. For each graph requested, you must provide the corresponding data table for replication. Graphs must be in PNG format; vector graphics are not permitted.
 
-[^9]: A container is a self-contained "box" that includes a program along with everything it needs to run - such as libraries, dependencies, and configuration settings. This ensures that the program behaves consistently across different computers, without requiring users to install or configure additional software. Containers also make it easy to install project-specific packages, which is considered good practice for ensuring transparency and reproducibility in research.
+[^8]: **Singularity** is now called [Apptainer](https://apptainer.org). Both names refer to the same container technology. Documentation: [https://apptainer.org](https://apptainer.org)
+
+[^9]: **Containers** are self-contained environments that include software and all its dependencies (libraries, configurations, packages). This ensures consistent behavior across sessions and enables reproducible research. Each container is isolated, preventing conflicts between different projects' software requirements.
