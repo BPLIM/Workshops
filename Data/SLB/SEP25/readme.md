@@ -1,13 +1,13 @@
 # Historical Series of the Portuguese Banking Sector
 
-In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/tree/master/SLB/SEP25/SLB_manual_SEP25.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/tree/master/SLB/SEP25/aux_files/metadata) of the most recent extraction of Historical Series of the Portuguese Banking Sector (September 2025).
+In this folder we make available the [data manual](https://github.com/BPLIM/Manuals/tree/master/Data/SLB/SEP25/SLB_manual_SEP25.pdf) and auxiliary documentation ([metadata files](https://github.com/BPLIM/Manuals/tree/master/Data/SLB/SEP25/aux_files/metadata)) of the most recent extraction of Historical Series of the Portuguese Banking Sector (September 2025).
 
 **Citation of this Dataset**
 
 Banco de Portugal Microdata Research Laboratory (BPLIM) (2025): Historical Series of the Portuguese Banking Sector. Extraction: September 2025. Version: V1. Banco de Portugal - BPLIM. Dataset. https://doi.org/10.17900/SLB.Sep2025.V1
 
 
-To cite this data set you can use the package biblatex with the following [BibTeX entry](https://github.com/BPLIM/Manuals/tree/master/SLB/SEP25/aux_files/bibtex/SLB.bib):
+To cite this data set you can use the package biblatex with the following [BibTeX entry](https://github.com/BPLIM/Manuals/tree/master/Data/SLB/SEP25/aux_files/bibtex/SLB.bib):
 
 ```
 @dataset{SLB.Sep2025.V1,
