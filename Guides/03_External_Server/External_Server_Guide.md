@@ -1,17 +1,22 @@
 ---
-title: External Server Guide
+title: "External Server Guide"
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
-date: "May 2025"
+date: "October 2025"
 format:
-  pdf: 
+  pdf:
     documentclass: scrartcl
     pdf-engine: xelatex
     papersize: A4
     geometry: top=27mm, bottom=27mm, left=27mm, right=27mm
     toc: true
-    toc-title: Contents
+    toc-title: "Contents"
     toc-depth: 3
-    number-sections: true  
+    number-sections: true
+    # Link colors via Pandoc's hyperref settings
+    colorlinks: true
+    linkcolor: blue
+    urlcolor: blue
+    citecolor: blue
   html:
     theme: cosmo
     embed-resources: true
@@ -20,33 +25,21 @@ format:
     html-math-method: katex
     code-copy: true
     number-sections: true
-    
-##bibliography: references.bib
-##csl: apa-6th-edition
-##output:
-  ##html_document:
-    ##citation_package: citeproc
+bibliography: references.bib
+csl: apa-6th-edition.csl
 ---
 
-
-\newpage
 
 <!---
 
 1. open TERMINAL
 2. RUN THE FOLLOWING LINE IN THE TERMINAL
 
-> MAC > cd /Users/zxc/Documents/GitHub/Manuals/Guides/ExternalServer
-
-> Gab. 1.19 > C:\Users\mangelo\OneDrive - Universidade do Minho\Documentos\GitHub119\Manuals\Guides\03_External_Server
-
-> ACREM > C:\Users\asd\Documents\GitHub\Manuals\Guides\ExternalServer
-
-> Desktop > C:\Users\exu0o9\Documents\GitHub\Manuals\Guides\ExternalServer
-
 pandoc --toc --number-sections External_Server_Guide.md --pdf-engine=xelatex -o External_Server_Guide.pdf
 
-pandoc --toc --number-sections External_Server_Guide.md --pdf-engine=xelatex -V geometry:top=27mm -V geometry:bottom=27mm -V geometry:left=27mm -V geometry:right=27mm -o External_Server_Guide.pdf
+pandoc External_Server_Guide.md --pdf-engine=xelatex --toc --number-sections -V documentclass=scrartcl -V toc-title=Contents -V geometry:top=27mm -V geometry:bottom=27mm -V geometry:left=27mm -V geometry:right=27mm -V colorlinks=true -V linkcolor=blue -V urlcolor=blue -V citecolor=blue -o External_Server_Guide.pdf
+
+
 
 
 ALTERNATIVE
@@ -63,8 +56,7 @@ About BPLIM
 The ability to collect and accumulate microdata has been a powerful
 function of central banks. In the scientific community, an increasing
 number of research has been conducted using the micro-level
-information. To enhance collaborations between the central bank and
-the researchers, an advanced data-sharing platform is essential.
+information. To enhance collaborations between the central bank and researchers, an advanced data-sharing platform is essential.
 Accordingly, the Banco de Portugal Microdata Research Laboratory
 (BPLIM) (*Laboratório de Investigação em Microdados do Banco de
 Portugal*) is created to facilitate future scientific research effort
@@ -108,851 +100,1022 @@ confidentiality (low, medium, high).
 
 <!--=========================================== --->
 
+<!---
 \newpage
-
-# Access to the External Server
-
-## Upon access approval
-
-The User will be able to connect to the external server using `NoMachine` client access: see [Section 8.4](#install_nomachine) for details on installation and use.
-
-<!--- one of two possibilities.
-  - Browser access (_low performance_): see [Section 8.4](#browser_access) for further details
 -->
 
 
-## Password policy
-  - The first password delivered must be changed at the first login.
-  - After **60 days** the password will expire: the login window will show `new password`
-  - The passwords to be specified must meet the requirements described in [Section 8.3](#password).
+# Access to the External Server
 
-## First steps
+## Overview
 
-Once you start `NoMachine`, these are the first three screens you will see:
+This guide will help you connect to BPLIM's external server, navigate your project environment, and use statistical software (Stata, R, Python, Julia) for your research. The server runs on Linux and uses containerized environments to ensure reproducibility and consistency across projects.
 
-::: center
-![](./media/image1.png){width=65%}
-:::
+**Key features:**
 
-![](./media/image2.png){width=65%}
+- Secure remote access via NoMachine client
+- Isolated project environments with defined folder structures
+- Statistical software running in containers
+- Support for interactive and batch processing modes
 
-![](./media/image3.png){width=65%}
+## Upon Access Approval
 
-4. Select the "**Kickoff Application Launcher**" menu (in the lower left corner):
+Once access is approved, you can connect to the external server using the **NoMachine** client.
+See [Download, install and configure NoMachine client](#install_nomachine) for detailed instructions.
 
-![](./media/image4.png){width=10%}
+---
 
-![](./media/image5.png){width=50%}
+## Password Policy
 
-5.  Then you should:
-  - Click on the "**Applications**" button
-  - Select **"BPLIM"** and click on your project (i.e., "pxxx\_name"). At this stage, you should see a graphical environment ('Dolphin' application[^1]) like this:
+Passwords are a critical security component. Your initial password must be changed at first login, and all passwords must comply with the requirements below.
 
-![](./media/image6.png){width="4.724409448818897in"
-height="2.808662510936133in"}
+**Password requirements:**
 
-You can see the prompt command line together with 'Dolphin' using the
-keyboard shortcut 'F4'.
+- **Minimum length:** 8 characters
+- **Character classes:** At least 4 different types (uppercase, lowercase, numbers, punctuation)
+- **History:** Cannot reuse any of your last 7 passwords
+- **Expiration:** Passwords expire after 60 days and must be changed at next login
+- **Failed attempts:** After 6 consecutive failed login attempts, your account will be locked for 10 minutes
 
-> c. Files with the \"**sh**\" extension allow you to send
-    commands to your operating system or to enter your operating
-    system for interactive use (for example, the file *xstata17mp.sh*
-    will launch the graphical version of Stata 17). You can start the
-    application by double-clicking
-    the file name in 'Dolphin'[^2] or by typing in the Terminal `xstata17mp.sh`
-
-6. The directories that you have access to within the folder include:
-
-+-----------------------------------+-----------------------------------+
-| **initial\_dataset**              |                                   |
-|                                   | Data sources provided by BPLIM.   |
-|                                   |                                   |
-|                                   | *You have                         |
-|                                   | read-only access to this          |
-|                                   | directory.*                       |
-+-----------------------------------+-----------------------------------+
-| **initial\_dataset/modified**     |                                   |
-|                                   | Modified data provided by BPLIM.  |
-|                                   |                                   |
-+-----------------------------------+-----------------------------------+
-| **results**                       |                                   |
-|                                   | Output files that                 |
-|                                   | researchers wish to generate      |
-|                                   | and extract from the server.      |
-|                                   |                                   |
-|                                   | *You                              |
-|                                   | have read-write access to this    |
-|                                   | directory.*                       |
-+-----------------------------------+-----------------------------------+
-| **tools**                         |                                   |
-|                                   | Specific analysis tools.          |
-|                                   |                                   |
-|                                   | *You have read-only access to     |
-|                                   | this directory.*                  |
-+-----------------------------------+-----------------------------------+
-| **work\_area**                    |                                   |
-|                                   | Temporary                         |
-|                                   | work directory.                   |
-|                                   |                                   |
-|                                   | *You have read-write              |
-|                                   | access to this directory.*        |
-+-----------------------------------+-----------------------------------+
-| **/bplimext/doc/Manuals**         | Manuals and auxiliary files       |
-|                                   | are available here.               |
-+-----------------------------------+-----------------------------------+
-
-  - You will have in your **work\_area** folder templates for both Stata and R(`R.sh`). By default, the template file is read-only.
-
-7. To reset and disconnect the remote desktop connection or session,
-    you can simply log out of your remote session, as shown in the screenshot below. After you log out, close the window.[^3]
-
-![](./media/image7.png){width="3.1496062992125986in"
-height="3.505206692913386in"}
-
-Confirm before exiting by clicking on the **"Logout"** button to close the window:[^4]
-
-![](./media/image8.png){width="1.1423611111111112in"
-height="0.5228762029746282in"}
-
-  - In case you do not logout, your session will be left open until your
-    next login. You may use this facility to run your programs. However,
-    one must be aware that this option uses resources from the server,
-    so the efficient solution to run your programs "overnight" is using
-    the batch mode as described in Step 6 below. Furthermore, in case
-    the server is rebooted during a maintenance procedure, your session
-    will be automatically closed, and unsaved documents will be lost. We
-    recommend you save at regular intervals your statistical programs.
+For complete password policy details, see [Appendix: Password Requirements](#password)
 
 
-\pagebreak
-# Important guidelines
 
-## Keep your home area tidy
+## First Steps
 
- - _Do not save files in your home area_ `/home/USER_LOGIN`. _In case you exceed its size you will not be able to login._
+This section guides you through your initial login and introduces the basic interface and folder structure.
 
- - Check regularly the size of your project on the harddrive. Open a Terminal and apply the following steps:
+### Logging In
 
-  1. Move to the project folder: `cd /bplimext/projects/p000_xxx_yyy/`
-  2. List project size: `du -h`
-  3. Check size by folder and list folders with at least 1Gb: `du --max-depth 1 -h | sort -n | grep G`
-  4. Move to the folder 'work_area': `cd work_area`
-  5. Repeat the check in this folder: `du --max-depth 1 -h | sort -n | grep G`
-  6. Identify duplicated and temporary files and delete them: use the command `rm`
-  7. Compress big files/folders you are not using at the moment:
-  
-  > Compress folders: `tar -zcvf YOUR_FOLDER.tar.gz YOUR_FOLDER`
-  >
-  > Compress individual files: `gzip YOUR_FILE`
+1. When you start **NoMachine**, you will see the following connection screens:
+
+>
+
+> ![](./media/image1.png){width=65%}
+
+>
+
+> ![](./media/image2.png){width=65%}
+
+>
+
+> ![](./media/image3.png){width=65%}
+
+>
+
+### Accessing Your Project
+
+2. Once logged in, select the **Kickoff Application Launcher** menu:
+
+>
+
+> ![](./media/image4.png){width=10%}
+
+>
+
+> ![](./media/image5.png){width=50%}
+
+>
+
+3. Navigate to your project:
+
+   1. Click on **Applications**.
+
+   2. Select **BPLIM** and click on your project (e.g., `P999_research_project`).
+
+      This opens the **Dolphin** file manager[^1], showing your project folder:
+
+>
+
+> ![](./media/image6.png){width=50%}
+
+>
+
+ You can display the Terminal (command line) alongside Dolphin by pressing **F4**.
+
+### Understanding Your Project Structure
+
+4. **Launcher scripts**: Files with the `.sh` extension are scripts that launch applications or enter containerized environments. For example, `stata_container.sh` starts Stata.[^9]
+
+   You can run launcher scripts in two ways:
+
+   - **GUI method:** Double-click the `.sh` file in Dolphin
+   - **Terminal method:** Type `./stata_container.sh` in the Terminal
+
+5. **Project folders**: Your project folder contains the following directories:
+
+| Directory              | Purpose                               | Access     |
+|------------------------|---------------------------------------|------------|
+| `initial_dataset`      | Data sources provided by BPLIM        | Read-only  |
+| --- `external`         | Data provided by the researcher       | Read-only  |
+| --- `intermediate`     | Intermediate files                    | Read-only  |
+| --- `modified`         | Modified data provided by BPLIM       | Read-only  |
+| `results`              | Output files generated by researchers | Read-write |
+| `tools`                | Project-specific analysis tools       | Read-only  |
+| `work_area`            | Temporary working directory           | Read-write |
+
+   **Note:** Your `work_area` folder also contains templates for Stata and R. By default, these template files are read-only.
+
+### Logging Out
+
+6. To properly disconnect, log out as shown below, then close the NoMachine window:[^3]
+
+>
+
+> ![](./media/image7.png){width=50%}
+
+>
+
+   Confirm by clicking **Logout**:[^4]
+
+>
+
+> ![](./media/image8.png){width=25%}
+
+>
+
+**Important notes about session management:**
+
+- **Persistent sessions:** If you do not log out, your session remains open until your next login. While this keeps programs running, it consumes server resources.
+
+- **Best practice for long-running tasks:** Use **batch mode** (see [Running Programs in Batch Mode](#batch-mode)) instead of leaving sessions open.
+
+- **Server maintenance:** During server reboots, open sessions are terminated and unsaved work is lost. Save your work regularly.
+
+
+
+# Important Guidelines
+
+## Managing Disk Space
+
+Proper disk space management is essential for maintaining access to the server.
+
+### Critical Rule: Do Not Save Files in Your Home Folder
+
+**Never save files in your home folder** (`/home/USER_LOGIN`).
+If you exceed its size limit, you will not be able to log in. Always save files in your project's `work_area` folder.
+
+### Monitoring and Cleaning Your Project Folder
+
+Check your project size regularly to avoid exceeding storage limits. Follow these steps in the Terminal:
+
+1. Navigate to your project folder:
+
+   ```bash
+   cd /bplimext/projects/P999_research_project/
+   ```
+
+2. List the total project size:
+
+   ```bash
+   du -h
+   ```
+
+3. Check folder sizes and list those larger than or equal to 1 GB:
+
+   ```bash
+   du --max-depth=1 -h | sort -h | grep G
+   ```
+
+4. Move to the `work_area` folder:
+
+   ```bash
+   cd work_area
+   ```
+
+5. Repeat the size check in this folder:
+
+   ```bash
+   du --max-depth=1 -h | sort -h | grep G
+   ```
+
+6. Identify duplicate or temporary files and remove them:
+
+   ```bash
+   rm FILE_TO_DELETE
+   ```
+
+7. Compress large files or folders you are not currently using:
+
+   - Compress a folder:
+
+     ```bash
+     tar -zcvf YOUR_FOLDER.tar.gz YOUR_FOLDER
+     ```
+
+   - Compress an individual file:
+
+     ```bash
+     gzip YOUR_FILE
+     ```
 
 
 ## Using the Terminal
 
-Linux's Terminal is a command-line interpreter. You can use the 'shell' for a wide range of tasks, including searching files and files' contents, organizing your working space, and, most importantly, running your programs in `batch` mode.
+The Terminal is a command-line interface for interacting with the Linux system. It is essential for running programs in batch mode, managing files, and monitoring processes.
 
-1.  Linux's Terminal can be accessed from[^5]
+### Accessing the Terminal
 
-RedHat \> Applications \> System \> Terminal
+You can access the Terminal in two ways:
 
-![](./media/image9.png){width="3.937007874015748in"
-height="1.848682195975503in"}
+- **From the menu:** Red Hat → Applications → System → Terminal
 
-2.  See [Section 8.1](#shell_commands) for a list of some of the most used commands.
+>
 
-3. If you use a non-English keyboard, the 'true' keyboard
-    might be different from the one you see. The changes apply mostly
-    to the symbols, not letters or numbers. For example, in case you
-    have a Portuguese keyboard on your computer the '+' is now in key
-    '?', or the '\*' is in SHIFT + ?. This issue is specific to the
-    Operating System of your computer
+> ![](./media/image9.png){width=50%}
 
-4. Remember that Linux is case-sensitive: e.g., "`LS`" and "`ls`" are
-    treated as different commands.
+>
 
-5. You can use the arrow keys to scroll up and down through the
-    commands you have entered.
+- **From Dolphin:** Press **F4** to open an integrated Terminal at the current location
 
-6. You can use the "Tab" key to complete the command line
-    automatically.
+### Essential Terminal Tips
 
-7. _e.g._, type the following line to list elements within a folder in a 'human-readable' format, `h`, long list format, `l`, in reverse order,
-    `r`, sort by modification time, `t`, and almost all files, `A`,
+**Quick reference:**
 
-    `ls -lArth`
+1. **Case sensitivity:** Linux commands are case-sensitive (`ls` is not the same as `LS`)
 
-# Statistical software{#statistical_software}
+2. **Command history:** Use arrow keys (up/down) to scroll through previous commands
 
-The installation of additional commands/packages must be requested from the BPLIM team, bplim@bportugal.pt. Researchers are not allowed to install new commands/packages on the server autonomously.
+3. **Auto-completion:** Press **Tab** to auto-complete file names and commands
+
+4. **Keyboard layouts:** Non-English keyboards may have different symbol mappings. For example, on a Portuguese keyboard, `+` is on the `?` key
+
+5. **Common commands:** See [Appendix: Shell Commands](#shell_commands) for a comprehensive list
+
+**Example command:**
+
+   ```bash
+   ls -lArth
+   ```
+
+   Lists files in human-readable format (`h`), long format (`l`), reverse order (`r`), sorted by modification time (`t`), including hidden files (`A`)
+
+\newpage
+
+
+# Working with Containers
+
+All statistical software on the server runs inside **containers** -- isolated, self-contained environments that ensure reproducibility and consistency.[^9] Understanding how to work with containers is essential before using any statistical software.
+
+## What Are Containers?
+
+A container is a self-contained environment that includes a program along with all its dependencies, libraries, and configurations. This ensures:
+
+- **Consistency:** Programs behave identically across different sessions
+- **Reproducibility:** Your analysis can be replicated exactly
+- **Isolation:** Project-specific packages don't conflict with other projects
+
+## Starting Containers
+
+There are three ways to start a container:
+
+### Method 1: Using Launcher Scripts (Recommended)
+
+Each project includes launcher scripts (`.sh` files) for different software:
+
+- `stata_container.sh` - Launches Stata
+- `r_container.sh` - Launches R/RStudio
+- `python_container.sh` - Launches Python/Jupyter
+- `julia_container.sh` - Launches Julia
+
+**To use:** Double-click the script in Dolphin or run `./script_name.sh` in the Terminal.
+
+### Method 2: From the Terminal
+
+```bash
+cd /bplimext/projects/P999_research_project
+singularity shell tools/_container/CONTAINER_ID.sif
+```
+
+After entering the container, the Terminal prompt changes to show `Singularity>`. You can then launch applications manually.
+
+### Method 3: Direct Execution
+
+Run commands directly inside the container without entering an interactive shell:
+
+```bash
+singularity exec tools/_container/CONTAINER_ID.sif <command>
+```
+
+**When to use each method:**
+
+- **Method 1:** Best for interactive work with graphical interfaces
+- **Method 2:** Good for running multiple commands or programs within the same container session
+- **Method 3:** Ideal for batch processing and automated scripts
+
+
+# Statistical Software {#statistical_software}
+
+This section covers how to use Stata, R, Python, and Julia on the server. All software runs inside containers (see [Working with Containers](#working-with-containers) above).
 
 ## Stata
 
-Stata versions available in the server: 15, 16 and 17 (adjust the following lines to the Stata version you want to use)
+### Starting Stata
 
-1. Stata can be accessed in interactive graphical or non-graphical
-        modes.[^6]
+Use the `stata_container.sh` launcher script in your project folder:
 
-  - Interactive non-graphical mode
+- **GUI method:** Double-click `stata_container.sh` in Dolphin
+- **Terminal method:** Run `./stata_container.sh` from your project folder
 
-    Move to the desired folder, e.g.,
+**Manual container access:**
 
-      `cd /bplimext/projects/I001_jdoe/`
+If you need to manually access the Stata container:
 
-    and type
+```bash
+cd /bplimext/projects/P999_research_project
+singularity shell tools/_container/CONTAINER_ID.sif
+```
 
-      `stata17-mp`
+Then launch Stata:
 
-![](./media/image10.png){width="3.543307086614173in"
-height="2.488604549431321in"}
+- **Graphical version:** `xstata-mp`
+- **Command-line version:** `stata-mp`
 
-  - You may add a 'PATH' to your system folder by typing, for example on Stata 16, the following command in the shell "vi ~/.bash_profile" and adapt the following line
-    
-    `PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/bplimext/stata17`
+### Ado-files
 
-  - For the interactive graphical mode click on the icons
-    "**xstata17mp.sh**" (Stata 17) located in the
-    'desktop', depending on the desired Stata version,
+Ado-files are text files containing Stata programs. It is advisable to create and save your ado-files so results can be replicated later when running them on BPLIM datasets.
 
-![](./media/image11.png){width="0.5905511811023622in"
-height="0.46653543307086615in"}
+Stata looks for ado-files in several locations, typically organized as:
 
-![](./media/image12.png){width="3.937007874015748in"
-height="2.486382327209099in"}
+- **SITE** – system-wide ado-files
 
-  - You can use the 'Do-file Editor' in Stata to create your own
-      "do-files" and "ado-files", or you can use
-      *KWrite* editor (or 'gedit')
+- **PLUS** – user-installed ado-files
 
-  - You can open it from **RedHat** \> **Applications**
-      \> **Utilities** \> **KWrite**. You can also launch 'KWrite' from the 'shell' by typing 'kwrite'
+- **PERSONAL** – user-created ado-files
 
-  - In case the Stata's icon is not on your desktop, use Dolphin, move to the folder
-    '/bplimext/scripts/wrappers/', and drag and drop the file 'xstata17-mp' into
-    the desktop
+- **OLDPLACE** – legacy location for ado-files
 
-![](./media/image12b.png){width="3.937007874015748in"
-height="2.486382327209099in"}
 
-**NOTE**: to start Stata use the shortcuts in your project's folder.
+Ado-files created for your project can be found in the current directory (`.`). Specific ado-files requested from BPLIM will be placed in `/bplimext/projects/P999_research_project/tools`.
+To make sure Stata recognizes this directory, add the following line at the beginning of your `.do` file:
 
-2. To look for **"ado-files"**:
+```stata
+adopath + "/bplimext/projects/P999_research_project/tools"
+```
 
-"Ado-files" are text files containing the Stata program. It is
-advisable that one create and save his/her "ado-files" so the results
-can be replicated later by running the saved "ado-files" on the
-BPLIM's datasets.
+The `sysdir` command within Stata will list all directories currently in use:
 
-Stata looks for "ado-files" in several places. When it comes to
-personal ado-directories, they can be categorized in four ways:
+>
 
-  - (SITE), the directory for "ado-files" your site might have
-    installed;
+> ![](./media/image13.png){width=50%}
 
-  - (PLUS), the directory for "ado-files" you might have
-    installed;
+>
 
-  - (PERSONAL), the directory for "ado-files" you might have written;
+### Temporary Files
 
-  - (OLDPLACE), the directory where Stata users used to save their
-    personally written ado-files.
+To manage Stata's temporary files:
 
-The ado-files you have just written or those created for this project
-can be found in the current directory (.).
+1. Check the current temporary folder:
 
- Specific 'ado-files' you may ask to be made available in the server
- will be placed in your folder
- '/bplimext/projects/YOURPROJECTID/tools'. You should add this folder
- to your Stata 'ado-files' folder by executing the following command
- within Stata,
+   ```stata
+   tempfile junk
+   display "`junk'"
+   ```
 
-  `sysdir set PERSONAL "/bplimext/projects/YOURPROJECTID/tools"`
+2. It should display something like `/tmp/St98278.000001`
 
- You may also edit your 'profile.do' file, located in your root folder,
- "/home/YOURPROJECTID/", and add key instructions you may want to be
- executed every time you start Stata. The above instruction is one of
- such cases. You can create or edit the file 'profile.do' using
- 'Do-file Editor' within Stata ('vi profile.do' or KWrite are also a
- possibility).
+3. If the temporary file is not in the path `/tmp`, exit Stata and edit your `.bashrc` in your home directory (`cd ~`) with `kwrite` or `vi` and add:
 
- The ***sysdir*** command within Stata will tell you where they are on
- your computer:
+   ```bash
+   export STATATMP="/tmp"
+   ```
 
-![](./media/image13.png){width="3.9368055555555554in"
-height="2.2751399825021874in"}
+4. Apply the changes:
 
-<!---
-3. Stata's temporary files:
+   ```bash
+   source .bashrc
+   ```
 
-> Check the location of the folder with temporary files
+5. Start a new Stata session (inside the container).
 
-- In the command line in Stata type the following two commands to check the location of your temporary folder (`tempfile`):
 
-> `tempfile junk`
+### Running Stata in Batch Mode {#stata-batch}
 
-> `display "``junk'"`
+Batch mode is the recommended method for long-running or computationally intensive programs. For general information about batch processing, see [Running Programs in Batch Mode](#batch-mode).
 
-> In the work_area of your project add a folder named `.TMP`
+**Stata-specific steps:**
 
-> Using the Terminal, go to your home folder, `cd ~`, and the file `.bashrc` (e.g., with `kwrite` or `vim`) and add the following lines:
+1. Navigate to the folder containing your do-file (e.g., `prog1.do`):
 
-> `STATATMP="/bplimext/projects/YOUR_PROJECT_ID/work_area/.TMP"`
+   ```bash
+   cd /bplimext/projects/P999_research_project/work_area/
+   ```
 
-> `export STATATMP`
+   **Tip:** Use Dolphin to navigate, then press **F4** to open a Terminal at that location.
 
-> In the Terminal type `source .bashrc`
+2. Create a batch script file (plain text) named, for example, `batch_prog1`.
 
-> In the Linux Taskbar click in the RedHat and choose Logout
+3. In this file, write the command to execute your do-file:
 
-> Re-start your NoMachine session
+   ```bash
+   stata-mp do /bplimext/projects/P999_research_project/work_area/prog1.do
+   ```
 
-> Start Stata and confirm that your `tempfile` folder is pointing to the folder `.TMP`
+4. Create the batch file using a text editor:
 
-## 'batch' mode: an example using Stata
--->
+   - **Command-line editor:** `vi batch_prog1`
+   - **Graphical editors:** KWrite or Stata Do-file Editor
 
-1.  Start a *\'**shell**\'* in Linux and navigate to the directory
-         of the "do-file" file that you want to run (ex: prog1.do)
+>
 
-`cd /bplimext/projects/I001_jdoe/work_area/`
+> ![](./media/image14.png){width=50%}
 
-2. You might find it easier to use 'Dolphin' (= File Manager) to move
-     over your folder structure. In this case, we recommend activating
-     the 'shell' (= 'Terminal') associated with 'Dolphin'
+>
 
-  -  use Dolphin/File Manager
+   **Tip:** Adding a `.txt` extension (e.g., `batch_prog1.txt`) can help some editors recognize the file.
 
-  - click 'F4' to activate the shell with Dolphin. Benefit: fast
-         transition within folders and, at the same time, the ability
-         to run shell commands
+5. Enter the container environment and submit the batch job:
 
-3. Create an ASCII file named, e.g., 'batch\_prog1'
+   ```bash
+   singularity shell ../tools/_container/CONTAINER_ID.sif
+   at now -f batch_prog1
+   ```
 
-4. Inside the file, write just a line with the execution command you
-     would type in the 'shell'; e.g.,
+6. Monitor your program using `top` or check the log file:
 
-    `/bplimext/projects/I001_jdoe/stata-mp do`
-    
-    `/bplimext/projects/I001_jdoe/work_area/prog1.do`
+   ```bash
+   tail -f prog1.log
+   ```
 
-5. You can use, for example, the command line app 'vi' to create the batch file
+For detailed information on batch processing, monitoring, and troubleshooting, see the [Running Programs in Batch Mode](#batch-mode) section.
 
-![](./media/image14.png){width="3.543307086614173in"
-height="0.8180216535433071in"}
+### Running Stata with Screen
 
-6. The batch file can also be created using apps like 'kwrite' or Stata
-     'do file editor'
-
-![](./media/image15.png){width="3.543307086614173in"
-height="1.1132370953630797in"}
-
-or
-
-![](./media/image16.png){width="3.543307086614173in"
-height="2.0134241032370954in"}
-
-7. You may add the extension '.txt' to the name of the batch file, as
-     sometimes Stata *doeditor* does not 'see' the file 'batch', while
-     it 'sees' 'batch.txt'
-
-8. Once the batch file is created, one runs the `.do` file in batch mode
-     by typing in the 'Terminal':
-
-    `at now -f batch.txt`
-
-9. Type 'man at' to see a further option of the command '`at`'; e.g., one
-     could type
-
-    `at now + 5 hours -f batch.txt`
-
-  or
-
-    `at now + 4 minutes -f batch_prog1`
-
-  to run the Stata program within 5 hours or 4 minutes from now,
-  respectively. '`man`' is the help function in Linux
-
-10. Type '`top`' in the shell/Terminal to confirm the program is running
-
-11. Under '`top`' type '`i`' to hide irrelevant processes (show less output)
-
-12. To kill a running process with '`top`' press '`k`', for '`kill`', write
-    > the process number and then type '`9`'. The process number is
-    > identified in the first column as PID
-
-13. To get out of the `top`, type '`q`'
-
-14. Useful features of the command '`at`':
-
-  - '`atq`': use it to see programs in the batch queue (an '`=`' sign
-         indicates the program is running; an '`a`' indicates it is in
-         the queue and we see the time when it will be executed)
-
-  - '`atrm` \#': remove a batch from the batch queue
-
-  - one can see how the batch is running by typing
-
-      `tail --f logcrc_may21.log`
-
- It allows you to see an updated version of the last lines of the log;
- *i.e.*, it updates each time Stata changes the log. A key
- advantage of `tail` is that it does not interfere with the log file. Namely, it does not write over it.
-
-15. Another way to run a program in the background is by using the
-     command '`screen`'
-
-  - '`screen`' is useful when one wants to run Stata in interactive
-         mode and still guarantees that if the network connection goes
-         down one does not lose the session. We can simply kill the
-         'NoMachine' session and recover it later by typing '`screen --r`'
-
-  - We can run several instances of `screen`. If this is the case,
-         after opening a new NoMachine session, we need to type in the
-         Terminal shell '`screen -d`' to identify the running background
-         sessions. We can retrieve a particular session by knowing the
-         '`pid`' number and typing '`screen -r 34176`'
+To run Stata interactively while preserving your session if the connection drops, use `screen`. See [Using Screen for Persistent Sessions](#screen-sessions) for detailed instructions.
 
 
 ## R
 
-1. As with Stata, R can be accessed in interactive graphical or non-graphical modes.
+### Starting R/RStudio
 
-  - Interactive non-graphical mode: go to the RedHat symbol and type `R' in the Search box
+Use the `r_container.sh` launcher script in your project folder:
 
-![](./media/CallR.png){width=50%}
-    
-  - Alternatively, you can open a Terminal and type
+- **GUI method:** Double-click `r_container.sh` in Dolphin
+- **Terminal method:** Run `./r_container.sh` from your project folder
 
-> `R`
+This launches RStudio inside the container environment.
 
-  - Please make sure R is in your PATH; type `$PATH` in the Terminal. If this is not the case, type `PATH=$PATH:/usr/bin/`
+**Manual container access:**
 
-2. Using RStudio.
+If you need to manually access the R container:
 
-  - Open a Terminal and type 
-  
-  > `rstudio`
+```bash
+cd /bplimext/projects/P999_research_project
+singularity shell tools/_container/CONTAINER_ID.sif
+rstudio
+```
 
-  - Please make sure RStudio is in your PATH; type $PATH in the Terminal. If this is not the case, type
-  
-  > `PATH=$PATH:/opt/bplimext/R/usr/lib64/rstudio/bin/`
+**IMPORTANT:** When exiting R, do **not** save your workspace image to your home folder. If you need to preserve your workspace, save it in your project's `work_area` folder.
 
-  - In case you face difficulties opening/saving files in RStudio, please open a Terminal and type
 
-  > `/bplimext/scripts/wrappers/R.sh`
+### Running R in Batch Mode {#r-batch}
 
-**IMPORTANT**: do not save your workspace image in your home folder (`Save workspace image? [y/n/c]`). If you want to keep the workspace file save it in your project folder under `work_area`. 
+Batch mode is recommended for long-running R scripts. For general information about batch processing, see [Running Programs in Batch Mode](#batch-mode).
 
-**RStudio Font Type**: please make sure you are not using Font Type Courier (Menu Tools, Global Options, Appearance ...)
+**R-specific steps:**
+
+1. Navigate to the folder containing your R script (e.g., `analysis.R`):
+
+   ```bash
+   cd /bplimext/projects/P999_research_project/work_area/
+   ```
+
+2. Create a batch script file named, for example, `batch_r_analysis`:
+
+   ```bash
+   Rscript /bplimext/projects/P999_research_project/work_area/analysis.R /
+   > analysis.log 2>&1
+   ```
+
+   The `> analysis.log 2>&1` redirects both output and errors to a log file.
+
+3. Create the file using `vi`, `kwrite`, or any text editor:
+
+   ```bash
+   vi batch_r_analysis
+   ```
+
+4. Enter the container environment and submit the batch job:
+
+   ```bash
+   singularity shell tools/_container/CONTAINER_ID.sif
+   at now -f batch_r_analysis
+   ```
+
+5. Monitor your program:
+
+   ```bash
+   tail -f analysis.log
+   ```
+
+For detailed information on batch processing, see the [Running Programs in Batch Mode](#batch-mode) section.
+
+### Running R with Screen
+
+To run R interactively while preserving your session, use `screen`. See [Using Screen for Persistent Sessions](#screen-sessions) for detailed instructions.
+
 
 ## Python
 
-1. Open a Terminal and type
+**Starting Python/Jupyter**
 
-> `python3`
+Use the `python_container.sh` launcher script in your project folder:
+
+- **GUI method:** Double-click `python_container.sh` in Dolphin
+- **Terminal method:** Run `./python_container.sh` from your project folder
+
+**Manual container access:**
+
+```bash
+cd /bplimext/projects/P999_research_project
+singularity shell tools/_container/CONTAINER_ID.sif
+```
+
+Once inside the container, launch Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+This opens Jupyter in Firefox. Click **New** and select the **Python** kernel to create a notebook.
+
+You can also use VSCode:
+
+```bash
+code
+```
 
 
 ## Julia
 
-### Alternative A
+**Starting Julia**
 
-1. Open a Terminal and type (`julia` is located in /opt/bplimext/julia/lib/, you can add it to your `PATH`)
+Use the `julia_container.sh` launcher script in your project folder:
 
-> `julia`
+- **GUI method:** Double-click `julia_container.sh` in Dolphin
+- **Terminal method:** Run `./julia_container.sh` from your project folder
 
-2. Use Atom: open a Terminal and type
+**Manual container access:**
 
-> `atom`
+```bash
+cd /bplimext/projects/P999_research_project
+singularity shell tools/_container/CONTAINER_ID.sif
+```
 
-### Alternative B: using a container (see the discussion in the Appendix)
+Once inside the container, you can launch:
 
-1. Request a container with **`Julia`** for your project
-
-> The container will be in the folder `tools` inside the project folder
-
-> **Advantages**: you can build a Julia setup fine-tuned to your project, including the definition of Julia's version and packages
-
-
-## Updates to the commands and packages list
-
-  Additional commands/packages or updates to the existing ones have to be requested from BPLIM's Team.
-
-## Build a container to fine-tune your statistical packages
-
-  You can use Singularity containers in the server. To do so, please send us the definition file so we build the image and put it in your working area.
-  You can find detailed information on Singularity containers at [https://sylabs.io/](https://sylabs.io/).[^8] We provide some notes in the Appendix.
+- **Julia REPL:** `julia`
+- **Jupyter Notebook:** `jupyter notebook` (opens in Firefox; select the Julia kernel)
+- **VS Code:** `code` (opens VS Code for Julia development)
 
 
+## Updates to Commands and Packages
 
-# Allowed outputs
-
-Stata results can be exported to a file on disk using one of the following formats:
-
-1. ASCII files: e.g., log files
-
-2. graphs: as `.PNG` (do not use the option save, or saving, within a
-    graph command; instead, use the separate command line 'graph export xyz.png')
-
-3. csv: CSV (Comma Separated Value format), _e.g._, for use with MS Excel
-
-4. rtf: Rich Text Format for use with word processors
-
-5. xls or xlsx: Excel files with output tables
-
-6. tex: \LaTeX format
+Requests for additional commands or packages, as well as updates to existing ones, must be submitted to the **BPLIM Team**.
 
 
+## Build a Container to Fine-Tune Your Statistical Packages
 
-# Removing outputs
-
-The output files, e.g., log files or images, must be requested from the BPLIM team, bplim@bportugal.pt. Researchers are not allowed to place or remove files on the server autonomously.
-
- Place in the "[results]{.underline}" folder all the outputs you want
- to remove from the server.[^7]
-
-1. Send an email with the title
-    "**project I001\_jdoe**: request for result extraction" to
-    "**[bplim\@bportugal.pt]{.underline}**".
-
-2. Upon validation, the results will be sent to you via email.
+The server uses **Apptainer (formerly Singularity)** containers. To request one, please send the BPLIM Team the **definition file**. We will build the image and place it in your project's `tools`. Detailed information about Apptainer/Singularity containers is available at [https://sylabs.io/](https://sylabs.io/).[^8] Additional notes are provided in the Appendix.
 
 
+# Running Programs in Batch Mode {#batch-mode}
 
-# User's Home folder
+Batch mode is the **recommended method** for running long-running or computationally intensive programs. Instead of keeping an interactive session open, batch mode allows you to submit jobs that run in the background.
+
+## Why Use Batch Mode?
+
+- **Efficiency:** Frees up your interactive session
+- **Reliability:** Programs continue running even if you disconnect
+- **Resource management:** Better server performance for all users
+- **Recommended for:** Any program that runs longer than 30 minutes
+
+## Basic Batch Workflow
+
+1. **Navigate to your working folder:**
+
+   ```bash
+   cd /bplimext/projects/P999_research_project/work_area/
+   ```
+
+2. **Create a batch script file** (plain text) containing the command to execute:
+
+   Example for Stata (`batch_prog1`):
+
+   ```bash
+   stata-mp do /bplimext/projects/P999_research_project/work_area/prog1.do
+   ```
+
+   Example for R (`batch_r_analysis`):
+
+   ```bash
+   Rscript /bplimext/projects/P999_research_project/work_area/analysis.R /
+     analysis.log 2>&1
+   ```
+
+3. **Enter the container environment:**
+
+   ```bash
+   singularity shell ../tools/_container/CONTAINER_ID.sif
+   ```
+
+4. **Submit the batch job:**
+
+   ```bash
+   at now -f batch_prog1
+   ```
+
+## Scheduling Jobs
+
+The `at` command allows you to schedule jobs:
+
+- **Run immediately:** `at now -f batch_script`
+- **Run in 5 hours:** `at now + 5 hours -f batch_script`
+- **Run in 30 minutes:** `at now + 30 minutes -f batch_script`
+
+For more options, type `man at` in the Terminal.
+
+## Managing Batch Jobs
+
+**View queued/running jobs:**
+
+```bash
+atq
+```
+
+- `=` indicates the job is currently running
+- `a` indicates the job is queued with its scheduled time
+
+**Remove a job from the queue:**
+
+```bash
+atrm <job_number>
+```
+
+## Monitoring Running Programs
+
+### Using `top`
+
+```bash
+top
+```
+
+- Press `i` to hide background processes
+- Press `k` to kill a process (enter PID, then type `9` to force termination)
+- Press `q` to exit
+
+### Using `tail` to monitor log files
+
+```bash
+tail -f logfile.log
+```
+
+This continuously displays new lines as they are written. Press `CTRL + C` to stop monitoring.
 
 
-1. Do not save files in your Home folder:
-    "/home/USER_ID/".
+# Using Screen for Persistent Sessions {#screen-sessions}
 
-2. Regularly clean your Trash folder. If your disk use goes over the quota, you will be prevented from login in. In the Terminal type:
-    
-    `rm -rf ~/.local/share/Trash/*`
+`screen` is a session manager that allows you to run programs interactively while preserving your session if your network connection drops.
+
+## Basic Screen Usage
+
+**Start a new screen session:**
+
+```bash
+screen -S my_session_name
+```
+
+**Detach from a screen session** (keeps it running):
+
+Press `CTRL + A`, then `D`
+
+**List all running screen sessions:**
+
+```bash
+screen -ls
+```
+
+**Reattach to a screen session:**
+
+```bash
+screen -r my_session_name
+```
+
+Or, if only one session exists:
+
+```bash
+screen -r
+```
+
+**Reattach to a specific session by PID:**
+
+```bash
+screen -r <pid>
+```
+
+## Example: Running Stata with Screen
+
+```bash
+screen -S stata_session
+singularity shell tools/_container/CONTAINER_ID.sif
+stata-mp
+```
+
+To detach: Press `CTRL + A`, then `D`
+
+To return later: `screen -r stata_session`
+
+## When to Use Screen vs Batch Mode
+
+- **Use screen:** For interactive work where you need to see results immediately and may want to modify your approach
+- **Use batch mode:** For fully scripted analyses that don't require interaction
 
 
+# Allowed Outputs
 
-# Scientific support
+Results can be exported to disk in the following formats (see the [*Output Control Guide*](https://github.com/BPLIM/Manuals/blob/master/Guides/06_Output_Control/Output_Control_Guide.pdf)):
 
-Researchers will be provided with the necessary scientific and
-computational support (*i.e.*, advises on programming, computational
-resources, micro econometrics, and econometrics of panel data for
-research undertaken with the selected microdata).
+1. **ASCII files** — e.g., log files
+2. **Graphs** — export as `.png`
+3. **CSV** — Comma-Separated Values, for use with MS Excel or similar
+4. **TEX** — LaTeX format for integration into TeX documents
+
+# Requesting Outputs
+
+All output files (log files, tables, graphs) must be requested from the **BPLIM Team** at <bplim@bportugal.pt>. Researchers cannot independently extract files from the server. All outputs must comply with the [output control rules](https://github.com/BPLIM/Manuals/tree/master/Guides/06_Output_Control).
+
+After validation, approved results will be sent to you by email. The extraction process depends on your project type:
+
+## Projects Using Modified Data
+
+If your project uses modified data provided by BPLIM:
+
+1. **Run the replication app** successfully before requesting outputs. See the [Replication App manual](https://github.com/BPLIM/ReplicationApp/tree/main/Server) for instructions.
+
+2. **Send an email** to <bplim@bportugal.pt> with the subject line:
+
+   **Subject:** `P999_research_project: request replication`
+
+   Replace `P999_research_project` with your actual project ID.
+
+## Projects NOT Using Modified Data
+
+If your project does not use modified data:
+
+1. **Place all outputs** in the `results` folder within your project.[^7]
+
+2. **Send an email** to <bplim@bportugal.pt> with the subject line:
+
+   **Subject:** `P999_research_project: request for result extraction`
+
+   Replace `P999_research_project` with your actual project ID.
+
+
+# Managing Your Home Folder
+
+Your home folder (`/home/USER_ID/`) has a strict size limit. Exceeding this limit will prevent you from logging in.
+
+**Critical guidelines:**
+
+1. **Never save work files in your home folder.** Always use your project's `work_area` folder.
+
+2. **Regularly empty your Trash folder.** To clean the Trash via Terminal:
+
+   ```bash
+   rm -rf ~/.local/share/Trash/*
+   ```
+
+3. **Keep your home folder minimal.** Only configuration files and small settings should be stored there.
+
+If you cannot log in due to disk quota issues, contact the BPLIM Team for assistance.
+
+
+# Project Archival Policy
+
+Projects that remain **inactive for more than 2 years** will be archived automatically.
+
+**What this means:**
+
+- Archived projects are no longer directly accessible on the server
+- All project data is preserved and can be restored
+- To reactivate an archived project, contact the **BPLIM Team** at <bplim@bportugal.pt>
+
 
 
 # Appendix
 
-## Basic 'shell' commands on Linux{#shell_commands}
+## Basic Shell Commands on Linux {#shell_commands}
 
--   `top`: List the procedures that are being executed on the
-    server
+- **`top`**: List processes currently running on the server  
+  - Press `i` to hide background processes.  
+  - Press `h` to display the **help menu** for available options.
 
-    -   press '`i`' option to omit background processes;
+- **`pwd`**: Show the current working directory
 
-    -   clicar press '`h`' para ***help on top options*** ; '`h`'
-        > option to obtain the **top command help**.
+- **`cd`**: Change directory
 
--   `pwd`: Show current working
-    directory
+  ```bash
+    cd /bplimext/projects/PXXX_name/work_area/
+  ```
 
--   `cd`: Change directory
+- `cd ~`: Move to your home folder
 
-    `cd /bplimext/projects/I001_jdoe/work_area/`
+- `cp`: Copy file(s) to a given path
 
-    '`cd ~`' moves to your home folder
+  ```bash
+    cp prog1.do /bplimext/projects/PXXX_name/results
+  ```
 
-<!-- -->
+- `mv`: Move file(s) or rename file(s)
 
--   `cp`: Copy file(s) to a given path
+  ```bash
+    mv prog1.do /bplimext/projects/PXXX_name/results
+  ```
 
-    `cp prog1.do /bplimext/projects/I001_jdoe/results`
+- `rm`: Delete a file
 
-<!-- -->
+  ```bash
+    rm /bplimext/projects/PXXX_name/results/prog1.do
+  ```
 
--   `mv`: Move file(s) or rename a file from a given path
+- `mkdir`: Create a directory
 
-    `mv prog1.do /bplimext/projects/I001_jdoe/results`
+  ```bash
+    mkdir programs
+  ```
 
-<!-- -->
+- `rmdir`: Delete an empty directory
 
--   `rm`: Delete a file
+  ```bash
+    rmdir programs
+  ```
 
-    `rm /bplimext/projects/I001_jdoe/results/prog1.do`
+- `screen`: Start a session manager that allows running programs in the background and resuming them later
 
-<!-- -->
+  ```bash
+    screen top
+  ```
 
--   `mkdir`: Creates a directory
+- `man`: Show the manual page for a given command
 
-    `mkdir programs`
+  ```bash
+    man ls
+  ```
 
-<!-- -->
+- `du -h`: Display disk usage of files and directories in human-readable format
 
--   `rmdir`: Deletes a directory
+  ```bash
+    du /bplimext/projects/PXXX_name/work_area/
+  ```
 
-    `rmdir programs`
+- `df -h`: Show disk space utilization in human-readable format
 
-<!-- -->
+- `vi`: View or edit ASCII text files (e.g., `.do` files, logs)
 
--   `screen`: Switch between screen
+- `ghostscript`: Preview files with `.eps` or `.pdf` extensions
 
-    `screen top`
+  ```bash
+    ghostscript /bplimext/projects/PXXX_name/results/file_name.pdf
+  ```
 
-<!-- -->
+- `okular`: View PDF files
 
--   `man`: Show the manual page for the given command
+- `find`: Search for files
 
-    `man ls`
+  - Basic structure: `find /path options pattern`
 
-<!-- -->
+  ```bash
+    find . -name "*.do"
+  ```
 
--   `du -h`: Check the information on disk usage of files and
-    directories.
+  - Save search results to a file:
 
-> The "`-h`" option with "`du`" command provides results in "Human
-> Readable Format".
+  ```bash
+    find . -name "*.do" > find_results.txt
+  ```
 
-Ex: `du /bplimext/projects/I001_jdoe/work_area/`
+  - Search for a string within filenames:
 
--   `df -h`: Check disk space utilization and show the disk space
-    > statistics in "human readable" format.
+  ```bash
+    find . -name "*.do" | grep "analysis"
+  ```
 
--   `vi`: View 'ASCII' files; e.g., log files
+  - Identify `.do` files containing the word `graph export`:
 
--   `ghostscript`: Preview files with the extensions of _.eps_ and
-    _.pdf_
+  ```bash
+    find . -name "*.do" -exec grep "graph export" '{}' \; -print
+  ```
 
-> `ghostscript /bplimext/projects/I001_jdoe/results/file_name.pdf`
+- `passwd`: Change your password
 
--   `okular`: View 'PDF'
+- **Exit a program**: Press `CTRL + C` to terminate the current process in the shell
 
--   `find`: Find files
 
-> Structure: find /path option filename
->
-> `find . -name "*.do"`
->
-> Send the '`find`' output to a file:
->
-> `find . -name "\*.do" > find_results.txt`
->
-> Look for a particular string within the 'find' output:
->
-> `find . -name "\*.do" | grep "analysis"`
->
-> Identify files with extension '.do' that **contain** the word 'graph':
->
-> `find . -name "\*.do" -exec grep "graph export" '{}' \; -print`
+## Using the `vi` File Editor
 
--   `passwd`: Change your password
+1. Open a file in `vi` from the shell, for example:
 
--   **To exit** a program, type **CTRL + C** ('CTRL + C' kills a particular
-    execution in the shell)
-
-
-
-## Using the 'vi' file editor
-
-1.  In the shell type '`vi batch1.txt`'
-
-2.  These are the main shortcut keys
-
-    a.  'i' insert text
-
-    b.  'ESC' key get out of the 'insert' mode
-
-    c.  'x' delete specific characters
-
-    d.  'dd' delete a full line
-
-    e.  '10 dd' delete 10 lines
-
-    f.  'yy' copy lines
-
-    g.  'p' paste lines
-
-    h.  'SHIFT + G' go to the last line
-
-    i.  'gg' goes to the first line
-
-    j.  'ESC + q!' exit 'vi' without writing
-
-    k.  'w!' write and replace the file
-
-    l.  'ESC + q' exit the 'vi' session
-
-    m.  Check, for example,
-        [https://www.cs.colostate.edu/helpdocs/vi.html](https://www.cs.colostate.edu/helpdocs/vi.html)
-
-3.  Much easier solution: call '`gedit`' file editor
-
-4.  Linux commands I have to add to the manual
-
-5.  'CTRL + R': allows me to recover a previous command
-
-6.  `vi .bash_history`
-
-## External server's password requirements{#password}
-
-+-----------------------+-----------------------+-----------------------+
-| **Rule**              | **Value**             | **Notes **            |
-+-----------------------+-----------------------+-----------------------+
-| Maximum Password      | **[60                 | *After 60 days the    |
-| Lifetime              | days]{.underline}**   | password will         |
-|                       |                       | expire*               |
-|                       |                       | and has to be changed |
-|                       |                       | in the next login.    |
-|                       |                       | The password can be   |
-|                       |                       | changed at any moment |
-|                       |                       | using: **(1)**,"Redhat|
-|                       |                       | icon \| Applications  |
-|                       |                       | \|Settings \| System  |
-|                       |                       | Settings -- Account   |
-|                       |                       | Details", click       |
-|                       |                       | "Change Password";    |
-|                       |                       | or, **(2)**, in the   |
-|                       |                       | 'Shell' type 'passwd' |
-+-----------------------+-----------------------+-----------------------+
-| Minimum Number of     | 4                     | You should include at |
-| Character Classes     |                       | least 4 classes of    |
-|                       |                       | characters in the     |
-|                       |                       | password. For         |
-|                       |                       | example, small        |
-|                       |                       | letters, capital      |
-|                       |                       | letters, numbers and  |
-|                       |                       | punctuation marks.    |
-|                       |                       |                       |
-|                       |                       | There are a total of  |
-|                       |                       | five classes:         |
-|                       |                       |                       |
-|                       |                       | > 1\. Capital letters |
-|                       |                       | :                     |
-|                       |                       | > A-Z                 |
-|                       |                       | >                     |
-|                       |                       | > 2\. Small letters:  |
-|                       |                       | > a-z                 |
-|                       |                       | >                     |
-|                       |                       | > 3\. Numbers: 1-9    |
-|                       |                       | >                     |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       | > 4\. Punctuation     |
-|                       |                       | > marks: \<space\> !  |
-|                       |                       | > % & ( ) \* + . , {  |
-|                       |                       | > } \[ \] \~ \" \# \$ |
-|                       |                       | > \' - / \\ \^ \_ \`  |
-|                       |                       | > \|                  |
-|                       |                       | >                     |
-|                       |                       | > 5\. Characters above|
-|                       |                       | > 127 (0x7F): marked  |
-|                       |                       | > characters (ã, á,   |
-|                       |                       | > ä, à, etc.);        |
-|                       |                       | > symbols (@, £, §,   |
-|                       |                       | > º, ª, «, », etc.)   |
-|                       |                       |                       |
-|                       |                       | Number of characters: |
-|                       |                       | by using the same     |
-|                       |                       | character 3 or more   |
-|                       |                       | times may imply the   |
-|                       |                       | use of an additional  |
-|                       |                       | class (it is highly   |
-|                       |                       | recommended that you  |
-|                       |                       | do not use            |
-|                       |                       | consecutively the     |
-|                       |                       | same character more   |
-|                       |                       | than 2 times)         |
-+-----------------------+-----------------------+-----------------------+
-| Minimum Length of     | 8                     | The minimum size of   |
-| Password              |                       | the password is 8     |
-|                       |                       | characters (it may be |
-|                       |                       | higher in case you    |
-|                       |                       | repeat characters)    |
-+-----------------------+-----------------------+-----------------------+
-| Password History      | 7                     | One cannot use a      |
-|                       |                       | password defined in   |
-|                       |                       | the previous set of 7 |
-|                       |                       | passwords             |
-+-----------------------+-----------------------+-----------------------+
-| Maximum Consecutive   | 6                     | If the user fails 6   |
-| Failures              |                       | consecutive times the |
-|                       |                       | password the account  |
-|                       |                       | will be locked for    |
-|                       |                       | the time defined in   |
-|                       |                       | "Lockout Time"        |
-+-----------------------+-----------------------+-----------------------+
-| Fail Interval         | 60 sec.               | Time interval for     |
-|                       |                       | attempts to enter a   |
-|                       |                       | password to be        |
-|                       |                       | considered            |
-|                       |                       | consecutive. If more  |
-|                       |                       | than 60 seconds have  |
-|                       |                       | elapsed since the     |
-|                       |                       | last attempt,         |
-|                       |                       | consecutive attempts  |
-|                       |                       | are no longer         |
-|                       |                       | considered, ie the    |
-|                       |                       | number of failures,   |
-|                       |                       | according to the      |
-|                       |                       | requirement \"Maximum |
-|                       |                       | Consecutive           |
-|                       |                       | Failures\" becomes    |
-|                       |                       | one.                  |
-+-----------------------+-----------------------+-----------------------+
-| Lockout Time          | 600 sec.              | Time (10 minutes)     |
-|                       |                       | during which the      |
-|                       |                       | account will be       |
-|                       |                       | locked if the maximum |
-|                       |                       | number of failed      |
-|                       |                       | attempts is reached.  |
-+-----------------------+-----------------------+-----------------------+
+   ```bash
+    vi batch1.txt
+   ```
 
+2. Common shortcut keys in `vi`:
+
+   - `i`: Insert text
+   - `ESC`: Exit insert mode
+   - `x`: Delete the character under the cursor
+   - `dd`: Delete the current line
+   - `10 dd`: Delete 10 lines
+   - `yy`: Copy (yank) the current line
+   - `p`: Paste the copied (yanked) text
+   - `SHIFT + G`: Go to the last line
+   - `gg`: Go to the first line
+   - `ESC + :q!`: Quit without saving changes
+   - `ESC + :w!`: Write (save) and overwrite the file
+   - `ESC + :q`: Quit if no changes have been made
+
+   For a more complete guide, see: [https://www.cs.colostate.edu/helpdocs/vi.html](https://www.cs.colostate.edu/helpdocs/vi.html)
+
+3. Easier alternative: use the `gedit` text editor for a graphical interface:
+
+   ```bash
+    gedit batch1.txt
+   ```
+
+
+
+<!---
 \newpage
+-->
 
-## Download, install and configure NoMachine client{#install_nomachine}
+## Password Requirements {#password}
 
->
+| **Rule**               | **Value** | **Notes** |
+|------------------------|:---------:|-----------|
+| Max. Password Lifetime | 60 days   | After 60 days the password will expire and must be changed at the next login. The password can be changed at any time using: (1) Red Hat icon → Applications → Settings → System Settings → Account Details, click *Change Password*; or (2) in the Shell type `passwd`. |
+| Min. Character Classes | 4         | You should include at least 4 classes of characters in the password. For example: small letters, capital letters, numbers and punctuation marks. <br><br>There are a total of five classes: <br> - **A–Z** (capitals) <br> - **a–z** (lowercase) <br> - **0–9** (numbers) <br> - **punctuation**: `␣ ! % & ( ) * + . , { } [ ] ~ " # $ ' - / \ ^ _ \` \|` <br> - **chars above 127**: (ã, á, ä, à, etc.; @, £, §, º, ª, «, »). <br><br>**Note:** Using the same character 3+ times may require an additional class. Recommended: don't repeat the same character more than twice consecutively. |
+| Min. Length            | 8         | The minimum size of the password is 8 characters (it may be higher if you repeat characters). |
+| Password History       | 7         | You cannot reuse a password from the previous 7 passwords. |
+| Max. Failures          | 6         | If the user fails 6 consecutive times, the account will be locked for the time defined in *Lockout Time*. |
+| Fail Interval          | 60 sec    | Time interval to count attempts as consecutive. If more than 60 seconds have elapsed since the last attempt, the failure count resets to 1. |
+| Lockout Time           | 600 sec   | Time (10 minutes) during which the account will be locked if the maximum number of failed attempts is reached. |
+
+
+<!---
+\newpage
+-->
+
+
+## Download, Install and Configure NoMachine Client {#install_nomachine}
 
 **Step 1**: Go to the following link and use the credentials provided by BPLIM to access the site:
 
->
+> [Banco de Portugal Webdrive](https://www.bportugal.pt/webdrive/index.php/s/irAzxZmir8KHyzD/authenticate)
 
-> [https://www.bportugal.pt/webdrive/index.php/s/irAzxZmir8KHyzD/authenticate](https://www.bportugal.pt/webdrive/index.php/s/irAzxZmir8KHyzD/authenticate)
-
->
-
-> **Note**: sometimes the internet provider,*e.g.*, a University, may block access to this particular website.
+> **Note**: sometimes the internet provider, *e.g.*, a University, may block access to this particular website.
 Please check with your provider in case you get an error while trying to use the link.
 
 >
 
-> ![](./media/image17.png){width="3.052795275590551in" height="2.3622047244094486in"}
+> ![](./media/image17.png){width=50%}
 
 >
+
+<!---
+\newpage
+-->
 
 **Step 2**: Download the file with an extension compatible with your OS (Operating System).
 
 >
 
-> ![](./media/image18.png){width="3.6681966316710413in" height="2.3622047244094486in"}
+> ![](./media/image18.png){width=50%}
 
 >
 
+<!---
 \newpage
+-->
 
 **Step 3**: Install 'NoMachine'.
 
 >
 
-> ![](./media/image19.png){width="4.079410542432196in" height="3.1496062992125986in"}
-
-**\
-**
-
-> ![](./media/image21.png){width="4.063740157480315in" height="3.1496062992125986in"}
+> ![](./media/image19.png){width=50%}
 
 >
 
-> ![](./media/image22.png){width="4.093652668416448in"
-height="3.1496062992125986in"}
+> ![](./media/image21.png){width=50%}
 
-**\
-**
+>
 
-> ![](./media/image24.png){width="4.091154855643045in" height="3.1496062992125986in"}
+> ![](./media/image22.png){width=50%}
+
+>
+
+> ![](./media/image24.png){width=50%}
+
+>
 
 \newpage
 
@@ -960,56 +1123,49 @@ height="3.1496062992125986in"}
 
 >
 
-> ![](./media/image25_clean.png){width="2.7559055118110236in" height="1.2160203412073491in"}
-
-**\
-**
-
-**Step 5**: NoMachine client access configuration.
+> ![](./media/image25_clean.png){width=50%}
 
 >
+
+**Step 5**: NoMachine client access configuration.
 
 > **Step 5.1**: Start 'NoMachine' and create a new connection.
 
 >
 
-> ![](./media/image26.png){width="4.724409448818897in" height="3.0297101924759406in"}
+> ![](./media/image26.png){width=50%}
 
-**\
-**
+>
 
-> ![](./media/image27.png){width="4.724409448818897in" height="3.0301957567804023in"}
+> ![](./media/image27.png){width=50%}
 
-**\
-**
+>
+
+\newpage
 
 > **Step 5.2**: Define the 'Host' as bplimexterno.bportugal.pt, 'Port' 4000, 'Protocol' NX and set a 'Friendly Name' for 'Name'.
 
 >
 
-> ![](./media/image28_new.png){width="4.724409448818897in" height="3.0200164041994753in"}
+> ![](./media/image28_new.png){width=50%}
 
 >
 
-\newpage
 
-> **Step 5.3**: Use password authentication, with or without proxy, depending on the instructions of the network administrator/user \'s
-computer support. Click 'Add' to create the connection.
+> **Step 5.3**: Use password authentication -- with or without a proxy -- according to the instructions provided by your network administrator or IT support. The proxy settings can be customized under Proxy in the bottom-right corner. After completing the configurations, click Add to create the connection.
 
 >
 
-> ![](./media/image29.png){width="4.724409448818897in" height="3.024378827646544in"}
+> ![](./media/image29.png){width=50%}
 
-**\
-**
+>
 
 > **Step 5.4**: Once the entry for `bplimexterno.bportugal.pt` has been created, connect:
 
 >
 
-> ![](./media/image32.png){width="4.724409448818897in" height="3.036981627296588in"}
+> ![](./media/image32.png){width=50%}
 
-\newpage
 
 > **Step 5.5**: Before the first effective connection, it may be necessary to accept the certificate from bplimexterno.bportugal.pt. You should verify that the \"fingerprint\" (verification code) is:
 
@@ -1019,24 +1175,27 @@ computer support. Click 'Add' to create the connection.
 
 >
 
-> ![](./media/image33.png){width="4.724409448818897in" height="2.985113735783027in"}
+> ![](./media/image33.png){width=50%}
 
-**\
-**
+>
+
+<!---
+\newpage
+-->
 
 > **Step 5.6**: Connect with the UserID (**case sensitive**) and password provided by Banco de Portugal:
 
 >
 
-> ![](./media/image34.png){width="4.724409448818897in" height="3.0350426509186352in"}
-
-\newpage
-
-> **Step 5.7**: After the first successful login, it is necessary to change the password, which must comply with the Password Policy defined above.
+> ![](./media/image34.png){width=50%}
 
 >
 
-> ![](./media/password_prompt_enhanced_1_small.png){width="4.724409448818897in" height="3.029721128608924in"}
+> **Step 5.7**: After the first successful login, it is necessary to change the password, which must comply with the Password Policy defined Section 1.2.
+
+>
+
+> ![](./media/password_prompt_enhanced_1_small.png){width=50%}
 
 >
 
@@ -1044,19 +1203,20 @@ computer support. Click 'Add' to create the connection.
 
 >
 
-> ![](./media/password_prompt_enhanced_2_small.png){width="4.724409448818897in" height="3.029721128608924in"}
+> ![](./media/password_prompt_enhanced_2_small.png){width=50%}
+
+>
 
 > The NoMachine client does not tell you why the new password was not accepted -- it is the responsibility of the user to verify that the new password is in compliance.
 
 >
 
-\newpage
 
 > **Step 5.8**: Upon login success, the following screens should appear.
 
 >
 
-> ![](./media/image36.png){width="4.724409448818897in" height="3.0297101924759406in"}
+> ![](./media/image36.png){width=50%}
 
 >
 
@@ -1064,31 +1224,33 @@ computer support. Click 'Add' to create the connection.
 
 >
 
-> ![](./media/image37.png){width="4.724409448818897in" height="3.0297101924759406in"}
-
-\newpage
-
-> **Step 5.9**: In the following screend define the settings of your monitor.
+> ![](./media/image37.png){width=50%}
 
 >
 
-> ![](./media/image38_A.png){width="4.724409448818897in" height="3.0297101924759406in"}
+<!---
+\newpage
+-->
 
-**\
-**
-
-> ![](./media/image38_B.png){width="4.724409448818897in" height="3.0297101924759406in"}
+> **Step 5.9**: In the following screen define the settings of your monitor.
 
 >
 
-> ![](./media/image38_C.png){width="4.724409448818897in" height="3.0297101924759406in"}
+> ![](./media/image38_A.png){width=50%}
 
-**\
-**
+>
 
-> ![](./media/image38_D.png){width="4.724409448818897in" height="3.0297101924759406in"}
+> ![](./media/image38_B.png){width=50%}
 
-\newpage
+>
+
+> ![](./media/image38_C.png){width=50%}
+
+>
+
+> ![](./media/image38_D.png){width=50%}
+
+>
 
 > **Step 5.10**: Upon login success, the following screens should appear.
 
@@ -1098,504 +1260,396 @@ computer support. Click 'Add' to create the connection.
 
 >
 
-> ![](./media/image38.png){width="4.724409448818897in" height="3.0127438757655294in"}
+> ![](./media/image38.png){width=50%}
 
-**\
-**
+>
+
+<!---
+\newpage
+-->
 
 > **Step 5.11**: You should see the following screen.
 
 >
 
-> ![](./media/image39.png){width="4.724409448818897in" height="3.0127438757655294in"}
+> ![](./media/image39.png){width=50%}
 
+
+>
+
+<!---
 \newpage
+-->
+
 
 > **Step 5.12**: Click 'Display'.
 
 >
 
-> ![](./media/image39.png){width="4.724409448818897in" height="3.0268011811023623in"}
+> ![](./media/image39.png){width=50%}
 
-**\
-**
+>
 
 > **Step 5.13**: Choose the option that best fits your monitor.
 
 >
 
-> ![](./media/image40.png){width="4.724409448818897in" height="3.0219542869641294in"}
+> ![](./media/image40.png){width=50%}
 
-
-<!---
-
-## Browser access{#browser_access}
-
-> Use a browser (recommended Chrome, Firefox, Opera or Safari) and go to
 >
-> [https://bplimexterno.bportugal.pt:4443](https://bplimexterno.bportugal.pt:4443)
 
-Below are the sequential screens you should see. In steps 4 to 7, you can define your settings.
-
-> ![](./media/NoMachineWeb1.png){width="4.724409448818897in"
-> height="3.26626968503937in"}
-
-> ![](./media/NoMachineWeb2.png){width="4.724409448818897in"
-> height="3.26626968503937in"}
-
-> ![](./media/NoMachineWeb3.png){width="4.724409448818897in"
-> height="3.26626968503937in"}
-
-> ![](./media/NoMachineWeb4.png){width="4.724409448818897in"
-> height="3.26626968503937in"}
-
-> ![](./media/NoMachineWeb5.png){width="4.724409448818897in"
-> height="3.26626968503937in"}
-
-> ![](./media/NoMachineWeb6.png){width="4.724409448818897in"
-> height="3.26626968503937in"}
-
-> ![](./media/NoMachineWeb7.png){width="4.724409448818897in"
-> height="3.26626968503937in"}
-
-
-Configuring browser access
-
-> To a large extent the configuration of the access via browser is
-> similar to the configuration through the client NoMachine. However,
-> the features and performance are lower than the "NoMachine client
-> access".
 >
-> In case you are using a Portuguese Keyboard, note that the keyboard
-> has to be set to Portuguese, as shown below, and even then some
-> characters may have to be specified on the virtual keyboard (depending
-> on the browser used). Please confirm the configuration of the characters
-> on your keyboard.
->
-> ![](./media/image41.png){width="4.724409448818897in"
-> height="3.26626968503937in"}
->
-> ![](./media/image42.png){width="4.724409448818897in"
-> height="3.8038615485564304in"}
->
-> ![](./media/image43.png){width="4.724409448818897in"
-> height="3.779623797025372in"}
->
-> ![](./media/image44.png){width="4.724409448818897in"
-> height="3.8038615485564304in"}
-
--->
-
-\newpage
 
 ## Frequently Asked Questions
 
-<!---
-1.  After the login in "https://webfa.bportugal.pt" I am not able to
-    download NoMachine's setup file
+1.  **Mac users cannot install NoMachine and receive the error below:**
 
- It may occur that a firewall is preventing the download. We have
- verified such problems in some Universities and Governmental services.
- Please try the download outside the firewall.
+>
+
+> ![](./media/image45.png){width=50%}
+
+>
+
+- Ensure your **macOS** is up to date.  
+- As a temporary solution, download the **NoMachine Enterprise Client** from the official website and run the installation file.
+
+
+> [NoMachine Client](https://www.nomachine.com/pt-pt/product&p=NoMachine%20Enterprise%20Client)
+
+>
+
+2.  **NoMachine authentication failure**
+
+
+>
+
+> ![](./media/image46.png){width=50%}
+
+
+>
+
+   - This may happen due to a mismatched keyboard layout.  
+     For example, if you use a **Portuguese keyboard** but the system assumes a **US keyboard**, a password containing `ç` may be rejected as "wrong password."  
+     Verify your keyboard layout or change your password after the first login using:
+
+     ```bash
+      passwd
+     ```
+
+   - If login fails with the error:  
+     *"Could not connect to the server. Error is 138: Connection is timed out"*  
+     check whether your network firewall is blocking the connection.  
+     Some university networks block external connections to BPLIM’s server.  
+     Test from another location (e.g., your home network).
+
+3.  **User pressed 'Lock' instead of 'Log out' and cannot unlock**
+
+   - Check that the keyboard layout is correct (e.g., PT or UK).  
+   - Close the NoMachine session and start a new one. Before the final **Login** step, right-click and choose **Logout**, then double-click to reconnect.
+
+
+>
+
+4.  **"Cannot see the screen in NoMachine"**
+
+>
+
+> ![](./media/image47.png){width=50%}
+
+>
+
+   - **Option A**: Move your mouse to the top-right corner of NoMachine.  
+     A folded-sheet icon will appear. Left-click → **Display → Change settings** → enable **Disable client-side hardware decoding**.
+
+
+>
+
+> ![](./media/image48.png){width=50%}
+
+
+>
+
+   - **Option B**: Close the NoMachine connection and start a new one. Before the final **Login** step, right-click and choose **Logout**, then double-click to reconnect.
+
+
+>
+
+<!---
+\newpage
 -->
 
-1.  Mac users are not able to install NoMachine, receiving the following message:
 
-> ![](./media/image45.png){width="2.1653543307086616in" height="1.4969652230971129in"}
-
- Please check if your Mac OSX is updated. Temporary solution: download  NoMachine Enterprise Client from the official website, and run the installation file:
-
-> https://www.nomachine.com/download-enterprise\#NoMachine-Enterprise-Client
-
-**\
-**
-
-2.  NoMachine authentication failure
+5. **"Error: Parameter 'agentm_display' has bad value"**
 
 >
 
-> ![](./media/image46.png){width="4.724409448818897in" height="3.0219542869641294in"}
+> ![](./media/parameter_bad_value.png){width=50%}
+
+>
+
+   - This usually means your home folder is full (`/home/USER_LOGIN`).  
+     **Do not save files in your home folder.**  
+   - Ask the BPLIM Team to free up space in your home directory.
+
+
+>
+
+6.  **Session is frozen**
+
+  - From the first NoMachine screen, double-click the following icon:  
+
+>
+
+> ![](./media/logout1.png){width=35%}
+
+>
+
+  - Then right-click the icon below and choose **Terminar sessão**:
+
+>
+
+> ![](./media/logout2.png){width=35%}
 
 >
 
 <!---
-  - We have observed that some users who change their password within
-    "https://webfa.bportugal.pt" later are not able to login within
-    NoMachine (error message shown in the image above).
-    -->
-  - In some cases, it occurs due to a different keyboard layout. For example, if you have
-    a Portuguese keyboard, but the website assumes a US keyboard, and
-    your password contains a symbol like 'ç' then you will get a "wrong
-    password" message. Please check the keyboard layout that is active
-    when you type the password. Alternatively, change the password after
-    the first login with NoMachine. Use linux's command 'passwd'.
-
->
-
-  - Login fails, and the system shows the message: \"Could not connect to
-    the server. Error is 138: Connection is timed out\" Please check if
-    your network has a strict firewall; e.g., some researchers are not
-    able to reach BPLIM's server within their University network. Please
-    check if in a different location, like at home, the connection
-    works.
-
-**\
-**
-
-3.  User pressed 'Lock' instead of 'Log out' and the unlock/password
-    does not work:
-
-  - Check if the keyboard settings are correct (e.g., PT or UK)
-
-  - Close the 'NoMachine' connection and start a new one. Before the
-        last step -before the \'Login'- right-click and choose 'Logout'.
-        Double-click for the new connection
-
-**\
-**
-
-4.  "Cannot see the screen in NoMachine" (see image below)
-
->
-
-> ![](./media/image47.png){width="4.016666666666667in" height="2.4999496937882766in"}
-
-**\
-**
-
-- [OPTION A]{.underline}: move your mouse on top the upper right corner of NoMachine, you should see a "folded like sheet", left-click your mouse, go to 'Display', 'Change settings', and click in 'Disable client side hardware decoding'.
-
->
-
-> ![](./media/image48.png){width="1.5652176290463693in" height="0.15in"}
-
-**\
-**
-
-- [OPTION B]{.underline}: Close the 'NoMachine' connection and start a
-    new one. Before the last step -before the \'Login'- right click and
-    choose 'Logout'. Double-click for the new connection
-
 \newpage
+-->
 
-5.  "Error: Parameter 'agentm_display' has bad value" (see image below)
 
-> ![](./media/parameter_bad_value.png){width="4.016666666666667in" height="2.4999496937882766in"}
+7. **Visualizing LaTeX tables**
 
->
+   If you want to preview a table exported to LaTeX as a PDF, create a simple file named `main.tex`:
 
-  - Your home folder is full (/home/USER_LOGIN): **_Do not save files in your home folder_**
+   ```latex
+   \documentclass{article}
+   \begin{document}
+     \input{your_table.tex}
+   \end{document}
+   ```
 
-  - Ask BPLIM Staff to empty space in your home folder
+   Replace `your_table.tex` with the name of your table file. Compile it in the Terminal with:
 
-**\
-**
+   ```bash
+   pdflatex main.tex
+   ```
 
-6. Session is frozen
+   This generates `main.pdf`, which you can view with:
 
-  - Go to NoMachine first screen and double-click in the following icon
-
-> ![](./media/logout1.png){width="3in"}
-
-  - right-click on the icon below and choose "Terminar sessão" 
-
-> ![](./media/logout2.png){width="3in"}
-
-**\
-**
-
-7. Visualizing \LaTeX  tables
-
-  - In case you want to see the pdf of tables you have exported to \LaTeX  you can create a generic tex file, `main.tex`, with the following content:
-
-  > `\documentclass{article}`
-  >
-  > `\begin{document}`
-  >
-  > `\input{your_table.tex}`
-  >
-  > `\end{document}`
-
-  > where your table is 'your_table.tex'. The tex file can be compiled in the Terminal by typing
-  > `pdflatex main.tex`.
+   ```bash
+   okular main.pdf
+   ```
   
 
-## Version control
+## Version Control with GitLab
 
-The server runs [GitLab](https://about.gitlab.com/). If you need to use Git for your projects, please send your request to BPLIM (bplim@bportugal.pt).
+The server provides [GitLab](https://about.gitlab.com/) for version control. Git is a distributed version-control system for tracking changes in files, ideal for managing code and scripts across your research project.
 
-In case you want to use Git you should request it from BPLIM (bplim@bportugal.pt).
-  
-  > [Wikipedia](https://en.wikipedia.org/wiki/Git):
-  > 
-  > ``Git is a distributed version-control system for tracking changes in any set of files, originally designed for coordinating work among programmers cooperating on source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows''
+**To request Git access:** Contact the BPLIM Team at <bplim@bportugal.pt>.
 
->
+### Benefits of Using Version Control
 
-First steps
+- Track all changes to your code and scripts
+- Revert to previous versions if needed
+- Collaborate with team members
+- Maintain a complete history of your research workflow
 
->
+### Getting Started with Git
 
-1.	First, authenticate using an `ssh-key`. Open a **Terminal** in your home folder
+#### Generate an SSH Key
 
->
+Open a Terminal in your home folder and generate an SSH key:
 
-  ```
-    cd ~
-  ```
-
->
-
-> and type:
-
->
-
-  ```
-    ssh-keygen -t rsa -C "BPLIM git"
-    cat ~/.ssh/id_rsa.pub
-  ```
->
-
-2. Second, after generating your SSH key, you'll need to select the text of the key in your terminal. You can usually do this by clicking and dragging your mouse over the key text. Once the key is highlighted, right-click on the selection and choose 'Copy' to copy the resulting key to your clipboard.
-
->
-
-3. Third, open **Firefox** (go to the RedHat icon and type Firefox in the search box) and navigate to [https://vxpp-bplimgit.bplim.local/](https://vxpp-bplimgit.bplim.local/)
-
->
-
-> ![](./media/GitLab.png){width="3in"}
-
->
-
-> Once you've navigated to the website, use your credentials for the external server to log in.
-
->
-
-4. Once logged in, navigate to your profile. In the upper-right corner of the webpage, you will find the **Settings** option.
-
->
-
-> ![](./media/GitLab2.png){width="1in"}
-
->
-
-> Now, on the left-side bar, click in **SSH Keys**
-
->
-
-> ![](./media/GitLab3.png){width="1in"}
-
->
-
-> and paste the contents of the clipboard in the text box on the top right corner under **Key**.
-
->
-
-> ![](./media/GitLab4.png){width="3in"}
-
->
-
-Give a title, e.g., "BPLIM git", and click in **Add key**.
-
->
-
-5. Go to **Projects**
-
->
-
-> ![](./media/GitLab5.png){width="2in"}
-
->
-
-and create a **New project**, e.g., `scripts_P999`, where P999 is your_project_ID_number
-
->
-
-> ![](./media/GitLab6.png){width="1in"}
-
->
-
-To use git, it is necessary to modify or create the .gitconfig file in your user's home directory. You can use **KWrite** (click in the RedHat icon and search for KWrite) to edit/create the file. The file should have the following format. In this file, you can adapt the name and replace 'investa' with your own user.
-
->
-
-```
-  [cola]
-          spellcheck = false  
-  [user]
-          name = Investigador A
-          email = investa@sxpe-bplim01.bplim.local
-  [gui]
-          editor = kwrite
+```bash
+cd ~
+ssh-keygen -t rsa -C "BPLIM git"
+cat ~/.ssh/id_rsa.pub
 ```
 
-\newpage
+Highlight the generated key, right-click, and select **Copy** to copy it to your clipboard.
 
-6. You can clone the project by opening a **Terminal** and moving to your work_area:
+#### Access GitLab
+
+Open Firefox (Red Hat → Search → Firefox) and navigate to:
+
+[https://vxpp-bplimgit.bplim.local/](https://vxpp-bplimgit.bplim.local/)
+
 
 >
 
+> ![](./media/GitLab.png){width=50%}
+
+>
+
+Log in with your external server credentials.
+
+#### Add Your SSH Key in GitLab
+
+- Navigate to your profile by clicking **Settings** in the top-right corner
+
+>
+
+> ![](./media/GitLab2.png){width=35%}
+
+>
+
+- In the left sidebar, click **SSH Keys**
+
+>
+
+> ![](./media/GitLab3.png){width=35%}
+
+>
+
+- Paste your SSH key in the **Key** text box
+
+>
+
+> ![](./media/GitLab4.png){width=50%}
+
+>
+
+- Enter a title (e.g., "BPLIM git") and click **Add key**
+
+
+#### Create a New GitLab Project
+
+Go to **Projects** → **New project** and create a repository (e.g., `scripts_P999`).
+
+
+>
+
+> ![](./media/GitLab5.png){width=50%}
+
+>
+
+> ![](./media/GitLab6.png){width=40%}
+
+>
+
+#### Configure Git
+
+Create or edit the `.gitconfig` file in your home folder. Use KWrite (Red Hat → Search → KWrite):
+
+```bash
+[cola]
+        spellcheck = false
+[user]
+        name = Your Name
+        email = your_username@sxpe-bplim01.bplim.local
+[gui]
+        editor = kwrite
 ```
-  cd /bplimext/projects/your_project_ID/work_area/
-```
->
 
-> and typing
+#### Clone Your Project
 
->
+In the Terminal, navigate to your `work_area` and clone the repository:
 
-```
-  git clone git@vxpp-bplimgit.bplim.local:investa/scripts_P999.git
+```bash
+cd /bplimext/projects/P999_research_project/work_area/
+git clone git@vxpp-bplimgit.bplim.local:username/scripts_P999.git
 ```
 
->
+#### Add .gitignore File
 
-7. Add the file `.gitignore` available in folder `tools` of your project:
+Copy the `.gitignore` template from your project's `tools` folder:
 
->
-
-```
-  cd scripts_P999
-  cp /bplimext/projects/your_project_ID/tools/.gitignore .
+```bash
+cd scripts_P999
+cp /bplimext/projects/P999_research_project/tools/.gitignore .
 ```
 
->
+#### Make Your First Commit
 
-8. Do your first commit & push
-
->
-
-```
-  git add *
-
-  git commit -a -m "First"
-
-  git push
+```bash
+git add *
+git commit -a -m "Initial commit"
+git push
 ```
 
->
+#### Best Practices
 
-9. **To use the version control system effectively, please place all your scripts and code files in the folder named 'scripts_P999'. This organization is important for maintaining a structured and efficient workflow with the version control system.**
+- Store all your scripts and code in the Git repository folder (e.g., `scripts_P999`)
+- Commit changes regularly with descriptive messages
+- Pull before you push to avoid conflicts
+- Use branches for experimental work
 
-<!--- 1. move to a specific folder; _e.g._, `cd /bplimext/projects/your_project_ID/work_area/`
-2. create a .gitignore file (check [toptal](https://www.toptal.com/developers/gitignore) for some examples)
-3. `git init`
-4. `git add *.do`
-5. `git commit -a -m "First"`
-6. `git show first_do_file.do`
--->
 
-\newpage
+## Building Custom Containers
 
-## Containers
+If you need custom software packages or specific versions, you can request a custom container.
 
-<!---
-## Singularity containers
+### Steps to Build a Custom Container
 
-### Using a prebuilt image available at BPLIM's server
+#### Create a Container Definition
 
-You can use Singularity to run the Anaconda environment inside the server. The image for Singularity is placed in:
+Use the template files available in the [BPLIM Containers GitHub repository](https://github.com/BPLIM/Containers).
 
-  > `/opt/bplimext/singularity-images`
+#### Test and Build Using Sylabs Cloud
 
-Explore the following example. Type these sequence of commands:
-
-`cd /bplimext/projects/your_project_ID/work_area`
-
-`mkdir containers`
-
-`cd containers`
-
-`singularity build --sandbox Anaconda /opt/bplimext/singularity-images/bplimAnaconda.sif`
-
-`singularity shell --writable Anaconda`
-
-Now you are inside the container and can run commands such as:
-
-  > `anaconda-navigator`
-  >
-  > `jupyter lab`
-  >
-  > `spyder`
-
--->
-
-### Build your container
-
-- You can write a script to build your container using the template definition files available at our [GitHub repository](https://github.com/BPLIM/Containers)
-
-- Test your script and build the container using [SylabsCloud](https://cloud.sylabs.io/) (you can use your GitHub account to login)
-
-- Click in 'CREATE'
+- Sign in to [Sylabs Cloud](https://cloud.sylabs.io/) (use your GitHub account)
+- Click **CREATE**:
 
 >
 
-> ![](media/SylabsCreate.png){width="1.2in"}
+> ![](media/SylabsCreate.png){width=20%}
 
 >
 
-- In the following step upload your '.def' file or copy/paste its contents in the Text box:
+- Upload your `.def` file or paste its contents:
 
 >
 
-> ![](media/SylabsBuildContainer.png){width="1.7in"}
+> ![](media/SylabsBuildContainer.png){width=30%}
 
 >
 
-- Sylabs runs a first test on the validity of your script and releases the button 'Build' (click on it)
+- Sylabs validates your script. Once successful, click **Build**
+- Monitor the build process for any errors
+- After successful build, send the **definition file** to the BPLIM Team
 
-- Follow the outcome at the bottom of the screen and check for possible error messages
+#### Using Your Custom Container
 
-- Once you succeed in building the container, you can send us the definition file with your changes
+Once the BPLIM Team builds your container, it will be placed in your project's `tools/_container` folder.
 
-### Use the container in BPLIM's server
+To use it:
 
->
+```bash
+cd /bplimext/projects/P999_research_project/tools/_container
+singularity shell YOUR_CONTAINER_ID.sif
+```
 
-- Open a `Terminal`
-
-- Move to your project's folder
-
-> `cd /bplimext/projects/YOURPROJECTID/tools/containers`
-
-- Start the container by typing
-
-> `singularity shell YOURPROJECTID.sif`
-
-- The prompt of the `Terminal` will show: `Singularity`
-
-- Start RStudio by typping `rstudio` (small caps)
+The Terminal prompt changes to `Singularity>`, indicating you're inside the container. You now have access to your custom software environment.
 
 >
 
-> ![](media/Singularity_Terminal_Prompt.png){width="1.7in"}
+> ![](media/Singularity_Terminal_Prompt.png){width=20%}
 
 >
 
-- Once inside RStudio you have access to the original folder structure of your project.
+Launch applications as needed (e.g., `rstudio` for RStudio).
 
->
 
 ## Jupyter Lab
 
-Explore [Jupyter lab](https://jupyter.org/):
+[JupyterLab](https://jupyter.org/) is a web-based interactive development environment for notebooks, code, and data. It provides a flexible interface for data science, scientific computing, and machine learning workflows.
 
->
+### Starting JupyterLab
 
-  > "JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. JupyterLab is extensible and modular: write plugins that add new components and integrate with existing ones."
+From within a container (Python or Julia), run:
 
->
+```bash
+jupyter lab --browser=firefox
+```
 
-Start Jupyter Lab by typing:
+This opens JupyterLab in Firefox, providing an integrated environment for:
 
->
+- Interactive notebooks (Python, Julia, R)
+- Code editing and execution
+- Data visualization
+- Terminal access
 
-> `jupyter lab --browser=firefox`
-
->
-
-Sample session:
+### Example JupyterLab Session
 
 >
 
@@ -1603,33 +1657,16 @@ Sample session:
 
 >
 
-[^1]: Dolphin is an intuitive and easy-to-use file manager. You can use it, for example, to browse the directory, to
-    create or delete files/directories (by using the right mouse
-    button). For more information about Dolphin, please visit:
-    [https://userbase.kde.org/Dolphin](https://userbase.kde.org/Dolphin)
-    .
+**Tip:** JupyterLab is ideal for exploratory data analysis and prototyping. For production scripts, consider using dedicated `.py`, `.R`, or `.jl` files.
 
-[^2]: In case 'xstata17mp.sh' does not launch Stata please see '[Section 3](#statistical_software)'.
+[^1]: **Dolphin** is the file manager included with the KDE desktop environment. You can browse folders, create/delete files and folders (right-click for context menu), and manage your project files. More information: [https://userbase.kde.org/Dolphin](https://userbase.kde.org/Dolphin)
 
-[^3]: Click on the cross button at the upper right corner to close.
+[^3]: Click the cross button in the upper-right corner of the NoMachine window to close the connection.
 
-[^4]: Note that before exiting the server, you need to make
-    sure that all active programs have been closed (unless they have
-    been launched in *batch* mode). Running programs in *batch* mode is justified for
-    procedures that require high computational resources, intense
-    calculation and/or long processing time.
+[^4]: Before logging out, ensure all active programs are closed (unless running in batch mode). Batch mode is recommended for computationally intensive or long-running tasks.
 
-[^5]: The '*shell'* supports the commands in Linux operating system
-    (some are disabled).
+[^7]: **Output extraction rules:** Only non-sensitive text files without identifiable information can be extracted. For each graph requested, you must provide the corresponding data table for replication. Graphs must be in PNG format; vector graphics are not permitted.
 
-[^6]: The version of Stata on the server has the same features as the
-    Stata on Windows or Mac. By default when the Stata starts in this
-    way the \"working directory\" active becomes your folder
-    \"work\_area\".
+[^8]: **Singularity** is now called [Apptainer](https://apptainer.org). Both names refer to the same container technology. Documentation: [https://apptainer.org](https://apptainer.org)
 
-[^7]: You may only remove text files that do not contain data or results
-    that allow identification. For all the graphs you request as an
-    output you must provide the corresponding Table to replicate it. You
-    may only export graphs in .PNG format (no vector graph is allowed).
-
-[^8]: Singularity is now called [Apptainer](https://apptainer.org). You can find further information here: [https://apptainer.org](https://apptainer.org).
+[^9]: **Containers** are self-contained environments that include software and all its dependencies (libraries, configurations, packages). This ensures consistent behavior across sessions and enables reproducible research. Each container is isolated, preventing conflicts between different projects' software requirements.
