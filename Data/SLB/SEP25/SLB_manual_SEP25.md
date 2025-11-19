@@ -11,7 +11,7 @@ execute:
   echo: false
   warning: false
 format:
-  pdf: 
+  pdf:
     toc: true
   html:
     toc: true
@@ -698,7 +698,7 @@ The BPLIM data extractions are designed to be cumulative and complete. Each new 
 
 # Auxiliary Files {#sec-auxiliary-files}
 
-- For the metadata and summary statistics, please check the following auxiliary files: ^[The summary statistics, on perturbed data, are available in BPLIM's servers.]
+- For the metadata and summary statistics, please check the following auxiliary files: ^[The summary statistics are available in BPLIM's servers.]
 
 | File | Description of Variables | Summary Statistics |
 |:----|:----:|:----:|
