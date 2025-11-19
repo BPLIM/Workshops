@@ -1,9 +1,7 @@
 ---
 title: BPLIM Datasets Guide
-subtitle: ""
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
-date: "August, 2025"
-#downloads: [pdf, epub]
+date: "November 2025"
 format:
   pdf: 
     documentclass: scrartcl
