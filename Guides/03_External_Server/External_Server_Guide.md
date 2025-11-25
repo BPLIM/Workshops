@@ -350,8 +350,6 @@ You can access the Terminal in two ways:
 
    Lists files in human-readable format (`h`), long format (`l`), reverse order (`r`), sorted by modification time (`t`), including hidden files (`A`)
 
-\newpage
-
 
 # Working with Containers
 
@@ -599,63 +597,49 @@ Once inside the container, you can launch:
 - **Jupyter Notebook:** `jupyter notebook` (opens in Firefox; select the Julia kernel)
 - **VSCode:** `vscode` (opens the BPLIM-configured VSCode environment)
 
+
 ## Structuring and Writing Code
 
 **Goal:** keep code readable, reproducible, and easy to hand over.
 
 ### Organize your project
-
 - Work in `work_area`; folders `initial_dataset`, `external`, `intermediate`, `tools`and `modified` are read-only.
-- Keep scripts in a dedicated folder (e.g., `work_area/scripts`), and store outputs in `results` (logs under `results/logs`).
+- Use the macros/variables defined in configuration files (profile.do, config.R, config.py) - `path_source`, `path_source_p`, `path_rep`, etc.
+- Keep scripts in a dedicated folder (e.g., `work_area/scripts`), and store outputs in a `results` folder under the work_area (check the template).
 - Do not save anything in your home folder.
 
 ### Naming and layout
-
 - Use short, descriptive names with underscores (e.g., `01_import.do`, `02_clean.R`, `03_analysis.py`).
 - Use `YYYYMMDD` for dated files (e.g., `analysis_20250312.log`).
 - Add a brief `README` in `work_area` explaining the script order and entry points.
 
 ### Paths and reproducibility
-
-- Prefer relative paths from the `work_area` instead of hard-coded absolute paths or home-relative paths.
+- Use paths defined in the configuration files or prefer relative paths from the `work_area` instead of hard-coded absolute paths or home-relative paths.
 - Set seeds for random routines (Stata: `set seed`, R: `set.seed()`, Python: `random.seed()`/`numpy.random.seed()`).
 - Use the provided launcher scripts (`stata_container.sh`, `r_container.sh`, `python_container.sh`, `julia_container.sh`) to ensure you are inside the correct container.
 
 ### Ado-files and packages
-
 - Save your own ado-files in `work_area/ado/` (or similar) and add it to the search path, for example:
-
   ```stata
-  adopath + "/bplimext/projects/P999_research_project/work_area/ado"
-  adopath + "/bplimext/projects/P999_research_project/tools"
+  run profile.do
+  ...
+  adopath + “${path_rep}/ado”
   ```
-
 - Packages or commands not already available must be requested from the BPLIM Team.
 
 ### Batch and logging
-
 - For long runs, use batch mode (see [Running Programs in Batch Mode](#batch-mode)); redirect output to a dated log in `results/logs` (e.g., `stata-mp do ... > results/logs/run_20250312.log`).
 - Keep batch scripts (e.g., `batch_run1`) alongside the code they execute, and reference them from the batch section.
 
 ### Editors and tools
-
 - Use the provided wrappers (`vscode` for VSCode) or the software-specific editors inside each container.
 - If editing via GUI, remember to show hidden files when needed (e.g., `.bashrc`); if using `vi`, see *Using the `vi` File Editor*.
 - Track code with GitLab (see *Version Control with GitLab*) and commit regularly with clear messages.
 
 ### Data handling
-
 - Never copy data to your home folder.
 - Keep only essential intermediate files; clean temporary artifacts in `work_area` to manage space.
 - Place final, non-sensitive outputs in `results` in line with the output extraction rules.
-
-### Using the BPLIM templates
-
-Your `work_area` folder contains template files for Stata, R and/or Python, depending on your project. These templates are pre-configured to follow the recommended project structure (reading from `initial_dataset`, writing to `results`, working under `work_area`).
-
-- Copy a template to `work_area/scripts` (or a similar folder) and rename it (e.g., `01_import.do`, `01_import.R`, `01_import.py`).
-- Adjust only the parts that are project-specific, such as replacing `P999_research_project` with your actual project ID.
-- Keep all input and output paths inside your project folders (`initial_dataset`, `results`, `work_area`) and avoid using your home folder.
 
 
 ## Updates to Commands and Packages
@@ -1143,14 +1127,14 @@ Time (10 minutes) during which the account will be locked if the maximum number 
      Some university networks block external connections to BPLIM’s server.  
      Test from another location (e.g., your home network).
 
+\newpage
+
 3. **User pressed 'Lock' instead of 'Log out' and cannot unlock**
 
 - Check that the keyboard layout is correct (e.g., PT or UK).  
 - Close the NoMachine session and start a new one. Before the final **Login** step, right-click and choose **Logout**, then click to reconnect.
 
 >
-
-\newpage
 
 1. **"Cannot see the screen in NoMachine"**
 
