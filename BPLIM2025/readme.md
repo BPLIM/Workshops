@@ -43,7 +43,8 @@ Tools and Techniques for Fast Computing". Recordings of all sessions are availab
 
 **Parallel and Cross-Language Computing: A Hands-On Workshop for Empirical Researchers**
 
-[Miguel Portela](https://sites.google.com/site/reisportela), Universidade do Minho
+[Miguel Portela](https://sites.google.com/site/reisportela), Universidade do Minho  
+
 [Nelson Areal](https://nelsonareal.net/), Universidade do Minho
 
 - [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day2_01_Portela_Areal.pdf) / [Video]() <br/><br/> 
