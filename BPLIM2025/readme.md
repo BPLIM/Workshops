@@ -23,11 +23,11 @@ Tools and Techniques for Fast Computing". Recordings of all sessions will be ava
 
 - [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_02_Jannic_Cutura.pdf) / Video <br/><br/> 
 
-**`collapse` and `fastverse`: Advanced and Fast Statistics and Data Transformation in R**
+**Speeding Up Computation Using Julia: An Illustration Using Discrete Choice Demand Models**
 
-[Sebastian Krantz](https://sebastiankrantz.com/), CPCS, World Bank, and Kiel Institute
+[Joris Pinkse](http://joris.pinkse.org/), Penn State University
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_03_Sebastian_Krantz.pdf) / Video <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day2_03_Joris_Pinkse.pdf) / Video <br/><br/>
 
 **(Pretty) Big Data Wrangling with DuckDB and Polars**
 
@@ -54,14 +54,17 @@ Tools and Techniques for Fast Computing". Recordings of all sessions will be ava
 
 [Alexander Fischer](https://www.linkedin.com/in/alexander-fischer-25653219b/), Trivago
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day2_02_Alexander_Fischer.pdf) / Video <br/><br/> 
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day2_02_Alexander_Fischer.pdf) / Video <br/><br/>
 
 
-**Speeding Up Computation Using Julia: An Illustration Using Discrete Choice Demand Models**
+**`collapse` and `fastverse`: Advanced and Fast Statistics and Data Transformation in R**
 
-[Joris Pinkse](http://joris.pinkse.org/), Penn State University
+[Sebastian Krantz](https://sebastiankrantz.com/), CPCS, World Bank, and Kiel Institute
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day2_03_Ulrich_Matter.pdf) / [Video](https://www.youtube.com/watch?v=JRtuf4EdLko) <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_03_Sebastian_Krantz.pdf) / Video <br/><br/>
+
+
+
 
 
 
