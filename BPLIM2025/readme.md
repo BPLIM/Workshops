@@ -1,7 +1,7 @@
 # BPLIM Workshop 2025
 
 In this folder you can find the materials from the Workshop on "Speeding Up Empirical Research:
-Tools and Techniques for Fast Computing". Recordings of all sessions are available [here]().
+Tools and Techniques for Fast Computing". Recordings of all sessions will be available shortly [here]().
 
 
 ## Presentations
