@@ -1,7 +1,7 @@
 # BPLIM Workshop 2025
 
 In this folder you can find the materials from the Workshop on "Speeding Up Empirical Research:
-Tools and Techniques for Fast Computing". Recordings of all sessions will be available shortly [here]().
+Tools and Techniques for Fast Computing". Recordings of all sessions will be available shortly.
 
 
 ## Presentations
@@ -15,25 +15,25 @@ Tools and Techniques for Fast Computing". Recordings of all sessions will be ava
 
 [David Zarruk](https://www.davidzarruk.com/), Amazon
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_01_David_Zarruk.pdf) / [Video]() <br/><br/> 
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_01_David_Zarruk.pdf) / Video <br/><br/> 
 
 **Why Your Data Analysis Code Runs So Slowly and What To Do About It**
 
 [Jannic Cutura](https://www.janniccutura.net/),  European Central Bank
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_02_Jannic_Cutura.pdf) / [Video]() <br/><br/> 
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_02_Jannic_Cutura.pdf) / Video <br/><br/> 
 
 **`collapse` and `fastverse`: Advanced and Fast Statistics and Data Transformation in R**
 
 [Sebastian Krantz](https://sebastiankrantz.com/), CPCS, World Bank, and Kiel Institute
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_03_Sebastian_Krantz.pdf) / [Video]() <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_03_Sebastian_Krantz.pdf) / Video <br/><br/>
 
 **(Pretty) Big Data Wrangling with DuckDB and Polars**
 
 [Grant McDermott](https://grantmcdermott.com/), Amazon
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_04_Grant_McDermott.pdf) / [Video]() <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_04_Grant_McDermott.pdf) / Video <br/><br/>
 
 
 
@@ -47,14 +47,14 @@ Tools and Techniques for Fast Computing". Recordings of all sessions will be ava
 
 [Nelson Areal](https://nelsonareal.net/), Universidade do Minho
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day2_01_Portela_Areal.pdf) / [Video]() <br/><br/> 
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day2_01_Portela_Areal.pdf) / Video <br/><br/> 
 
 
 **Estimating LLRMs (Large Linear Regression Models)**
 
 [Alexander Fischer](https://www.linkedin.com/in/alexander-fischer-25653219b/), Trivago
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day2_02_Alexander_Fischer.pdf) / [Video]() <br/><br/> 
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day2_02_Alexander_Fischer.pdf) / Video <br/><br/> 
 
 
 **Speeding Up Computation Using Julia: An Illustration Using Discrete Choice Demand Models**
