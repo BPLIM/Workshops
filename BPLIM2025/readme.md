@@ -33,7 +33,7 @@ Tools and Techniques for Fast Computing". Recordings of all sessions will be ava
 
 [Grant McDermott](https://grantmcdermott.com/), Amazon
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_04_Grant_McDermott.pdf) / Video <br/><br/>
+- [Materials](https://grantmcdermott.com/duckdb-polars/) / Video <br/><br/>
 
 
 
