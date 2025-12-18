@@ -61,7 +61,7 @@ Tools and Techniques for Fast Computing". Recordings of all sessions will be ava
 
 [Sebastian Krantz](https://sebastiankrantz.com/), CPCS, World Bank, and Kiel Institute
 
-- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day1_03_Sebastian_Krantz.pdf) / Video <br/><br/>
+- [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day2_03_Sebastian_Krantz.pdf) / Video <br/><br/>
 
 
 
