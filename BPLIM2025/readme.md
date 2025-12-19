@@ -52,7 +52,7 @@ Tools and Techniques for Fast Computing". Recordings of all sessions will be ava
 
 **Estimating LLRMs (Large Linear Regression Models)**
 
-[Alexander Fischer](https://www.linkedin.com/in/alexander-fischer-25653219b/), Trivago
+[Alexander Fischer](https://github.com/s3alfisc), Trivago
 
 - [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day2_02_Alexander_Fischer.pdf) / Video <br/><br/>
 
