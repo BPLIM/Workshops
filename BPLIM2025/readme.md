@@ -59,7 +59,7 @@ Tools and Techniques for Fast Computing". Recordings of all sessions will be ava
 
 **`collapse` and `fastverse`: Advanced and Fast Statistics and Data Transformation in R**
 
-[Sebastian Krantz](https://sebastiankrantz.com/), CPCS, World Bank, and Kiel Institute
+[Sebastian Krantz](https://github.com/SebKrantz), CPCS, World Bank, and Kiel Institute
 
 - [Slides](https://github.com/BPLIM/Workshops/blob/master/BPLIM2025/Day2_03_Sebastian_Krantz.pdf) / Video <br/><br/>
 
